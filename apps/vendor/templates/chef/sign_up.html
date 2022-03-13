@@ -1,0 +1,13 @@
+{% extends 'base_signup.html' %}
+
+{% block title %}Sign Up{% endblock %}
+{% block heading %}Chef - Sign Up{% endblock %}
+
+{% block content %}
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-pink pull-right">Sign Up</button>
+    </form>
+    <a href="{% url 'chef-sign-in' %}">Already have an account?</a>
+{% endblock %} 

@@ -23,7 +23,8 @@ python3 manage.py migrate
 5. Run migrations:
 
 ```
-python3 manage.py makemigrations
+python3 manage.py makemigrations 
+# TODO: add snippet to do migrations to all appsdjango.db.migrations.exceptions.NodeNotFoundError
 python3 manage.py migrate
 ```
 6. Run server:

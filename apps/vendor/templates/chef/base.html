@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block title %} Chef {% endblock %}
+
+{% block script %}
+    <script>
+        $(document).ready(function() {
+            var now = new Date();
+            setInterval(function() {
+                $.ajax({
+                    url: '/api/restaurant/order/notification/' + now.toISOString() + '/',
+                    method: 'GET',
+                    success: function(data) {
+                        if (data['notification'] === 0) {
+                            $('.badge').text('');
+                        } else {
+                            $('.badge').text(data['notification']);
+                        }
+                    }
+                })
+            }, 3000)
+        })
+
+    </script>
+{% endblock %}
+
+{% block sidebar %}
+
+    {% url 'chef-order' as restaurant_order_url %}
+    {% url 'chef-meal' as restaurant_meal_url %}
+    {% url 'chef-report' as restaurant_report_url %}
+    {% url 'chef-customers' as restaurant_customers_url %}
+    {% url 'chef-drivers' as restaurant_drivers_url %}
+    {% url 'chef-account' as restaurant_account_url %}
+
+    <div class="text-center">
+      <img class="img-circle" src="{{ MEDIA_URL }}{{ request.user.restaurant.logo }}"
+          width="70" height="70" />
+      <br/>
+      <br/>
+      <h4>Hi, {{ chef.name }}</h4>
+      <h5>{{ chef.name }}</h5>
+    </div>
+
+    <div class="list-group">
+      <span class="text-uppercase">Dashboard</span>
+
+      <a href="{% url 'chef-order' %}"
+          class="list-group-item {% if request.path == restaurant_order_url %} active {% endif %} ">
+          Orders
+          <span class="badge"></span>
+      </a>
+      <a href="{% url 'chef-meal' %}"
+          class="list-group-item {% if request.path == restaurant_meal_url %} active {% endif %} ">Meals</a>
+            
+      <a href="{% url 'chef-report' %}"
+          class="list-group-item {% if request.path == restaurant_report_url %} active {% endif %} ">Reports</a>
+
+    <a href="{% url 'chef-customers' %}"
+        class="list-group-item {% if request.path == restaurant_customers_url %} active {% endif %} ">Customers</a>
+    
+      <span class="text-uppercase">Profile</span>
+      <a href="{% url 'chef-account' %}"
+          class="list-group-item {% if request.path == restaurant_account_url %} active {% endif %} ">Account</a>
+    </div>
+
+    <div class="text-center">
+      <a href="{% url 'chef-sign-out' %}?next={{ request.path }}"
+          class="btn btn-pink">Logout</a>
+    </div>
+
+{% endblock %}  
