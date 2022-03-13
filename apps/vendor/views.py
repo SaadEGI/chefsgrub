@@ -151,12 +151,12 @@ def home(request):
     return redirect(chef_home)
 
 
-@login_required(login_url='/chef/sign-in/')
+@login_required(login_url='/vendors/chef/sign-in/')
 def chef_home(request):
     return redirect('chef-order')
 
 
-@login_required(login_url='/chef/sign-in/')
+@login_required(login_url='/vendors/chef/sign-in/')
 def chef_order(request):
     # if request.method == "POST":
         # order = Order.objects.get(id=request.POST["id"],
@@ -173,7 +173,7 @@ def chef_order(request):
     return render(request, 'chef/order.html', {"orders": orders, 'chef': chef})
 
 
-@login_required(login_url='/chef/sign-in/')
+@login_required(login_url='/vendors/chef/sign-in/')
 def chef_meal(request):
     chef = request.user.vendor
     meals = Product.objects.filter(
@@ -181,10 +181,10 @@ def chef_meal(request):
     return render(request, 'chef/meal.html', {"meals": meals, 'chef': chef})
 
 
-@login_required(login_url='/chef/sign-in/')
+@login_required(login_url='/vendors/chef/sign-in/')
 def chef_customers(request):
     return redirect('/')
-# @login_required(login_url='/chef/sign-in/')
+# @login_required(login_url='/vendors/chef/sign-in/')
 # def chef_customers(request):
 
 #     customers = Customer.objects.annotate(total_order=Count(
@@ -199,7 +199,7 @@ def chef_customers(request):
 #                   {"all_customers": all_customers})
 
 
-@login_required(login_url='/chef/sign-in/')
+@login_required(login_url='/vendors/chef/sign-in/')
 def chef_account(request):
     user_form = forms.UserFormForEdit(instance=request.user)
     chef_form = forms.ChefForm(instance=request.user)
@@ -222,7 +222,7 @@ def chef_account(request):
     })
 
 
-@login_required(login_url='/chef/sign-in/')
+@login_required(login_url='/vendors/chef/sign-in/')
 def chef_add_meal(request):
     chef = request.user.vendor
     if request.method == 'POST':
@@ -242,12 +242,12 @@ def chef_add_meal(request):
         'chef': chef,
         'form': form
     })
-@login_required(login_url='/chef/sign-in/')
+@login_required(login_url='/vendors/chef/sign-in/')
 def chef_report(request):
     return render(request, 'chef/report.html', {}) # TODO: get the actual report to work
 
 
-# @login_required(login_url='/restaurant/sign-in/')
+# @login_required(login_url='/vendors/restaurant/sign-in/')
 # def restaurant_report(request):
 #     # Calculate revenue and number of order by current week
 #     from datetime import datetime, timedelta
