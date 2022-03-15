@@ -37,7 +37,9 @@ python3 manage.py runserver
 ```
 deactivate
 ```
+## Development
 
+For development, [git-flow](https://gitlab.com/strtporg/backend-chef/-/wikis/Git-Flow) workflow is used
 ## Resources
 ### interiorshop
 
