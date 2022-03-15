@@ -31,7 +31,9 @@ def product(request, category_slug, product_slug):
         form = AddToCartForm(request.POST)
 
         if form.is_valid():
-            quantity = form.cleaned_data['quantity']
+            quantity = 1
+
+            #form.cleaned_data['quantity']
 
             cart.add(product_id=product.id, quantity=quantity, update_quantity=False)
 
