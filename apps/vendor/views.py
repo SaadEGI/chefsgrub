@@ -147,10 +147,6 @@ def become_chef(request):
     return render(request, 'chef/sign_up.html', {'form': form})
 
 
-def home(request):
-    return redirect(chef_home)
-
-
 @login_required(login_url='/vendors/chef/sign-in/')
 def chef_home(request):
     return redirect('chef-order')
@@ -178,7 +174,7 @@ def chef_meal(request):
     chef = request.user.vendor
     meals = Product.objects.filter(
         vendor=chef).order_by("-id")
-    return render(request, 'chef/meal.html', {"meals": meals, 'chef': chef})
+    return render(request, 'chef/meal.html', {"meals": meals, 'chef': chef}) # 
 
 
 @login_required(login_url='/vendors/chef/sign-in/')
@@ -219,6 +215,7 @@ def chef_account(request):
         "user_form": user_form,
         'chef': chef,
         "chef_form": chef_form #TODO: change forms to accomodate the model used
+# TODO: hook it up, take notes from edit_vendor
     })
 
 
@@ -245,6 +242,21 @@ def chef_add_meal(request):
 @login_required(login_url='/vendors/chef/sign-in/')
 def chef_report(request):
     return render(request, 'chef/report.html', {}) # TODO: get the actual report to work
+
+@login_required(login_url='/vendors/chef/sign-in/')
+def chef_edit_meal(request, meal_id):
+    form = ProductForm(instance=Meal.objects.get(id=meal_id))
+
+    if request.method == "POST":
+        form = ProductForm(request.POST,
+                        request.FILES,
+                        instance=Meal.objects.get(id=meal_id))
+
+        if form.is_valid():
+            form.save()
+            return redirect(chef_meal)
+
+    return render(request, 'chef/edit_meal.html', {"form": form}) # TODO: hook it up, take notes from edit_product
 
 
 # @login_required(login_url='/vendors/restaurant/sign-in/')
