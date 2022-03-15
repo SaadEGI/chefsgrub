@@ -1,15 +1,213 @@
-{% extends 'core/base.html' %}
+{% extends 'core/base2.html' %}
 
-{% block title %}Welcome | {% endblock %}
+{% load static %}
 
 {% block content %}
-    <div class="columns is-multiline mb-6">
-        <div class="column is-12 has-text-centered mt-6 mb-6">
-            <h2 class="is-size-3">Newest products</h2>
+
+
+
+
+    <div class="osahan-home-page">
+        <div class="bg-primary p-3 d-none">
+            <div class="text-white">
+                <div class="title d-flex align-items-center">
+                    <a class="toggle" href="#">
+                        <span></span>
+                    </a>
+                    <h4 class="font-weight-bold m-0 pl-5">Browse</h4>
+                    <a class="text-white font-weight-bold ml-auto" data-toggle="modal" data-target="#exampleModal" href="#">Filter</a>
+                </div>
+            </div>
+            <div class="input-group mt-3 rounded shadow-sm overflow-hidden">
+                <div class="input-group-prepend">
+                    <button class="border-0 btn btn-outline-secondary text-dark bg-white btn-block"><i class="feather-search"></i></button>
+                </div>
+                <input type="text" class="shadow-none border-0 form-control" placeholder="Search for restaurants or dishes">
+            </div>
+        </div>
+        <!-- Filters -->
+        <div class="container">
+             <div class="cat-slider">
+                <div class="cat-item px-1 py-3">
+                    <a class="bg-white rounded d-block p-2 text-center shadow-sm" href=" palestinian/ ">
+                        <img alt="#" src=" {% static 'img/palestinian.png' %} " class="img-fluid mb-2">
+                        <p class="m-0 small">Palestinian</p>
+                    </a>
+                </div>
+                <div class="cat-item px-1 py-3">
+                    <a class="bg-white rounded d-block p-2 text-center shadow-sm" href=" ./moroccan ">
+                        <img alt="#" src=" {% static 'img/moroccan.png' %} " class="img-fluid mb-2">
+                        <p class="m-0 small">Moroccan</p>
+                    </a>
+                </div>
+                <div class="cat-item px-1 py-3">
+                    <a class="bg-white rounded d-block p-2 text-center shadow-sm" href=" syrian/ ">
+                        <img alt="#" src=" {% static 'img/syrian.png' %} " class="img-fluid mb-2">
+                        <p class="m-0 small">Syrian</p>
+                    </a>
+                </div>
+                <div class="cat-item px-1 py-3">
+                    <a class="bg-white rounded d-block p-2 text-center shadow-sm" href=" turkish/ ">
+                        <img alt="#" src=" {% static 'img/turkish.png' %} " class="img-fluid mb-2">
+                        <p class="m-0 small">Turkish</p>
+                    </a>
+                </div>
+                <div class="cat-item px-1 py-3">
+                    <a class="bg-white rounded d-block p-2 text-center shadow-sm" href=" indian/ ">
+                        <img alt="#" src=" {% static 'img/indian.png' %} " class="img-fluid mb-2">
+                        <p class="m-0 small">indian</p>
+                    </a>
+                </div>
+                <div class="cat-item px-1 py-3">
+                    <a class="bg-white rounded d-block p-2 text-center shadow-sm" href=" jordanian/ ">
+                        <img alt="#" src=" {% static 'img/jordanian.png' %} " class="img-fluid mb-2">
+                        <p class="m-0 small">Jordanian</p>
+                    </a>
+                </div>
+                <div class="cat-item px-1 py-3">
+                    <a class="bg-white rounded d-block p-2 text-center shadow-sm" href=" pakistani/ ">
+                        <img alt="#" src=" {% static 'img/pakisatni.png' %} " class="img-fluid mb-2">
+                        <p class="m-0 small">Pakistani</p>
+                    </a>
+                </div>
+                <div class="cat-item px-1 py-3">
+                    <a class="bg-white rounded d-block p-2 text-center shadow-sm" href=" german/ ">
+                        <img alt="#" src=" {% static 'img/german.png' %} " class="img-fluid mb-2">
+                        <p class="m-0 small">German</p>
+                    </a>
+                </div>
+                <div class="cat-item px-1 py-3">
+                    <a class="bg-white rounded d-block p-2 text-center shadow-sm" href=" italian/ ">
+                        <img alt="#" src=" {% static 'img/italian.png' %} " class="img-fluid mb-2">
+                        <p class="m-0 small">Italian</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- offer sectio slider -->
+        <div class="bg-white">
+            <div class="container">
+                <div class="offer-slider">
+                    <div class="cat-item px-1 py-3">
+                        <a class="d-block text-center shadow-sm" href=" {% static 'trending.html' %} ">
+                            <img alt="#" src=" {% static 'img/pro1.jpg' %} " class="img-fluid rounded">
+                        </a>
+                    </div>
+                    <div class="cat-item px-1 py-3">
+                        <a class="d-block text-center shadow-sm" href=" {% static 'trending.html' %} ">
+                            <img alt="#" src=" {% static 'img/pro2.jpg' %} " class="img-fluid rounded">
+                        </a>
+                    </div>
+                    <div class="cat-item px-1 py-3">
+                        <a class="d-block text-center shadow-sm" href=" {% static 'trending.html' %} ">
+                            <img alt="#" src=" {% static 'img/pro3.jpg' %} " class="img-fluid rounded">
+                        </a>
+                    </div>
+                    <div class="cat-item px-1 py-3">
+                        <a class="d-block text-center shadow-sm" href=" {% static 'trending.html' %} ">
+                            <img alt="#" src=" {% static 'img/pro4.jpg' %} " class="img-fluid rounded">
+                        </a>
+                    </div>
+                    <div class="cat-item px-1 py-3">
+                        <a class="d-block text-center shadow-sm" href=" {% static 'trending.html' %} ">
+                            <img alt="#" src=" {% static 'img/pro2.jpg' %} " class="img-fluid rounded">
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        {% for product in newest_products %}
-            {% include 'product/parts/list_item.html' %}
-        {% endfor %}
+        <div class="container">
+
+            <!-- Trending this week -->
+            <div class="pt-4 pb-2 title d-flex align-items-center">
+                <h5 class="m-0">Ramadan Special</h5>
+
+
+                <a class="font-weight-bold ml-auto" href=" {% static 'trending.html' %} ">View all <i class="feather-chevrons-right"></i></a>
+            </div>
+            <!-- slider -->
+            <div class="trending-slider">
+                {% for product in newest_products %}
+
+                <div class="osahan-slider-item">
+                    <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm">
+                        <div class="list-card-image">
+                            <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
+                            <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
+                            <div class="member-plan position-absolute"><span class="badge badge-dark"></span></div>
+                            <a href=" {% static 'chef.html' %} ">
+                                <img alt="#" src=" {{ product.get_thumbnail }} " class="img-fluid item-img w-100">
+                            </a>
+                        </div>
+                        <div class="p-3 position-relative">
+                            <div class="list-card-body">
+                                <h6 class="mb-1"><a href=" {% static 'chef.html' %} " class="text-black">{{ product.title }}
+                              </a>
+                                </h6>
+                                <p class="text-gray mb-3">{{ product.vendor }}</p>
+                                <p class="text-gray mb-3 time"><span class="bg-light text-dark rounded-sm pl-2 pb-1 pt-1 pr-2"><i class="feather-clock"></i> 15–30 min</span> <span class="float-right text-black-50"> $350 FOR TWO</span></p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <!-- Most popular -->
+            <div class="py-3 title d-flex align-items-center">
+                <h5 class="m-0">Most popular</h5>
+                <a class="font-weight-bold ml-auto" href=" {% static 'most_popular.html' %} ">26 places <i class="feather-chevrons-right"></i></a>
+            </div>
+            <!-- Most popular -->
+            <div class="most_popular">
+                <div class="row">
+                    {% for vendor in vendorsall %}
+                        <div class="col-md-3 pb-3">
+                        <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm">
+                            <div class="list-card-image">
+                                <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
+                                <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
+                                <div class="member-plan position-absolute"><span class="badge badge-dark"></span></div>
+                                <a href=" {% static 'chef.html' %} ">
+                                    <img alt="{{ vendor.image }}" src=" {% url 'vendor' vendor.id %} " class="img-fluid item-img w-100">
+                                </a>
+                            </div>
+                            <div class="p-3 position-relative">
+                                <div class="list-card-body">
+                                    <h6 class="mb-1"><a href=" {% url 'vendor' vendor.id %} " class="text-black">{{ vendor.name }}
+                                 </a>
+                                    </h6>
+                                    <p class="text-gray mb-1 small"></p>
+                                    <p class="text-gray mb-1 rating">
+                                    </p>
+                                    <ul class="rating-stars list-unstyled">
+                                        <li>
+                                            <i class="feather-star star_active"></i>
+                                            <i class="feather-star star_active"></i>
+                                            <i class="feather-star star_active"></i>
+                                            <i class="feather-star star_active"></i>
+                                            <i class="feather-star"></i>
+                                        </li>
+                                    </ul>
+                                    <p></p>
+                                </div>
+                                <div class="list-card-badge">
+                                    <span class="badge badge-danger"></span> <small></small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+            {% endfor %}
+
+
+            </div>
+            <!-- Most sales -->
+
+            <!-- Most sales -->
+
+        </div>
     </div>
+
 {% endblock %}
