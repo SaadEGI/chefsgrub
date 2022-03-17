@@ -16,7 +16,7 @@ class ProductImageForm(forms.ModelForm):
 class ChefForm(forms.ModelForm):
     class Meta:
         model = models.Vendor # Restaurant
-        fields = ("name", "phone", "address")
+        fields = ("name", "phone", "address", "logo")
 
 
 class UserFormForEdit(forms.ModelForm):
