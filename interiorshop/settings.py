@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -143,7 +144,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     (BASE_DIR / 'static'),
-    ("vendorapp", BASE_DIR / "apps/vendor/static")
 ]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media/'
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+env = environ.Env()
+environ.Env.read_env()

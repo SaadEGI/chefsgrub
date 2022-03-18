@@ -27,11 +27,11 @@
                     {% for meal in meals %}
                         <tr>
                           <td scope="row">{{ meal.id }}</td>
-                          <td><a href="{% url 'chef-edit-meal' meal.id %}">{{ meal.name }}</a></td>
-                          <td>{{ meal.short_description }}</td>
+                          <td><a href="{% url 'chef-edit-meal' meal.id %}">{{ meal.title }}</a></td>
+                          <td>{{ meal.description }}</td>
                           <td>{{ meal.price }}</td>
                           <td class="text-center"><img class="img-rounded"
-                              src="{{ MEDIA_URL }}{{ meal.image }}" width="50" height="50"></td>
+                              src="{{ MEDIA_URL }}{{ meal.image.url }}" width="50" height="50"></td>
                         </tr>
 
                     {% endfor %}
