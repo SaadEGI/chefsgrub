@@ -34,8 +34,8 @@
     {% url 'chef-account' as restaurant_account_url %}
 
     <div class="text-center">
-      <img class="img-circle" src="{{ MEDIA_URL }}{{ request.user.restaurant.logo }}"
-          width="70" height="70" />
+        <img class="img-circle" src="{{ MEDIA_URL }}{{ chef.logo.url }}"
+        width="70" height="70" />
       <br/>
       <br/>
       <h4>Hi, {{ chef.name }}</h4>

@@ -101,7 +101,7 @@ def chef_account(request):
         user_form = forms.UserFormForEdit(request.POST, instance=request.user)
         chef_form = forms.ChefForm(request.POST,
                                    request.FILES,
-                                   instance=request.user.chef)
+                                   instance=request.user.vendor)
 
         if user_form.is_valid() and chef_form.is_valid():
             user_form.save()
