@@ -127,7 +127,7 @@ def chef_add_meal(request):
             product.slug = slugify(product.title)
             product.save()
 
-            return redirect('vendor_admin')
+            return redirect('chef-account')
     else:
         form = forms.ProductForm()
 
@@ -141,13 +141,12 @@ def chef_report(request):
 
 @login_required(login_url='/chef/sign-in/')
 def chef_edit_meal(request, meal_id):
-    form = ProductForm(instance=Meal.objects.get(id=meal_id))
+    form = forms.ProductForm(instance=Product.objects.get(id=meal_id))
 
     if request.method == "POST":
-        form = ProductForm(request.POST,
+        form = forms.ProductForm(request.POST,
                         request.FILES,
                         instance=Meal.objects.get(id=meal_id))
-
         if form.is_valid():
             form.save()
             return redirect(chef_meal)

@@ -25,5 +25,5 @@ urlpatterns = [
     path('sign-out', auth_views.LogoutView.as_view(),
          {'next_page': '/'}, name='chef-sign-out'),
     path('meal/add/', views.chef_add_meal, name='chef-add-meal'),
-    path('meal/edit/', views.chef_edit_meal, name='chef-edit-meal'),
+    path('meal/edit/<int:meal_id>', views.chef_edit_meal, name='chef-edit-meal'),
 ]
