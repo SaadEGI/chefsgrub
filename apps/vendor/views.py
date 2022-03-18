@@ -146,7 +146,7 @@ def chef_edit_meal(request, meal_id):
     if request.method == "POST":
         form = forms.ProductForm(request.POST,
                         request.FILES,
-                        instance=Meal.objects.get(id=meal_id))
+                        instance=Product.objects.get(id=meal_id))
         if form.is_valid():
             form.save()
             return redirect(chef_meal)
