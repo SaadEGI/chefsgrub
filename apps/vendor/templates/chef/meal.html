@@ -31,7 +31,7 @@
                           <td>{{ meal.description }}</td>
                           <td>{{ meal.price }}</td>
                           <td class="text-center"><img class="img-rounded"
-                              src="{{ MEDIA_URL }}{{ meal.get_thumbnail }}" width="50" height="50"></td>
+                              src="{{ MEDIA_URL }}{{ meal.image.url }}" width="50" height="50"></td>
                         </tr>
 
                     {% endfor %}

@@ -8,7 +8,7 @@ class Vendor(models.Model):
     address = models.CharField(max_length=500, default=None, blank=True, null=True)
     created_by = models.OneToOneField(User, related_name='vendor', on_delete=models.CASCADE)
     id = models.AutoField(primary_key=True)
-    logo = models.ImageField(upload_to='vendor_logo/', default=None, blank=True, null=True)
+    logo = models.ImageField(upload_to='uploads/', default=None, blank=True, null=True)
     thumbnail = models.ImageField(upload_to='uploads/', blank=True, null=True)
 
     class Meta:
