@@ -6,7 +6,7 @@ from . import views
 urlpatterns = [
 # Views for customers @ /chef
     path('', views.vendors, name='vendors'),
-    path('<int:vendor_id>/', views.vendor, name='vendor'),
+    path('<str:vendorName>/', views.vendor, name='vendor'),
 
 
 

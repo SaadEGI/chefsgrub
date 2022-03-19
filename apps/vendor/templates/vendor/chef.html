@@ -18,14 +18,18 @@
                 {% if vendors %}
                 {% for vendor in vendors %}
                 <h2 class="font-weight-bold">{{ vendor.name }}</h2>
+                {% if vendor.logo %}
                 <img class="img-circle" src="{{ MEDIA_URL }}{{ vendor.logo.url }}"
+                {% endif %}
                 width="70" height="70" />
                 {% endfor %}
                 {% elif vendor %}
 
                 <h2 class="font-weight-bold">{{ vendor.name }}</h2>
+                {% if vendor.logo %}
                 <img class="img-circle" src="{{ MEDIA_URL }}{{ vendor.logo.url }}"
                 width="70" height="70" />
+                {% endif %}
                 {% endif %}
 
                       <div class="rating-wrap d-flex align-items-center mt-2">
