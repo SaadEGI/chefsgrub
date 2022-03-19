@@ -6,14 +6,13 @@ from . import views
 urlpatterns = [
 # Views for customers @ /chef
     path('', views.vendors, name='vendors'),
-    path('<str:vendorName>/', views.vendor, name='vendor'),
+    path('become-chef/', views.become_chef, name='become-chef'),
 
 
 
 
 
 # Views for chefs @ /chef
-    path('become-chef/', views.become_chef, name='become-chef'),
     path('sign-in/', auth_views.LoginView.as_view(
         template_name='chef/sign_in.html', next_page='/chef/order'), name='chef-sign-in'),
     path('chef-admin/', views.chef_admin, name='chef-admin'),
@@ -26,4 +25,5 @@ urlpatterns = [
          {'next_page': '/'}, name='chef-sign-out'),
     path('meal/add/', views.chef_add_meal, name='chef-add-meal'),
     path('meal/edit/<int:meal_id>', views.chef_edit_meal, name='chef-edit-meal'),
+    path('<str:vendorName>/', views.vendor, name='vendor'),
 ]
