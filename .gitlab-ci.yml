@@ -34,3 +34,4 @@ deploy:      # This job runs in the deploy stage.
     url: $HEROKU_APP_HOST
   only: 
     - main
+    - web
