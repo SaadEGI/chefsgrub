@@ -6,14 +6,9 @@ from apps.vendor.models import Vendor
 def frontpage(request):
     newest_products = Product.objects.all()[0:8]
     vendorsall = Vendor.objects.all()
-    #morproducts = Product.category.filter(category='Moroccan')
+    ramadan_products = Product.objects.filter(category=1)
 
-
-
-    #category=product.category"fajsbcd"
-    #ramdproducts=category.Product.objects.all()[0:8]
-
-    return render(request, 'core/frontpage.html', {'vendorsall': vendorsall,'newest_products': newest_products})
+    return render(request, 'core/frontpage.html',{'ramadan_products': ramadan_products, 'newest_products': newest_products, 'vendorsall':vendorsall})
 
 def contact(request):
     return render(request, 'core/contact.html')

@@ -28,7 +28,7 @@
                                 <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
 
                                 <a href="/chef/{{ product.vendor_id }}">
-                                    <img alt="#" src=" {{ product.get_thumbnail }} " class="img-fluid item-img w-100">
+                                    <img alt="#" src=" {{ MEDIA_URL }}{{ product.image.url }} " class="img-fluid item-img w-100">
                                 </a>
                             </div>
                             <div class="p-3 position-relative">

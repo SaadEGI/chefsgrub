@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'chef/base.html' %}
 
 {% block title %} Chef {% endblock %}
 
@@ -34,8 +34,10 @@
     {% url 'chef-account' as restaurant_account_url %}
 
     <div class="text-center">
-      <img class="img-circle" src="{{ MEDIA_URL }}{{ request.user.restaurant.logo }}"
-          width="70" height="70" />
+        {% if chef.logo %}
+        <img class="img-circle" src="{{ MEDIA_URL }}{{ chef.logo.url }}"
+        {% endif %}
+        width="70" height="70" />
       <br/>
       <br/>
       <h4>Hi, {{ chef.name }}</h4>

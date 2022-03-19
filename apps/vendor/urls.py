@@ -15,7 +15,7 @@ urlpatterns = [
 # Views for chefs @ /chef
     path('become-chef/', views.become_chef, name='become-chef'),
     path('sign-in/', auth_views.LoginView.as_view(
-        template_name='chef/sign_in.html', next_page='/vendors/chef'), name='chef-sign-in'),
+        template_name='chef/sign_in.html', next_page='/chef/order'), name='chef-sign-in'),
     path('chef-admin/', views.chef_admin, name='chef-admin'),
     path('order/', views.chef_order, name='chef-order'),
     path('meal/', views.chef_meal, name='chef-meal'),  # TODO
@@ -25,5 +25,5 @@ urlpatterns = [
     path('sign-out', auth_views.LogoutView.as_view(),
          {'next_page': '/'}, name='chef-sign-out'),
     path('meal/add/', views.chef_add_meal, name='chef-add-meal'),
-    path('meal/edit/', views.chef_edit_meal, name='chef-edit-meal'),
+    path('meal/edit/<int:meal_id>', views.chef_edit_meal, name='chef-edit-meal'),
 ]
