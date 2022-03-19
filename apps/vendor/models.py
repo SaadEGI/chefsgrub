@@ -2,12 +2,12 @@ from django.contrib.auth.models import User
 from django.db import models
 
 class Vendor(models.Model):
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255, unique=True, primary_key=True)
     phone = models.CharField(max_length=500, default=None, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     address = models.CharField(max_length=500, default=None, blank=True, null=True)
     created_by = models.OneToOneField(User, related_name='vendor', on_delete=models.CASCADE)
-    id = models.AutoField(primary_key=True)
+    # id = models.AutoField(primary_key=True)
     logo = models.ImageField(upload_to='uploads/', default=None, blank=True, null=True)
     thumbnail = models.ImageField(upload_to='uploads/', blank=True, null=True)
 

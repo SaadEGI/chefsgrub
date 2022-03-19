@@ -17,8 +17,8 @@ def vendors(request):
     return render(request, 'vendor/chef.html', {'vendors': vendors})
 
 
-def vendor(request, vendor_id):
-    vendor = get_object_or_404(Vendor, pk=vendor_id)
+def vendor(request, vendorName):
+    vendor = get_object_or_404(Vendor, pk=vendorName)
 
     return render(request, 'vendor/chef.html', {'vendor': vendor})
 
