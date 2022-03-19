@@ -22,8 +22,7 @@ deploy:      # This job runs in the deploy stage.
     - echo "Deploying application..."
     - whoami
     - echo -en $"ENVIRONMENT=staging\nSECRET_KEY=$1" > .env
-    - python manage.py makemigrations
-    - python manage.py migrate
+    - make venv
     - /home/ubuntu/.rbenv/shims/dpl --provider=heroku --app=$HEROKU_APPNAME --api-key=$HEROKU_APIKEY --skip-cleanup
     - export HEROKU_API_KEY=$HEROKU_APIKEY
     - echo "Application successfully deployed."
