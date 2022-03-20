@@ -4,12 +4,11 @@ migrate:
 	python3 manage.py makemigrations
 	python3 manage.py migrate
 venv:
-	virtualenv venv
+	python3 -m venv venv
 	. venv/bin/activate
 	pip3 install -r requirements.txt
 	python3 manage.py makemigrations
 	python3 manage.py migrate
-	python3 manage.py runserver
 updateDependencies:
 	pip3 freeze > requirements.txt
 createSuperUser:

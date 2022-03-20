@@ -1,2 +1,2 @@
-web: gunicorn interior.wsgi
-migrate: bash python manage.py migrate
+migrate: make migrate
+web: gunicorn interiorshop.wsgi
