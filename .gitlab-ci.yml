@@ -17,7 +17,11 @@ stages:
 #     - echo "No lint issues found."
 
 deploy:      # This job runs in the deploy stage.
+  image: ruby:3.1.1
   stage: deploy  # It only runs when *both* jobs in the test stage complete successfully.
+  before_script:
+  - gem install dpl
+  - wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | sh
   script:
     - echo -en $"ENVIRONMENT=staging\nSECRET_KEY=$1" > .env
     # - make venv
@@ -34,4 +38,4 @@ deploy:      # This job runs in the deploy stage.
   only: 
     - main
   tags:
-    - shellRunner
+    - dockerRunner
