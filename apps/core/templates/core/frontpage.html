@@ -170,12 +170,14 @@
                                 <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
                                 <div class="member-plan position-absolute"><span class="badge badge-dark"></span></div>
                                 <a href=" {% static 'chef.html' %} ">
-                                    <img alt="{{ vendor.image }}" src=" {% url 'vendor' vendor.id %} " class="img-fluid item-img w-100">
+                                    {% if vendor.logo %}
+                                    <img alt="{{ vendor.image }}" src=" {{ MEDIA_URL }}{{ vendor.logo.url }} " class="img-fluid item-img w-100">
+                                    {% endif %}
                                 </a>
                             </div>
                             <div class="p-3 position-relative">
                                 <div class="list-card-body">
-                                    <h6 class="mb-1"><a href=" {% url 'vendor' vendor.id %} " class="text-black">{{ vendor.name }}
+                                    <h6 class="mb-1"><a href=" {% url 'vendor' vendor.name %} " class="text-black">{{ vendor.name }}
                                  </a>
                                     </h6>
                                     <p class="text-gray mb-1 small"></p>
