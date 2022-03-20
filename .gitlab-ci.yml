@@ -21,7 +21,7 @@ deploy:      # This job runs in the deploy stage.
   script:
     - echo -en $"ENVIRONMENT=staging\nSECRET_KEY=$1" > .env
     # - make venv
-    - source ~/.zshrc
+    # - source ~/.zshrc
     - pwd;
     - whoami
     - which $SHELL
