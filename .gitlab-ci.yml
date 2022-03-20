@@ -21,8 +21,10 @@ deploy:      # This job runs in the deploy stage.
   script:
     - echo -en $"ENVIRONMENT=staging\nSECRET_KEY=$1" > .env
     # - make venv
+    - source ~/.zshrc
     - pwd;
     - whoami
+    - which $SHELL
     - which dpl
     - dpl --provider=heroku --app=$HEROKU_APPNAME --api-key=$HEROKU_APIKEY --skip-cleanup
     - export HEROKU_API_KEY=$HEROKU_APIKEY
