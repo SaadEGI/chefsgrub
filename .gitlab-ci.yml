@@ -20,7 +20,7 @@ deploy:      # This job runs in the deploy stage.
   stage: deploy  # It only runs when *both* jobs in the test stage complete successfully.
   script:
     - echo "Deploying application..."
-    - whoami
+    - whoami;ls;
     - echo -en $"ENVIRONMENT=staging\nSECRET_KEY=$1" > .env
     - make venv
     - /home/ubuntu/.rbenv/shims/dpl --provider=heroku --app=$HEROKU_APPNAME --api-key=$HEROKU_APIKEY --skip-cleanup
@@ -31,3 +31,5 @@ deploy:      # This job runs in the deploy stage.
     url: $HEROKU_APP_HOST
   only: 
     - main
+  tags:
+    - shelRunner
