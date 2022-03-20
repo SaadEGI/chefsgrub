@@ -32,4 +32,4 @@ deploy:      # This job runs in the deploy stage.
   only: 
     - main
   tags:
-    - shelRunner
+    - shellRunner
