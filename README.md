@@ -37,6 +37,11 @@ python3 manage.py runserver
 ```
 deactivate
 ```
+
+##Setting up POSTgres for django app
+
+https://stackpython.medium.com/how-to-start-django-project-with-a-database-postgresql-aaa1d74659d8
+
 ## Development
 
 For development, [git-flow](https://gitlab.com/strtporg/backend-chef/-/wikis/Git-Flow) workflow is used
