@@ -98,10 +98,10 @@
                             <!-- signin -->
                             <a href=" /cart " class="widget-header mr-4 text-dark">
                                 <div class="icon d-flex align-items-center">
-                                    <i class="feather-shopping-cart h6 mr-2 mb-0"></i> <span>Cart</span>
+                                    <i class="feather-shopping-cart h6 mr-2 mb-0"></i> <span>Cart {% if cart %} ({{ cart|length }}){% endif %}</span>
                                 </div>
                             </a>
-                            <a class="toggle " href="#">
+                            <a class="toggle" href="#">
                                 <span></span>
                             </a>
                         </div>

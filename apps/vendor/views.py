@@ -10,17 +10,52 @@ from apps.product.models import Product, ProductImage
 from apps.order.models import Order, OrderItem
 
 from . import forms
+from django.contrib.auth import login
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserCreationForm
+from django.utils.text import slugify
+from django.shortcuts import render, redirect, get_object_or_404
+
+from .models import Vendor
+from apps.product.models import Product, ProductImage
+
+from .forms import ProductForm, ProductImageForm
+
+from django.contrib import messages
+from django.db.models import Q
+from django.shortcuts import render, get_object_or_404, redirect
+
+from apps.product.forms import AddToCartForm
+from apps.product.models import Category, Product
+
+from apps.cart.cart import Cart
 
 def vendors(request):
     vendors = Vendor.objects.all()
 
+
     return render(request, 'vendor/chef.html', {'vendors': vendors})
 
+def vendor(request, vendor_id):
+    vendor = get_object_or_404(Vendor, pk=vendor_id)
+    cart = Cart(request)
 
-def vendor(request, vendorName):
-    vendor = get_object_or_404(Vendor, pk=vendorName)
+    if request.method == 'POST':
+        form = AddToCartForm(request.POST)
 
-    return render(request, 'vendor/chef.html', {'vendor': vendor})
+        if form.is_valid():
+            quantity = 1
+            #product.id =1
+            product_id = form.cleaned_data['product_id']
+
+            # form.cleaned_data['quantity']
+
+            cart.add(product_id=product_id, quantity=quantity, update_quantity=False)
+
+            messages.success(request, 'The product was added to the cart')
+
+    else:
+        form = AddToCartForm()
 
 
 
