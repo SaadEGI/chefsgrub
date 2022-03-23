@@ -94,7 +94,7 @@
                     <div class="row justify-content-center">
                         {% if vendors %}
                         {% for vendor in vendors %}
-
+                        {% if vendor.products %}
                         {% for product in vendor.products.all %}
                         <div class="col-xl-3 col-lg-4 col-md-6">
                             <div class="single-item-wrap style-2">
@@ -134,7 +134,9 @@
                                 </div>
                             </div>
                         </div>
+
                         {% endfor %}
+                        {% endif %}
                         {% endfor %}
                         {% elif vendor %}
                         {% for product in vendor.products.all %}

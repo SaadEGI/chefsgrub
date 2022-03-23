@@ -1,13 +1,14 @@
 deleteDB:
-	rm db.sqlite3 apps/*/migrations/0*
+	python3 manage.py flush --no-input
+	rm -r apps/*/migrations/0* apps/*/__pycache__ apps/*/migrations/__pycache__ interiorshop/__pycache__
 migrate:
-	python3 manage.py makemigrations
+	python3 manage.py makemigrations vendor core cart product order
 	python3 manage.py migrate
 venv:
 	python3 -m venv venv
 	. venv/bin/activate
 	pip3 install -r requirements.txt
-	python3 manage.py makemigrations
+	python3 manage.py makemigrations vendor core cart product order
 	python3 manage.py migrate
 updateDependencies:
 	pip3 freeze > requirements.txt
