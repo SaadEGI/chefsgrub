@@ -85,7 +85,9 @@
                         <div class="col-xl-3 col-lg-4 col-md-6">
                             <div class="single-item-wrap style-2">
                                 <div class="thumb">
-                                    <img src="{{ product.get_thumbnail }}" alt="img">
+                                    {% if product.image %}
+                                    <img class="img" src="{{ MEDIA_URL }}{{ product.image.url }}"
+                                    {% endif %}
 
                                 </div>
                                 <div class="wrap-details">
