@@ -1,6 +1,9 @@
 # Backend-Chef
 ## Setup
 
+Create a postgres DB with the following username and password: (strtpadmin, strtpadmin)
+
+
 1. Create virtual environment:
 ```
 virtualenv venv
@@ -15,16 +18,16 @@ pip install -r requirements.txt
 ```
 source venv/bin/activate
 ```
-4. Create DB(sqlite4):
+4. Create DB:
 
 ```
+python3 manage.py makemigrations vendor core cart product order
 python3 manage.py migrate
 ```
 5. Run migrations:
 
 ```
 python3 manage.py makemigrations 
-# TODO: add snippet to do migrations to all appsdjango.db.migrations.exceptions.NodeNotFoundError
 python3 manage.py migrate
 ```
 6. Run server:
@@ -32,11 +35,7 @@ python3 manage.py migrate
 ```
 python3 manage.py runserver
 ```
-7. Deactivate virutal environment:
 
-```
-deactivate
-```
 ## Development
 
 For development, [git-flow](https://gitlab.com/strtporg/backend-chef/-/wikis/Git-Flow) workflow is used
