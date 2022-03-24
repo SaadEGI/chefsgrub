@@ -36,27 +36,21 @@ def vendors(request):
 
     return render(request, 'vendor/chef.html', {'vendors': vendors})
 
-def vendor(request, vendor_id):
-    vendor = get_object_or_404(Vendor, pk=vendor_id)
-    cart = Cart(request)
-
-    if request.method == 'POST':
-        form = AddToCartForm(request.POST)
-
-        if form.is_valid():
-            quantity = 1
-            #product.id =1
-            product_id = form.cleaned_data['product_id']
-
-            # form.cleaned_data['quantity']
-
-            cart.add(product_id=product_id, quantity=quantity, update_quantity=False)
-
-            messages.success(request, 'The product was added to the cart')
-
-    else:
-        form = AddToCartForm()
-
+def vendor(request, vendorName):
+    vendor = get_object_or_404(Vendor, pk=vendorName)
+    # cart = Cart(request)
+    # if request.method == 'POST':
+    #     form = AddToCartForm(request.POST)
+    #     if form.is_valid():
+    #         quantity = 1
+    #         #product.id =1
+    #         product_id = form.cleaned_data['product_id']
+    #         # form.cleaned_data['quantity']
+    #         cart.add(product_id=product_id, quantity=quantity, update_quantity=False)
+    #         messages.success(request, 'The product was added to the cart')
+    # else:
+    #     form = AddToCartForm()
+    return render(request, 'vendor/chef.html', {'vendor': vendor})
 
 
 
