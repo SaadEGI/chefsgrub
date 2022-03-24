@@ -15,24 +15,8 @@
         <div class="container position-relative">
             <img alt="#" class="restaurant-pic" src="/media/uploads/uploads/Reebok_Royal_Complete_3.0_Low_Shoes_Blau_G57711_02_standard.webp" />
             <div class="pt-3 text-white">
-                {% if vendors %}
-                {% for vendor in vendors %}
                 <h2 class="font-weight-bold">{{ vendor.name }}</h2>
-                {% if vendor.logo %}
-                <img class="img-circle" src="{{ MEDIA_URL }}{{ vendor.logo.url }}"
-                {% endif %}
-                width="70" height="70" />
-                {% endfor %}
-                {% elif vendor %}
-
-                <h2 class="font-weight-bold">{{ vendor.name }}</h2>
-                {% if vendor.logo %}
-                <img class="img-circle" src="{{ MEDIA_URL }}{{ vendor.logo.url }}"
-                width="70" height="70" />
-                {% endif %}
-                {% endif %}
-
-                      <div class="rating-wrap d-flex align-items-center mt-2">
+                <div class="rating-wrap d-flex align-items-center mt-2">
                     <ul class="rating-stars list-unstyled">
                         <li>
                             <i class="feather-star text-warning"></i>
@@ -92,62 +76,20 @@
             <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane fade show active" id="pills-ramen" role="tabpanel" aria-labelledby="pills-ramen-tab">
                     <div class="row justify-content-center">
-                        {% if vendors %}
-                        {% for vendor in vendors %}
-                        {% if vendor.products %}
-                        {% for product in vendor.products.all %}
+                         {% for product in vendor.products.all %}
+
+
+
+
+
                         <div class="col-xl-3 col-lg-4 col-md-6">
                             <div class="single-item-wrap style-2">
                                 <div class="thumb">
-                                    <img src="{{ MEDIA_URL }}{{ product.image.url }}" alt="img">
+                                    <img src="{{ product.get_thumbnail }}" alt="img">
 
                                 </div>
                                 <div class="wrap-details">
-                                    <h5>{{ product.title }}</h5>
-                                    <div class="wrap-footer">
-                                        <div class="rating">
-
-                                            <span class="rating-inner">
-                                                <i class="ri-star-fill ps-0"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-half-line pe-0"></i>
-                                            </span>
-
-                                        </div>
-                                    </div>
-                                    <div class="btn-area">
-                                        <h6 class="price">{{ product.price }} €</h6>
-                                        <form method="post" action=".">
-
-        {% csrf_token %}
-
-        <div class="field has-addons">
-            <div class="control">
-                <button class="btn btn-secondary">Add to cart</button>
-            </div>
-        </div>
-    </form>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {% endfor %}
-                        {% endif %}
-                        {% endfor %}
-                        {% elif vendor %}
-                        {% for product in vendor.products.all %}
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="single-item-wrap style-2">
-                                <div class="thumb">
-                                    <img src="{{ MEDIA_URL}}{{ product.image.url }}" alt="img">
-
-                                </div>
-                                <div class="wrap-details">
-                                    <h5>{{ product.title }}</h5>
+                                    <h5>{{ product.title }} </h5>
                                     <div class="wrap-footer">
                                         <div class="rating">
 
@@ -163,11 +105,21 @@
                                     </div>
                                     <div class="btn-area">
                                         <h6 class="price">{{ product.price }} €</h6>
-                                        <form method="post" action=".">
 
+
+
+                <form method="post" action=".">
         {% csrf_token %}
 
         <div class="field has-addons">
+            <div class="control">
+                <input type="hidden" name="quantity" value="1" class="input" min="1">
+            </div>
+            <div class="control">
+                <input type="hidden" name="product_id" value="{{ product.id }}" class="input" min="1">
+            </div>
+
+
             <div class="control">
                 <button class="btn btn-secondary">Add to cart</button>
             </div>
@@ -179,534 +131,13 @@
                             </div>
                         </div>
                         {% endfor %}
-                        {% endif %}
+
+
+
 
                     </div>
                 </div>
-                <div class="tab-pane fade" id="pills-pizza" role="tabpanel" aria-labelledby="pills-pizza-tab">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-3 col-md-6">
-                            <div class="single-item-wrap style-2">
-                                <div class="thumb">
-                                    <img src=" {% static 'assets/img/home-2/product/05.png' %} " alt="img">
-                                    <a class="fav-btn" href="#"><i class="ri-heart-fill"></i></a>
-                                </div>
-                                <div class="wrap-details">
-                                    <h5><a href=" {% static 'single-product.html' %} ">Margherita Pizza</a></h5>
-                                    <div class="wrap-footer">
-                                        <div class="rating">
-                                            4.9
-                                            <span class="rating-inner">
-                                                <i class="ri-star-fill ps-0"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-half-line pe-0"></i>
-                                            </span>
-                                            (200)
-                                        </div>
-                                    </div>
-                                    <div class="btn-area">
-                                        <h6 class="price">$17.00</h6>
-                                        <a class="btn btn-secondary" href=" {% static 'single-product.html' %} ">Add to cart <i class="ri-add-line"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="single-item-wrap style-2">
-                                <div class="thumb">
-                                    <img src=" {% static 'assets/img/home-2/product/06.png' %} " alt="img">
-                                    <a class="fav-btn" href="#"><i class="ri-heart-fill"></i></a>
-                                </div>
-                                <div class="wrap-details">
-                                    <h5><a href=" {% static 'single-product.html' %} ">Maxican Pizza</a></h5>
-                                    <div class="wrap-footer">
-                                        <div class="rating">
-                                            4.9
-                                            <span class="rating-inner">
-                                                <i class="ri-star-fill ps-0"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-half-line pe-0"></i>
-                                            </span>
-                                            (200)
-                                        </div>
-                                    </div>
-                                    <div class="btn-area">
-                                        <h6 class="price">$17.00</h6>
-                                        <a class="btn btn-secondary" href=" {% static 'single-product.html' %} ">Add to cart <i class="ri-add-line"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="single-item-wrap style-2">
-                                <div class="thumb">
-                                    <img src=" {% static 'assets/img/home-2/product/07.png' %} " alt="img">
-                                    <a class="fav-btn" href="#"><i class="ri-heart-fill"></i></a>
-                                </div>
-                                <div class="wrap-details">
-                                    <h5><a href=" {% static 'single-product.html' %} ">Garlic Chicken Pizza</a></h5>
-                                    <div class="wrap-footer">
-                                        <div class="rating">
-                                            4.9
-                                            <span class="rating-inner">
-                                                <i class="ri-star-fill ps-0"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-half-line pe-0"></i>
-                                            </span>
-                                            (200)
-                                        </div>
-                                    </div>
-                                    <div class="btn-area">
-                                        <h6 class="price">$17.00</h6>
-                                        <a class="btn btn-secondary" href=" {% static 'single-product.html' %} ">Add to cart <i class="ri-add-line"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="single-item-wrap style-2">
-                                <div class="thumb">
-                                    <img src=" {% static 'assets/img/home-2/product/08.png' %} " alt="img">
-                                    <a class="fav-btn" href="#"><i class="ri-heart-fill"></i></a>
-                                </div>
-                                <div class="wrap-details">
-                                    <h5><a href=" {% static 'single-product.html' %} ">BBQ Chicken Pizza </a></h5>
-                                    <div class="wrap-footer">
-                                        <div class="rating">
-                                            4.9
-                                            <span class="rating-inner">
-                                                <i class="ri-star-fill ps-0"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-half-line pe-0"></i>
-                                            </span>
-                                            (200)
-                                        </div>
-                                    </div>
-                                    <div class="btn-area">
-                                        <h6 class="price">$17.00</h6>
-                                        <a class="btn btn-secondary" href=" {% static 'single-product.html' %} ">Add to cart <i class="ri-add-line"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="pills-burger" role="tabpanel" aria-labelledby="pills-burger-tab">
-                    <div class="row justify-content-center">
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="single-item-wrap style-2">
-                                <div class="thumb">
-                                    <img src=" {% static 'assets/img/home-2/product/01.png' %} " alt="img">
-                                    <a class="fav-btn" href="#"><i class="ri-heart-fill"></i></a>
-                                </div>
-                                <div class="wrap-details">
-                                    <h5><a href=" {% static 'single-product.html' %} ">Double Burger</a></h5>
-                                    <div class="wrap-footer">
-                                        <div class="rating">
-                                            4.9
-                                            <span class="rating-inner">
-                                                <i class="ri-star-fill ps-0"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-half-line pe-0"></i>
-                                            </span>
-                                            (200)
-                                        </div>
-                                    </div>
-                                    <div class="btn-area">
-                                        <h6 class="price">$17.00</h6>
-                                        <a class="btn btn-secondary" href=" {% static 'single-product.html' %} ">Add to cart <i class="ri-add-line"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="single-item-wrap style-2">
-                                <div class="thumb">
-                                    <img src=" {% static 'assets/img/home-2/product/02.png' %} " alt="img">
-                                    <a class="fav-btn" href="#"><i class="ri-heart-fill"></i></a>
-                                </div>
-                                <div class="wrap-details">
-                                    <h5><a href=" {% static 'single-product.html' %} ">Gulliver Burger</a></h5>
-                                    <div class="wrap-footer">
-                                        <div class="rating">
-                                            4.9
-                                            <span class="rating-inner">
-                                                <i class="ri-star-fill ps-0"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-half-line pe-0"></i>
-                                            </span>
-                                            (200)
-                                        </div>
-                                    </div>
-                                    <div class="btn-area">
-                                        <h6 class="price">$17.00</h6>
-                                        <a class="btn btn-secondary" href=" {% static 'single-product.html' %} ">Add to cart <i class="ri-add-line"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="single-item-wrap style-2">
-                                <div class="thumb">
-                                    <img src=" {% static 'assets/img/home-2/product/03.png' %} " alt="img">
-                                    <a class="fav-btn" href="#"><i class="ri-heart-fill"></i></a>
-                                </div>
-                                <div class="wrap-details">
-                                    <h5><a href=" {% static 'single-product.html' %} ">Cheese Momos</a></h5>
-                                    <div class="wrap-footer">
-                                        <div class="rating">
-                                            4.9
-                                            <span class="rating-inner">
-                                                <i class="ri-star-fill ps-0"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-half-line pe-0"></i>
-                                            </span>
-                                            (200)
-                                        </div>
-                                    </div>
-                                    <div class="btn-area">
-                                        <h6 class="price">$17.00</h6>
-                                        <a class="btn btn-secondary" href=" {% static 'single-product.html' %} ">Add to cart <i class="ri-add-line"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="single-item-wrap style-2">
-                                <div class="thumb">
-                                    <img src=" {% static 'assets/img/home-2/product/04.png' %} " alt="img">
-                                    <a class="fav-btn" href="#"><i class="ri-heart-fill"></i></a>
-                                </div>
-                                <div class="wrap-details">
-                                    <h5><a href=" {% static 'single-product.html' %} ">Patty Buns Burgers</a></h5>
-                                    <div class="wrap-footer">
-                                        <div class="rating">
-                                            4.9
-                                            <span class="rating-inner">
-                                                <i class="ri-star-fill ps-0"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-half-line pe-0"></i>
-                                            </span>
-                                            (200)
-                                        </div>
-                                    </div>
-                                    <div class="btn-area">
-                                        <h6 class="price">$17.00</h6>
-                                        <a class="btn btn-secondary" href=" {% static 'single-product.html' %} ">Add to cart <i class="ri-add-line"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="pills-french-fry" role="tabpanel" aria-labelledby="pills-french-fry-tab">
-                    <div class="row justify-content-center">
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="single-item-wrap style-2">
-                                <div class="thumb">
-                                    <img src=" {% static 'assets/img/home-2/product/01.png' %} " alt="img">
-                                    <a class="fav-btn" href="#"><i class="ri-heart-fill"></i></a>
-                                </div>
-                                <div class="wrap-details">
-                                    <h5><a href=" {% static 'single-product.html' %} ">Double Burger</a></h5>
-                                    <div class="wrap-footer">
-                                        <div class="rating">
-                                            4.9
-                                            <span class="rating-inner">
-                                                <i class="ri-star-fill ps-0"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-half-line pe-0"></i>
-                                            </span>
-                                            (200)
-                                        </div>
-                                    </div>
-                                    <div class="btn-area">
-                                        <h6 class="price">$17.00</h6>
-                                        <a class="btn btn-secondary" href=" {% static 'single-product.html' %} ">Add to cart <i class="ri-add-line"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="single-item-wrap style-2">
-                                <div class="thumb">
-                                    <img src=" {% static 'assets/img/home-2/product/02.png' %} " alt="img">
-                                    <a class="fav-btn" href="#"><i class="ri-heart-fill"></i></a>
-                                </div>
-                                <div class="wrap-details">
-                                    <h5><a href=" {% static 'single-product.html' %} ">Gulliver Burger</a></h5>
-                                    <div class="wrap-footer">
-                                        <div class="rating">
-                                            4.9
-                                            <span class="rating-inner">
-                                                <i class="ri-star-fill ps-0"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-half-line pe-0"></i>
-                                            </span>
-                                            (200)
-                                        </div>
-                                    </div>
-                                    <div class="btn-area">
-                                        <h6 class="price">$17.00</h6>
-                                        <a class="btn btn-secondary" href=" {% static 'single-product.html' %} ">Add to cart <i class="ri-add-line"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="single-item-wrap style-2">
-                                <div class="thumb">
-                                    <img src=" {% static 'assets/img/home-2/product/03.png' %} " alt="img">
-                                    <a class="fav-btn" href="#"><i class="ri-heart-fill"></i></a>
-                                </div>
-                                <div class="wrap-details">
-                                    <h5><a href=" {% static 'single-product.html' %} ">Cheese Momos</a></h5>
-                                    <div class="wrap-footer">
-                                        <div class="rating">
-                                            4.9
-                                            <span class="rating-inner">
-                                                <i class="ri-star-fill ps-0"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-half-line pe-0"></i>
-                                            </span>
-                                            (200)
-                                        </div>
-                                    </div>
-                                    <div class="btn-area">
-                                        <h6 class="price">$17.00</h6>
-                                        <a class="btn btn-secondary" href=" {% static 'single-product.html' %} ">Add to cart <i class="ri-add-line"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="single-item-wrap style-2">
-                                <div class="thumb">
-                                    <img src=" {% static 'assets/img/home-2/product/04.png' %} " alt="img">
-                                    <a class="fav-btn" href="#"><i class="ri-heart-fill"></i></a>
-                                </div>
-                                <div class="wrap-details">
-                                    <h5><a href=" {% static 'single-product.html' %} ">Patty Buns Burgers</a></h5>
-                                    <div class="wrap-footer">
-                                        <div class="rating">
-                                            4.9
-                                            <span class="rating-inner">
-                                                <i class="ri-star-fill ps-0"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-half-line pe-0"></i>
-                                            </span>
-                                            (200)
-                                        </div>
-                                    </div>
-                                    <div class="btn-area">
-                                        <h6 class="price">$17.00</h6>
-                                        <a class="btn btn-secondary" href=" {% static 'single-product.html' %} ">Add to cart <i class="ri-add-line"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="pills-fast-food" role="tabpanel" aria-labelledby="pills-fast-food-tab">
-                    <div class="row justify-content-center">
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="single-item-wrap style-2">
-                                <div class="thumb">
-                                    <img src=" {% static 'assets/img/home-2/product/01.png' %} " alt="img">
-                                    <a class="fav-btn" href="#"><i class="ri-heart-fill"></i></a>
-                                </div>
-                                <div class="wrap-details">
-                                    <h5><a href=" {% static 'single-product.html' %} ">Double Burger</a></h5>
-                                    <div class="wrap-footer">
-                                        <div class="rating">
-                                            4.9
-                                            <span class="rating-inner">
-                                                <i class="ri-star-fill ps-0"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-half-line pe-0"></i>
-                                            </span>
-                                            (200)
-                                        </div>
-                                    </div>
-                                    <div class="btn-area">
-                                        <h6 class="price">$17.00</h6>
-                                        <a class="btn btn-secondary" href=" {% static 'single-product.html' %} ">Add to cart <i class="ri-add-line"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="single-item-wrap style-2">
-                                <div class="thumb">
-                                    <img src=" {% static 'assets/img/home-2/product/02.png' %} " alt="img">
-                                    <a class="fav-btn" href="#"><i class="ri-heart-fill"></i></a>
-                                </div>
-                                <div class="wrap-details">
-                                    <h5><a href=" {% static 'single-product.html' %} ">Gulliver Burger</a></h5>
-                                    <div class="wrap-footer">
-                                        <div class="rating">
-                                            4.9
-                                            <span class="rating-inner">
-                                                <i class="ri-star-fill ps-0"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-half-line pe-0"></i>
-                                            </span>
-                                            (200)
-                                        </div>
-                                    </div>
-                                    <div class="btn-area">
-                                        <h6 class="price">$17.00</h6>
-                                        <a class="btn btn-secondary" href=" {% static 'single-product.html' %} ">Add to cart <i class="ri-add-line"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="single-item-wrap style-2">
-                                <div class="thumb">
-                                    <img src=" {% static 'assets/img/home-2/product/03.png' %} " alt="img">
-                                    <a class="fav-btn" href="#"><i class="ri-heart-fill"></i></a>
-                                </div>
-                                <div class="wrap-details">
-                                    <h5><a href=" {% static 'single-product.html' %} ">Cheese Momos</a></h5>
-                                    <div class="wrap-footer">
-                                        <div class="rating">
-                                            4.9
-                                            <span class="rating-inner">
-                                                <i class="ri-star-fill ps-0"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-half-line pe-0"></i>
-                                            </span>
-                                            (200)
-                                        </div>
-                                    </div>
-                                    <div class="btn-area">
-                                        <h6 class="price">$17.00</h6>
-                                        <a class="btn btn-secondary" href=" {% static 'single-product.html' %} ">Add to cart <i class="ri-add-line"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="single-item-wrap style-2">
-                                <div class="thumb">
-                                    <img src=" {% static 'assets/img/home-2/product/04.png' %} " alt="img">
-                                    <a class="fav-btn" href="#"><i class="ri-heart-fill"></i></a>
-                                </div>
-                                <div class="wrap-details">
-                                    <h5><a href=" {% static 'single-product.html' %} ">Patty Buns Burgers</a></h5>
-                                    <div class="wrap-footer">
-                                        <div class="rating">
-                                            4.9
-                                            <span class="rating-inner">
-                                                <i class="ri-star-fill ps-0"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-half-line pe-0"></i>
-                                            </span>
-                                            (200)
-                                        </div>
-                                    </div>
-                                    <div class="btn-area">
-                                        <h6 class="price">$17.00</h6>
-                                        <a class="btn btn-secondary" href=" {% static 'single-product.html' %} ">Add to cart <i class="ri-add-line"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="pills-drinks" role="tabpanel" aria-labelledby="pills-drinks-tab">
-                    <div class="row justify-content-center">
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="single-item-wrap style-2">
-                                <div class="thumb">
-                                    <img src=" {% static 'assets/img/home-2/product/01.png' %} " alt="img">
-                                    <a class="fav-btn" href="#"><i class="ri-heart-fill"></i></a>
-                                </div>
-                                <div class="wrap-details">
-                                    <h5><a href=" {% static 'single-product.html' %} ">Double Burger</a></h5>
-                                    <div class="wrap-footer">
-                                        <div class="rating">
-                                            4.9
-                                            <span class="rating-inner">
-                                                <i class="ri-star-fill ps-0"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-half-line pe-0"></i>
-                                            </span>
-                                            (200)
-                                        </div>
-                                    </div>
-                                    <div class="btn-area">
-                                        <h6 class="price">$17.00</h6>
-                                        <a class="btn btn-secondary" href=" {% static 'single-product.html' %} ">Add to cart <i class="ri-add-line"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="single-item-wrap style-2">
-                                <div class="thumb">
-                                    <img src=" {% static 'assets/img/home-2/product/02.png' %} " alt="img">
-                                    <a class="fav-btn" href="#"><i class="ri-heart-fill"></i></a>
-                                </div>
-                                <div class="wrap-details">
-                                    <h5><a href=" {% static 'single-product.html' %} ">Gulliver Burger</a></h5>
-                                    <div class="wrap-footer">
-                                        <div class="rating">
-                                            4.9
-                                            <span class="rating-inner">
-                                                <i class="ri-star-fill ps-0"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-fill"></i>
-                                                <i class="ri-star-half-line pe-0"></i>
-                                            </span>
-                                            (200)
-                                        </div>
-                                    </div>
-                                    <div class="btn-area">
-                                        <h6 class="price">$17.00</h6>
-                                        <a class="btn btn-secondary" href=" {% static 'single-product.html' %} ">Add to cart <i class="ri-add-line"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>

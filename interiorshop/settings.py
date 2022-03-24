@@ -57,10 +57,10 @@ CART_SESSION_ID = 'cart'
 
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = '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'
+EMAIL_HOST_PASSWORD = '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'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-DEFAULT_EMAIL_FROM = 'Interiorstore <noreply@codewithstein.com>'
+DEFAULT_EMAIL_FROM = 'ChefGrub <strtporg@gmail.com>'
 
 # Application definition
 

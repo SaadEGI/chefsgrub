@@ -15,6 +15,18 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.utils.text import slugify
 from django.shortcuts import render, redirect, get_object_or_404
+from . import forms
+
+from .models import Vendor
+from apps.product.models import Product, ProductImage
+from apps.order.models import Order, OrderItem
+
+from . import forms
+from django.contrib.auth import login
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserCreationForm
+from django.utils.text import slugify
+from django.shortcuts import render, redirect, get_object_or_404
 
 from .models import Vendor
 from apps.product.models import Product, ProductImage
@@ -30,14 +42,15 @@ from apps.product.models import Category, Product
 
 from apps.cart.cart import Cart
 
+
 def vendors(request):
     vendors = Vendor.objects.all()
 
-
     return render(request, 'vendor/chef.html', {'vendors': vendors})
 
-def vendor(request, vendor_id):
-    vendor = get_object_or_404(Vendor, pk=vendor_id)
+
+def vendor(request, vendorName):
+    vendor = get_object_or_404(Vendor, pk=vendorName)
     cart = Cart(request)
 
     if request.method == 'POST':
@@ -45,7 +58,7 @@ def vendor(request, vendor_id):
 
         if form.is_valid():
             quantity = 1
-            #product.id =1
+            # product.id =1
             product_id = form.cleaned_data['product_id']
 
             # form.cleaned_data['quantity']
@@ -56,6 +69,8 @@ def vendor(request, vendor_id):
 
     else:
         form = AddToCartForm()
+
+    return render(request, 'vendor/chef.html', {'form': form ,'vendor': vendor})
 
 
 
@@ -93,11 +108,10 @@ def chef_order(request):
         #     order.status = Order.READY
         #     order.save()
     chef = request.user.vendor
-    orders = OrderItem.objects.filter(
-    vendor=chef).order_by("-id") 
+    orders = chef.orders.all()
     # #TODO: fix filter
 
-    return render(request, 'chef/order.html', {"orders": orders, 'chef': chef})
+    return render(request, 'chef/order.html', {'orders': orders,'orders': orders, 'chef': chef})
 
 
 @login_required(login_url='/chef/sign-in/')
