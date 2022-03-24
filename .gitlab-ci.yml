@@ -19,7 +19,7 @@ deploy:
   - gem install dpl
   - wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | sh
   script:
-    - echo -en $"ENVIRONMENT=staging\nSECRET_KEY=$1" > .env
+    - echo -en $"ENVIRONMENT=staging\nSECRET_KEY=$1\nDJANGO_SUPERUSER_PASSWORD=$ADMIN_PASSWORD" > .env
     - dpl --provider=heroku --app=$HEROKU_APPNAME --api-key=$HEROKU_APIKEY --skip-cleanup
     - export HEROKU_API_KEY=$HEROKU_APIKEY
   environment:
