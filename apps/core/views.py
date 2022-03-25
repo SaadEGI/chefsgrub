@@ -12,6 +12,8 @@ def frontpage(request):
 
 def contact(request):
     return render(request, 'core/contact.html')
+def aboutus(request):
+    return render(request, 'core/about.html')
 
 def home(request):
     return render(request, 'core/home2.html', {})

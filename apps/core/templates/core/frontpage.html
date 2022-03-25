@@ -124,7 +124,7 @@
                 <h5 class="m-0">Ramadan Special</h5>
 
 
-                <a class="font-weight-bold ml-auto" href=" {% static 'trending.html' %} ">View all <i class="feather-chevrons-right"></i></a>
+                <a class="font-weight-bold ml-auto" href=" ramadan/  ">View all <i class="feather-chevrons-right"></i></a>
             </div>
             <!-- slider -->
             <div class="trending-slider">
@@ -133,9 +133,8 @@
                 <div class="osahan-slider-item">
                     <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm">
                         <div class="list-card-image">
-                            <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
-                            <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
                             <div class="member-plan position-absolute"><span class="badge badge-dark"></span></div>
+
                             <a href=" {% static 'chef.html' %} ">
                                 <img alt="" src=" {{ product.get_thumbnail}} " class="img-fluid item-img w-100">
                             </a>
@@ -146,7 +145,7 @@
                               </a>
                                 </h6>
                                 <p class="text-gray mb-3">{{ product.vendor }}</p>
-                                <p class="text-gray mb-3 time"><span class="bg-light text-dark rounded-sm pl-2 pb-1 pt-1 pr-2"><i class="feather-clock"></i> 15–30 min</span> <span class="float-right text-black-50"> $350 FOR TWO</span></p>
+                                <p class="text-gray mb-3 time"><span class="bg-light text-dark rounded-sm pl-2 pb-1 pt-1 pr-2"><i class="feather-clock"></i> Ready in 8 Hours</span> <span class="float-right text-black-50"> Ramadan Offers</span></p>
                             </div>
 
                         </div>
@@ -157,8 +156,7 @@
             <!-- Most popular -->
             <div class="py-3 title d-flex align-items-center">
                 <h5 class="m-0">Most popular</h5>
-                <a class="font-weight-bold ml-auto" href=" {% static 'most_popular.html' %} ">26 places <i class="feather-chevrons-right"></i></a>
-            </div>
+                 </div>
             <!-- Most popular -->
             <div class="most_popular">
                 <div class="row">
@@ -167,7 +165,6 @@
                         <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm">
                             <div class="list-card-image">
                                 <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
-                                <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
                                 <div class="member-plan position-absolute"><span class="badge badge-dark"></span></div>
                                 <a href=" {% static 'chef.html' %} ">
                                     {% if vendor.logo %}
