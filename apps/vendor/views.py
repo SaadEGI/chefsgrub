@@ -43,6 +43,8 @@ from apps.product.models import Category, Product
 from apps.cart.cart import Cart
 
 
+
+
 def vendors(request):
     vendors = Vendor.objects.all()
 
