@@ -128,7 +128,7 @@
             </div>
             <!-- slider -->
             <div class="trending-slider">
-                {% for product in newest_products %}
+                {% for product in ramadan_products %}
 
                 <div class="osahan-slider-item">
                     <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm">
@@ -137,12 +137,12 @@
                             <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
                             <div class="member-plan position-absolute"><span class="badge badge-dark"></span></div>
                             <a href=" {% static 'chef.html' %} ">
-                                <img alt="#" src=" {{ product.logo.url }} " class="img-fluid item-img w-100">
+                                <img alt="" src=" {{ product.get_thumbnail}} " class="img-fluid item-img w-100">
                             </a>
                         </div>
                         <div class="p-3 position-relative">
                             <div class="list-card-body">
-                                <h6 class="mb-1"><a href=" {% static 'chef.html' %} " class="text-black">{{ product.title }}
+                                <h6 class="mb-1"><a href="{% url 'vendor' product.vendor %} " class="text-black">{{ product.title }}
                               </a>
                                 </h6>
                                 <p class="text-gray mb-3">{{ product.vendor }}</p>
@@ -171,7 +171,7 @@
                                 <div class="member-plan position-absolute"><span class="badge badge-dark"></span></div>
                                 <a href=" {% static 'chef.html' %} ">
                                     {% if vendor.logo %}
-                                    <img alt="{{ vendor.image }}" src=" {{ MEDIA_URL }}{{ vendor.logo.url }} " class="img-fluid item-img w-100">
+                                    <img alt="{{ vendor.image }}" src=" {{ MEDIA_URL }}{{ vendor.image }} " class="img-fluid item-img w-100">
                                     {% endif %}
                                 </a>
                             </div>
