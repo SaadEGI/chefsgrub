@@ -12,7 +12,7 @@ stages:
 #   script:
 #     - echo "end2end tests run successfully"
 
-deploy:
+staging.deploy:
   image: ruby:3.1.1
   stage: deploy
   before_script:
@@ -26,7 +26,23 @@ deploy:
     name: staging
     url: $HEROKU_APP_HOST
   only: 
-    - main
     - develop
+  tags:
+    - dockerRunner
+
+
+
+production.deploy:
+  image: ruby:3.1.1
+  stage: deploy
+  before_script:
+  - gem install dpl
+  script:
+    - export HEROKU_API_KEY=$HEROKU_APIKEY
+  environment:
+    name: staging
+    url: $HEROKU_APP_HOST
+  only: 
+    - main
   tags:
     - dockerRunner
