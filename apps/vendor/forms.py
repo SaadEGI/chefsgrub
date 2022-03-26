@@ -16,7 +16,8 @@ class ProductImageForm(forms.ModelForm):
 class ChefForm(forms.ModelForm):
     class Meta:
         model = models.Vendor # Restaurant
-        fields = ("name", "phone", "address", "logo")
+        fields = ("phone", "address", "logo") # TODO: cos "name" field is primary key on the Vendor model, it is sensitive. Updating it should be
+        # done in the right way. If being a PK prevents it from being updated without creating problems, a new PK should be used instead
 
 
 class UserFormForEdit(forms.ModelForm):

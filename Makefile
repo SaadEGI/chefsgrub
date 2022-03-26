@@ -1,6 +1,6 @@
 deleteDB:
 	python3 manage.py flush --no-input
-	python3 manage.py reset_db
+	python3 manage.py reset_db --noinput
 	rm -r apps/*/migrations/0* apps/*/__pycache__ apps/*/migrations/__pycache__ interiorshop/__pycache__
 migrate:
 	python3 manage.py makemigrations vendor core cart product order
