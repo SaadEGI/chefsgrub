@@ -16,3 +16,5 @@ updateDependencies:
 createSuperUser:
 	python3 manage.py createsuperuser --username superuser --email sufian5@live.com --noinput
 	# https://www.oreilly.com/library/view/managing-projects-with/0596006101/ch07.html
+run: 
+	python3 manage.py runserver
