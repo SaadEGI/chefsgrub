@@ -85,9 +85,9 @@
                         <div class="col-xl-3 col-lg-4 col-md-6">
                             <div class="single-item-wrap style-2">
                                 <div class="thumb">
-                                    {% if product.image %}
-                                    <img class="img" src="{{ MEDIA_URL }}{{ product.image.url }}"
-                                    {% endif %}
+                                    {% comment %} {% if product.image %} {% endcomment %}
+                                    <img class="img" src="{{ product.get_thumbnail }}"
+                                    {% comment %} {% endif %} {% endcomment %}
 
                                 </div>
                                 <div class="wrap-details">
