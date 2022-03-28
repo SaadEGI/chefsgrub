@@ -1,15 +1,17 @@
-{% extends 'chef/base2.html' %} {% block page %}
+{% extends 'chef/base2.html' %}
 
-<div class="panel">
-  <div class="panel-heading bg-blue">
-    <h4 class="panel-title text-center text-white">Meals</h4>
-  </div>
-  <div class="panel-body">
-    <div class="text-right">
-      <a href="{% url 'chef-add-meal' %}" class="btn btn-pink">Add Meal</a>
-      <br />
-      <br />
-    </div>
+{% block page %}
+
+    <div class="panel">
+        <div class="panel-heading bg-blue">
+            <h4 class="panel-title text-center text-white">Meals</h4>
+        </div>
+        <div class="panel-body">
+            <div class="text-right">
+                <a href="{% url 'chef-add-meal' %}" class="btn btn-pink">Add Meal</a>
+                <br/>
+                <br/>
+            </div>
 
     <table class="table table-bordered table-hover table-striped">
       <thead>

@@ -190,7 +190,7 @@ def chef_add_meal(request):
 def chef_report(request):
     return render(request, 'chef/report.html', {}) # TODO: get the actual report to work
 
-@login_required(login_url='/chef/sign-in/')#TODO:test it
+@login_required(login_url='/chef/sign-in/')
 def chef_edit_meal(request, meal_id):
     form = forms.ProductForm(instance=Product.objects.get(id=meal_id))
 
