@@ -5,6 +5,11 @@ from apps.vendor.models import Vendor
 from .forms import ContactForm
 
 from django.core.mail import send_mail
+import http.client
+import requests
+import json
+SENDGRID_API_KEY = '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'
+
 
 
 def frontpage(request):
@@ -47,3 +52,21 @@ def contact(request):
 
     form = ContactForm()
     return render(request, "core/contact.html", {'form': form})
+
+def subscriber_add(request):
+    if request.method == 'POST':
+        try:
+            conn = http.client.HTTPSConnection("api.sendgrid.com")
+            email = request.POST.get('subscriber-email')
+            payload = json.dumps({"contacts": [{"email": email}]})
+            headers = {
+                'authorization': "Bearer %s" % SENDGRID_API_KEY,
+                'content-type': "application/json"
+            }
+            conn.request("PUT", "/v3/marketing/contacts", payload, headers)
+            res = conn.getresponse()
+            data = res.read()
+            print(data.decode("utf-8"))
+        except Exception as e:
+            print(e.message)
+    return redirect('/')
