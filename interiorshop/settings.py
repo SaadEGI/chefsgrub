@@ -62,6 +62,19 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_EMAIL_FROM = 'ChefGrub <strtporg@gmail.com>'
 
+#AWS
+
+AWS_ACCESS_KEY_ID = 'AKIAYBSI6JJQ2JZRBFG7'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'herokuappuploadimages'
+AWS_S_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+AWS_S3_REGION_NAME = "ap-south-1"
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -76,7 +89,8 @@ INSTALLED_APPS = [
     'apps.order',
     'apps.product',
     'apps.vendor',
-    'django_extensions'
+    'django_extensions',
+    'storages'
 ]
 
 MIDDLEWARE = [
@@ -125,7 +139,7 @@ WSGI_APPLICATION = 'interiorshop.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'CHEFSGRUB', 
+        'NAME': 'CHEFSGRUB',
         'USER': 'strtpadmin',
         'PASSWORD': 'strtpadmin',
         'HOST': '127.0.0.1', 
