@@ -73,7 +73,7 @@ AWS_SECRET_ACCESS_KEY = 'GvJXROOnpd8fQrqPK3rv5NXE7Hk9VHWyJV6mgIln'
 AWS_STORAGE_BUCKET_NAME = 'herokuappuploadimages'
 AWS_S_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
-AWS_S3_REGION_NAME = "ap-south-1"
+#AWS_S3_REGION_NAME = "ap-south-1"
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
