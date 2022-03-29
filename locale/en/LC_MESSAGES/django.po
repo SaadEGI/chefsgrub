@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-29 21:41+0200\n"
+"POT-Creation-Date: 2022-03-29 22:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -134,8 +134,10 @@ msgid "Delivery Support"
 msgstr "Delivery Support"
 
 #: apps/core/templates/core/base2.html:181
-msgid "Contact Us"
-msgstr "Contact Us"
+#: apps/core/templates/core/base2.html:197
+#: apps/core/templates/core/base2.html:226
+msgid "Contact us"
+msgstr "Contact us"
 
 #: apps/core/templates/core/base2.html:182
 msgid "Terms of use"
@@ -146,6 +148,12 @@ msgstr "Terms of use"
 msgid "Privacy policy"
 msgstr "Privacy policy"
 
+#: apps/core/templates/core/base2.html:187
+#, fuzzy
+#| msgid "Chef"
+msgid "For Chefs"
+msgstr "Chef"
+
 #: apps/core/templates/core/base2.html:189
 msgid "Chef's login"
 msgstr "Chef's login"
@@ -154,10 +162,13 @@ msgstr "Chef's login"
 msgid "Join us as a Chef"
 msgstr "Join us as a Chef"
 
-#: apps/core/templates/core/base2.html:197
-#: apps/core/templates/core/base2.html:226
-msgid "Contact us"
-msgstr "Contact us"
+#: apps/core/templates/core/base2.html:194
+msgid "Get to Know Us"
+msgstr ""
+
+#: apps/core/templates/core/base2.html:210
+msgid "ChefsGrub All rights reserved"
+msgstr ""
 
 #: apps/core/templates/core/base2.html:220
 msgid "Homepage"
@@ -252,6 +263,42 @@ msgstr "Term of use"
 msgid "Logout"
 msgstr "Logout"
 
+#: apps/core/templates/core/frontpage.html:34
+msgid "Palestinian"
+msgstr ""
+
+#: apps/core/templates/core/frontpage.html:40
+msgid "Moroccan"
+msgstr ""
+
+#: apps/core/templates/core/frontpage.html:46
+msgid "Syrian"
+msgstr ""
+
+#: apps/core/templates/core/frontpage.html:52
+msgid "Turkish"
+msgstr ""
+
+#: apps/core/templates/core/frontpage.html:58
+msgid "indian"
+msgstr ""
+
+#: apps/core/templates/core/frontpage.html:64
+msgid "Jordanian"
+msgstr ""
+
+#: apps/core/templates/core/frontpage.html:70
+msgid "Pakistani"
+msgstr ""
+
+#: apps/core/templates/core/frontpage.html:76 interiorshop/settings.py:188
+msgid "German"
+msgstr "German"
+
+#: apps/core/templates/core/frontpage.html:82
+msgid "Italian"
+msgstr ""
+
 #: apps/order/templates/order/email_notify_customer.html:26
 msgid "Order confirmation"
 msgstr "Order confirmation"
@@ -307,6 +354,7 @@ msgid "Zip and place"
 msgstr "Zip and place"
 
 #: apps/order/templates/order/email_notify_vendor.html:36
+#: apps/vendor/templates/chef/order.html:31
 msgid "E-mail"
 msgstr "E-mail"
 
@@ -440,10 +488,6 @@ msgstr "Euro"
 msgid "Customer Name"
 msgstr "Customer Name"
 
-#: apps/vendor/templates/chef/order.html:31
-msgid "Email"
-msgstr "Email"
-
 #: apps/vendor/templates/chef/order.html:34
 msgid "City"
 msgstr "City"
@@ -496,10 +540,6 @@ msgstr "Already have an account"
 msgid "hello"
 msgstr "hello"
 
-#: interiorshop/settings.py:188
-msgid "German"
-msgstr "German"
-
 #: interiorshop/settings.py:189
 msgid "English"
 msgstr "English"
@@ -507,6 +547,12 @@ msgstr "English"
 #: interiorshop/settings.py:190
 msgid "Arabic"
 msgstr "Arabic"
+
+#~ msgid "Contact Us"
+#~ msgstr "Contact Us"
+
+#~ msgid "Email"
+#~ msgstr "Email"
 
 #~ msgid "About Us"
 #~ msgstr "About Us"

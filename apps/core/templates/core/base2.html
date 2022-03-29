@@ -184,14 +184,14 @@
                         </ul>
                     </aside>
                     <aside class="col-sm-3  col-md-2 text-white">
-                        <h6 class="title">For Chefs</h6>
+                        <h6 class="title">{% translate "For Chefs" %}</h6>
                         <ul class="list-unstyled hov_footer">
                             <li> <a href=" /chef/sign-in/ " class="text-muted"> {% translate "Chef's login" %} </a></li>
                             <li> <a href=" {% static 'signup.html' %} " class="text-muted"> {% translate "Join us as a Chef" %} </a></li>
                            </ul>
                     </aside>
                     <aside class="col-sm-3  col-md-2 text-white">
-                        <h6 class="title">Get to Know Us</h6>
+                        <h6 class="title">{% translate "Get to Know Us" %}</h6>
                         <ul class="list-unstyled hov_footer">
                             <li> <a href=" /aboutus " class="text-muted"> {% translate "About us" %} </a></li>
                             <li> <a href="/contact " class="text-muted"> {% translate "Contact us" %} </a></li>
@@ -207,7 +207,7 @@
         <!-- //container -->
         <section class="footer-copyright border-top py-3 bg-light">
             <div class="container d-flex align-items-center">
-                <p class="mb-0"> © 2022 ChefsGrub All rights reserved </p>
+                <p class="mb-0"> © {% now "Y" %} {% translate "ChefsGrub All rights reserved" %} </p>
                 <p class="text-muted mb-0 ml-auto d-flex align-items-center">
                     <a href="#" class="d-block"><img alt="#" src=" {% static 'img/appstore.png' %} " height="40"></a>
                     <a href="#" class="d-block ml-3"><img alt="#" src=" {% static 'img/playmarket.png' %} " height="40"></a>

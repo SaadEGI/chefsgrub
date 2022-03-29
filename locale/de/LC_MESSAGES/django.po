@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-29 21:41+0200\n"
+"POT-Creation-Date: 2022-03-29 22:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -118,7 +118,9 @@ msgstr "Über uns"
 #: apps/core/templates/core/base2.html:165
 msgid ""
 "ChefsGrub is a homemade food ordering and homemade food delivery platform"
-msgstr "ChefsGrub ist ein Platform für Bestellung hausgekochtes Essens und Lieferung hausgekochtes Essens"
+msgstr ""
+"ChefsGrub ist ein Platform für Bestellung hausgekochtes Essens und Lieferung "
+"hausgekochtes Essens"
 
 #: apps/core/templates/core/base2.html:178
 msgid "Services"
@@ -129,7 +131,9 @@ msgid "Delivery Support"
 msgstr "Lieferungunterstützung"
 
 #: apps/core/templates/core/base2.html:181
-msgid "Contact Us"
+#: apps/core/templates/core/base2.html:197
+#: apps/core/templates/core/base2.html:226
+msgid "Contact us"
 msgstr "Kontaktiere uns"
 
 #: apps/core/templates/core/base2.html:182
@@ -141,6 +145,12 @@ msgstr "Nutzungsbedingungen"
 msgid "Privacy policy"
 msgstr "Datenschutz"
 
+#: apps/core/templates/core/base2.html:187
+#, fuzzy
+#| msgid "Chef"
+msgid "For Chefs"
+msgstr "Chef"
+
 #: apps/core/templates/core/base2.html:189
 msgid "Chef's login"
 msgstr "Chef's login"
@@ -149,10 +159,13 @@ msgstr "Chef's login"
 msgid "Join us as a Chef"
 msgstr "Werde Chef"
 
-#: apps/core/templates/core/base2.html:197
-#: apps/core/templates/core/base2.html:226
-msgid "Contact us"
-msgstr "Kontaktiere uns"
+#: apps/core/templates/core/base2.html:194
+msgid "Get to Know Us"
+msgstr ""
+
+#: apps/core/templates/core/base2.html:210
+msgid "ChefsGrub All rights reserved"
+msgstr ""
 
 #: apps/core/templates/core/base2.html:220
 msgid "Homepage"
@@ -247,6 +260,42 @@ msgstr "Nutzungsbedingungen"
 msgid "Logout"
 msgstr "Ausloggen"
 
+#: apps/core/templates/core/frontpage.html:34
+msgid "Palestinian"
+msgstr ""
+
+#: apps/core/templates/core/frontpage.html:40
+msgid "Moroccan"
+msgstr ""
+
+#: apps/core/templates/core/frontpage.html:46
+msgid "Syrian"
+msgstr ""
+
+#: apps/core/templates/core/frontpage.html:52
+msgid "Turkish"
+msgstr ""
+
+#: apps/core/templates/core/frontpage.html:58
+msgid "indian"
+msgstr ""
+
+#: apps/core/templates/core/frontpage.html:64
+msgid "Jordanian"
+msgstr ""
+
+#: apps/core/templates/core/frontpage.html:70
+msgid "Pakistani"
+msgstr ""
+
+#: apps/core/templates/core/frontpage.html:76 interiorshop/settings.py:188
+msgid "German"
+msgstr "Deutsch"
+
+#: apps/core/templates/core/frontpage.html:82
+msgid "Italian"
+msgstr ""
+
 #: apps/order/templates/order/email_notify_customer.html:26
 msgid "Order confirmation"
 msgstr "Bestellungsbestätigung"
@@ -302,6 +351,7 @@ msgid "Zip and place"
 msgstr "PLZ und Standort"
 
 #: apps/order/templates/order/email_notify_vendor.html:36
+#: apps/vendor/templates/chef/order.html:31
 msgid "E-mail"
 msgstr "E-Mail"
 
@@ -435,10 +485,6 @@ msgstr "Euro"
 msgid "Customer Name"
 msgstr "Kundenname"
 
-#: apps/vendor/templates/chef/order.html:31
-msgid "Email"
-msgstr "E-Mail"
-
 #: apps/vendor/templates/chef/order.html:34
 msgid "City"
 msgstr "Stadt"
@@ -491,10 +537,6 @@ msgstr ""
 msgid "hello"
 msgstr "Hallo"
 
-#: interiorshop/settings.py:188
-msgid "German"
-msgstr "Deutsch"
-
 #: interiorshop/settings.py:189
 msgid "English"
 msgstr "English"
@@ -502,3 +544,9 @@ msgstr "English"
 #: interiorshop/settings.py:190
 msgid "Arabic"
 msgstr "العربية"
+
+#~ msgid "Contact Us"
+#~ msgstr "Kontaktiere uns"
+
+#~ msgid "Email"
+#~ msgstr "E-Mail"
