@@ -1,3 +1,4 @@
+from django.utils.translation import gettext 
 from django.urls import path
 
 from . import views

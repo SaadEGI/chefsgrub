@@ -18,3 +18,6 @@ createSuperUser:
 	# https://www.oreilly.com/library/view/managing-projects-with/0596006101/ch07.html
 run: 
 	python3 manage.py runserver
+i18n:
+	python3 manage.py makemessages --all -i venv
+	python3 manage.py compilemessages --all -i venv

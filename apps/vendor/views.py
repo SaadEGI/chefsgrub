@@ -43,42 +43,51 @@ from apps.product.models import Category, Product
 from apps.cart.cart import Cart
 
 
+from django.utils.translation import get_language, activate, gettext
+
+
+def translate(langauge):
+    currentLanguage = get_language()
+    try:
+        activate(language)
+        text = gettext("hello")
+    finally:
+        activate(currentLanguage)
+    return text
 
 
 def vendors(request):
     vendors = Vendor.objects.all()
 
-    return render(request, 'vendor/chef.html', {'vendors': vendors})
+    return render(request, "vendor/chef.html", {"vendors": vendors})
 
 
 def vendor(request, vendorName):
     vendor = get_object_or_404(Vendor, pk=vendorName)
     cart = Cart(request)
 
-    if request.method == 'POST':
+    if request.method == "POST":
         form = AddToCartForm(request.POST)
 
         if form.is_valid():
             quantity = 1
             # product.id =1
-            product_id = form.cleaned_data['product_id']
+            product_id = form.cleaned_data["product_id"]
 
             # form.cleaned_data['quantity']
 
             cart.add(product_id=product_id, quantity=quantity, update_quantity=False)
 
-            messages.success(request, 'The product was added to the cart')
+            messages.success(request, "The product was added to the cart")
 
     else:
         form = AddToCartForm()
 
-    return render(request, 'vendor/chef.html', {'form': form ,'vendor': vendor})
-
-
+    return render(request, "vendor/chef.html", {"form": form, "vendor": vendor})
 
 
 def become_chef(request):
-    if request.method == 'POST':
+    if request.method == "POST":
         form = UserCreationForm(request.POST)
 
         if form.is_valid():
@@ -88,45 +97,46 @@ def become_chef(request):
 
             chef = Vendor.objects.create(name=user.username, created_by=user)
 
-            return redirect('chef-order')
+            return redirect("chef-order")
     else:
         form = UserCreationForm()
 
-    return render(request, 'chef/sign_up.html', {'form': form})
+    return render(request, "chef/sign_up.html", {"form": form})
 
 
-@login_required(login_url='/chef/sign-in/')
+@login_required(login_url="/chef/sign-in/")
 def chef_admin(request):
-    return redirect('chef-order')
+    return redirect("chef-order")
 
 
-@login_required(login_url='/chef/sign-in/')
+@login_required(login_url="/chef/sign-in/")
 def chef_order(request):
     # if request.method == "POST":
-        # order = Order.objects.get(id=request.POST["id"],
-        #                           vendor=request.user.vendor)
+    # order = Order.objects.get(id=request.POST["id"],
+    #                           vendor=request.user.vendor)
 
-        # if order.status == Order.COOKING:
-        #     order.status = Order.READY
-        #     order.save()
+    # if order.status == Order.COOKING:
+    #     order.status = Order.READY
+    #     order.save()
     chef = request.user.vendor
     orders = chef.orders.all()
     # #TODO: fix filter
 
-    return render(request, 'chef/order.html', {'orders': orders,'orders': orders, 'chef': chef})
+    return render(request, "chef/order.html", {"orders": orders, "orders": orders, "chef": chef})
 
 
-@login_required(login_url='/chef/sign-in/')
+@login_required(login_url="/chef/sign-in/")
 def chef_meal(request):
     chef = request.user.vendor
-    meals = Product.objects.filter(
-        vendor=chef).order_by("-id")
-    return render(request, 'chef/meal.html', {"meals": meals, 'chef': chef}) # 
+    meals = Product.objects.filter(vendor=chef).order_by("-id")
+    return render(request, "chef/meal.html", {"meals": meals, "chef": chef})  #
 
 
-@login_required(login_url='/chef/sign-in/')
+@login_required(login_url="/chef/sign-in/")
 def chef_customers(request):
-    return redirect('/')
+    return redirect("/")
+
+
 # @login_required(login_url='/chef/sign-in/')
 # def chef_customers(request):
 
@@ -142,7 +152,7 @@ def chef_customers(request):
 #                   {"all_customers": all_customers})
 
 
-@login_required(login_url='/chef/sign-in/')
+@login_required(login_url="/chef/sign-in/")
 def chef_account(request):
     user_form = forms.UserFormForEdit(instance=request.user)
     chef_form = forms.ChefForm(instance=request.user)
@@ -150,26 +160,28 @@ def chef_account(request):
 
     if request.method == "POST":
         user_form = forms.UserFormForEdit(request.POST, instance=request.user)
-        chef_form = forms.ChefForm(request.POST,
-                                   request.FILES,
-                                   instance=request.user.vendor)
+        chef_form = forms.ChefForm(request.POST, request.FILES, instance=request.user.vendor)
 
         if user_form.is_valid() and chef_form.is_valid():
             user_form.save()
             chef_form.save()
 
-    return render(request, 'chef/account.html', {
-        "user_form": user_form,
-        'chef': chef,
-        "chef_form": chef_form #TODO: change forms to accomodate the model used
-# TODO: hook it up, take notes from edit_vendor
-    })
+    return render(
+        request,
+        "chef/account.html",
+        {
+            "user_form": user_form,
+            "chef": chef,
+            "chef_form": chef_form  # TODO: change forms to accomodate the model used
+            # TODO: hook it up, take notes from edit_vendor
+        },
+    )
 
 
-@login_required(login_url='/chef/sign-in/')
+@login_required(login_url="/chef/sign-in/")
 def chef_add_meal(request):
     chef = request.user.vendor
-    if request.method == 'POST':
+    if request.method == "POST":
         form = forms.ProductForm(request.POST, request.FILES)
 
         if form.is_valid():
@@ -178,29 +190,26 @@ def chef_add_meal(request):
             product.slug = slugify(product.title)
             product.save()
 
-            return redirect('chef-meal')
+            return redirect("chef-meal")
     else:
         form = forms.ProductForm()
 
-    return render(request, 'chef/add_meal.html', {
-        'chef': chef,
-        'form': form
-    })
-@login_required(login_url='/chef/sign-in/')
-def chef_report(request):
-    return render(request, 'chef/report.html', {}) # TODO: get the actual report to work
+    return render(request, "chef/add_meal.html", {"chef": chef, "form": form})
 
-@login_required(login_url='/chef/sign-in/')
+
+@login_required(login_url="/chef/sign-in/")
+def chef_report(request):
+    return render(request, "chef/report.html", {})  # TODO: get the actual report to work
+
+
+@login_required(login_url="/chef/sign-in/")
 def chef_edit_meal(request, meal_id):
     form = forms.ProductForm(instance=Product.objects.get(id=meal_id))
 
     if request.method == "POST":
-        form = forms.ProductForm(request.POST,
-                        request.FILES,
-                        instance=Product.objects.get(id=meal_id))
+        form = forms.ProductForm(request.POST, request.FILES, instance=Product.objects.get(id=meal_id))
         if form.is_valid():
             form.save()
             return redirect(chef_meal)
 
-    return render(request, 'chef/edit_meal.html', {"form": form}) # TODO: hook it up, take notes from edit_product
-
+    return render(request, "chef/edit_meal.html", {"form": form})  # TODO: hook it up, take notes from edit_product

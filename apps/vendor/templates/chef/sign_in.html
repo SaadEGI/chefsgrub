@@ -1,14 +1,14 @@
 {% extends 'chef/base_signup.html' %}
 
-{% block title %}Sign In{% endblock %}
+{% block title %}{% translate "Sign In" %}{% endblock %}
 
-{% block heading %}Chef - Sign In{% endblock %}
+{% block heading %}{% translate "Chef" %} - {% translate "Sign In" %}{% endblock %}
 
 {% block content %}
     <form method="POST">
       {% csrf_token %}
       {{ form.as_p }}
-      <button type="submit" class="btn btn-pink pull-right">Sign In</button>
+      <button type="submit" class="btn btn-pink pull-right">{% translate "Sign In" %}</button>
     </form>
-    <a href="{% url 'become-chef' %}">Become a Chef</a>
+    <a href="{% url 'become-chef' %}">{% translate "Become a Chef" %}</a>
 {% endblock %} 

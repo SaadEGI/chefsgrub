@@ -1,0 +1,515 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-29 21:41+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: apps/core/templates/core/About.html:12
+#: apps/vendor/templates/chef/base2.html:64
+msgid "Profile"
+msgstr "Profile"
+
+#: apps/core/templates/core/About.html:25
+msgid "Welcome to ChefsGrub"
+msgstr "Welcome to ChefsGrub"
+
+#: apps/core/templates/core/base.html:10 apps/core/templates/core/base.html:21
+#: apps/core/templates/core/base.html:68
+#: apps/order/templates/order/email_notify_customer.html:6
+msgid "Interiorshop"
+msgstr "Interiorshop"
+
+#: apps/core/templates/core/base.html:39
+#: apps/product/templates/product/search.html:3
+#: apps/product/templates/product/search.html:8
+msgid "Search"
+msgstr "Search"
+
+#: apps/core/templates/core/base.html:51
+msgid "Contact"
+msgstr ""
+
+#: apps/core/templates/core/base.html:54
+#: apps/core/templates/core/base2.html:101
+#: apps/core/templates/core/base2.html:227
+#: apps/core/templates/core/coming-soon.html:128
+msgid "Cart"
+msgstr "Cart"
+
+#: apps/core/templates/core/base.html:71
+msgid "Vendor admin"
+msgstr "Vendor admin"
+
+#: apps/core/templates/core/base.html:73
+msgid "Become vendor"
+msgstr "Become vendor"
+
+#: apps/core/templates/core/base.html:76
+msgid "Vendors"
+msgstr "Vendors"
+
+#: apps/core/templates/core/base2.html:14
+msgid "ChefsGrub"
+msgstr "ChefsGrub"
+
+#: apps/core/templates/core/base2.html:14
+msgid "Order Homemade Food"
+msgstr "Order Homemade Food"
+
+#: apps/core/templates/core/base2.html:47
+#: apps/core/templates/core/coming-soon.html:40
+msgid "Select Location"
+msgstr "Select Location"
+
+#: apps/core/templates/core/base2.html:48
+#: apps/core/templates/core/base2.html:58
+msgid "Wuppertal"
+msgstr "Wuppertal"
+
+#: apps/core/templates/core/base2.html:55
+msgid "Choose your city"
+msgstr "Choose your city"
+
+#: apps/core/templates/core/base2.html:62
+#, fuzzy
+#| msgid "Dusseldorf"
+msgid "Düsseldorf"
+msgstr "Dusseldorf"
+
+#: apps/core/templates/core/base2.html:66
+msgid "Berlin"
+msgstr "Berlin"
+
+#: apps/core/templates/core/base2.html:125
+#: apps/core/templates/core/base2.html:236
+msgid "Home"
+msgstr ""
+
+#: apps/core/templates/core/base2.html:131
+#, fuzzy
+#| msgid "i Feel Lucky"
+msgid "I Feel Lucky"
+msgstr "I Feel Lucky"
+
+#: apps/core/templates/core/base2.html:144
+msgid "Favorites"
+msgstr "Favorites"
+
+#: apps/core/templates/core/base2.html:150
+msgid "Chef's Panel"
+msgstr "Chef's Panel"
+
+#: apps/core/templates/core/base2.html:164
+#: apps/core/templates/core/base2.html:196
+#: apps/core/templates/core/base2.html:225
+msgid "About us"
+msgstr "About us"
+
+#: apps/core/templates/core/base2.html:165
+msgid ""
+"ChefsGrub is a homemade food ordering and homemade food delivery platform"
+msgstr ""
+"ChefsGrub is a homemade food ordering and homemade food delivery platform"
+
+#: apps/core/templates/core/base2.html:178
+msgid "Services"
+msgstr "Services"
+
+#: apps/core/templates/core/base2.html:180
+msgid "Delivery Support"
+msgstr "Delivery Support"
+
+#: apps/core/templates/core/base2.html:181
+msgid "Contact Us"
+msgstr "Contact Us"
+
+#: apps/core/templates/core/base2.html:182
+msgid "Terms of use"
+msgstr "Terms of use"
+
+#: apps/core/templates/core/base2.html:183
+#: apps/core/templates/core/coming-soon.html:121
+msgid "Privacy policy"
+msgstr "Privacy policy"
+
+#: apps/core/templates/core/base2.html:189
+msgid "Chef's login"
+msgstr "Chef's login"
+
+#: apps/core/templates/core/base2.html:190
+msgid "Join us as a Chef"
+msgstr "Join us as a Chef"
+
+#: apps/core/templates/core/base2.html:197
+#: apps/core/templates/core/base2.html:226
+msgid "Contact us"
+msgstr "Contact us"
+
+#: apps/core/templates/core/base2.html:220
+msgid "Homepage"
+msgstr "Homepage"
+
+#: apps/core/templates/core/base2.html:223
+msgid "Ramadan Offers"
+msgstr "Ramadan Offers"
+
+#: apps/core/templates/core/base2.html:242
+msgid "FAQ"
+msgstr "FAQ"
+
+#: apps/core/templates/core/base2.html:248
+msgid "Help"
+msgstr "Help"
+
+#: apps/core/templates/core/base2.html:267
+msgid "Sort by"
+msgstr "Sort by"
+
+#: apps/core/templates/core/base2.html:271
+msgid "Top Rated"
+msgstr "Top Rated"
+
+#: apps/core/templates/core/base2.html:275
+msgid "Nearest Me"
+msgstr "Nearest Me"
+
+#: apps/core/templates/core/base2.html:279
+msgid "Cost High to Low"
+msgstr "Cost High to Low"
+
+#: apps/core/templates/core/base2.html:283
+msgid "Cost Low to High"
+msgstr "Cost Low to High"
+
+#: apps/core/templates/core/base2.html:287
+msgid "Most Popular"
+msgstr "Most Popular"
+
+#: apps/core/templates/core/base2.html:295
+msgid "Open Now"
+msgstr "Open Now"
+
+#: apps/core/templates/core/base2.html:299
+msgid "Credit Cards"
+msgstr "Credit Cards"
+
+#: apps/core/templates/core/base2.html:307
+msgid "ADDITIONAL FILTERS"
+msgstr "ADDITIONAL FILTERS"
+
+#: apps/core/templates/core/base2.html:313
+msgid "Min"
+msgstr "Min"
+
+#: apps/core/templates/core/base2.html:317
+msgid "Max"
+msgstr "Max"
+
+#: apps/core/templates/core/base2.html:327
+msgid "Close"
+msgstr "Close"
+
+#: apps/core/templates/core/base2.html:330
+msgid "Apply"
+msgstr "Apply"
+
+#: apps/core/templates/core/coming-soon.html:60
+msgid "Choose your country"
+msgstr "Choose your country"
+
+#: apps/core/templates/core/coming-soon.html:117
+msgid "My account"
+msgstr "My account"
+
+#: apps/core/templates/core/coming-soon.html:118
+msgid "Delivery support"
+msgstr "Delivery support"
+
+#: apps/core/templates/core/coming-soon.html:119
+msgid "Contant us"
+msgstr "Contant us"
+
+#: apps/core/templates/core/coming-soon.html:120
+msgid "Term of use"
+msgstr "Term of use"
+
+#: apps/core/templates/core/coming-soon.html:122
+#: apps/vendor/templates/chef/base2.html:71
+msgid "Logout"
+msgstr "Logout"
+
+#: apps/order/templates/order/email_notify_customer.html:26
+msgid "Order confirmation"
+msgstr "Order confirmation"
+
+#: apps/order/templates/order/email_notify_customer.html:43
+#: apps/order/templates/order/email_notify_vendor.html:43
+msgid "Products"
+msgstr "Products"
+
+#: apps/order/templates/order/email_notify_customer.html:47
+#: apps/order/templates/order/email_notify_vendor.html:47
+#: apps/vendor/templates/chef/order.html:26
+msgid "Product"
+msgstr "Product"
+
+#: apps/order/templates/order/email_notify_customer.html:48
+#: apps/order/templates/order/email_notify_vendor.html:48
+#: apps/vendor/templates/chef/meal.html:22
+msgid "Price"
+msgstr "Price"
+
+#: apps/order/templates/order/email_notify_customer.html:49
+#: apps/order/templates/order/email_notify_vendor.html:49
+#: apps/vendor/templates/chef/order.html:26
+msgid "Quantity"
+msgstr "Quantity"
+
+#: apps/order/templates/order/email_notify_customer.html:50
+#: apps/order/templates/order/email_notify_vendor.html:50
+msgid "Total"
+msgstr "Total"
+
+#: apps/order/templates/order/email_notify_vendor.html:26
+msgid "New order"
+msgstr "New order"
+
+#: apps/order/templates/order/email_notify_vendor.html:31
+msgid "Details"
+msgstr "Details"
+
+#: apps/order/templates/order/email_notify_vendor.html:33
+#: apps/vendor/templates/chef/meal.html:20
+msgid "Name"
+msgstr "Name"
+
+#: apps/order/templates/order/email_notify_vendor.html:34
+#: apps/vendor/templates/chef/order.html:33
+msgid "Address"
+msgstr "Address"
+
+#: apps/order/templates/order/email_notify_vendor.html:35
+msgid "Zip and place"
+msgstr "Zip and place"
+
+#: apps/order/templates/order/email_notify_vendor.html:36
+msgid "E-mail"
+msgstr "E-mail"
+
+#: apps/order/templates/order/email_notify_vendor.html:37
+#: apps/vendor/templates/chef/order.html:32
+msgid "Phone"
+msgstr "Phone"
+
+#: apps/product/templates/product/parts/list_item.html:13
+msgid "View"
+msgstr "View"
+
+#: apps/product/templates/product/product.html:46
+msgid "Add to cart"
+msgstr "Add to cart"
+
+#: apps/product/templates/product/search.html:9
+msgid "Search term"
+msgstr "Search term"
+
+#: apps/vendor/templates/chef/account.html:8
+#: apps/vendor/templates/chef/base2.html:66
+msgid "Account"
+msgstr "Account"
+
+#: apps/vendor/templates/chef/add_meal.html:9
+#: apps/vendor/templates/chef/meal.html:11
+msgid "Add Meal"
+msgstr "Add Meal"
+
+#: apps/vendor/templates/chef/add_meal.html:16
+msgid "Create"
+msgstr "Create"
+
+#: apps/vendor/templates/chef/base2.html:3
+#: apps/vendor/templates/chef/sign_in.html:5
+#: apps/vendor/templates/chef/sign_up.html:4
+msgid "Chef"
+msgstr "Chef"
+
+#: apps/vendor/templates/chef/base2.html:43
+msgid "Hi"
+msgstr "Hi"
+
+#: apps/vendor/templates/chef/base2.html:48
+msgid "Dashboard"
+msgstr "Dashboard"
+
+#: apps/vendor/templates/chef/base2.html:52
+#: apps/vendor/templates/chef/order.html:7
+msgid "Orders"
+msgstr "Orders"
+
+#: apps/vendor/templates/chef/base2.html:56
+#: apps/vendor/templates/chef/meal.html:7
+msgid "Meals"
+msgstr "Meals"
+
+#: apps/vendor/templates/chef/base2.html:59
+msgid "Reports"
+msgstr "Reports"
+
+#: apps/vendor/templates/chef/base2.html:62
+#: apps/vendor/templates/chef/customers.html:7
+msgid "Customers"
+msgstr "Customers"
+
+#: apps/vendor/templates/chef/customers.html:14
+#: apps/vendor/templates/chef/meal.html:19
+#: apps/vendor/templates/chef/order.html:14
+msgid "Id"
+msgstr "Id"
+
+#: apps/vendor/templates/chef/customers.html:15
+msgid "Customer avatar"
+msgstr "Customer avatar"
+
+#: apps/vendor/templates/chef/customers.html:16
+msgid "Customer name"
+msgstr "Customer name"
+
+#: apps/vendor/templates/chef/customers.html:17
+msgid "Customer address"
+msgstr "Customer address"
+
+#: apps/vendor/templates/chef/customers.html:18
+msgid "Num of Orders"
+msgstr "Num of Orders"
+
+#: apps/vendor/templates/chef/edit_meal.html:9
+msgid "Edit Meal"
+msgstr "Edit Meal"
+
+#: apps/vendor/templates/chef/edit_meal.html:16
+msgid "Update"
+msgstr "Update"
+
+#: apps/vendor/templates/chef/meal.html:21
+msgid "Short Description"
+msgstr "Short Description"
+
+#: apps/vendor/templates/chef/meal.html:23
+msgid "Image"
+msgstr "Image"
+
+#: apps/vendor/templates/chef/order.html:16
+msgid "Customer"
+msgstr "Customer"
+
+#: apps/vendor/templates/chef/order.html:18
+msgid "Status"
+msgstr "Status"
+
+#: apps/vendor/templates/chef/order.html:19
+msgid "Action"
+msgstr "Action"
+
+#: apps/vendor/templates/chef/order.html:26
+msgid "Item Number"
+msgstr "Item Number"
+
+#: apps/vendor/templates/chef/order.html:26
+msgid "Product Price"
+msgstr "Product Price"
+
+#: apps/vendor/templates/chef/order.html:26
+msgid "Euro"
+msgstr "Euro"
+
+#: apps/vendor/templates/chef/order.html:30
+msgid "Customer Name"
+msgstr "Customer Name"
+
+#: apps/vendor/templates/chef/order.html:31
+msgid "Email"
+msgstr "Email"
+
+#: apps/vendor/templates/chef/order.html:34
+msgid "City"
+msgstr "City"
+
+#: apps/vendor/templates/chef/order.html:44
+msgid "Ready"
+msgstr "Ready"
+
+#: apps/vendor/templates/chef/report.html:15
+msgid "Top 3 Meals"
+msgstr "Top 3 Meals
+
+#: apps/vendor/templates/chef/report.html:47
+msgid "Top 3 Drivers"
+msgstr "Top 3 Drivers"
+
+#: apps/vendor/templates/chef/report.html:79
+msgid "Top 3 Customers"
+msgstr "Top 3 Customers"
+
+#: apps/vendor/templates/chef/report.html:114
+msgid "Revenue by Week"
+msgstr "Revenue by Week"
+
+#: apps/vendor/templates/chef/report.html:145
+msgid "Order by Week"
+msgstr "Order by Week"
+
+#: apps/vendor/templates/chef/sign_in.html:3
+#: apps/vendor/templates/chef/sign_in.html:5
+#: apps/vendor/templates/chef/sign_in.html:11
+msgid "Sign In"
+msgstr "Sign In"
+
+#: apps/vendor/templates/chef/sign_in.html:13
+msgid "Become a Chef"
+msgstr "Become a Chef"
+
+#: apps/vendor/templates/chef/sign_up.html:3
+#: apps/vendor/templates/chef/sign_up.html:4
+#: apps/vendor/templates/chef/sign_up.html:10
+msgid "Sign Up"
+msgstr "Sign Up"
+
+#: apps/vendor/templates/chef/sign_up.html:12
+msgid "Already have an account"
+msgstr "Already have an account"
+
+#: apps/vendor/views.py:53
+msgid "hello"
+msgstr "hello"
+
+#: interiorshop/settings.py:188
+msgid "German"
+msgstr "German"
+
+#: interiorshop/settings.py:189
+msgid "English"
+msgstr "English"
+
+#: interiorshop/settings.py:190
+msgid "Arabic"
+msgstr "Arabic"
+
+#~ msgid "About Us"
+#~ msgstr "About Us"
+
+#~ msgid "Contacts us"
+#~ msgstr "Contacts us"

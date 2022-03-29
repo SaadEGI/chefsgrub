@@ -4,34 +4,34 @@
 
     <div class="panel">
         <div class="panel-heading bg-blue">
-            <h4 class="panel-title text-center text-white">Orders</h4>
+            <h4 class="panel-title text-center text-white">{% translate "Orders" %}</h4>
         </div>
         <div class="panel-body">
             <br/>
             <table class="table table-bordered table-hover table-striped">
                 <thead>
                   <tr class="bg-gray text-white">
-                    <th>Id</th>
+                    <th>{% translate "Id" %}</th>
                     <th>Order Details</th>
-                    <th>Customer</th>
+                    <th>{% translate "Customer" %}</th>
                     <th>Total Paid</th>
-                    <th>Status</th>
-                    <th>Action</th>
+                    <th>{% translate "Status" %}</th>
+                    <th>{% translate "Action" %}</th>
                   </tr>
                 </thead>
                 <tbody>
                     {% for order in orders %}
                         <tr>
                             <td scope="row">{{ order.id }}</td>
-                            <td>{% for item in order.items.all %} Item Number :{{ item.id }}  <br />Product :{{ item.product.title }}  <br />Quantity: {{ item.quantity }} <br /> Product Price: {{ item.product.price}} Euro<br />-------------<br />{% endfor %}</td>
+                            <td>{% for item in order.items.all %} {% translate "Item Number" %} :{{ item.id }}  <br />{% translate "Product" %} :{{ item.product.title }}  <br />{% translate "Quantity" %}: {{ item.quantity }} <br /> {% translate "Product Price" %}: {{ item.product.price}} {% translate "Euro" %}<br />-------------<br />{% endfor %}</td>
 
 
                             <td>
-                                <b>Customer Name: </b>{{ order.first_name }}  {{ order.last_name }}  <br />
-                               <b> Email: </b> {{ order.email }}  <br />
-                                <b>Phone:</b> {{ order.phone }}  <br />
-                                <b>Address: </b> {{ order.address }}  <br />
-                                <b>City:</b> {{ order.place }}  <br /></b>
+                                <b>{% translate "Customer Name" %}: </b>{{ order.first_name }}  {{ order.last_name }}  <br />
+                               <b> {% translate "E-mail" %}: </b> {{ order.email }}  <br />
+                                <b>{% translate "Phone" %}:</b> {{ order.phone }}  <br />
+                                <b>{% translate "Address" %}: </b> {{ order.address }}  <br />
+                                <b>{% translate "City" %}:</b> {{ order.place }}  <br /></b>
                             </td>
 
                             <td>{{ order.paid_amount }}</td>
@@ -41,7 +41,7 @@
                                     <form method="POST">
                                       {% csrf_token %}
                                       <input name="id" value="{{ order.id }}" hidden>
-                                      <button class="btn btn-success">Ready</button>
+                                      <button class="btn btn-success">{% translate "Ready" %}</button>
                                     </form>
                                 {% endif %}
                             </td>
