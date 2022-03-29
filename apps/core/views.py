@@ -15,7 +15,7 @@ SENDGRID_API_KEY = 'SG.oI30t1swQTqBSON1gCU4dw.VDcfEbljdIsJPiPvMT9MqNfdg71n7tM0FK
 def frontpage(request):
     newest_products = Product.objects.all()[0:8]
     vendorsall = Vendor.objects.all()
-    ramadan_products = Product.objects.filter(category=1)
+    ramadan_products = Product.objects.filter(category=2)
 
     return render(request, 'core/frontpage.html',{'ramadan_products':ramadan_products,'newest_products': newest_products, 'vendorsall':vendorsall})
 
