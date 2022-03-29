@@ -454,7 +454,7 @@ msgstr "Ready"
 
 #: apps/vendor/templates/chef/report.html:15
 msgid "Top 3 Meals"
-msgstr "Top 3 Meals
+msgstr "Top 3 Meals"
 
 #: apps/vendor/templates/chef/report.html:47
 msgid "Top 3 Drivers"

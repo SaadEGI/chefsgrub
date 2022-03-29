@@ -11,6 +11,7 @@ from . import views
 
 #
 #
+app_name = "apps.core"
 
 urlpatterns = [
     path('', views.frontpage, name='frontpage'),

@@ -1,8 +1,9 @@
 from django.contrib.auth import views as auth_views
 from django.urls import path
-
+from django.conf.urls.i18n import i18n_patterns
 from . import views 
 
+app_name = "vendor"
 urlpatterns = [
     # Views for chefs @ /chef
     path("become-chef/", views.become_chef, name="become-chef"),
@@ -24,3 +25,5 @@ urlpatterns = [
     path("<str:vendorName>/", views.vendor, name="vendor"),
     path("", views.vendors, name="vendors"),
 ]
+
+i18n_patterns
