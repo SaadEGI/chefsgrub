@@ -1,5 +1,5 @@
 {% extends 'chef/base_signup.html' %}
-
+{% load i18n %}
 {% block title %}{% translate "Sign Up" %}{% endblock %}
 {% block heading %}{% translate "Chef" %} - {% translate "Sign Up"%}{% endblock %}
 
@@ -9,5 +9,5 @@
       {{ form.as_p }}
       <button type="submit" class="btn btn-pink pull-right">{% translate "Sign Up" %}</button>
     </form>
-    <a href="{% url 'chef-sign-in' %}">{% translate "Already have an account" %}?</a>
+    <a href="{% url 'vendor:chef-sign-in' %}">{% translate "Already have an account" %}?</a>
 {% endblock %} 

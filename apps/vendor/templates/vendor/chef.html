@@ -1,5 +1,5 @@
 {% extends 'core/base2.html' %}
-
+{% load i18n %}
 {% load static %}
 
 
@@ -32,8 +32,8 @@
             <div class="pb-4">
                 <div class="row">
                     <div class="col-6 col-md-2">
-                        <p class="text-white-50 font-weight-bold m-0 small">Delivery</p>
-                        <p class="text-white m-0">Free</p>
+                        <p class="text-white-50 font-weight-bold m-0 small">{% translate "Delivery" %}</p>
+                        <p class="text-white m-0">{% translate "Free" %}</p>
                     </div>
 
                 </div>
@@ -44,7 +44,7 @@
         <div class="p-3 bg-primary bg-primary mt-n3 rounded position-relative">
             <div class="d-flex align-items-center">
 
-                <a href=" {% static 'contact-us.html' %} " class="btn btn-sm btn-outline-light ml-auto">Contact</a>
+                <a href=" {% static 'contact-us.html' %} " class="btn btn-sm btn-outline-light ml-auto">{% translate "Contact" %}</a>
             </div>
         </div>
     </div>
@@ -61,7 +61,7 @@
                     </div>
 
                     <div class="row m-0">
-                        <h6 class="p-3 m-0 bg-light w-100">MAIN ITEMS <small class="text-black-50"></small></h6>
+                        <h6 class="p-3 m-0 bg-light w-100">{% translate "MAIN ITEMS" %} <small class="text-black-50"></small></h6>
                         <div class="col-md-12 px-0 border-top">
 
                         </div>
@@ -121,7 +121,7 @@
 
 
             <div class="control">
-                <button class="btn btn-secondary">Add to cart</button>
+                <button class="btn btn-secondary">{% translate "Add to cart" %}</button>
             </div>
         </div>
     </form>
@@ -143,7 +143,7 @@
     </section>
                 <div class="mb-3">
                     <div class="bg-white rounded p-3 mb-3 clearfix graph-star-rating rounded shadow-sm">
-                        <h6 class="mb-0 mb-1">Ratings and Reviews</h6>
+                        <h6 class="mb-0 mb-1">{% translate "Ratings and Reviews" %}</h6>
                         <p class="text-muted mb-4 mt-1 small">Rated 3.5 out of 5</p>
                         <div class="graph-star-rating-body">
                             <div class="rating-list">
@@ -192,7 +192,7 @@
                                 <div class="rating-list-right font-weight-bold small">4 %</div>
                             </div>
                         </div>
-                        <div class="graph-star-rating-footer text-center mt-3"><button type="button" class="btn btn-primary btn-block btn-sm">Rate and Review</button></div>
+                        <div class="graph-star-rating-footer text-center mt-3"><button type="button" class="btn btn-primary btn-block btn-sm">{% translate "Rate and Review" %}</button></div>
                     </div>
 
 
