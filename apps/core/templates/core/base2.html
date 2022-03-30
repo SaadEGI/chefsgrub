@@ -88,9 +88,7 @@
                                         {% for LANG_LANGUAGE_CODE, LANG_LANGUAGE_NAME in langs %}
                                         <div class="form-check dropdown-item">
                                             <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios{{LANG_LANGUAGE_CODE}}" value="option1"
-                                            {% if LANG_LANGUAGE_CODE == LANGUAGE_CODE %}
-                                            checked
-                                            {% endif %}
+
                                             >
                                             <a href="/{{LANG_LANGUAGE_CODE}}">
                                             <label class="form-check-label" for="exampleRadios{{LANG_LANGUAGE_CODE}}">
@@ -113,7 +111,14 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                           {% for LANG_LANGUAGE_CODE, LANG_LANGUAGE_NAME in langs %}
                             <li>
-                            <a class="dropdown-item" href="/{{ LANG_LANGUAGE_CODE }}/">
+                            <a
+                            class="dropdown-item
+                            {% if LANG_LANGUAGE_CODE == LANGUAGE_CODE %}
+                             btn-primary"
+                            {% else %}
+                                "
+                            {% endif %}
+                             href="/{{ LANG_LANGUAGE_CODE }}/" style="text-decoration: none">
                             {{ LANG_LANGUAGE_CODE | language_name_local }}
                             </a>
                             </li>
