@@ -74,50 +74,19 @@
                             </div>
                         </div>
                     </div>
-                    {% comment %} <div class="col-1 d-flex align-items-center m-none">
-                        <div class="dropdown mr-">
-                            <a class="text-dark dropdown-toggle d-flex align-items-center py-3" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <div>
-                                    <p class="text-muted mb-0 small"></p>
-                                    {{ defaultLanguage.name_local }} 
-                                </div>
-                            </a>
-                            <div class="dropdown-menu p-0 drop-loc" aria-labelledby="navbarDropdown1">
-                                <div class="osahan-country">
-                                    <div class="filter">
-                                        {% for LANG_LANGUAGE_CODE, LANG_LANGUAGE_NAME in langs %}
-                                        <div class="form-check dropdown-item">
-                                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios{{LANG_LANGUAGE_CODE}}" value="option1"
-
-                                            >
-                                            <a href="/{{LANG_LANGUAGE_CODE}}">
-                                            <label class="form-check-label" for="exampleRadios{{LANG_LANGUAGE_CODE}}">
-                                                {{LANG_LANGUAGE_CODE| language_name_local}}
-                                            </label>
-                                        </a>
-                                        </div>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> {% endcomment %}
                     <li class="col-1 nav-item dropdown" style="list-style-type: none;">
-                        {% comment %} <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> {% endcomment %}
                             <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                 {% translate "Select Lanauge" %}
                             </button>
-                        {% comment %} </a> {% endcomment %}
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                           {% for LANG_LANGUAGE_CODE, LANG_LANGUAGE_NAME in langs %}
                             <li>
                             <a
                             class="dropdown-item
                             {% if LANG_LANGUAGE_CODE == LANGUAGE_CODE %}
-                             btn-primary"
-                            {% else %}
-                                "
+                             btn-primary
                             {% endif %}
+                            "
                              href="/{{ LANG_LANGUAGE_CODE }}/" style="text-decoration: none">
                             {{ LANG_LANGUAGE_CODE | language_name_local }}
                             </a>
