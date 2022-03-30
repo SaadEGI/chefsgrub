@@ -127,8 +127,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'CHEFSGRUB', 
-        'USER': 'strtpadmin',
-        'PASSWORD': 'strtpadmin',
+        'USER': 'postgres',
+        'PASSWORD': 'bend1965',
         'HOST': '127.0.0.1', 
         'PORT': '5432',
     }
