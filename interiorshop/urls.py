@@ -22,15 +22,15 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("chef/", include("apps.vendor.urls", namespace="apps.vendor")),
-    path("cart/", include("apps.cart.urls", namespace="apps.cart")),
-    path("", include("apps.core.urls", namespace="apps.core")),
-    path("product/", include("apps.product.urls", namespace="apps.product")),
+    # path("chef/", include("apps.vendor.urls", namespace="apps.vendor")),
+    # path("cart/", include("apps.cart.urls", namespace="apps.cart")),
+    # path("", include("apps.core.urls", namespace="apps.core")),
+    # path("product/", include("apps.product.urls", namespace="apps.product")),
 ]# + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
 
 urlpatterns += i18n_patterns (
     path("chef/", include("apps.vendor.urls", namespace="apps.vendor")),
     path("cart/", include("apps.cart.urls", namespace="apps.cart")),
     path("", include("apps.core.urls", namespace="apps.core")),
-    path("product/", include("apps.product.urls", namespace="apps.product")),
+    path("", include("apps.product.urls", namespace="apps.product")),
 )
