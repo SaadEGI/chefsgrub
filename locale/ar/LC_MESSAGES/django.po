@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-29 22:50+0000\n"
+"POT-Creation-Date: 2022-03-31 22:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,17 +20,23 @@ msgstr ""
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 #: apps/core/templates/core/About.html:12
+#: apps/core/templates/core/contact.html:13
 #: apps/vendor/templates/chef/base2.html:64
 msgid "Profile"
-msgstr ""
+msgstr "حساب شخصي"
 
 #: apps/core/templates/core/About.html:25
 msgid "Welcome to ChefsGrub"
 msgstr "أهلا بك في ChefsGrub"
 
+#: apps/core/templates/core/About.html:35
+msgid ""
+"Customers can either pick up their order, or choose our delivery service"
+msgstr ""
+
 #: apps/core/templates/core/base.html:10 apps/core/templates/core/base.html:21
 #: apps/core/templates/core/base.html:68
-#: apps/order/templates/order/email_notify_customer.html:6
+#: apps/order/templates/order/email_notify_customer.html:7
 msgid "Interiorshop"
 msgstr "Interiorshop"
 
@@ -41,331 +47,476 @@ msgid "Search"
 msgstr "البحث"
 
 #: apps/core/templates/core/base.html:51
+#: apps/vendor/templates/vendor/chef.html:47
 msgid "Contact"
 msgstr "تواصل"
 
 #: apps/core/templates/core/base.html:54
-#: apps/core/templates/core/base2.html:101
-#: apps/core/templates/core/base2.html:227
-#: apps/core/templates/core/coming-soon.html:128
+#: apps/core/templates/core/base2.html:125
+#: apps/core/templates/core/base2.html:252
 msgid "Cart"
 msgstr "سلة المشتريات"
 
 #: apps/core/templates/core/base.html:71
+#: apps/vendor/templates/vendor/vendor_admin.html:3
+#: apps/vendor/templates/vendor/vendor_admin.html:7
 msgid "Vendor admin"
 msgstr "Vendor admin"
 
 #: apps/core/templates/core/base.html:73
+#: apps/vendor/templates/vendor/become_vendor.html:3
+#: apps/vendor/templates/vendor/become_vendor.html:6
 msgid "Become vendor"
 msgstr "Become a vendor"
 
 #: apps/core/templates/core/base.html:76
+#: apps/vendor/templates/vendor/vendors.html:3
+#: apps/vendor/templates/vendor/vendors.html:6
 msgid "Vendors"
 msgstr "Vendors"
 
-#: apps/core/templates/core/base2.html:14
+#: apps/core/templates/core/base2.html:17
 msgid "ChefsGrub"
 msgstr "ChefsGrub"
 
-#: apps/core/templates/core/base2.html:14
+#: apps/core/templates/core/base2.html:17
 msgid "Order Homemade Food"
 msgstr "اطلب أكل منزلي"
 
-#: apps/core/templates/core/base2.html:47
-#: apps/core/templates/core/coming-soon.html:40
+#: apps/core/templates/core/base2.html:50
 msgid "Select Location"
 msgstr "أختر الموقع"
 
-#: apps/core/templates/core/base2.html:48
-#: apps/core/templates/core/base2.html:58
+#: apps/core/templates/core/base2.html:51
+#: apps/core/templates/core/base2.html:61
 msgid "Wuppertal"
 msgstr "فوبرتال"
 
-#: apps/core/templates/core/base2.html:55
+#: apps/core/templates/core/base2.html:58
 msgid "Choose your city"
 msgstr "اختر مدينتك"
 
-#: apps/core/templates/core/base2.html:62
+#: apps/core/templates/core/base2.html:65
 msgid "Düsseldorf"
 msgstr "دوزلدورف"
 
-#: apps/core/templates/core/base2.html:66
+#: apps/core/templates/core/base2.html:69
 msgid "Berlin"
 msgstr "برلين"
 
-#: apps/core/templates/core/base2.html:125
-#: apps/core/templates/core/base2.html:236
+#: apps/core/templates/core/base2.html:79
+#, fuzzy
+#| msgid "Select Location"
+msgid "Select Lanauge"
+msgstr "أختر الموقع"
+
+#: apps/core/templates/core/base2.html:149
+#: apps/core/templates/core/base2.html:261
 msgid "Home"
 msgstr ""
 
-#: apps/core/templates/core/base2.html:131
+#: apps/core/templates/core/base2.html:155
 msgid "I Feel Lucky"
 msgstr ""
 
-#: apps/core/templates/core/base2.html:144
+#: apps/core/templates/core/base2.html:168
 msgid "Favorites"
 msgstr "المفضلة"
 
-#: apps/core/templates/core/base2.html:150
+#: apps/core/templates/core/base2.html:174
 msgid "Chef's Panel"
 msgstr ""
 
-#: apps/core/templates/core/base2.html:164
-#: apps/core/templates/core/base2.html:196
-#: apps/core/templates/core/base2.html:225
+#: apps/core/templates/core/base2.html:188
+#: apps/core/templates/core/base2.html:220
+#: apps/core/templates/core/base2.html:250
 msgid "About us"
 msgstr "عنا"
 
-#: apps/core/templates/core/base2.html:165
+#: apps/core/templates/core/base2.html:189
 msgid ""
 "ChefsGrub is a homemade food ordering and homemade food delivery platform"
 msgstr ""
 
-#: apps/core/templates/core/base2.html:178
+#: apps/core/templates/core/base2.html:202
 msgid "Services"
 msgstr "الخدمات"
 
-#: apps/core/templates/core/base2.html:180
+#: apps/core/templates/core/base2.html:204
 msgid "Delivery Support"
 msgstr "دعم التوصيل"
 
-#: apps/core/templates/core/base2.html:181
-#: apps/core/templates/core/base2.html:197
-#: apps/core/templates/core/base2.html:226
+#: apps/core/templates/core/base2.html:205
+#: apps/core/templates/core/base2.html:221
+#: apps/core/templates/core/base2.html:251
 msgid "Contact us"
 msgstr "تواصل معنا"
 
-#: apps/core/templates/core/base2.html:182
+#: apps/core/templates/core/base2.html:206
 msgid "Terms of use"
 msgstr "شروط الاستخدام"
 
-#: apps/core/templates/core/base2.html:183
-#: apps/core/templates/core/coming-soon.html:121
+#: apps/core/templates/core/base2.html:207
 msgid "Privacy policy"
 msgstr "نهج الخصوصية"
 
-#: apps/core/templates/core/base2.html:187
+#: apps/core/templates/core/base2.html:211
 #, fuzzy
 #| msgid "Chef"
 msgid "For Chefs"
 msgstr "طاهي"
 
-#: apps/core/templates/core/base2.html:189
+#: apps/core/templates/core/base2.html:213
 msgid "Chef's login"
 msgstr "تسجيل الدخول الخاص بالطهاة"
 
-#: apps/core/templates/core/base2.html:190
+#: apps/core/templates/core/base2.html:214
 msgid "Join us as a Chef"
 msgstr "أنشأ حساب طاهي"
 
-#: apps/core/templates/core/base2.html:194
+#: apps/core/templates/core/base2.html:218
 msgid "Get to Know Us"
 msgstr ""
 
-#: apps/core/templates/core/base2.html:210
+#: apps/core/templates/core/base2.html:234
 msgid "ChefsGrub All rights reserved"
 msgstr ""
 
-#: apps/core/templates/core/base2.html:220
+#: apps/core/templates/core/base2.html:245
 msgid "Homepage"
 msgstr "الصفحة الرئيسية"
 
-#: apps/core/templates/core/base2.html:223
+#: apps/core/templates/core/base2.html:248
+#: apps/core/templates/core/frontpage.html:148
 msgid "Ramadan Offers"
 msgstr "عروض رمضانية"
 
-#: apps/core/templates/core/base2.html:242
+#: apps/core/templates/core/base2.html:267
 msgid "FAQ"
 msgstr "أسئلة مكررة"
 
-#: apps/core/templates/core/base2.html:248
+#: apps/core/templates/core/base2.html:273
 msgid "Help"
 msgstr "المساعدة"
 
-#: apps/core/templates/core/base2.html:267
+#: apps/core/templates/core/base2.html:292
 msgid "Sort by"
 msgstr ""
 
-#: apps/core/templates/core/base2.html:271
+#: apps/core/templates/core/base2.html:296
 msgid "Top Rated"
 msgstr ""
 
-#: apps/core/templates/core/base2.html:275
+#: apps/core/templates/core/base2.html:300
 msgid "Nearest Me"
 msgstr "الأقرب الي"
 
-#: apps/core/templates/core/base2.html:279
+#: apps/core/templates/core/base2.html:304
 msgid "Cost High to Low"
 msgstr ""
 
-#: apps/core/templates/core/base2.html:283
+#: apps/core/templates/core/base2.html:308
 msgid "Cost Low to High"
 msgstr "السعر من ال"
 
-#: apps/core/templates/core/base2.html:287
+#: apps/core/templates/core/base2.html:312
 msgid "Most Popular"
 msgstr "الأشهر"
 
-#: apps/core/templates/core/base2.html:295
+#: apps/core/templates/core/base2.html:320
 msgid "Open Now"
-msgstr ""
+msgstr "مفتوح الأن"
 
-#: apps/core/templates/core/base2.html:299
+#: apps/core/templates/core/base2.html:324
 msgid "Credit Cards"
 msgstr "بطاقة ائتمان"
 
-#: apps/core/templates/core/base2.html:307
+#: apps/core/templates/core/base2.html:332
 msgid "ADDITIONAL FILTERS"
 msgstr ""
 
-#: apps/core/templates/core/base2.html:313
+#: apps/core/templates/core/base2.html:338
 msgid "Min"
 msgstr ""
 
-#: apps/core/templates/core/base2.html:317
+#: apps/core/templates/core/base2.html:342
 msgid "Max"
 msgstr ""
 
-#: apps/core/templates/core/base2.html:327
+#: apps/core/templates/core/base2.html:352
 msgid "Close"
-msgstr ""
+msgstr "مغلق"
 
-#: apps/core/templates/core/base2.html:330
+#: apps/core/templates/core/base2.html:355
 msgid "Apply"
 msgstr "طبق"
 
-#: apps/core/templates/core/coming-soon.html:60
-msgid "Choose your country"
-msgstr "اختر دولتك"
+#: apps/core/templates/core/contact.html:24
+msgid ""
+"Whether you have questions or you would just like to say hello, Please "
+"contact us"
+msgstr ""
 
-#: apps/core/templates/core/coming-soon.html:117
-msgid "My account"
-msgstr "حسابي"
+#: apps/core/templates/core/contact.html:28
+#, fuzzy
+#| msgid "Customer Name"
+msgid "Your Name"
+msgstr "اسم الزبون"
 
-#: apps/core/templates/core/coming-soon.html:118
-msgid "Delivery support"
-msgstr "دعم التوصيل"
+#: apps/core/templates/core/contact.html:32
+#: apps/order/templates/order/email_notify_customer.html:37
+#: apps/order/templates/order/email_notify_vendor.html:37
+#: apps/vendor/templates/chef/order.html:31
+#: apps/vendor/templates/vendor/vendor_admin.html:63
+msgid "E-mail"
+msgstr "البريد الالكتروني"
 
-#: apps/core/templates/core/coming-soon.html:119
-msgid "Contant us"
-msgstr "تواصل معنا"
-
-#: apps/core/templates/core/coming-soon.html:120
-msgid "Term of use"
-msgstr "شروط الاستخدام"
-
-#: apps/core/templates/core/coming-soon.html:122
-#: apps/vendor/templates/chef/base2.html:71
-msgid "Logout"
-msgstr "تسجيل الخروج"
+#: apps/core/templates/core/contact.html:37
+msgid "HOW CAN WE HELP YOU"
+msgstr "كيف يمكننا مساعدتك"
 
 #: apps/core/templates/core/frontpage.html:34
+#: apps/core/templates/core/home-2.html:34
 msgid "Palestinian"
-msgstr ""
+msgstr "فلسطيني"
 
 #: apps/core/templates/core/frontpage.html:40
+#: apps/core/templates/core/home-2.html:40
 msgid "Moroccan"
-msgstr ""
+msgstr "مغربي"
 
 #: apps/core/templates/core/frontpage.html:46
+#: apps/core/templates/core/home-2.html:46
 msgid "Syrian"
-msgstr ""
+msgstr "سوري"
 
 #: apps/core/templates/core/frontpage.html:52
+#: apps/core/templates/core/home-2.html:52
 msgid "Turkish"
-msgstr ""
+msgstr "تركي"
 
 #: apps/core/templates/core/frontpage.html:58
+#: apps/core/templates/core/home-2.html:58
 msgid "indian"
-msgstr ""
+msgstr "هندي"
 
 #: apps/core/templates/core/frontpage.html:64
+#: apps/core/templates/core/home-2.html:64
 msgid "Jordanian"
-msgstr ""
+msgstr "أردني"
 
 #: apps/core/templates/core/frontpage.html:70
+#: apps/core/templates/core/home-2.html:70
 msgid "Pakistani"
-msgstr ""
+msgstr "باكستاني"
 
-#: apps/core/templates/core/frontpage.html:76 interiorshop/settings.py:188
+#: apps/core/templates/core/frontpage.html:76
+#: apps/core/templates/core/home-2.html:76 interiorshop/settings.py:191
 msgid "German"
-msgstr "Deutsch"
+msgstr "ألماني"
 
 #: apps/core/templates/core/frontpage.html:82
+#: apps/core/templates/core/home-2.html:82
 msgid "Italian"
+msgstr "ايطالي"
+
+#: apps/core/templates/core/frontpage.html:124
+#: apps/core/templates/core/home-2.html:124
+#, fuzzy
+#| msgid "Ramadan Offers"
+msgid "Ramadan Special"
+msgstr "عروض رمضانية"
+
+#: apps/core/templates/core/frontpage.html:127
+#: apps/core/templates/core/home-2.html:127
+msgid "View all"
+msgstr "رؤية الكل"
+
+#: apps/core/templates/core/frontpage.html:148
+msgid "Ready in 8 Hours"
+msgstr "جاهز في 8 ساعات"
+
+#: apps/core/templates/core/frontpage.html:158
+#: apps/core/templates/core/home-2.html:226
+#, fuzzy
+#| msgid "Most Popular"
+msgid "Most popular"
+msgstr "الأشهر"
+
+#: apps/core/templates/core/home-2.html:17
+msgid "Browse"
+msgstr "تصفح"
+
+#: apps/core/templates/core/home-2.html:136
+#: apps/core/templates/core/home-2.html:160
+#: apps/core/templates/core/home-2.html:182
+#: apps/core/templates/core/home-2.html:237
+#: apps/core/templates/core/home-2.html:272
+#: apps/core/templates/core/home-2.html:340
+#: apps/core/templates/core/home-2.html:375
+#: apps/core/templates/core/home-2.html:478
+#: apps/core/templates/core/home-2.html:521
+#: apps/core/templates/core/home-2.html:545
+#: apps/core/templates/core/home-2.html:567
+msgid "Promoted"
+msgstr "اعلان"
+
+#: apps/core/templates/core/home-2.html:146
+msgid "Vegetarian"
+msgstr "نباتي"
+
+#: apps/core/templates/core/home-2.html:146
+#: apps/core/templates/core/home-2.html:168
+#: apps/core/templates/core/home-2.html:553
+msgid "Indian"
+msgstr "عندي"
+
+#: apps/core/templates/core/home-2.html:146
+#: apps/core/templates/core/home-2.html:192
+#: apps/core/templates/core/home-2.html:486
+#: apps/core/templates/core/home-2.html:531
+msgid "Pure veg"
+msgstr "نباتي"
+
+#: apps/core/templates/core/home-2.html:150
+#: apps/core/templates/core/home-2.html:172
+#: apps/core/templates/core/home-2.html:262
+#: apps/core/templates/core/home-2.html:330
+#: apps/core/templates/core/home-2.html:363
+#: apps/core/templates/core/home-2.html:501
+#: apps/core/templates/core/home-2.html:535
+#: apps/core/templates/core/home-2.html:557
+#: apps/core/templates/core/home-2.html:581
+msgid "OFFER"
+msgstr "خصم"
+
+#: apps/core/templates/core/home-2.html:167
+#: apps/core/templates/core/home-2.html:213
+msgid "Thai Famous Cuisine"
+msgstr "أطباق تايوانية مشهورة"
+
+#: apps/core/templates/core/home-2.html:168
+msgid "North Indian"
+msgstr "هندي شمالي"
+
+#: apps/core/templates/core/home-2.html:192
+#: apps/core/templates/core/home-2.html:247
+#: apps/core/templates/core/home-2.html:385
+#: apps/core/templates/core/home-2.html:531
+#: apps/core/templates/core/home-2.html:577
+msgid "North"
+msgstr "شمال"
+
+#: apps/core/templates/core/home-2.html:192
+#: apps/core/templates/core/home-2.html:247
+#: apps/core/templates/core/home-2.html:315
+#: apps/core/templates/core/home-2.html:385
+#: apps/core/templates/core/home-2.html:531
+#: apps/core/templates/core/home-2.html:577
+msgid "Hamburgers"
+msgstr "همبرجر"
+
+#: apps/core/templates/core/home-2.html:279
+msgid "Thai Famous Indian Cuisine"
 msgstr ""
 
-#: apps/order/templates/order/email_notify_customer.html:26
+#: apps/core/templates/core/home-2.html:348
+#: apps/core/templates/core/home-2.html:486
+msgid "American"
+msgstr "أمريكي"
+
+#: apps/core/templates/core/home-2.html:485
+msgid "Bite Me Now Sandwiches"
+msgstr ""
+
+#: apps/core/templates/core/home-2.html:510
+msgid "Most sales"
+msgstr "الأكتر مبيعا"
+
+#: apps/order/templates/order/email_notify_customer.html:27
 msgid "Order confirmation"
 msgstr "تأكيد الطلبية"
 
-#: apps/order/templates/order/email_notify_customer.html:43
-#: apps/order/templates/order/email_notify_vendor.html:43
+#: apps/order/templates/order/email_notify_customer.html:34
+#: apps/order/templates/order/email_notify_vendor.html:34
+#: apps/vendor/templates/chef/meal.html:20
+#: apps/vendor/templates/vendor/vendor_admin.html:60
+msgid "Name"
+msgstr "الاسم"
+
+#: apps/order/templates/order/email_notify_customer.html:35
+#: apps/order/templates/order/email_notify_vendor.html:35
+#: apps/vendor/templates/chef/order.html:33
+#: apps/vendor/templates/vendor/vendor_admin.html:61
+msgid "Address"
+msgstr "العنوان"
+
+#: apps/order/templates/order/email_notify_customer.html:36
+#: apps/order/templates/order/email_notify_vendor.html:36
+#: apps/vendor/templates/vendor/vendor_admin.html:62
+msgid "Zip and place"
+msgstr "الرقم البريدي والمدينة"
+
+#: apps/order/templates/order/email_notify_customer.html:38
+#: apps/order/templates/order/email_notify_vendor.html:38
+#: apps/vendor/templates/chef/order.html:32
+#: apps/vendor/templates/vendor/vendor_admin.html:64
+msgid "Phone"
+msgstr "الهاتف"
+
+#: apps/order/templates/order/email_notify_customer.html:44
+#: apps/order/templates/order/email_notify_vendor.html:44
 msgid "Products"
 msgstr "المنتجات"
 
-#: apps/order/templates/order/email_notify_customer.html:47
-#: apps/order/templates/order/email_notify_vendor.html:47
+#: apps/order/templates/order/email_notify_customer.html:48
+#: apps/order/templates/order/email_notify_vendor.html:48
 #: apps/vendor/templates/chef/order.html:26
 msgid "Product"
 msgstr "المنتج"
 
-#: apps/order/templates/order/email_notify_customer.html:48
-#: apps/order/templates/order/email_notify_vendor.html:48
+#: apps/order/templates/order/email_notify_customer.html:49
+#: apps/order/templates/order/email_notify_vendor.html:49
 #: apps/vendor/templates/chef/meal.html:22
+#: apps/vendor/templates/vendor/vendor_admin.html:28
+#: apps/vendor/templates/vendor/vendor_admin.html:70
 msgid "Price"
 msgstr "السعر"
 
-#: apps/order/templates/order/email_notify_customer.html:49
-#: apps/order/templates/order/email_notify_vendor.html:49
+#: apps/order/templates/order/email_notify_customer.html:50
+#: apps/order/templates/order/email_notify_vendor.html:50
 #: apps/vendor/templates/chef/order.html:26
+#: apps/vendor/templates/vendor/vendor_admin.html:71
 msgid "Quantity"
 msgstr "الكمية"
 
-#: apps/order/templates/order/email_notify_customer.html:50
-#: apps/order/templates/order/email_notify_vendor.html:50
+#: apps/order/templates/order/email_notify_customer.html:51
+#: apps/order/templates/order/email_notify_vendor.html:51
+#: apps/vendor/templates/vendor/vendor_admin.html:73
 msgid "Total"
 msgstr "المجموع"
 
-#: apps/order/templates/order/email_notify_vendor.html:26
+#: apps/order/templates/order/email_notify_vendor.html:27
 msgid "New order"
 msgstr "طلب جديد"
 
-#: apps/order/templates/order/email_notify_vendor.html:31
+#: apps/order/templates/order/email_notify_vendor.html:32
 msgid "Details"
 msgstr "التفاصيل"
 
-#: apps/order/templates/order/email_notify_vendor.html:33
-#: apps/vendor/templates/chef/meal.html:20
-msgid "Name"
-msgstr "الاسم"
-
-#: apps/order/templates/order/email_notify_vendor.html:34
-#: apps/vendor/templates/chef/order.html:33
-msgid "Address"
-msgstr "العنوان"
-
-#: apps/order/templates/order/email_notify_vendor.html:35
-msgid "Zip and place"
-msgstr "الرقم البريدي والمدينة"
-
-#: apps/order/templates/order/email_notify_vendor.html:36
-#: apps/vendor/templates/chef/order.html:31
-msgid "E-mail"
-msgstr "البريد الالكتروني"
-
-#: apps/order/templates/order/email_notify_vendor.html:37
-#: apps/vendor/templates/chef/order.html:32
-msgid "Phone"
-msgstr "الهاتف"
-
 #: apps/product/templates/product/parts/list_item.html:13
+#: apps/vendor/templates/vendor/vendors.html:16
 msgid "View"
 msgstr ""
 
 #: apps/product/templates/product/product.html:46
+#: apps/vendor/templates/vendor/chef.html:124
 msgid "Add to cart"
 msgstr "أضف الى سلة المشتريات"
+
+#: apps/product/templates/product/product.html:56
+msgid "Similar products"
+msgstr ""
 
 #: apps/product/templates/product/search.html:9
 msgid "Search term"
@@ -375,6 +526,11 @@ msgstr ""
 #: apps/vendor/templates/chef/base2.html:66
 msgid "Account"
 msgstr "الحساب"
+
+#: apps/vendor/templates/chef/account.html:16
+#: apps/vendor/templates/chef/edit_meal.html:16
+msgid "Update"
+msgstr "حدث"
 
 #: apps/vendor/templates/chef/add_meal.html:9
 #: apps/vendor/templates/chef/meal.html:11
@@ -418,6 +574,10 @@ msgstr "التقارير"
 msgid "Customers"
 msgstr "الزبائن"
 
+#: apps/vendor/templates/chef/base2.html:71
+msgid "Logout"
+msgstr "تسجيل الخروج"
+
 #: apps/vendor/templates/chef/customers.html:14
 #: apps/vendor/templates/chef/meal.html:19
 #: apps/vendor/templates/chef/order.html:14
@@ -444,10 +604,6 @@ msgstr "رقم الطلبات"
 msgid "Edit Meal"
 msgstr "عدل الوجبة"
 
-#: apps/vendor/templates/chef/edit_meal.html:16
-msgid "Update"
-msgstr "حدث"
-
 #: apps/vendor/templates/chef/meal.html:21
 msgid "Short Description"
 msgstr "وصف قصير"
@@ -456,9 +612,21 @@ msgstr "وصف قصير"
 msgid "Image"
 msgstr "صورة"
 
+#: apps/vendor/templates/chef/order.html:15
+#, fuzzy
+#| msgid "Details"
+msgid "Order Details"
+msgstr "التفاصيل"
+
 #: apps/vendor/templates/chef/order.html:16
 msgid "Customer"
 msgstr "الزبون"
+
+#: apps/vendor/templates/chef/order.html:17
+#, fuzzy
+#| msgid "Total"
+msgid "Total Paid"
+msgstr "المجموع"
 
 #: apps/vendor/templates/chef/order.html:18
 msgid "Status"
@@ -529,23 +697,190 @@ msgid "Sign Up"
 msgstr "اشترك"
 
 #: apps/vendor/templates/chef/sign_up.html:12
+#: apps/vendor/templates/vendor/become_vendor.html:22
 msgid "Already have an account"
 msgstr "لديك حساب"
+
+#: apps/vendor/templates/vendor/add_product.html:3
+#: apps/vendor/templates/vendor/add_product.html:6
+#: apps/vendor/templates/vendor/vendor_admin.html:21
+#, fuzzy
+#| msgid "Product"
+msgid "Add product"
+msgstr "المنتج"
+
+#: apps/vendor/templates/vendor/add_product.html:15
+msgid "Submit"
+msgstr "إرسال"
+
+#: apps/vendor/templates/vendor/become_vendor.html:15
+#, fuzzy
+#| msgid "Sign Up"
+msgid "Sign up"
+msgstr "اشترك"
+
+#: apps/vendor/templates/vendor/become_vendor.html:24
+#: apps/vendor/templates/vendor/login.html:3
+#: apps/vendor/templates/vendor/login.html:6
+#: apps/vendor/templates/vendor/login.html:15
+msgid "Log in"
+msgstr "تسجيل الدخول"
+
+#: apps/vendor/templates/vendor/chef.html:29
+msgid "Reviews"
+msgstr "مراجعات"
+
+#: apps/vendor/templates/vendor/chef.html:35
+#, fuzzy
+#| msgid "Delivery Support"
+msgid "Delivery"
+msgstr "دعم التوصيل"
+
+#: apps/vendor/templates/vendor/chef.html:36
+msgid "Free"
+msgstr "مجاني"
+
+#: apps/vendor/templates/vendor/chef.html:64
+msgid "MAIN ITEMS"
+msgstr ""
+
+#: apps/vendor/templates/vendor/chef.html:146
+msgid "Ratings and Reviews"
+msgstr ""
+
+#: apps/vendor/templates/vendor/chef.html:147
+msgid "Rated"
+msgstr "مقيم"
+
+#: apps/vendor/templates/vendor/chef.html:150
+#: apps/vendor/templates/vendor/chef.html:159
+#: apps/vendor/templates/vendor/chef.html:168
+#: apps/vendor/templates/vendor/chef.html:177
+#: apps/vendor/templates/vendor/chef.html:186
+msgid "Star"
+msgstr "نجمة"
+
+#: apps/vendor/templates/vendor/chef.html:195
+msgid "Rate and Review"
+msgstr "قيم"
+
+#: apps/vendor/templates/vendor/edit_product.html:3
+#: apps/vendor/templates/vendor/edit_product.html:6
+#, fuzzy
+#| msgid "Product"
+msgid "Edit product"
+msgstr "المنتج"
+
+#: apps/vendor/templates/vendor/edit_product.html:15
+#: apps/vendor/templates/vendor/edit_vendor.html:31
+msgid "Save changes"
+msgstr "احفظ التغييرات"
+
+#: apps/vendor/templates/vendor/edit_product.html:22
+#, fuzzy
+#| msgid "Image"
+msgid "Images"
+msgstr "صورة"
+
+#: apps/vendor/templates/vendor/edit_product.html:31
+msgid "Add image"
+msgstr "أضف صورة"
+
+#: apps/vendor/templates/vendor/edit_vendor.html:3
+#: apps/vendor/templates/vendor/edit_vendor.html:6
+#, fuzzy
+#| msgid "Edit Meal"
+msgid "Edit vendor"
+msgstr "عدل الوجبة"
+
+#: apps/vendor/templates/vendor/edit_vendor.html:12
+#, fuzzy
+#| msgid "Vendor admin"
+msgid "Vendor name"
+msgstr "Vendor admin"
+
+#: apps/vendor/templates/vendor/edit_vendor.html:18
+msgid "This is not the same as the username"
+msgstr "ليس يطابق اسم المستخدم"
+
+#: apps/vendor/templates/vendor/vendor_admin.html:9
+msgid "My balance"
+msgstr "رصيدي"
+
+#: apps/vendor/templates/vendor/vendor_admin.html:10
+#, fuzzy
+#| msgid "My account"
+msgid "My paid amount"
+msgstr "حسابي"
+
+#: apps/vendor/templates/vendor/vendor_admin.html:14
+#: apps/vendor/templates/vendor/vendor_admin.html:38
+#, fuzzy
+#| msgid "Edit Meal"
+msgid "Edit"
+msgstr "عدل الوجبة"
+
+#: apps/vendor/templates/vendor/vendor_admin.html:15
+msgid "Log out"
+msgstr "تسجيل الخروج"
+
+#: apps/vendor/templates/vendor/vendor_admin.html:19
+#, fuzzy
+#| msgid "Products"
+msgid "My products"
+msgstr "المنتجات"
+
+#: apps/vendor/templates/vendor/vendor_admin.html:27
+#: apps/vendor/templates/vendor/vendor_admin.html:69
+msgid "Title"
+msgstr "عنوان"
+
+#: apps/vendor/templates/vendor/vendor_admin.html:29
+#, fuzzy
+#| msgid "Action"
+msgid "Actions"
+msgstr "فعل"
+
+#: apps/vendor/templates/vendor/vendor_admin.html:44
+msgid "You don't have any products yet"
+msgstr "ليس لديك أي منتج"
+
+#: apps/vendor/templates/vendor/vendor_admin.html:49
+#, fuzzy
+#| msgid "New order"
+msgid "My orders"
+msgstr "طلب جديد"
+
+#: apps/vendor/templates/vendor/vendor_admin.html:72
+msgid "Paid"
+msgstr "مدقوع"
 
 #: apps/vendor/views.py:53
 msgid "hello"
 msgstr "مرحبا"
 
-#: interiorshop/settings.py:189
+#: interiorshop/settings.py:192
 msgid "English"
-msgstr "English"
+msgstr "انجليزي"
 
-#: interiorshop/settings.py:190
+#: interiorshop/settings.py:193
 msgid "Arabic"
 msgstr "العربية"
+
+#~ msgid "Choose your country"
+#~ msgstr "اختر دولتك"
+
+#~ msgid "Delivery support"
+#~ msgstr "دعم التوصيل"
+
+#~ msgid "Contant us"
+#~ msgstr "تواصل معنا"
+
+#~ msgid "Term of use"
+#~ msgstr "شروط الاستخدام"
 
 #~ msgid "Contact Us"
 #~ msgstr "تواصل معنا"
 
 #~ msgid "Email"
-#~ msgstr "ال"
+#~ msgstr "البريد الالكتروني"
