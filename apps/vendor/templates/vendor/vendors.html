@@ -1,9 +1,9 @@
 {% extends 'core/base.html' %}
 {% load i18n %}
-{% block title %}Vendors | {% endblock %}
+{% block title %}{% translate "Vendors" %} | {% endblock %}
 
 {% block content %}
-    <h1 class="title">Vendors</h1>
+    <h1 class="title">{% translate "Vendors" %}</h1>
 
     <div class="columns is-multiline">
         {% for vendor in vendors %}
@@ -13,7 +13,7 @@
 
                     <hr>
 
-                    <a href="{% url 'vendor:vendor' vendor.id %}" class="button is-dark is-uppercase">View</a>
+                    <a href="{% url 'vendor:vendor' vendor.id %}" class="button is-dark is-uppercase">{% translate "View" %}</a>
                 </div>
             </div>
         {% endfor %}

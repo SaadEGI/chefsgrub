@@ -31,11 +31,11 @@
                 <td>
                     <h3>Details</h3>
 
-                    <b>Name:</b> {{ order.first_name }} {{ order.last_name }}<br>
-                    <b>Address:</b> {{ order.address }}<br>
-                    <b>Zip and place:</b> {{ order.zipcode }} {{ order.place }}<br>
-                    <b>E-mail:</b> {{ order.email }}<br>
-                    <b>Phone:</b> {{ order.phone }}
+                    <b>{% translate "Name" %}:</b> {{ order.first_name }} {{ order.last_name }}<br>
+                    <b>{% translate "Address" %}:</b> {{ order.address }}<br>
+                    <b>{% translate "Zip and place" %}:</b> {{ order.zipcode }} {{ order.place }}<br>
+                    <b>{% translate "E-mail" %}:</b> {{ order.email }}<br>
+                    <b>{% translate "Phone" %}:</b> {{ order.phone }}
                 </td>
             </tr>
 

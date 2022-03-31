@@ -1,9 +1,9 @@
 {% extends 'core/base.html' %}
 {% load i18n %}
-{% block title %}Log in | {% endblock %}
+{% block title %}{% translate "Log in" %} | {% endblock %}
 
 {% block content %}
-    <h1 class="title">Log in</h1>
+    <h1 class="title">{% translate "Log in" %}</h1>
 
     <form method="post" action=".">
         {% csrf_token %}
@@ -12,7 +12,7 @@
 
         <div class="field">
             <div class="control">
-                <button class="button is-dark is-uppercase">Log in</button>
+                <button class="button is-dark is-uppercase">{% translate "Log in" %}</button>
             </div>
         </div>
     </form>

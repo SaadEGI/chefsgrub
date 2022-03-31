@@ -10,7 +10,7 @@
         <div class="d-none">
             <div class="bg-primary border-bottom p-3 d-flex align-items-center">
                 <a class="toggle togglew toggle-2" href="#"><span></span></a>
-                <h4 class="font-weight-bold m-0 text-white">Profile</h4>
+                <h4 class="font-weight-bold m-0 text-white">{% translate "Profile" %}</h4>
             </div>
         </div>
         <!-- profile -->
@@ -21,20 +21,20 @@
                     <div class="rounded shadow-sm">
                         <div class="osahan-cart-item-profile bg-white rounded shadow-sm p-4">
                             <div class="flex-column">
-                                <h6 class="font-weight-bold">Whether you have questions or you would just like to say hello, Please contact us!</h6>
+                                <h6 class="font-weight-bold">{% translate "Whether you have questions or you would just like to say hello, Please contact us" %}!</h6>
                                 <form method="post">
                                      {% csrf_token %}
                                     <div class="form-group">
-                                        <label for="full_name" class="small font-weight-bold">Your Name</label>
+                                        <label for="full_name" class="small font-weight-bold">{% translate "Your Name" %}</label>
                                         <input type="text" class="form-control" id="full_name" placeholder="Max Mustermann">
                                     </div>
                                     <div class="form-group">
-                                        <label for="email_address" class="small font-weight-bold">E-mail</label>
+                                        <label for="email_address" class="small font-weight-bold">{% translate "E-mail" %}</label>
                                         <input type="email" class="form-control" id="email_address" placeholder="Muster@gmail.com">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="message" class="small font-weight-bold">HOW CAN WE HELP YOU?</label>
+                                        <label for="message" class="small font-weight-bold">{% translate "HOW CAN WE HELP YOU" %}?</label>
                                         <textarea class="form-control" id="message" placeholder="Hi there, I would like to ..." rows="3"></textarea>
                                     </div>
                                     <input   class="btn btn-primary btn-block" type="submit" value="Submit">

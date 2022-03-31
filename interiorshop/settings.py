@@ -91,9 +91,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 TEMPLATE_CONTEXT_PROCESSORS = (
-
-    # Put your context processors here
-
     'django.core.context_processors.request',
 )
 

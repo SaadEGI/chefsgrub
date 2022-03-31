@@ -1,32 +1,32 @@
 {% extends 'core/base.html' %}
 {% load i18n %}
-{% block title %}Vendor admin | {% endblock %}
+{% block title %}{% translate "Vendor admin" %} | {% endblock %}
 
 {% block content %}
     <div class="box">
-        <h1 class="title">Vendor admin - {{ vendor.name }}</h1>
+        <h1 class="title">{% translate "Vendor admin" %} - {{ vendor.name }}</h1>
 
-        <strong>My balance: </strong>${{ vendor.get_balance }}<br>
-        <strong>My paid amount: </strong>${{ vendor.get_paid_amount }}
+        <strong>{% translate "My balance" %}: </strong>${{ vendor.get_balance }}<br>
+        <strong>{% translate "My paid amount" %}: </strong>${{ vendor.get_paid_amount }}
 
         <hr>
 
-        <a href="{% url 'vendor:edit_vendor' %}" class="button is-info is-uppercase">Edit</a>
-        <a href="{% url 'vendor:logout' %}" class="button is-danger is-uppercase">Log out</a>
+        <a href="{% url 'vendor:edit_vendor' %}" class="button is-info is-uppercase">{% translate "Edit" %}</a>
+        <a href="{% url 'vendor:logout' %}" class="button is-danger is-uppercase">{% translate "Log out" %}</a>
     </div>
 
     <div class="box">
-        <h2 class="is-size-3 mb-4">My products</h2>
+        <h2 class="is-size-3 mb-4">{% translate "My products" %}</h2>
 
-        <a href="{% url 'vendor:add_product' %}" class="button is-dark is-uppercase mb-6">Add product</a>
+        <a href="{% url 'vendor:add_product' %}" class="button is-dark is-uppercase mb-6">{% translate "Add product" %}</a>
 
         {% if products %}
             <table class="table is-fullwidth">
                 <thead>
                     <tr>
-                        <th>Title</th>
-                        <th>Price</th>
-                        <th>Actions</th>
+                        <th>{% translate "Title" %}</th>
+                        <th>{% translate "Price" %}</th>
+                        <th>{% translate "Actions" %}</th>
                     </tr>
                 </thead>
 
@@ -35,18 +35,18 @@
                         <tr>
                             <td><a href="   ">{{ product.title }}</a></td>
                             <td>${{ product.price }}</td>
-                            <td><a href="{% url 'vendor:edit_product' product.id %}">Edit</a></td>
+                            <td><a href="{% url 'vendor:edit_product' product.id %}">{% translate "Edit" %}</a></td>
                         </tr>
                     {% endfor %}
                 </tbody>
             </table>
         {% else %}
-            <p>You don't have any products yet...</p>
+            <p>{% translate "You don't have any products yet" %}...</p>
         {% endif %}
     </div>
 
     <div class="box">
-        <h2 class="is-size-3 mb-4">My orders</h2>
+        <h2 class="is-size-3 mb-4">{% translate "My orders" %}</h2>
     
         {% if orders %}
             {% for order in orders %}
@@ -57,20 +57,20 @@
                         </div>
     
                         <div class="column is-12">
-                            <b>Name:</b> {{ order.first_name }} {{ order.last_name }}<br>
-                            <b>Address:</b> {{ order.address }}<br>
-                            <b>Zip and place:</b> {{ order.zipcode }} {{ order.place }}<br>
-                            <b>E-mail:</b> {{ order.email }}<br>
-                            <b>Phone:</b> {{ order.phone }}
+                            <b>{% translate "Name" %}:</b> {{ order.first_name }} {{ order.last_name }}<br>
+                            <b>{% translate "Address" %}:</b> {{ order.address }}<br>
+                            <b>{% translate "Zip and place" %}:</b> {{ order.zipcode }} {{ order.place }}<br>
+                            <b>{% translate "E-mail" %}:</b> {{ order.email }}<br>
+                            <b>{% translate "Phone" %}:</b> {{ order.phone }}
     
                             <table class="table is-fullwidth mt-4">
                                 <thead>
                                     <tr>
-                                        <th>Title</th>
-                                        <th>Price</th>
-                                        <th>Quantity</th>
-                                        <th>Paid</th>
-                                        <th>Total</th>
+                                        <th>{% translate "Title" %}</th>
+                                        <th>{% translate "Price" %}</th>
+                                        <th>{% translate "Quantity" %}</th>
+                                        <th>{% translate "Paid" %}</th>
+                                        <th>{% translate "Total" %}</th>
                                     </tr>
                                 </thead>
     
