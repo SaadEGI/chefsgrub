@@ -8,7 +8,7 @@
         </div>
         <div class="panel-body">
             <div class="text-right">
-                <a href="{% url 'chef-add-meal' %}" class="btn btn-pink">{% translate "Add Meal" %}</a>
+                <a href="{% url 'vendor:chef-add-meal' %}" class="btn btn-pink">{% translate "Add Meal" %}</a>
                 <br/>
                 <br/>
             </div>
@@ -28,7 +28,7 @@
         <tr>
           <td scope="row">{{ meal.id }}</td>
           <td>
-            <a href="{% url 'chef-edit-meal' meal.id %}">{{ meal.title }}</a>
+            <a href="{% url 'vendor:chef-edit-meal' meal.id %}">{{ meal.title }}</a>
           </td>
           <td>{{ meal.description }}</td>
           <td>{{ meal.price }}</td>

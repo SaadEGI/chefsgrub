@@ -87,7 +87,7 @@
                              btn-primary
                             {% endif %}
                             "
-                             href="/{{ LANG_LANGUAGE_CODE }}/" style="text-decoration: none">
+                             href="/{{ LANG_LANGUAGE_CODE }}{{request.get_full_path | slice:'3:'}}" style="text-decoration: none">
                             {{ LANG_LANGUAGE_CODE | language_name_local }}
                             </a>
                             </li>

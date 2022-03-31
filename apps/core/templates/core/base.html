@@ -48,10 +48,10 @@
                         <a href="{% url 'product:category' category.slug %}" class="navbar-item">{{ category.title }}</a>
                     {% endfor %}
 
-                    <a href="{% url 'contact' %}" class="navbar-item">{% translate "Contact" %}</a>
+                    <a href="{% url 'contact:contact' %}" class="navbar-item">{% translate "Contact" %}</a>
 
                     <div class="navbar-item">
-                        <a href="{% url 'cart' %}" class="button is-dark">{% translate "Cart" %}{% if cart %} ({{ cart|length }}){% endif %}</a>
+                        <a href="{% url 'cart:cart' %}" class="button is-dark">{% translate "Cart" %}{% if cart %} ({{ cart|length }}){% endif %}</a>
                     </div>
                 </div>
             </div>
@@ -73,7 +73,7 @@
                 <a href="{% url 'vendor:become_vendor' %}">{% translate "Become vendor" %}</a>
             {% endif %}
 
-            <a href="{% url 'vendors' %}">{% translate "Vendors" %}</a>
+            <a href="{% url 'vendor:vendors' %}">{% translate "Vendors" %}</a>
         </footer>
 
         {% block scripts %}

@@ -26,7 +26,7 @@ urlpatterns = [
     # path("cart/", include("apps.cart.urls", namespace="apps.cart")),
     # path("", include("apps.core.urls", namespace="apps.core")),
     # path("product/", include("apps.product.urls", namespace="apps.product")),
-]# + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
 
 urlpatterns += i18n_patterns (
     path("chef/", include("apps.vendor.urls", namespace="apps.vendor")),

@@ -26,12 +26,12 @@
 
 {% block sidebar %}
 
-    {% url 'chef-order' as restaurant_order_url %}
-    {% url 'chef-meal' as restaurant_meal_url %}
-    {% url 'chef-report' as restaurant_report_url %}
-    {% url 'chef-customers' as restaurant_customers_url %}
-    {% url 'chef-drivers' as restaurant_drivers_url %}
-    {% url 'chef-account' as restaurant_account_url %}
+    {% url 'vendor:chef-order' as restaurant_order_url %}
+    {% url 'vendor:chef-meal' as restaurant_meal_url %}
+    {% url 'vendor:chef-report' as restaurant_report_url %}
+    {% url 'vendor:chef-customers' as restaurant_customers_url %}
+    {% url 'vendor:chef-drivers' as restaurant_drivers_url %}
+    {% url 'vendor:chef-account' as restaurant_account_url %}
 
     <div class="text-center">
         {% if chef.logo %}
@@ -47,27 +47,27 @@
     <div class="list-group">
       <span class="text-uppercase">{% translate "Dashboard" %}</span>
 
-      <a href="{% url 'chef-order' %}"
+      <a href="{% url 'vendor:chef-order' %}"
           class="list-group-item {% if request.path == restaurant_order_url %} active {% endif %} ">
           {% translate "Orders" %}
           <span class="badge"></span>
       </a>
-      <a href="{% url 'chef-meal' %}"
+      <a href="{% url 'vendor:chef-meal' %}"
           class="list-group-item {% if request.path == restaurant_meal_url %} active {% endif %} ">{% translate "Meals" %}</a>
             
-      <a href="{% url 'chef-report' %}"
+      <a href="{% url 'vendor:chef-report' %}"
           class="list-group-item {% if request.path == restaurant_report_url %} active {% endif %} ">{% translate "Reports" %}</a>
 
-    <a href="{% url 'chef-customers' %}"
+    <a href="{% url 'vendor:chef-customers' %}"
         class="list-group-item {% if request.path == restaurant_customers_url %} active {% endif %} ">{% translate "Customers" %}</a>
     
       <span class="text-uppercase">{% translate "Profile" %}</span>
-      <a href="{% url 'chef-account' %}"
+      <a href="{% url 'vendor:chef-account' %}"
           class="list-group-item {% if request.path == restaurant_account_url %} active {% endif %} ">{% translate "Account" %}</a>
     </div>
 
     <div class="text-center">
-      <a href="{% url 'chef-sign-out' %}?next={{ request.path }}"
+      <a href="{% url 'vendor:chef-sign-out' %}?next={{ request.path }}"
           class="btn btn-pink">{% translate "Logout" %}</a>
     </div>
 
