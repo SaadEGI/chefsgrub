@@ -55,6 +55,7 @@ def vendor(request, vendorName):
     vendor = get_object_or_404(Vendor, pk=vendorName)
     cart = Cart(request)
 
+
     if request.method == 'POST':
         form = AddToCartForm(request.POST)
 

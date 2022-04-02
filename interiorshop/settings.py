@@ -78,6 +78,11 @@ AWS_S3_SIGNATURE_VERSION = 's3v4'
 AWS_S3_REGION_NAME = 'eu-central-1'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
+#TAWKTO live chat
+
+TAWKTO_ID_SITE='<62484c252abe5b455fc38fd6>'
+TAWKTO_API_KEY='<tawkto api key>'
+TAWKTO_IS_SECURE=True
 
 
 
@@ -96,7 +101,9 @@ INSTALLED_APPS = [
     'apps.product',
     'apps.vendor',
     'django_extensions',
-    'storages'
+    'storages',
+    'tawkto',
+
 ]
 
 MIDDLEWARE = [
