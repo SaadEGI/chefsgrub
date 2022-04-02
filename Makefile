@@ -20,3 +20,4 @@ run:
 # i18n:
 #   python3 manage.py makemessages --all -i venv --no-obsolete
 # 	python3 manage.py compilemessages -l de,en,ar
+# 	django-admin compilemessages
