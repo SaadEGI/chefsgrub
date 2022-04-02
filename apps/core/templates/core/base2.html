@@ -76,7 +76,7 @@
                     </div>
                     <li class="col-1 nav-item dropdown" style="list-style-type: none;">
                             <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                {% translate "Select Lanauge" %}
+                                {% translate "Select Language" %}
                             </button>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                           {% for LANG_LANGUAGE_CODE, LANG_LANGUAGE_NAME in langs %}
@@ -168,6 +168,7 @@
                     {% translate "Favorites" %}
                 </a>
             </div>
+
             <div class="col">
                 <a href=" /chef/sign-in " class="text-dark small font-weight-bold text-decoration-none">
                     <p class="h4 m-0"><i class="feather-user"></i></p>
@@ -243,6 +244,26 @@
     <nav id="main-nav">
         <ul class="second-nav">
             <li><a href=" /home "><i class="feather-home mr-2"></i> {% translate "Homepage" %}</a></li>
+         <li>
+                <a href="#"><i class="feather-globe mr-2"></i> {% translate "Select Language" %}</a>
+                <ul>
+                    {% for LANG_LANGUAGE_CODE, LANG_LANGUAGE_NAME in langs %}
+                            <li>
+                            <a
+                            class="dropdown-item
+                            {% if LANG_LANGUAGE_CODE == LANGUAGE_CODE %}
+                             btn-primary
+                            {% endif %}
+                            "
+                             href="/{{ LANG_LANGUAGE_CODE }}{{request.get_full_path | slice:'3:'}}" style="text-decoration: none">
+                            {{ LANG_LANGUAGE_CODE | language_name_local }}
+                            </a>
+                            </li>
+                          {% endfor %}
+                </ul>
+            </li>
+
+
 
 
             <li><a href=" /ramadan "><i class="feather-heart mr-2"></i> {% translate "Ramadan Offers" %}</a></li>

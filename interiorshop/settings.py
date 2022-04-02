@@ -136,6 +136,7 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+#strtpadmin
 if PRODUCTION:# or ENVIRONMENT == 'staging':
     DATABASES['default'] = dj_database_url.config()
 
