@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-02 12:53+0000\n"
+"POT-Creation-Date: 2022-04-02 13:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -96,8 +96,6 @@ msgid "Choose your city"
 msgstr "Choose your city"
 
 #: apps/core/templates/core/base2.html:65
-#, fuzzy
-#| msgid "Dusseldorf"
 msgid "Düsseldorf"
 msgstr "Dusseldorf"
 
@@ -106,19 +104,15 @@ msgid "Berlin"
 msgstr "Berlin"
 
 #: apps/core/templates/core/base2.html:79
-#, fuzzy
-#| msgid "Select Location"
 msgid "Select Lanauge"
-msgstr "Select Location"
+msgstr "Select Lanauge"
 
 #: apps/core/templates/core/base2.html:149
 #: apps/core/templates/core/base2.html:261
 msgid "Home"
-msgstr ""
+msgstr "Home"
 
 #: apps/core/templates/core/base2.html:155
-#, fuzzy
-#| msgid "i Feel Lucky"
 msgid "I Feel Lucky"
 msgstr "I Feel Lucky"
 
@@ -258,12 +252,12 @@ msgid ""
 "Whether you have questions or you would just like to say hello, Please "
 "contact us"
 msgstr ""
+"Whether you have questions or you would just like to say hello, Please "
+"contact us"
 
 #: apps/core/templates/core/contact.html:28
-#, fuzzy
-#| msgid "Customer Name"
 msgid "Your Name"
-msgstr "Customer Name"
+msgstr "Your Name"
 
 #: apps/core/templates/core/contact.html:32
 #: apps/order/templates/order/email_notify_customer.html:37
@@ -280,61 +274,57 @@ msgstr ""
 #: apps/core/templates/core/frontpage.html:34
 #: apps/core/templates/core/home-2.html:34
 msgid "Palestinian"
-msgstr ""
+msgstr "Palestinian"
 
 #: apps/core/templates/core/frontpage.html:40
 #: apps/core/templates/core/home-2.html:40
 msgid "Moroccan"
-msgstr ""
+msgstr "Moroccan"
 
 #: apps/core/templates/core/frontpage.html:46
 #: apps/core/templates/core/home-2.html:46
 msgid "Syrian"
-msgstr ""
+msgstr "Syrian"
 
 #: apps/core/templates/core/frontpage.html:52
 #: apps/core/templates/core/home-2.html:52
 msgid "Turkish"
-msgstr ""
+msgstr "Turkish"
 
 #: apps/core/templates/core/frontpage.html:58
 #: apps/core/templates/core/home-2.html:58
 msgid "indian"
-msgstr ""
+msgstr "indian"
 
 #: apps/core/templates/core/frontpage.html:64
 #: apps/core/templates/core/home-2.html:64
 msgid "Jordanian"
-msgstr ""
+msgstr "Jordanian"
 
 #: apps/core/templates/core/frontpage.html:70
 #: apps/core/templates/core/home-2.html:70
 msgid "Pakistani"
-msgstr ""
+msgstr "Pakistani"
 
 #: apps/core/templates/core/frontpage.html:76
 #: apps/core/templates/core/home-2.html:76 interiorshop/settings.py:191
 msgid "German"
-msgstr "German"
+msgstr "Deutsch"
 
 #: apps/core/templates/core/frontpage.html:82
 #: apps/core/templates/core/home-2.html:82
 msgid "Italian"
-msgstr ""
+msgstr "Italian"
 
 #: apps/core/templates/core/frontpage.html:124
 #: apps/core/templates/core/home-2.html:124
-#, fuzzy
-#| msgid "Ramadan Offers"
 msgid "Ramadan Special"
-msgstr "Ramadan Offers"
+msgstr "Ramadan Special"
 
 #: apps/core/templates/core/frontpage.html:127
 #: apps/core/templates/core/home-2.html:127
-#, fuzzy
-#| msgid "View"
 msgid "View all"
-msgstr "View"
+msgstr "View all"
 
 #: apps/core/templates/core/frontpage.html:148
 msgid "Ready in 8 Hours"
@@ -342,10 +332,8 @@ msgstr ""
 
 #: apps/core/templates/core/frontpage.html:158
 #: apps/core/templates/core/home-2.html:226
-#, fuzzy
-#| msgid "Most Popular"
 msgid "Most popular"
-msgstr "Most Popular"
+msgstr "Most popular"
 
 #: apps/core/templates/core/home-2.html:17
 msgid "Browse"
@@ -611,20 +599,16 @@ msgid "Image"
 msgstr "Image"
 
 #: apps/vendor/templates/chef/order.html:15
-#, fuzzy
-#| msgid "Details"
 msgid "Order Details"
-msgstr "Details"
+msgstr "Order Details"
 
 #: apps/vendor/templates/chef/order.html:16
 msgid "Customer"
 msgstr "Customer"
 
 #: apps/vendor/templates/chef/order.html:17
-#, fuzzy
-#| msgid "Total"
 msgid "Total Paid"
-msgstr "Total"
+msgstr "Total Paid"
 
 #: apps/vendor/templates/chef/order.html:18
 msgid "Status"
@@ -707,18 +691,14 @@ msgstr "Already have an account"
 #: apps/vendor/templates/vendor/add_product.html:3
 #: apps/vendor/templates/vendor/add_product.html:6
 #: apps/vendor/templates/vendor/vendor_admin.html:21
-#, fuzzy
-#| msgid "Product"
 msgid "Add product"
-msgstr "Product"
+msgstr "Add product"
 
 #: apps/vendor/templates/vendor/add_product.html:15
 msgid "Submit"
 msgstr "Submit"
 
 #: apps/vendor/templates/vendor/become_vendor.html:15
-#, fuzzy
-#| msgid "Sign Up"
 msgid "Sign up"
 msgstr "Sign Up"
 
@@ -750,10 +730,8 @@ msgid "Ratings and Reviews"
 msgstr "Ratings and Reviews"
 
 #: apps/vendor/templates/vendor/chef.html:154
-#, fuzzy
-#| msgid "Top Rated"
 msgid "Rated"
-msgstr "Top Rated"
+msgstr "Rated"
 
 #: apps/vendor/templates/vendor/chef.html:159
 #: apps/vendor/templates/vendor/chef.html:177
@@ -769,10 +747,8 @@ msgstr "Rate and Review"
 
 #: apps/vendor/templates/vendor/edit_product.html:3
 #: apps/vendor/templates/vendor/edit_product.html:6
-#, fuzzy
-#| msgid "Product"
 msgid "Edit product"
-msgstr "Product"
+msgstr "Edit product"
 
 #: apps/vendor/templates/vendor/edit_product.html:15
 #: apps/vendor/templates/vendor/edit_vendor.html:31
@@ -780,10 +756,8 @@ msgid "Save changes"
 msgstr "Save changes"
 
 #: apps/vendor/templates/vendor/edit_product.html:22
-#, fuzzy
-#| msgid "Image"
 msgid "Images"
-msgstr "Image"
+msgstr "Images"
 
 #: apps/vendor/templates/vendor/edit_product.html:31
 msgid "Add image"
@@ -791,16 +765,12 @@ msgstr "Add image"
 
 #: apps/vendor/templates/vendor/edit_vendor.html:3
 #: apps/vendor/templates/vendor/edit_vendor.html:6
-#, fuzzy
-#| msgid "Edit Meal"
 msgid "Edit vendor"
-msgstr "Edit Meal"
+msgstr "Edit vendor"
 
 #: apps/vendor/templates/vendor/edit_vendor.html:12
-#, fuzzy
-#| msgid "Vendor admin"
 msgid "Vendor name"
-msgstr "Vendor admin"
+msgstr "Vendor name"
 
 #: apps/vendor/templates/vendor/edit_vendor.html:18
 msgid "This is not the same as the username"
@@ -811,27 +781,21 @@ msgid "My balance"
 msgstr "My balance"
 
 #: apps/vendor/templates/vendor/vendor_admin.html:10
-#, fuzzy
-#| msgid "My account"
 msgid "My paid amount"
-msgstr "My account"
+msgstr "My paid amount"
 
 #: apps/vendor/templates/vendor/vendor_admin.html:14
 #: apps/vendor/templates/vendor/vendor_admin.html:38
-#, fuzzy
-#| msgid "Edit Meal"
 msgid "Edit"
-msgstr "Edit Meal"
+msgstr "Edit"
 
 #: apps/vendor/templates/vendor/vendor_admin.html:15
 msgid "Log out"
 msgstr "Log out"
 
 #: apps/vendor/templates/vendor/vendor_admin.html:19
-#, fuzzy
-#| msgid "Products"
 msgid "My products"
-msgstr "Products"
+msgstr "My products"
 
 #: apps/vendor/templates/vendor/vendor_admin.html:27
 #: apps/vendor/templates/vendor/vendor_admin.html:69
@@ -839,20 +803,16 @@ msgid "Title"
 msgstr "Title"
 
 #: apps/vendor/templates/vendor/vendor_admin.html:29
-#, fuzzy
-#| msgid "Action"
 msgid "Actions"
-msgstr "Action"
+msgstr "Actions"
 
 #: apps/vendor/templates/vendor/vendor_admin.html:44
 msgid "You don't have any products yet"
 msgstr ""
 
 #: apps/vendor/templates/vendor/vendor_admin.html:49
-#, fuzzy
-#| msgid "New order"
 msgid "My orders"
-msgstr "New order"
+msgstr "My orders"
 
 #: apps/vendor/templates/vendor/vendor_admin.html:72
 msgid "Paid"
