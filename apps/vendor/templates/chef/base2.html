@@ -1,74 +1,87 @@
-{% extends 'chef/base.html' %}
-{% load i18n %}
-{% block title %} {% translate "Chef" %} {% endblock %}
+{% extends 'chef/base.html' %} {% load i18n %} {% block title %} {% translate
+"Chef" %} {% endblock %} {% block script %}
+<script>
+  $(document).ready(function () {
+    var now = new Date();
+    setInterval(function () {
+      $.ajax({
+        url: "/api/restaurant/order/notification/" + now.toISOString() + "/",
+        method: "GET",
+        success: function (data) {
+          if (data["notification"] === 0) {
+            $(".badge").text("");
+          } else {
+            $(".badge").text(data["notification"]);
+          }
+        },
+      });
+    }, 3000);
+  });
+</script>
+{% endblock %} {% block sidebar %} {% url 'vendor:chef-order' as
+restaurant_order_url %} {% url 'vendor:chef-meal' as restaurant_meal_url %} {%
+url 'vendor:chef-report' as restaurant_report_url %} {% url
+'vendor:chef-customers' as restaurant_customers_url %} {% url
+'vendor:chef-drivers' as restaurant_drivers_url %} {% url 'vendor:chef-account'
+as restaurant_account_url %}
 
-{% block script %}
-    <script>
-        $(document).ready(function() {
-            var now = new Date();
-            setInterval(function() {
-                $.ajax({
-                    url: '/api/restaurant/order/notification/' + now.toISOString() + '/',
-                    method: 'GET',
-                    success: function(data) {
-                        if (data['notification'] === 0) {
-                            $('.badge').text('');
-                        } else {
-                            $('.badge').text(data['notification']);
-                        }
-                    }
-                })
-            }, 3000)
-        })
+<div class="text-center">
+  {% if chef.logo %}
+  <img
+    class="img-circle"
+    src="{{ MEDIA_URL }}{{ chef.logo.url }}"
+    width="70"
+    height="70"
+  />
+  {% endif %}
+  <br />
+  <br />
+  <h4>{% translate "Hi" %}, {{ chef.name }}</h4>
+  <h5>{{ chef.name }}</h5>
+</div>
 
-    </script>
+<div class="list-group">
+  <span class="text-uppercase">{% translate "Dashboard" %}</span>
+
+  <a
+    href="{% url 'vendor:chef-order' %}"
+    class="list-group-item {% if request.path == restaurant_order_url %} active {% endif %}"
+  >
+    {% translate "Orders" %}
+    <span class="badge"></span>
+  </a>
+  <a
+    href="{% url 'vendor:chef-meal' %}"
+    class="list-group-item {% if request.path == restaurant_meal_url %} active {% endif %}"
+    >{% translate "Meals" %}</a
+  >
+
+  <a
+    href="{% url 'vendor:chef-report' %}"
+    class="list-group-item {% if request.path == restaurant_report_url %} active {% endif %}"
+    >{% translate "Reports" %}</a
+  >
+
+  <a
+    href="{% url 'vendor:chef-customers' %}"
+    class="list-group-item {% if request.path == restaurant_customers_url %} active {% endif %}"
+    >{% translate "Customers" %}</a
+  >
+
+  <span class="text-uppercase">{% translate "Profile" %}</span>
+  <a
+    href="{% url 'vendor:chef-account' %}"
+    class="list-group-item {% if request.path == restaurant_account_url %} active {% endif %}"
+    >{% translate "Account" %}</a
+  >
+</div>
+
+<div class="text-center">
+  <a
+    href="{% url 'vendor:chef-sign-out' %}?next={{ request.path }}"
+    class="btn btn-pink"
+    >{% translate "Logout" %}</a
+  >
+</div>
+
 {% endblock %}
-
-{% block sidebar %}
-
-    {% url 'vendor:chef-order' as restaurant_order_url %}
-    {% url 'vendor:chef-meal' as restaurant_meal_url %}
-    {% url 'vendor:chef-report' as restaurant_report_url %}
-    {% url 'vendor:chef-customers' as restaurant_customers_url %}
-    {% url 'vendor:chef-drivers' as restaurant_drivers_url %}
-    {% url 'vendor:chef-account' as restaurant_account_url %}
-
-    <div class="text-center">
-        {% if chef.logo %}
-        <img class="img-circle" src="{{ MEDIA_URL }}{{ chef.logo.url }}"
-        width="70" height="70" />
-        {% endif %}
-      <br/>
-      <br/>
-      <h4>{% translate "Hi" %}, {{ chef.name }}</h4>
-      <h5>{{ chef.name }}</h5>
-    </div>
-
-    <div class="list-group">
-      <span class="text-uppercase">{% translate "Dashboard" %}</span>
-
-      <a href="{% url 'vendor:chef-order' %}"
-          class="list-group-item {% if request.path == restaurant_order_url %} active {% endif %} ">
-          {% translate "Orders" %}
-          <span class="badge"></span>
-      </a>
-      <a href="{% url 'vendor:chef-meal' %}"
-          class="list-group-item {% if request.path == restaurant_meal_url %} active {% endif %} ">{% translate "Meals" %}</a>
-            
-      <a href="{% url 'vendor:chef-report' %}"
-          class="list-group-item {% if request.path == restaurant_report_url %} active {% endif %} ">{% translate "Reports" %}</a>
-
-    <a href="{% url 'vendor:chef-customers' %}"
-        class="list-group-item {% if request.path == restaurant_customers_url %} active {% endif %} ">{% translate "Customers" %}</a>
-    
-      <span class="text-uppercase">{% translate "Profile" %}</span>
-      <a href="{% url 'vendor:chef-account' %}"
-          class="list-group-item {% if request.path == restaurant_account_url %} active {% endif %} ">{% translate "Account" %}</a>
-    </div>
-
-    <div class="text-center">
-      <a href="{% url 'vendor:chef-sign-out' %}?next={{ request.path }}"
-          class="btn btn-pink">{% translate "Logout" %}</a>
-    </div>
-
-{% endblock %}  

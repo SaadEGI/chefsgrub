@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-31 22:33+0000\n"
+"POT-Creation-Date: 2022-04-02 12:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: apps/core/templates/core/About.html:12
 #: apps/core/templates/core/contact.html:13
-#: apps/vendor/templates/chef/base2.html:64
+#: apps/vendor/templates/chef/base2.html:71
 msgid "Profile"
 msgstr "حساب شخصي"
 
@@ -47,7 +47,7 @@ msgid "Search"
 msgstr "البحث"
 
 #: apps/core/templates/core/base.html:51
-#: apps/vendor/templates/vendor/chef.html:47
+#: apps/vendor/templates/vendor/chef.html:52
 msgid "Contact"
 msgstr "تواصل"
 
@@ -105,10 +105,8 @@ msgid "Berlin"
 msgstr "برلين"
 
 #: apps/core/templates/core/base2.html:79
-#, fuzzy
-#| msgid "Select Location"
 msgid "Select Lanauge"
-msgstr "أختر الموقع"
+msgstr "أختر اللغة"
 
 #: apps/core/templates/core/base2.html:149
 #: apps/core/templates/core/base2.html:261
@@ -161,10 +159,8 @@ msgid "Privacy policy"
 msgstr "نهج الخصوصية"
 
 #: apps/core/templates/core/base2.html:211
-#, fuzzy
-#| msgid "Chef"
 msgid "For Chefs"
-msgstr "طاهي"
+msgstr "للطهاة"
 
 #: apps/core/templates/core/base2.html:213
 msgid "Chef's login"
@@ -176,11 +172,11 @@ msgstr "أنشأ حساب طاهي"
 
 #: apps/core/templates/core/base2.html:218
 msgid "Get to Know Us"
-msgstr ""
+msgstr "تعرف علينا"
 
 #: apps/core/templates/core/base2.html:234
 msgid "ChefsGrub All rights reserved"
-msgstr ""
+msgstr "جميع الحقوق محفوظة - ChefsGrub"
 
 #: apps/core/templates/core/base2.html:245
 msgid "Homepage"
@@ -258,10 +254,8 @@ msgid ""
 msgstr ""
 
 #: apps/core/templates/core/contact.html:28
-#, fuzzy
-#| msgid "Customer Name"
 msgid "Your Name"
-msgstr "اسم الزبون"
+msgstr "الاسم"
 
 #: apps/core/templates/core/contact.html:32
 #: apps/order/templates/order/email_notify_customer.html:37
@@ -322,8 +316,6 @@ msgstr "ايطالي"
 
 #: apps/core/templates/core/frontpage.html:124
 #: apps/core/templates/core/home-2.html:124
-#, fuzzy
-#| msgid "Ramadan Offers"
 msgid "Ramadan Special"
 msgstr "عروض رمضانية"
 
@@ -338,8 +330,6 @@ msgstr "جاهز في 8 ساعات"
 
 #: apps/core/templates/core/frontpage.html:158
 #: apps/core/templates/core/home-2.html:226
-#, fuzzy
-#| msgid "Most Popular"
 msgid "Most popular"
 msgstr "الأشهر"
 
@@ -510,7 +500,7 @@ msgid "View"
 msgstr ""
 
 #: apps/product/templates/product/product.html:46
-#: apps/vendor/templates/vendor/chef.html:124
+#: apps/vendor/templates/vendor/chef.html:133
 msgid "Add to cart"
 msgstr "أضف الى سلة المشتريات"
 
@@ -523,7 +513,7 @@ msgid "Search term"
 msgstr ""
 
 #: apps/vendor/templates/chef/account.html:8
-#: apps/vendor/templates/chef/base2.html:66
+#: apps/vendor/templates/chef/base2.html:75
 msgid "Account"
 msgstr "الحساب"
 
@@ -541,21 +531,15 @@ msgstr "أضف وجبة"
 msgid "Create"
 msgstr ""
 
-#: apps/vendor/templates/chef/base2.html:3
-#: apps/vendor/templates/chef/sign_in.html:5
-#: apps/vendor/templates/chef/sign_up.html:4
-msgid "Chef"
-msgstr "طاهي"
-
-#: apps/vendor/templates/chef/base2.html:43
+#: apps/vendor/templates/chef/base2.html:39
 msgid "Hi"
 msgstr "مرحبا"
 
-#: apps/vendor/templates/chef/base2.html:48
+#: apps/vendor/templates/chef/base2.html:44
 msgid "Dashboard"
 msgstr "اللوحة"
 
-#: apps/vendor/templates/chef/base2.html:52
+#: apps/vendor/templates/chef/base2.html:50
 #: apps/vendor/templates/chef/order.html:7
 msgid "Orders"
 msgstr "الطلبات"
@@ -565,16 +549,16 @@ msgstr "الطلبات"
 msgid "Meals"
 msgstr "الوجبات"
 
-#: apps/vendor/templates/chef/base2.html:59
+#: apps/vendor/templates/chef/base2.html:62
 msgid "Reports"
 msgstr "التقارير"
 
-#: apps/vendor/templates/chef/base2.html:62
+#: apps/vendor/templates/chef/base2.html:68
 #: apps/vendor/templates/chef/customers.html:7
 msgid "Customers"
 msgstr "الزبائن"
 
-#: apps/vendor/templates/chef/base2.html:71
+#: apps/vendor/templates/chef/base2.html:83
 msgid "Logout"
 msgstr "تسجيل الخروج"
 
@@ -613,18 +597,14 @@ msgid "Image"
 msgstr "صورة"
 
 #: apps/vendor/templates/chef/order.html:15
-#, fuzzy
-#| msgid "Details"
 msgid "Order Details"
-msgstr "التفاصيل"
+msgstr "تفاصيل الطلب"
 
 #: apps/vendor/templates/chef/order.html:16
 msgid "Customer"
 msgstr "الزبون"
 
 #: apps/vendor/templates/chef/order.html:17
-#, fuzzy
-#| msgid "Total"
 msgid "Total Paid"
 msgstr "المجموع"
 
@@ -686,6 +666,11 @@ msgstr ""
 msgid "Sign In"
 msgstr "تسجيل الدخول"
 
+#: apps/vendor/templates/chef/sign_in.html:5
+#: apps/vendor/templates/chef/sign_up.html:4
+msgid "Chef"
+msgstr "طاهي"
+
 #: apps/vendor/templates/chef/sign_in.html:13
 msgid "Become a Chef"
 msgstr "اشترك كطاهي"
@@ -704,18 +689,14 @@ msgstr "لديك حساب"
 #: apps/vendor/templates/vendor/add_product.html:3
 #: apps/vendor/templates/vendor/add_product.html:6
 #: apps/vendor/templates/vendor/vendor_admin.html:21
-#, fuzzy
-#| msgid "Product"
 msgid "Add product"
-msgstr "المنتج"
+msgstr "اضف منتجا"
 
 #: apps/vendor/templates/vendor/add_product.html:15
 msgid "Submit"
 msgstr "إرسال"
 
 #: apps/vendor/templates/vendor/become_vendor.html:15
-#, fuzzy
-#| msgid "Sign Up"
 msgid "Sign up"
 msgstr "اشترك"
 
@@ -726,48 +707,44 @@ msgstr "اشترك"
 msgid "Log in"
 msgstr "تسجيل الدخول"
 
-#: apps/vendor/templates/vendor/chef.html:29
+#: apps/vendor/templates/vendor/chef.html:30
 msgid "Reviews"
 msgstr "مراجعات"
 
-#: apps/vendor/templates/vendor/chef.html:35
-#, fuzzy
-#| msgid "Delivery Support"
+#: apps/vendor/templates/vendor/chef.html:38
 msgid "Delivery"
-msgstr "دعم التوصيل"
+msgstr "التوصيل"
 
-#: apps/vendor/templates/vendor/chef.html:36
+#: apps/vendor/templates/vendor/chef.html:40
 msgid "Free"
 msgstr "مجاني"
 
-#: apps/vendor/templates/vendor/chef.html:64
+#: apps/vendor/templates/vendor/chef.html:69
 msgid "MAIN ITEMS"
 msgstr ""
 
-#: apps/vendor/templates/vendor/chef.html:146
+#: apps/vendor/templates/vendor/chef.html:152
 msgid "Ratings and Reviews"
 msgstr ""
 
-#: apps/vendor/templates/vendor/chef.html:147
+#: apps/vendor/templates/vendor/chef.html:154
 msgid "Rated"
 msgstr "مقيم"
 
-#: apps/vendor/templates/vendor/chef.html:150
 #: apps/vendor/templates/vendor/chef.html:159
-#: apps/vendor/templates/vendor/chef.html:168
 #: apps/vendor/templates/vendor/chef.html:177
-#: apps/vendor/templates/vendor/chef.html:186
+#: apps/vendor/templates/vendor/chef.html:195
+#: apps/vendor/templates/vendor/chef.html:213
+#: apps/vendor/templates/vendor/chef.html:231
 msgid "Star"
 msgstr "نجمة"
 
-#: apps/vendor/templates/vendor/chef.html:195
+#: apps/vendor/templates/vendor/chef.html:250
 msgid "Rate and Review"
 msgstr "قيم"
 
 #: apps/vendor/templates/vendor/edit_product.html:3
 #: apps/vendor/templates/vendor/edit_product.html:6
-#, fuzzy
-#| msgid "Product"
 msgid "Edit product"
 msgstr "المنتج"
 
@@ -777,8 +754,6 @@ msgid "Save changes"
 msgstr "احفظ التغييرات"
 
 #: apps/vendor/templates/vendor/edit_product.html:22
-#, fuzzy
-#| msgid "Image"
 msgid "Images"
 msgstr "صورة"
 
@@ -788,14 +763,10 @@ msgstr "أضف صورة"
 
 #: apps/vendor/templates/vendor/edit_vendor.html:3
 #: apps/vendor/templates/vendor/edit_vendor.html:6
-#, fuzzy
-#| msgid "Edit Meal"
 msgid "Edit vendor"
 msgstr "عدل الوجبة"
 
 #: apps/vendor/templates/vendor/edit_vendor.html:12
-#, fuzzy
-#| msgid "Vendor admin"
 msgid "Vendor name"
 msgstr "Vendor admin"
 
@@ -808,27 +779,21 @@ msgid "My balance"
 msgstr "رصيدي"
 
 #: apps/vendor/templates/vendor/vendor_admin.html:10
-#, fuzzy
-#| msgid "My account"
 msgid "My paid amount"
 msgstr "حسابي"
 
 #: apps/vendor/templates/vendor/vendor_admin.html:14
 #: apps/vendor/templates/vendor/vendor_admin.html:38
-#, fuzzy
-#| msgid "Edit Meal"
 msgid "Edit"
-msgstr "عدل الوجبة"
+msgstr "عدل"
 
 #: apps/vendor/templates/vendor/vendor_admin.html:15
 msgid "Log out"
 msgstr "تسجيل الخروج"
 
 #: apps/vendor/templates/vendor/vendor_admin.html:19
-#, fuzzy
-#| msgid "Products"
 msgid "My products"
-msgstr "المنتجات"
+msgstr "منتجاتي"
 
 #: apps/vendor/templates/vendor/vendor_admin.html:27
 #: apps/vendor/templates/vendor/vendor_admin.html:69
@@ -836,8 +801,6 @@ msgid "Title"
 msgstr "عنوان"
 
 #: apps/vendor/templates/vendor/vendor_admin.html:29
-#, fuzzy
-#| msgid "Action"
 msgid "Actions"
 msgstr "فعل"
 
@@ -846,10 +809,8 @@ msgid "You don't have any products yet"
 msgstr "ليس لديك أي منتج"
 
 #: apps/vendor/templates/vendor/vendor_admin.html:49
-#, fuzzy
-#| msgid "New order"
 msgid "My orders"
-msgstr "طلب جديد"
+msgstr "طلباتي"
 
 #: apps/vendor/templates/vendor/vendor_admin.html:72
 msgid "Paid"
@@ -866,21 +827,3 @@ msgstr "انجليزي"
 #: interiorshop/settings.py:193
 msgid "Arabic"
 msgstr "العربية"
-
-#~ msgid "Choose your country"
-#~ msgstr "اختر دولتك"
-
-#~ msgid "Delivery support"
-#~ msgstr "دعم التوصيل"
-
-#~ msgid "Contant us"
-#~ msgstr "تواصل معنا"
-
-#~ msgid "Term of use"
-#~ msgstr "شروط الاستخدام"
-
-#~ msgid "Contact Us"
-#~ msgstr "تواصل معنا"
-
-#~ msgid "Email"
-#~ msgstr "البريد الالكتروني"
