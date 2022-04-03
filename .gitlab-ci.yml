@@ -36,7 +36,7 @@ deploy:
 
 deploy.production:
   stage: deploy
-  image: ubuntu:20.04
+  image: alpine:latest
   before_script:
     - apt-get install -y rsync
   script:
