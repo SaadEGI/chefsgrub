@@ -37,6 +37,8 @@ deploy:
 deploy.production:
   stage: deploy
   image: ubuntu:20.04
+  before_script:
+    - apt-get install -y rsync
   script:
     - echo -en $"ENVIRONMENT=production\nSECRET_KEY=$1\nDJANGO_SUPERUSER_PASSWORD=$ADMIN_PASSWORD" > .env
     - rsync -azv --stats -e "ssh -i $LIGHTSAIL_SSH_KEY"  ./ ubuntu@3.67.179.62:/home/ubuntu/ChefsGrub/live
