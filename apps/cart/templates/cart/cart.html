@@ -4,191 +4,329 @@
 
 {% block content %}
 
-    <div class="osahan-checkout">
-        <div class="d-none">
-            <div class="bg-primary border-bottom p-3 d-flex align-items-center">
-                <a class="toggle togglew toggle-2" href="#"><span></span></a>
-                <h4 class="font-weight-bold m-0 text-white">Checkout</h4>
+
+    {% if cart %}
+
+        <div class="osahan-checkout">
+            <div class="d-none">
+                <div class="bg-primary border-bottom p-3 d-flex align-items-center">
+                    <a class="toggle togglew toggle-2" href="#"><span></span></a>
+                    <h4 class="font-weight-bold m-0 text-white">Checkout</h4>
+                </div>
             </div>
-        </div>
-        <!-- checkout -->
-        <div class="container position-relative">
-            <div class="py-5 row">
-                <div class="col-md-8 mb-3">
-                    <div>
-                        <div class="osahan-cart-item mb-3 rounded shadow-sm bg-white overflow-hidden">
-                            <div class="osahan-cart-item-profile bg-white p-3">
-                                <div class="d-flex flex-column">
-                                    <h6 class="mb-3 font-weight-bold">Delivery Address</h6>
-                                    <div class="row">
-                                        <div class="custom-control col-lg-6 custom-radio mb-3 position-relative border-custom-radio">
-                                            <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" checked>
-                                            <label class="custom-control-label w-100" for="customRadioInline1">
-                                       <div>
-                                          <div class="p-3 bg-white rounded shadow-sm w-100">
-                                             <div class="d-flex align-items-center mb-2">
-                                                <h6 class="mb-0">Home</h6>
-                                                <p class="mb-0 badge badge-success ml-auto"><i class="icofont-check-circled"></i> Default</p>
-                                             </div>
-                                             <p class="small text-muted m-0">1001 Veterans Blvd</p>
-                                             <p class="small text-muted m-0">Redwood City, CA 94063</p>
-                                          </div>
-                                          <a href="#"  data-toggle="modal" data-target="#exampleModal" class="btn btn-block btn-light border-top">Edit</a>
-                                       </div>
-                                    </label>
-                                        </div>
-                                        <div class="custom-control col-lg-6 custom-radio position-relative border-custom-radio">
-                                            <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
-                                            <label class="custom-control-label w-100" for="customRadioInline2">
-                                       <div>
-                                          <div class="p-3 rounded bg-white shadow-sm w-100">
-                                             <div class="d-flex align-items-center mb-2">
-                                                <h6 class="mb-0">Work</h6>
-                                                <p class="mb-0 badge badge-light ml-auto"><i class="icofont-check-circled"></i> Select</p>
-                                             </div>
-                                             <p class="small text-muted m-0">Model Town, Ludhiana</p>
-                                             <p class="small text-muted m-0">Punjab 141002, India</p>
-                                          </div>
-                                          <a href="#"  data-toggle="modal" data-target="#exampleModal" class="btn btn-block btn-light border-top">Edit</a>
-                                       </div>
-                                    </label>
-                                        </div>
-                                    </div>
-                                    <a class="btn btn-primary" href="#" data-toggle="modal" data-target="#exampleModal"> ADD NEW ADDRESS </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion mb-3 rounded shadow-sm bg-white overflow-hidden" id="accordionExample">
-                            <div class="osahan-card bg-white border-bottom overflow-hidden">
-                                <div class="osahan-card-header" id="headingOne">
-                                    <h2 class="mb-0">
-                                        <button class="d-flex p-3 align-items-center btn btn-link w-100" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                 <i class="feather-credit-card mr-3"></i> Credit/Debit Card
-                                 <i class="feather-chevron-down ml-auto"></i>
-                                 </button>
-                                    </h2>
-                                </div>
-                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                                    <div class="osahan-card-body border-top p-3">
-                                        <h6 class="m-0">Add new card</h6>
-                                        <p class="small">WE ACCEPT <span class="osahan-card ml-2 font-weight-bold">( Master Card / Visa Card / Rupay )</span></p>
-                                        <form>
-                                            <div class="form-row">
-                                                <div class="col-md-12 form-group">
-                                                    <label class="form-label font-weight-bold small">Card number</label>
-                                                    <div class="input-group">
-                                                        <input placeholder="Card number" type="number" class="form-control">
-                                                        <div class="input-group-append"><button type="button" class="btn btn-outline-secondary"><i class="feather-credit-card"></i></button></div>
+            <!-- checkout -->
+            <div class="container position-relative">
+                <div class="py-5 row">
+                    <div class="col-md-8 mb-3">
+                        <div>
+                            <div class="osahan-cart-item mb-3 rounded shadow-sm bg-white overflow-hidden">
+                                <div class="osahan-cart-item-profile bg-white p-3">
+                                    <div class="d-flex flex-column">
+                                        <h6 class="mb-3 font-weight-bold">Delivery Address</h6>
+                                        <form method="post" action="." id="payment-form">
+                                            {% csrf_token %}
+
+                                            {% if form.non_field_errors %}
+                                                <div class="notification is-danger">
+                                                    {{ form.non_field_errors }}
+                                                </div>
+                                            {% endif %}
+
+                                            {% if form.errors %}
+                                                <div class="notification is-danger">
+                                                    <ul>
+                                                        {% for field in form %}
+                                                            {% for error in field.errors %}
+                                                                <li><strong>{{ field.label }}: </strong>{{ error }}</li>
+                                                            {% endfor %}
+                                                        {% endfor %}
+                                                    </ul>
+                                                </div>
+                                            {% endif %}
+
+                                            <div class="columns">
+                                                <div class="column is-6">
+                                                    <div class="field">
+
+                                                        <label>First name</label>
+
+
+                                                        <div class="control">
+                                                            <input class="col-md-12 form-group" type="text"
+                                                                   name="first_name">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="field">
+                                                        <label>Last name</label>
+
+                                                        <div class="control">
+                                                            <input class="col-md-12 form-group" type="text"
+                                                                   name="last_name">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="field">
+                                                        <label>E-mail</label>
+
+                                                        <div class="control">
+                                                            <input class="col-md-12 form-group" type="email"
+                                                                   name="email">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="field">
+                                                        <label>Phone</label>
+
+                                                        <div class="control">
+                                                            <input class="col-md-12 form-group" type="text"
+                                                                   name="phone">
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-8 form-group"><label class="form-label font-weight-bold small">Valid through(MM/YY)</label><input placeholder="Enter Valid through(MM/YY)" type="number" class="form-control"></div>
-                                                <div class="col-md-4 form-group"><label class="form-label font-weight-bold small">CVV</label><input placeholder="Enter CVV Number" type="number" class="form-control"></div>
-                                                <div class="col-md-12 form-group"><label class="form-label font-weight-bold small">Name on card</label><input placeholder="Enter Card number" type="text" class="form-control"></div>
-                                                <div class="col-md-12 form-group mb-0">
-                                                    <div class="custom-control custom-checkbox"><input type="checkbox" id="custom-checkbox1" class="custom-control-input"><label title="" type="checkbox" for="custom-checkbox1" class="custom-control-label small pt-1">Securely save this card for a faster checkout next time.</label></div>
+
+                                                <div class="column is-6">
+                                                    <div class="field">
+                                                        <label>Address</label>
+
+                                                        <div class="control">
+                                                            <input class="col-md-12 form-group" type="text"
+                                                                   name="address">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="field">
+                                                        <label>Zip code</label>
+
+                                                        <div class="control">
+                                                            <input class="col-md-12 form-group" type="text"
+                                                                   name="zipcode">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="field">
+                                                        <label>City</label>
+
+                                                        <div class="control">
+                                                            <input class="col-md-12 form-group" type="text"
+                                                                   name="place">
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </form>
+
+
                                     </div>
                                 </div>
                             </div>
-                            <div class="osahan-card bg-white overflow-hidden">
-                                <div class="osahan-card-header" id="headingThree">
-                                    <h2 class="mb-0">
-                                        <button class="d-flex p-3 align-items-center btn btn-link w-100" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                 <i class="feather-dollar-sign mr-3"></i> Paypal
-                                 <i class="feather-chevron-down ml-auto"></i>
-                                 </button>
-                                    </h2>
+                            <div class="accordion mb-3 rounded shadow-sm bg-white overflow-hidden"
+                                 id="accordionExample">
+                                <div class="osahan-card bg-white border-bottom overflow-hidden">
+                                    <div class="osahan-card-header" id="headingOne">
+                                        <h2 class="mb-0">
+                                            <button class="d-flex p-3 align-items-center btn btn-link w-100"
+                                                    type="button" data-toggle="collapse" data-target="#collapseOne"
+                                                    aria-expanded="true" aria-controls="collapseOne">
+                                                <i class="feather-credit-card mr-3"></i> PayPal
+                                                <i class="feather-chevron-down ml-auto"></i>
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                         data-parent="#accordionExample">
+                                        <div class="osahan-card-body border-top p-3">
+
+
+                                            <div id="paypal-button-container"></div>
+                                            <script src="https://www.paypal.com/sdk/js?client-id=AYoam_YecYQZydznsG1pjoa0_ocXMBzQ6gPJXsirScWO-eJErlqq73BSPi1x6pIB62IIXUUlDH2OCghU&currency=EUR&disable-funding=card"></script>
+                                            <script>
+                                                // Render the PayPal button into #paypal-button-container
+                                                function getCookie(name) {
+                                                    var cookieValue = null;
+                                                    if (document.cookie && document.cookie !== '') {
+                                                        var cookies = document.cookie.split(';');
+                                                        for (var i = 0; i < cookies.length; i++) {
+                                                            var cookie = cookies[i].trim();
+                                                            // Does this cookie string begin with the name we want?
+                                                            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                                                                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                                                                break;
+                                                            }
+                                                        }
+                                                    }
+                                                    return cookieValue;
+                                                }
+
+                                                var csrftoken = getCookie('csrftoken');
+
+                                                var total = '{{product.price}}'
+                                                var productId = '{{product.id}}'
+
+                                                function completeOrder() {
+                                                    var url = "/cart/success/"
+
+                                                    fetch(url, {
+                                                        method: 'POST',
+                                                        headers: {
+                                                            'Content-type': 'application/json',
+                                                            'X-CSRFToken': csrftoken,
+                                                        },
+                                                        body: JSON.stringify({'productId': productId})
+                                                    })
+                                                }
+
+                                                paypal.Buttons({
+
+                                                    // Set up the transaction
+                                                    createOrder: function (data, actions) {
+                                                        return actions.order.create({
+                                                            purchase_units: [{
+                                                                amount: {
+                                                                    value: '{{ cart.get_total_cost }}'
+                                                                }
+                                                            }]
+                                                        });
+                                                    },
+
+                                                    // Finalize the transaction
+                                                    onApprove: function (data, actions) {
+                                                        return actions.order.capture().then(function (orderData) {
+                                                            // Successful capture! For demo purposes:
+                                                            console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                                                            var transaction = orderData.purchase_units[0].payments.captures[0];
+                                                            completeOrder()
+                                                            alert('Transaction ' + transaction.status + ': ' + transaction.id + '\n\nSee console for all available details');
+
+                                                            // Replace the above to show a success message within this page, e.g.
+                                                            // const element = document.getElementById('paypal-button-container');
+                                                            // element.innerHTML = '';
+                                                            // element.innerHTML = '<h3>Thank you for your payment!</h3>';
+                                                            // Or go to another URL:  actions.redirect('thank_you.html');
+                                                        });
+                                                    }
+
+
+                                                }).render('#paypal-button-container');
+                                            </script>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                                    <div id="paypal-button" style="width: 200px"></div>
 
-
-<script>
-
-paypal.Button.render({
-
- style: {
-
- size: 'responsive'
-
- }
-
-});
-
-</script>
-                                </div>
-                            </div>
-                            <div class="osahan-card bg-white overflow-hidden">
-                                <div class="osahan-card-header" id="headingThree">
-                                    <h2 class="mb-0">
-                                        <button class="d-flex p-3 align-items-center btn btn-link w-100" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                 <i class="feather-dollar-sign mr-3"></i> Cash on Delivery
-                                 <i class="feather-chevron-down ml-auto"></i>
-                                 </button>
-                                    </h2>
-                                </div>
-                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                                    <div class="card-body border-top">
-                                        <h6 class="mb-3 mt-0 mb-3 font-weight-bold">Cash</h6>
-                                        <p class="m-0">Please keep exact change handy to help us serve you better</p>
+                                <div class="osahan-card bg-white overflow-hidden">
+                                    <div class="osahan-card-header" id="headingThree">
+                                        <h2 class="mb-0">
+                                            <button class="d-flex p-3 align-items-center btn btn-link w-100"
+                                                    type="button" data-toggle="collapse" data-target="#collapseThree"
+                                                    aria-expanded="false" aria-controls="collapseThree">
+                                                <i class="feather-dollar-sign mr-3"></i> Cash on Delivery
+                                                <i class="feather-chevron-down ml-auto"></i>
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                         data-parent="#accordionExample">
+                                        <div class="card-body border-top">
+                                            <h6 class="mb-3 mt-0 mb-3 font-weight-bold">Cash</h6>
+                                            <p class="m-0">Please keep exact change handy to help us serve you
+                                                better</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="osahan-cart-item rounded rounded shadow-sm overflow-hidden bg-white sticky_sidebar">
-                        <div class="d-flex border-bottom osahan-cart-item-profile bg-white p-3">
-                            <img alt="osahan" src=" {% static 'img/starter1.jpg' %} " class="mr-3 rounded-circle img-fluid">
-                            <div class="d-flex flex-column">
-                                <h6 class="mb-1 font-weight-bold">{{ vendor.name }}</h6>
+                    <div class="col-md-4">
+                        <div class="osahan-cart-item rounded rounded shadow-sm overflow-hidden bg-white sticky_sidebar">
+                            <div class="d-flex border-bottom osahan-cart-item-profile bg-white p-3">
+                                <img alt="osahan" src=" {{ vendor.image }} " class="mr-3 rounded-circle img-fluid">
+                                <div class="d-flex flex-column">
+                                    <h6 class="mb-1 font-weight-bold">{{ vendor.name }}</h6>
 
+                                </div>
                             </div>
-                        </div>
-                        <div class="bg-white border-bottom py-2">
-                            {% for item in cart %}
-                            <div class="gold-members d-flex align-items-center justify-content-between px-3 py-2 border-bottom">
-                                <div class="media align-items-center">
-                                    <div class="mr-2 text-danger">&middot;</div>
-                                    <div class="media-body">
-                                        <p class="m-0">{{ item.product.title }}</p>
+                            <div class="bg-white border-bottom py-2">
+                                {% for item in cart %}
+                                    <div class="gold-members d-flex align-items-center justify-content-between px-3 py-2 border-bottom">
+                                        <div class="media align-items-center">
+                                            <div class="mr-2 text-danger">&middot;</div>
+                                            <div class="media-body">
+                                                <p class="m-0">{{ item.product.title }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <a href="?change_quantity={{ item.id }}&quantity=-1"
+                                               class="btn-sm right inc btn btn-outline-secondary">-</a>
+                                            <span class="count-number float-right"><input class="count-number-input"
+                                                                                          type="text" readonly=""
+                                                                                          value="{{ item.quantity }}"></span>
+                                            <a href="?change_quantity={{ item.id }}&quantity=1"
+                                               class="btn-sm right inc btn btn-outline-secondary">+</a>
+
+                                            <td><a href="?remove_from_cart={{ item.id }}" class="delete">Remove</a></td>
+                                            <p class="text-gray mb-0 float-right ml-2 text-muted small">{{ item.product.price }}</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <span class="count-number float-right"><button href="?change_quantity={{ item.id }}&quantity=-1" type="button" class="btn-sm left dec btn btn-outline-secondary"> <i class="feather-minus"></i> </button><input class="count-number-input" type="text" readonly="" value="{{ item.quantity }}"><button type="button" href="?change_quantity={{ item.id }}&quantity=1" class="btn-sm right inc btn btn-outline-secondary"> <i class="feather-plus"></i> </button></span>
-                                    <p class="text-gray mb-0 float-right ml-2 text-muted small">$628</p>
-                                </div>
-                            </div>
-                            {% endfor %}
+                                {% endfor %}
 
-                        </div>
-                        <div class="bg-white p-3 py-3 border-bottom clearfix">
-                            <div class="input-group-sm mb-2 input-group">
-                                <input placeholder="Enter promo code" type="text" class="form-control">
-                                <div class="input-group-append"><button type="button" class="btn btn-primary"><i class="feather-percent"></i> APPLY</button></div>
                             </div>
-                            <div class="mb-0 input-group">
-                                <div class="input-group-prepend"><span class="input-group-text"><i class="feather-message-square"></i></span></div>
-                                <textarea placeholder="Any suggestions? We will pass it on..." aria-label="With textarea" class="form-control"></textarea>
-                            </div>
-                        </div>
-                        <div class="bg-white p-3 clearfix border-bottom">
-                            <p class="mb-1">Item Total <span class="float-right text-dark">{{ cart.get_total_cost }}</span></p>
-                            <p class="mb-1">Delivery Fee<span class="text-info ml-1"><i class="feather-info"></i></span><span class="float-right text-dark">Free</span></p>
+                            <div class="bg-white p-3 py-3 border-bottom clearfix">
 
-                            <hr>
-                            <h6 class="font-weight-bold mb-0">TO PAY <span class="float-right">{{ cart.get_total_cost }} €</span></h6>
-                        </div>
-                        <div class="p-3">
-                            <a class="btn btn-success btn-block btn-lg" href=" {% static 'successful.html' %} ">PAY {{ cart.get_total_cost }} €<i class="feather-arrow-right"></i></a>
+                                <div class="mb-0 input-group">
+                                    <div class="input-group-prepend"><span class="input-group-text"><i
+                                            class="feather-message-square"></i></span></div>
+                                    <textarea placeholder="Any suggestions? We will pass it on..."
+                                              aria-label="With textarea" class="form-control"></textarea>
+                                </div>
+                            </div>
+                            <div class="bg-white p-3 clearfix border-bottom">
+                                <p class="mb-1">Item Total <span
+                                        class="float-right text-dark">{{ cart.get_total_cost }}</span></p>
+                                <p class="mb-1">Delivery Fee<span class="text-info ml-1"><i
+                                        class="feather-info"></i></span><span class="float-right text-dark">Free</span>
+                                </p>
+
+                                <hr>
+                                <h6 class="font-weight-bold mb-0">TO PAY <span
+                                        class="float-right">{{ cart.get_total_cost }} €</span></h6>
+                            </div>
+
+                            <div class="field">
+                                <div class="control">
+                                    <button class="btn btn-success btn-block btn-lg">PAY {{ cart.get_total_cost }} €
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+
+    {% else %}
+        <div class="container-fluid mt-100">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+
+                        <div class="card-body cart">
+                            <div class="col-sm-12 empty-cart-cls text-center"><img src="https://i.imgur.com/dCdflKN.png"
+                                                                                   width="130" height="130"
+                                                                                   class="img-fluid mb-4 mr-3">
+                                <h3><strong>Your Cart is Empty</strong></h3>
+                                <h4>Add something to make me happy :)</h4> <a href="/"
+                                                                              class="btn btn-primary cart-btn-transform m-3"
+                                                                              data-abc="true">continue shopping</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% endif %}
+
+
+
+
 
 {% endblock %}

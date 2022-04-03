@@ -45,6 +45,10 @@ else:
 
 ALLOWED_HOSTS = ['*']
 
+## to fix the problem of using chefgrub.com
+CSRF_TRUSTED_ORIGINS = ['https://chefsgrub.com']
+
+
 STRIPE_PUB_KEY = 'pk_test_51HIHiuKBJV2qfWbD2gQe6aqanfw6Eyul5P02KeOuSR1UMuaV4TxEtaQyzr9DbLITSZweL7XjK3p74swcGYrE2qEX00Hz7GmhMI'
 STRIPE_SECRET_KEY = 'sk_test_51HIHiuKBJV2qfWbD4I9pAODack7r7r9LJOY65zSFx7jUUwgy2nfKEgQGvorv1p2xP7tgMsJ5N9EW7K1lBdPnFnyK00kdrS27cj'
 
@@ -57,10 +61,30 @@ CART_SESSION_ID = 'cart'
 
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = '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'
+EMAIL_HOST_PASSWORD = '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'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-DEFAULT_EMAIL_FROM = 'Interiorstore <noreply@codewithstein.com>'
+DEFAULT_EMAIL_FROM = 'ChefGrub <strtporg@gmail.com>'
+
+#AWS
+
+AWS_ACCESS_KEY_ID = 'AKIAYBSI6JJQ2JZRBFG7'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'herokuappuploadimages'
+AWS_S_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+#AWS_S3_REGION_NAME = "ap-south-1"
+AWS_S3_SIGNATURE_VERSION = 's3v4'
+AWS_S3_REGION_NAME = 'eu-central-1'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+#TAWKTO live chat
+
+TAWKTO_ID_SITE='<62484c252abe5b455fc38fd6>'
+TAWKTO_API_KEY='<tawkto api key>'
+TAWKTO_IS_SECURE=True
+
+
 
 # Application definition
 
@@ -75,7 +99,11 @@ INSTALLED_APPS = [
     'apps.core',
     'apps.order',
     'apps.product',
-    'apps.vendor'
+    'apps.vendor',
+    'django_extensions',
+    'storages',
+    'tawkto',
+
 ]
 
 MIDDLEWARE = [
@@ -124,13 +152,14 @@ WSGI_APPLICATION = 'interiorshop.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'CHEFSGRUB', 
-        'USER': 'strtpadmin', 
+        'NAME': 'CHEFSGRUB',
+        'USER': 'strtpadmin',
         'PASSWORD': 'strtpadmin',
         'HOST': '127.0.0.1', 
         'PORT': '5432',
     }
 }
+#strtpadmin
 if PRODUCTION:# or ENVIRONMENT == 'staging':
     DATABASES['default'] = dj_database_url.config()
 

@@ -1,7 +1,18 @@
-{% extends 'core/base.html' %}
+{% extends 'core/base2.html' %}
 
 {% block title %}Success | {% endblock %}
 
 {% block content %}
     <h1 class="title">Thanks for the order</h1>
+    <div class="jumbotron text-center">
+  <h1 class="display-3">Thank You!</h1>
+  <p class="lead"><strong>Please check your email</strong> for further details.</p>
+  <hr>
+  <p>
+    Having trouble? <a href="/contact">Contact us</a>
+  </p>
+  <p class="lead">
+    <a class="btn btn-primary btn-sm" href="/" role="button">Continue to homepage</a>
+  </p>
+</div>
 {% endblock %}

@@ -1,5 +1,5 @@
 from io import BytesIO
-from PIL import Image
+from PIL import Image, ImageOps
 
 from django.core.files import File
 from django.db import models
@@ -23,13 +23,14 @@ class Product(models.Model):
     category = models.ForeignKey(Category, related_name="products", on_delete=models.CASCADE)
     vendor = models.ForeignKey(Vendor, related_name="products", on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
-    id = models.AutoField(primary_key=True)
-
+    #id = models.AutoField(primary_key=True)
+    slug = models.SlugField(max_length=255, default='SOME')
     description = models.TextField(blank=True, null=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     date_added = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to="uploads/", default=None, blank=True, null=True)
     thumbnail = models.ImageField(upload_to="uploads/", blank=True, null=True)
+    trendingimage = models.ImageField(upload_to="uploads/trendingimages", blank=True, null=True)
 
     class Meta:
         ordering = ["-date_added"]
@@ -49,23 +50,54 @@ class Product(models.Model):
             else:
                 return "https://via.placeholder.com/240x180.jpg"
 
-    def make_thumbnail(self, image, size=(300, 200)):
+    def make_thumbnail(self, image, size=(200, 100)):
+        #img = Image.open(image)
+        #img.convert("RGB")
         img = Image.open(image)
-        img.convert("RGB")
-        img.thumbnail(size)
+        rgb_img = img.convert('RGB')
+        rgb_img.thumbnail(size)
 
         thumb_io = BytesIO()
-        img.save(thumb_io, "JPEG", quality=85)
+        rgb_img.save(thumb_io, "JPEG", quality=85)
 
         thumbnail = File(thumb_io, name=image.name)
 
         return thumbnail
+
+    def get_trendingimage(self):
+        if self.trendingimage:
+            return self.trendingimage.url
+        else:
+            if self.image:
+                self.trendingimage = self.make_trendingimage(self.image)
+                self.save()
+
+                return self.trendingimage.url
+            else:
+                return "https://via.placeholder.com/240x180.jpg"
+
+    def make_trendingimage(self, image, size=(508, 320)):
+        #img = Image.open(image)
+        #img.convert("RGB")
+        img = Image.open(image)
+        rgb_img = img.convert('RGB')
+        rgb_img = ImageOps.crop(rgb_img, 20)
+        rgb_img = rgb_img.resize(size)
+
+        thumb_io = BytesIO()
+        rgb_img.save(thumb_io, "JPEG", quality=85)
+
+
+        trendingimage = File(thumb_io, name=image.name)
+
+        return trendingimage
 
 
 class ProductImage(models.Model):
     product = models.ForeignKey(Product, related_name="images", on_delete=models.CASCADE)
     image = models.ImageField(upload_to="uploads/", blank=True, null=True)
     thumbnail = models.ImageField(upload_to="uploads/", blank=True, null=True)
+    trendingimage = models.ImageField(upload_to="uploads/", blank=True, null=True)
 
     def get_thumbnail(self):
         if self.thumbnail:
@@ -81,6 +113,7 @@ class ProductImage(models.Model):
 
     def make_thumbnail(self, image, size=(300, 200)):
         img = Image.open(image)
+        print(image.size)
         img.convert("RGB")
         img.thumbnail(size)
 
@@ -90,3 +123,4 @@ class ProductImage(models.Model):
         thumbnail = File(thumb_io, name=image.name)
 
         return thumbnail
+

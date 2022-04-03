@@ -1,7 +1,42 @@
-{% extends 'core/base.html' %}
+{% extends 'core/base2.html' %}
 
-{% block title %}Contact | {% endblock %}
+{% load static %}
 
 {% block content %}
-    <h1>Contact</h1>
+
+
+
+    <div class="osahan-profile">
+        <div class="d-none">
+            <div class="bg-primary border-bottom p-3 d-flex align-items-center">
+                <a class="toggle togglew toggle-2" href="#"><span></span></a>
+                <h4 class="font-weight-bold m-0 text-white">Profile</h4>
+            </div>
+        </div>
+        <!-- profile -->
+        <div class="container position-relative">
+            <div class="py-5 osahan-profile row">
+
+
+                <div class="">
+                    <div class="rounded shadow-sm">
+                        <div class="osahan-cart-item-profile bg-white rounded shadow-sm p-4">
+                            <div class="flex-column">
+                                <h6 class="font-weight-bold">Whether you have questions or you would just like to say hello, Please contact us!</h6>
+                                <form method="post">
+                                     {% csrf_token %}
+                                    <form method="post">
+        {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit">Submit</button>
+  
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
 {% endblock %}

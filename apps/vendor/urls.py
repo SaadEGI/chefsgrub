@@ -4,9 +4,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-# Views for customers @ /chef
-    path('', views.vendors, name='vendors'),
-    path('<int:vendor_id>/', views.vendor, name='vendor'),
 
 
 
@@ -26,4 +23,7 @@ urlpatterns = [
          {'next_page': '/'}, name='chef-sign-out'),
     path('meal/add/', views.chef_add_meal, name='chef-add-meal'),
     path('meal/edit/<int:meal_id>', views.chef_edit_meal, name='chef-edit-meal'),
+# Views for customers @ /chef
+    path('<str:vendorName>/', views.vendor, name='vendor'),
+    path('', views.vendors, name='vendors'),
 ]

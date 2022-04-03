@@ -1,4 +1,5 @@
 from django import forms
 
 class AddToCartForm(forms.Form):
-    quantity = forms.IntegerField()
+    quantity = 1
+    product_id = forms.IntegerField()
