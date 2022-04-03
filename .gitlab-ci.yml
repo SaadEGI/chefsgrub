@@ -36,7 +36,7 @@ deploy:
 
 deploy.production:
   stage: deploy
-  image: alpine:latest
+  image: ubuntu:20.04
   before_script:
   - apk update && apk add openssh-client rsync
   - eval $(ssh-agent -s)
