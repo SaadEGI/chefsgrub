@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-03 13:46+0000\n"
+"POT-Creation-Date: 2022-04-03 20:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: apps/core/templates/core/About.html:12
 #: apps/core/templates/core/contact.html:13
-#: apps/vendor/templates/chef/base2.html:71
+#: apps/vendor/templates/chef/base2.html:69
 msgid "Profile"
 msgstr "Profil"
 
@@ -36,10 +36,12 @@ msgid ""
 "cooked food, are eager to try  food from other cultures or want to have "
 "their meals planned and delivered for the week."
 msgstr ""
-"ChefsGrub ist eine Plattform, die es Hobbyköchen ermöglicht, ihre kulinarischen Dienste von ihrer privaten"
-" Küche aus Kunden anzubieten, die auf der Suche nach schwer zu findenden Gerichten aus ihrer Heimat sind,"
-" gesündere, selbst gekochte Speisen wünschen, gerne Speisen aus anderen Kulturen probieren oder ihre Mahlzeiten"
-" für die Woche planen und liefern lassen möchten. "
+"ChefsGrub ist eine Plattform, die es Hobbyköchen ermöglicht, ihre "
+"kulinarischen Dienste von ihrer privaten Küche aus Kunden anzubieten, die "
+"auf der Suche nach schwer zu findenden Gerichten aus ihrer Heimat sind, "
+"gesündere, selbst gekochte Speisen wünschen, gerne Speisen aus anderen "
+"Kulturen probieren oder ihre Mahlzeiten für die Woche planen und liefern "
+"lassen möchten. "
 
 #: apps/core/templates/core/About.html:30
 msgid ""
@@ -48,10 +50,12 @@ msgid ""
 "they sell. Customers can register, order a home-cooked meal, and pay for "
 "their order"
 msgstr ""
-"ChefsGrub ist im Grunde eine Plattform für die Bestellung und Lieferung"
-" von hausgemachten Gerichten. Köche können sich registrieren, ihre Mahlzeiten"
-" einstellen und werden für die verkauften Mahlzeiten bezahlt. Kunden können sich"
-" registrieren, ein selbstgekochtes Essen bestellen und für ihre Bestellung bezahlen. "
+"ChefsGrub ist im Grunde eine Plattform für die Bestellung und Lieferung von "
+"hausgemachten Gerichten. Köche können sich registrieren, ihre Mahlzeiten "
+"einstellen und werden für die verkauften Mahlzeiten bezahlt. Kunden können "
+"sich registrieren, ein selbstgekochtes Essen bestellen und für ihre "
+"Bestellung bezahlen. "
+
 #: apps/core/templates/core/About.html:32
 msgid ""
 "Customers can either pick up their order, or choose our delivery service"
@@ -92,6 +96,7 @@ msgid "Search"
 msgstr "Suche"
 
 #: apps/core/templates/core/base.html:51
+#: apps/vendor/templates/vendor/chef.html:47
 msgid "Contact"
 msgstr "Kontakt"
 
@@ -549,7 +554,7 @@ msgid "View"
 msgstr "Ansicht"
 
 #: apps/product/templates/product/product.html:46
-#: apps/vendor/templates/vendor/chef.html:121
+#: apps/vendor/templates/vendor/chef.html:105
 msgid "Add to cart"
 msgstr "Zum Einkaufswagen hinzufügen"
 
@@ -562,7 +567,7 @@ msgid "Search term"
 msgstr "Produkt suchen"
 
 #: apps/vendor/templates/chef/account.html:8
-#: apps/vendor/templates/chef/base2.html:75
+#: apps/vendor/templates/chef/base2.html:73
 msgid "Account"
 msgstr "Konto"
 
@@ -580,34 +585,41 @@ msgstr "Mahlzeit hinzufügen"
 msgid "Create"
 msgstr ""
 
-#: apps/vendor/templates/chef/base2.html:39
+#: apps/vendor/templates/chef/base2.html:1
+#: apps/vendor/templates/chef/sign_in.html:5
+#: apps/vendor/templates/chef/sign_up.html:4
+#: apps/vendor/templates/vendor/chef.html:6
+msgid "Chef"
+msgstr "Chef"
+
+#: apps/vendor/templates/chef/base2.html:37
 msgid "Hi"
 msgstr "Hi"
 
-#: apps/vendor/templates/chef/base2.html:44
+#: apps/vendor/templates/chef/base2.html:42
 msgid "Dashboard"
 msgstr "Tafel"
 
-#: apps/vendor/templates/chef/base2.html:50
+#: apps/vendor/templates/chef/base2.html:48
 #: apps/vendor/templates/chef/order.html:7
 msgid "Orders"
 msgstr "Bestellungen"
 
-#: apps/vendor/templates/chef/base2.html:56
+#: apps/vendor/templates/chef/base2.html:54
 #: apps/vendor/templates/chef/meal.html:7
 msgid "Meals"
 msgstr "Mahlzeiten"
 
-#: apps/vendor/templates/chef/base2.html:62
+#: apps/vendor/templates/chef/base2.html:60
 msgid "Reports"
 msgstr "Berichte"
 
-#: apps/vendor/templates/chef/base2.html:68
+#: apps/vendor/templates/chef/base2.html:66
 #: apps/vendor/templates/chef/customers.html:7
 msgid "Customers"
 msgstr "Kunden"
 
-#: apps/vendor/templates/chef/base2.html:83
+#: apps/vendor/templates/chef/base2.html:81
 msgid "Logout"
 msgstr "Ausloggen"
 
@@ -715,11 +727,6 @@ msgstr ""
 msgid "Sign In"
 msgstr "Einloggen"
 
-#: apps/vendor/templates/chef/sign_in.html:5
-#: apps/vendor/templates/chef/sign_up.html:4
-msgid "Chef"
-msgstr "Chef"
-
 #: apps/vendor/templates/chef/sign_in.html:13
 msgid "Become a Chef"
 msgstr "Werde Chef"
@@ -756,8 +763,34 @@ msgstr "Konto erstellen"
 msgid "Log in"
 msgstr "Einloggen"
 
+#: apps/vendor/templates/vendor/chef.html:28
+msgid "Reviews"
+msgstr ""
+
+#: apps/vendor/templates/vendor/chef.html:34
+#, fuzzy
+#| msgid "Delivery Support"
+msgid "Delivery"
+msgstr "Lieferungunterstützung"
+
 #: apps/vendor/templates/vendor/chef.html:65
 msgid "MAIN ITEMS"
+msgstr ""
+
+#: apps/vendor/templates/vendor/chef.html:146
+msgid "Ratings and Reviews"
+msgstr ""
+
+#: apps/vendor/templates/vendor/chef.html:150
+#: apps/vendor/templates/vendor/chef.html:160
+#: apps/vendor/templates/vendor/chef.html:170
+#: apps/vendor/templates/vendor/chef.html:180
+#: apps/vendor/templates/vendor/chef.html:190
+msgid "Star"
+msgstr ""
+
+#: apps/vendor/templates/vendor/chef.html:201
+msgid "Rate and Review"
 msgstr ""
 
 #: apps/vendor/templates/vendor/edit_product.html:3

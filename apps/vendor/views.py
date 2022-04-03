@@ -191,7 +191,7 @@ def chef_add_meal(request):
             product.slug = slugify(product.title)
             product.save()
 
-            return redirect("chef-meal")
+            return redirect("vendor:chef-meal")
     else:
         form = forms.ProductForm()
 
