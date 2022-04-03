@@ -19,6 +19,6 @@ server:
 	pip3 install -r requirements.txt
 	python3 manage.py makemigrations
 	python3 manage.py migrate
-	python3 manage.py collectstatic
+	python3 manage.py collectstatic --no-input
 	gunicorn --bind 0.0.0.0:8800 interiorshop.wsgi:application
 	sudo /etc/init.d/nginx restart
