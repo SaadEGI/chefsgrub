@@ -17,15 +17,15 @@ import dj_database_url
 
 
 
-env = environ.Env()
-environ.Env.read_env()
 BASE_DIR = Path(__file__).resolve().parent.parent
+env = environ.Env()
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 
 PRODUCTION = os.environ.get('DATABASE_URL') != None
 ENVIRONMENT = os.environ.get('ENVIRONMENT')
 # SECRET_KEY = 'wmmx*^_i6@p)kP5nxa=89byfm0=gzc_h%13q)*7g7+181rk0po' # TODO: get from os.environ.get('SECRET_KEY), inject it in pipeline
-if(ENVIRONMENT == 'staging' or ENVIRONMENT == 'production'):
+if(ENVIRONMENT == 'production'):
     SECRET_KEY = os.environ.get("SECRET_KEY")
 else:
     SECRET_KEY = 'tuxik&w(xnck86#t!asbp67u$##glq!#08y35%2kxrt!-3i%0n'
@@ -89,6 +89,7 @@ TAWKTO_IS_SECURE=True
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
