@@ -30,3 +30,30 @@ deploy:
     - develop
   tags:
     - dockerRunner
+  artifacts:
+    untracked: true
+    expire_in: 30 days
+
+deploy.production:
+  stage: deploy
+  image: alpine:latest
+  before_script:
+    - apk update && apk add openssh-client rsync
+  script:
+    - eval $(ssh-agent -s)
+    - echo "$LIGHTSAIL_SSH_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - echo "${LIGHTSAIL_HOST_KEY}" > ~/.ssh/known_hosts
+    - echo -en $"ENVIRONMENT=production\nSECRET_KEY=$1\nDJANGO_SUPERUSER_PASSWORD=$ADMIN_PASSWORD" > .env
+    - rsync -azv --stats -e ssh ./ ubuntu@3.67.179.62:/home/ubuntu/ChefsGrub/live
+    - ssh ubuntu@3.67.179.62 'cd ChefsGrub/live; make server;'
+  environment:
+    name: production
+    url: $AWS_APP_HOST
+  only: 
+    - main
+  tags:
+    - dockerRunner
+  artifacts:
+    untracked: true
+    expire_in: 30 days

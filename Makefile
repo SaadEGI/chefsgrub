@@ -1,20 +1,25 @@
 deleteDB:
-	python3 manage.py flush --no-input
-	python3 manage.py reset_db --noinput
-	rm -r apps/*/migrations/0* apps/*/__pycache__ apps/*/migrations/__pycache__ interiorshop/__pycache__
+	rm db.sqlite3 apps/*/migrations/0*
 migrate:
-	python3 manage.py makemigrations vendor core cart product order
+	python3 manage.py makemigrations
 	python3 manage.py migrate
 venv:
 	python3 -m venv venv
 	. venv/bin/activate
 	pip3 install -r requirements.txt
-	python3 manage.py makemigrations vendor core cart product order
+	python3 manage.py makemigrations
 	python3 manage.py migrate
 updateDependencies:
 	pip3 freeze > requirements.txt
 createSuperUser:
 	python3 manage.py createsuperuser --username superuser --email sufian5@live.com --noinput
-	# https://www.oreilly.com/library/view/managing-projects-with/0596006101/ch07.html
-run: 
-	python3 manage.py runserver
+server:
+	python3 -m venv venv
+	. venv/bin/activate
+	pip3 install -r requirements.txt
+	python3 manage.py makemigrations
+	python3 manage.py migrate
+	python3 manage.py collectstatic --no-input
+	# gunicorn --bind 0.0.0.0:8800 interiorshop.wsgi:application
+	sudo systemctl restart nginx 
+	sudo /etc/init.d/nginx restart
