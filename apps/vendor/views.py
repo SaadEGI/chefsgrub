@@ -54,8 +54,9 @@ def vendors(request):
 def vendor(request, vendorName):
     vendor = get_object_or_404(Vendor, pk=vendorName)
     cart = Cart(request)
-
-
+    imagesstring = '{"thumbnail": "%s","image": "%s", "id": "mainimage"},' % (
+        vendor.get_thumbnail(), vendor.logo.url)
+    print(imagesstring)
     if request.method == 'POST':
         form = AddToCartForm(request.POST)
 
@@ -73,7 +74,7 @@ def vendor(request, vendorName):
     else:
         form = AddToCartForm()
 
-    return render(request, 'vendor/chef.html', {'form': form ,'vendor': vendor})
+    return render(request, 'vendor/chef.html', {'form': form ,'vendor': vendor,'imagesstring': "[" + imagesstring.rstrip(',') + "]"})
 
 
 

@@ -44,7 +44,7 @@ class Vendor(models.Model):
     def make_thumbnail(self, logo, size=(300, 200)):
             # img = Image.open(image)
             # img.convert("RGB")
-            img = logo.open(logo)
+            img = Image.open(logo)
             rgb_img = img.convert('RGB')
             rgb_img.thumbnail(size)
 
