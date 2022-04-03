@@ -13,4 +13,12 @@ updateDependencies:
 	pip3 freeze > requirements.txt
 createSuperUser:
 	python3 manage.py createsuperuser --username superuser --email sufian5@live.com --noinput
-	# https://www.oreilly.com/library/view/managing-projects-with/0596006101/ch07.html
+server:
+	python3 -m venv venv
+	. venv/bin/activate
+	pip3 install -r requirements.txt
+	python3 manage.py makemigrations
+	python3 manage.py migrate
+	python3 manage.py collectstatic
+	gunicorn --bind 0.0.0.0:8800 interiorshop.wsgi:application
+	sudo /etc/init.d/nginx restart
