@@ -41,6 +41,7 @@ deploy.production:
   - apk update && apk add openssh-client rsync
   - eval $(ssh-agent -s)
   - echo "$LIGHTSAIL_SSH_KEY" | ssh-add -
+  - ls ~/.ssh/ 
   script:
     - echo -en $"ENVIRONMENT=production\nSECRET_KEY=$1\nDJANGO_SUPERUSER_PASSWORD=$ADMIN_PASSWORD" > .env
     - ls ~/.ssh/ 
