@@ -41,12 +41,12 @@ deploy.production:
   - apk update && apk add openssh-client rsync
   - eval $(ssh-agent -s)
   - echo "$LIGHTSAIL_SSH_KEY" | ssh-add -
-  - echo "Host * ntStrictHostKeyChecking no" >> ~/.ssh/config
   script:
+    - echo  $LIGHTSAIL_SSH_KEY >> ~/key
     - echo -en $"ENVIRONMENT=production\nSECRET_KEY=$1\nDJANGO_SUPERUSER_PASSWORD=$ADMIN_PASSWORD" > .env
-    - ls ~/.ssh/ 
-    - rsync -azv --stats -e ssh  ./ ubuntu@3.67.179.62:/home/ubuntu/ChefsGrub/live
-    - ssh ubuntu@3.67.179.62 'cd ChefsGrub/live; make server;'
+    - ls; pwd
+    - rsync -azv --stats -e "ssh -i ~/key"  ./ ubuntu@3.67.179.62:/home/ubuntu/ChefsGrub/live
+    - ssh -i ~/key ubuntu@3.67.179.62 'cd ChefsGrub/live; make server;'
   environment:
     name: production
     url: $AWS_APP_HOST
