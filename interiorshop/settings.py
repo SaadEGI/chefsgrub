@@ -68,13 +68,13 @@ DEFAULT_EMAIL_FROM = 'ChefGrub <order@chefsgrub.com>'
 
 #AWS
 
-AWS_ACCESS_KEY_ID = 'AKIAYBSI6JJQ2JZRBFG7'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = 'AKIAYBSI6JJQXEJEKSMH'
+AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'chefsgrub'
 AWS_S_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 #AWS_S3_REGION_NAME = "ap-south-1"
-AWS_S3_SIGNATURE_VERSION = 's3v4'
+#AWS_S3_SIGNATURE_VERSION = 's3v4'
 AWS_S3_REGION_NAME = 'eu-central-1'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
@@ -152,9 +152,9 @@ WSGI_APPLICATION = 'interiorshop.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'chefsgrub',
-        'USER': 'strtpadmin',
-        'PASSWORD': 'strtpadmin',
+        'NAME': 'CHEFSGRUB',
+        'USER': 'postgres',
+        'PASSWORD': 'bend1965',
         'HOST': '127.0.0.1', 
         'PORT': '5432',
     }
