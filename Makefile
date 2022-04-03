@@ -15,6 +15,9 @@ updateDependencies:
 	pip3 freeze > requirements.txt
 createSuperUser:
 	python3 manage.py createsuperuser --username superuser --email sufian5@live.com --noinput
-	# https://www.oreilly.com/library/view/managing-projects-with/0596006101/ch07.html
 run: 
 	python3 manage.py runserver
+# i18n:
+#   python3 manage.py makemessages --all -i venv --no-obsolete
+# 	python3 manage.py compilemessages -l de,en,ar
+# 	python3 manage.py compilemessages

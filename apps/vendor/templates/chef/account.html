@@ -1,11 +1,11 @@
 {% extends 'chef/base2.html' %}
-
+{% load i18n %}
 {% block page %}
     <div class="col-lg-offset-2 col-lg-8">
         <div class="panel">
             <div class="panel-heading bg-blue">
                 <h4 class="panel-title text-center text-white">
-                    Account
+                    {% translate "Account" %}
                 </h4>
             </div>
             <div class="panel-body">
@@ -13,7 +13,7 @@
                     {% csrf_token %}
                     {{ user_form.as_p }}
                     {{ chef_form.as_p }}
-                    <button type="submit" class="btn btn-pink">Update</button>
+                    <button type="submit" class="btn btn-pink">{% translate "Update" %}</button>
                 </form>
             </div>
         </div>

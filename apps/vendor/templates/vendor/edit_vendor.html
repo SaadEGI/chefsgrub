@@ -1,21 +1,21 @@
 {% extends 'core/base.html' %}
-
-{% block title %}Edit vendor | {% endblock %}
+{% load i18n %}
+{% block title %}{% translate "Edit vendor" %} | {% endblock %}
 
 {% block content %}
-    <h1 class="title">Edit vendor</h1>
+    <h1 class="title">{% translate "Edit vendor" %}</h1>
 
     <form method="post" action=".">
         {% csrf_token %}
 
         <div class="field">
-            <label>Vendor name</label>
+            <label>{% translate "Vendor name" %}</label>
 
             <div class="control">
                 <input type="text" name="name" id="id_name" value="{{ vendor.name }}" class="input">
             </div>
 
-            <p class="help">This is not the same as the username!</p>
+            <p class="help">{% translate "This is not the same as the username" %}!</p>
         </div>
 
         <div class="field">
@@ -28,7 +28,7 @@
 
         <div class="field">
             <div class="control">
-                <button class="button is-dark is-uppercase">Save changes</button>
+                <button class="button is-dark is-uppercase">{% translate "Save changes" %}</button>
             </div>
         </div>
     </form>

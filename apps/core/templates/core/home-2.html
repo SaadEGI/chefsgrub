@@ -1,7 +1,7 @@
 {% extends 'core/base2.html' %}
 
 {% load static %}
-
+{% load i18n %}
 {% block content %}
 
 
@@ -14,7 +14,7 @@
                     <a class="toggle" href="#">
                         <span></span>
                     </a>
-                    <h4 class="font-weight-bold m-0 pl-5">Browse</h4>
+                    <h4 class="font-weight-bold m-0 pl-5">{% translate "Browse" %}</h4>
                     <a class="text-white font-weight-bold ml-auto" data-toggle="modal" data-target="#exampleModal" href="#">Filter</a>
                 </div>
             </div>
@@ -31,55 +31,55 @@
                 <div class="cat-item px-1 py-3">
                     <a class="bg-white rounded d-block p-2 text-center shadow-sm" href=" palestinian/ ">
                         <img alt="#" src=" {% static 'img/palestinian.png' %} " class="img-fluid mb-2">
-                        <p class="m-0 small">Palestinian</p>
+                        <p class="m-0 small">{% translate "Palestinian" %}</p>
                     </a>
                 </div>
                 <div class="cat-item px-1 py-3">
                     <a class="bg-white rounded d-block p-2 text-center shadow-sm" href=" ./moroccan ">
                         <img alt="#" src=" {% static 'img/moroccan.png' %} " class="img-fluid mb-2">
-                        <p class="m-0 small">Moroccan</p>
+                        <p class="m-0 small">{% translate "Moroccan" %}</p>
                     </a>
                 </div>
                 <div class="cat-item px-1 py-3">
                     <a class="bg-white rounded d-block p-2 text-center shadow-sm" href=" syrian/ ">
                         <img alt="#" src=" {% static 'img/syrian.png' %} " class="img-fluid mb-2">
-                        <p class="m-0 small">Syrian</p>
+                        <p class="m-0 small">{% translate "Syrian" %}</p>
                     </a>
                 </div>
                 <div class="cat-item px-1 py-3">
                     <a class="bg-white rounded d-block p-2 text-center shadow-sm" href=" turkish/ ">
                         <img alt="#" src=" {% static 'img/turkish.png' %} " class="img-fluid mb-2">
-                        <p class="m-0 small">Turkish</p>
+                        <p class="m-0 small">{% translate "Turkish" %}</p>
                     </a>
                 </div>
                 <div class="cat-item px-1 py-3">
                     <a class="bg-white rounded d-block p-2 text-center shadow-sm" href=" indian/ ">
                         <img alt="#" src=" {% static 'img/indian.png' %} " class="img-fluid mb-2">
-                        <p class="m-0 small">indian</p>
+                        <p class="m-0 small">{% translate "indian" %}</p>
                     </a>
                 </div>
                 <div class="cat-item px-1 py-3">
                     <a class="bg-white rounded d-block p-2 text-center shadow-sm" href=" jordanian/ ">
                         <img alt="#" src=" {% static 'img/jordanian.png' %} " class="img-fluid mb-2">
-                        <p class="m-0 small">Jordanian</p>
+                        <p class="m-0 small">{% translate "Jordanian" %}</p>
                     </a>
                 </div>
                 <div class="cat-item px-1 py-3">
                     <a class="bg-white rounded d-block p-2 text-center shadow-sm" href=" pakistani/ ">
                         <img alt="#" src=" {% static 'img/pakisatni.png' %} " class="img-fluid mb-2">
-                        <p class="m-0 small">Pakistani</p>
+                        <p class="m-0 small">{% translate "Pakistani" %}</p>
                     </a>
                 </div>
                 <div class="cat-item px-1 py-3">
                     <a class="bg-white rounded d-block p-2 text-center shadow-sm" href=" german/ ">
                         <img alt="#" src=" {% static 'img/german.png' %} " class="img-fluid mb-2">
-                        <p class="m-0 small">German</p>
+                        <p class="m-0 small">{% translate "German" %}</p>
                     </a>
                 </div>
                 <div class="cat-item px-1 py-3">
                     <a class="bg-white rounded d-block p-2 text-center shadow-sm" href=" italian/ ">
                         <img alt="#" src=" {% static 'img/italian.png' %} " class="img-fluid mb-2">
-                        <p class="m-0 small">Italian</p>
+                        <p class="m-0 small">{% translate "Italian" %}</p>
                     </a>
                 </div>
             </div>
@@ -121,10 +121,10 @@
 
             <!-- Trending this week -->
             <div class="pt-4 pb-2 title d-flex align-items-center">
-                <h5 class="m-0">Ramadan Special</h5>
+                <h5 class="m-0">{% translate "Ramadan Special" %}</h5>
 
 
-                <a class="font-weight-bold ml-auto" href=" {% static 'trending.html' %} ">View all <i class="feather-chevrons-right"></i></a>
+                <a class="font-weight-bold ml-auto" href=" {% static 'trending.html' %} ">{% translate "View all" %} <i class="feather-chevrons-right"></i></a>
             </div>
             <!-- slider -->
             <div class="trending-slider">
@@ -133,7 +133,7 @@
                         <div class="list-card-image">
                             <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
                             <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
-                            <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
+                            <div class="member-plan position-absolute"><span class="badge badge-dark">{% translate "Promoted" %}</span></div>
                             <a href=" {% static 'chef.html' %} ">
                                 <img alt="#" src=" {% static 'img/trending1.png' %} " class="img-fluid item-img w-100">
                             </a>
@@ -143,11 +143,11 @@
                                 <h6 class="mb-1"><a href=" {% static 'chef.html' %} " class="text-black">Famous Dave's Bar-B-Que
                               </a>
                                 </h6>
-                                <p class="text-gray mb-3">Vegetarian • Indian • Pure veg</p>
+                                <p class="text-gray mb-3">{% translate "Vegetarian" %} • {% translate "Indian" %} • {% translate "Pure veg"%}</p>
                                 <p class="text-gray mb-3 time"><span class="bg-light text-dark rounded-sm pl-2 pb-1 pt-1 pr-2"><i class="feather-clock"></i> 15–30 min</span> <span class="float-right text-black-50"> $350 FOR TWO</span></p>
                             </div>
                             <div class="list-card-badge">
-                                <span class="badge badge-danger">OFFER</span> <small> Use Coupon OSAHAN50</small>
+                                <span class="badge badge-danger">{% translate "OFFER" %}</span> <small> Use Coupon OSAHAN50</small>
                             </div>
                         </div>
                     </div>
@@ -157,19 +157,19 @@
                         <div class="list-card-image">
                             <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
                             <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
-                            <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
+                            <div class="member-plan position-absolute"><span class="badge badge-dark">{% translate "Promoted" %}</span></div>
                             <a href=" {% static 'chef.html' %} ">
                                 <img alt="#" src=" {% static 'img/trending2.png' %} " class="img-fluid item-img w-100">
                             </a>
                         </div>
                         <div class="p-3 position-relative">
                             <div class="list-card-body">
-                                <h6 class="mb-1"><a href=" {% static 'chef.html' %} " class="text-black">Thai Famous Cuisine</a></h6>
-                                <p class="text-gray mb-3">North Indian • Indian • Pure veg</p>
+                                <h6 class="mb-1"><a href=" {% static 'chef.html' %} " class="text-black">{% translate "Thai Famous Cuisine" %}</a></h6>
+                                <p class="text-gray mb-3">{% translate "North Indian" %} • {% translate "Indian" %} • Pure veg</p>
                                 <p class="text-gray mb-3 time"><span class="bg-light text-dark rounded-sm pl-2 pb-1 pt-1 pr-2"><i class="feather-clock"></i> 30–35 min</span> <span class="float-right text-black-50"> $250 FOR TWO</span></p>
                             </div>
                             <div class="list-card-badge">
-                                <span class="badge badge-success">OFFER</span> <small>65% off</small>
+                                <span class="badge badge-success">{% translate "OFFER" %}</span> <small>65% off</small>
                             </div>
                         </div>
                     </div>
@@ -179,7 +179,7 @@
                         <div class="list-card-image">
                             <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
                             <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
-                            <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
+                            <div class="member-plan position-absolute"><span class="badge badge-dark">{% translate "Promoted" %}</span></div>
                             <a href=" {% static 'chef.html' %} ">
                                 <img alt="#" src=" {% static 'img/trending3.png' %} " class="img-fluid item-img w-100">
                             </a>
@@ -189,7 +189,7 @@
                                 <h6 class="mb-1"><a href=" {% static 'chef.html' %} " class="text-black">The osahan Restaurant
                               </a>
                                 </h6>
-                                <p class="text-gray mb-3">North • Hamburgers • Pure veg</p>
+                                <p class="text-gray mb-3">{% translate "North" %} • {% translate "Hamburgers" %} • {% translate "Pure veg" %}</p>
                                 <p class="text-gray mb-3 time"><span class="bg-light text-dark rounded-sm pl-2 pb-1 pt-1 pr-2"><i class="feather-clock"></i> 15–25 min</span> <span class="float-right text-black-50"> $500 FOR TWO</span></p>
                             </div>
                             <div class="list-card-badge">
@@ -210,7 +210,7 @@
                         </div>
                         <div class="p-3 position-relative">
                             <div class="list-card-body">
-                                <h6 class="mb-1"><a href=" {% static 'chef.html' %} " class="text-black">Thai Famous Cuisine</a></h6>
+                                <h6 class="mb-1"><a href=" {% static 'chef.html' %} " class="text-black">{% translate "Thai Famous Cuisine" %}</a></h6>
                                 <p class="text-gray mb-3">North Indian • Indian • Pure veg</p>
                                 <p class="text-gray mb-3 time"><span class="bg-light text-dark rounded-sm pl-2 pb-1 pt-1 pr-2"><i class="feather-clock"></i> 30–35 min</span> <span class="float-right text-black-50"> $250 FOR TWO</span></p>
                             </div>
@@ -223,7 +223,7 @@
             </div>
             <!-- Most popular -->
             <div class="py-3 title d-flex align-items-center">
-                <h5 class="m-0">Most popular</h5>
+                <h5 class="m-0">{% translate "Most popular" %}</h5>
                 <a class="font-weight-bold ml-auto" href=" {% static 'most_popular.html' %} ">26 places <i class="feather-chevrons-right"></i></a>
             </div>
             <!-- Most popular -->
@@ -234,7 +234,7 @@
                             <div class="list-card-image">
                                 <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
                                 <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
-                                <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
+                                <div class="member-plan position-absolute"><span class="badge badge-dark">{% translate "Promoted" %}</span></div>
                                 <a href=" {% static 'chef.html' %} ">
                                     <img alt="#" src=" {% static 'img/popular1.png' %} " class="img-fluid item-img w-100">
                                 </a>
@@ -244,7 +244,7 @@
                                     <h6 class="mb-1"><a href=" {% static 'chef.html' %} " class="text-black">The osahan Restaurant
                                  </a>
                                     </h6>
-                                    <p class="text-gray mb-1 small">• North • Hamburgers</p>
+                                    <p class="text-gray mb-1 small">• {% translate "North" %} • {% translate "Hamburgers"%} </p>
                                     <p class="text-gray mb-1 rating">
                                     </p>
                                     <ul class="rating-stars list-unstyled">
@@ -259,7 +259,7 @@
                                     <p></p>
                                 </div>
                                 <div class="list-card-badge">
-                                    <span class="badge badge-danger">OFFER</span> <small>65% OSAHAN50</small>
+                                    <span class="badge badge-danger">{% translate "OFFER" %}</span> <small>65% OSAHAN50</small>
                                 </div>
                             </div>
                         </div>
@@ -269,14 +269,14 @@
                             <div class="list-card-image">
                                 <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
                                 <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
-                                <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
+                                <div class="member-plan position-absolute"><span class="badge badge-dark">{% translate "Promoted" %}</span></div>
                                 <a href=" {% static 'chef.html' %} ">
                                     <img alt="#" src=" {% static 'img/popular2.png' %} " class="img-fluid item-img w-100">
                                 </a>
                             </div>
                             <div class="p-3 position-relative">
                                 <div class="list-card-body">
-                                    <h6 class="mb-1"><a href=" {% static 'chef.html' %} " class="text-black">Thai Famous Indian Cuisine</a></h6>
+                                    <h6 class="mb-1"><a href=" {% static 'chef.html' %} " class="text-black">{% translate "Thai Famous Indian Cuisine" %}</a></h6>
                                     <p class="text-gray mb-1 small">• Indian • Pure veg</p>
                                     <p class="text-gray mb-1 rating">
                                     </p>
@@ -312,7 +312,7 @@
                                     <h6 class="mb-1"><a href=" {% static 'chef.html' %} " class="text-black">The osahan Restaurant
                                  </a>
                                     </h6>
-                                    <p class="text-gray mb-1 small">• Hamburgers • Pure veg</p>
+                                    <p class="text-gray mb-1 small">• {% translate "Hamburgers" %} • Pure veg</p>
                                     <p class="text-gray mb-1 rating">
                                     </p>
                                     <ul class="rating-stars list-unstyled">
@@ -327,7 +327,7 @@
                                     <p></p>
                                 </div>
                                 <div class="list-card-badge">
-                                    <span class="badge badge-danger">OFFER</span> <small>65% OSAHAN50</small>
+                                    <span class="badge badge-danger">{% translate "OFFER" %}</span> <small>65% OSAHAN50</small>
                                 </div>
                             </div>
                         </div>
@@ -337,7 +337,7 @@
                             <div class="list-card-image">
                                 <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
                                 <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
-                                <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
+                                <div class="member-plan position-absolute"><span class="badge badge-dark">{% translate "Promoted" %}</span></div>
                                 <a href=" {% static 'chef.html' %} ">
                                     <img alt="#" src=" {% static 'img/popular4.png' %} " class="img-fluid item-img w-100">
                                 </a>
@@ -345,7 +345,7 @@
                             <div class="p-3 position-relative">
                                 <div class="list-card-body">
                                     <h6 class="mb-1"><a href=" {% static 'chef.html' %} " class="text-black">Bite Me Now Sandwiches</a></h6>
-                                    <p class="text-gray mb-1 small">American • Pure veg</p>
+                                    <p class="text-gray mb-1 small">{% translate "American" %} • Pure veg</p>
                                     <p class="text-gray mb-1 rating">
                                     </p>
                                     <ul class="rating-stars list-unstyled">
@@ -360,7 +360,7 @@
                                     <p></p>
                                 </div>
                                 <div class="list-card-badge">
-                                    <span class="badge badge-success">OFFER</span> <small>65% off</small>
+                                    <span class="badge badge-success">{% translate "OFFER" %}</span> <small>65% off</small>
                                 </div>
                             </div>
                         </div>
@@ -372,7 +372,7 @@
                             <div class="list-card-image">
                                 <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
                                 <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
-                                <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
+                                <div class="member-plan position-absolute"><span class="badge badge-dark">{% translate "Promoted" %}</span></div>
                                 <a href=" {% static 'chef.html' %} ">
                                     <img alt="#" src=" {% static 'img/popular5.png' %} " class="img-fluid item-img w-100">
                                 </a>
@@ -382,7 +382,7 @@
                                     <h6 class="mb-1"><a href=" {% static 'chef.html' %} " class="text-black">The osahan Restaurant
                                  </a>
                                     </h6>
-                                    <p class="text-gray mb-1 small">• North • Hamburgers</p>
+                                    <p class="text-gray mb-1 small">• {% translate "North" %} • {% translate "Hamburgers" %}</p>
                                     <p class="text-gray mb-1 rating">
                                     </p>
                                     <ul class="rating-stars list-unstyled">
@@ -475,15 +475,15 @@
                             <div class="list-card-image">
                                 <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
                                 <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
-                                <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
+                                <div class="member-plan position-absolute"><span class="badge badge-dark">{% translate "Promoted" %}</span></div>
                                 <a href=" {% static 'chef.html' %} ">
                                     <img alt="#" src=" {% static 'img/popular8.png' %} " class="img-fluid item-img w-100">
                                 </a>
                             </div>
                             <div class="p-3 position-relative">
                                 <div class="list-card-body">
-                                    <h6 class="mb-1"><a href=" {% static 'chef.html' %} " class="text-black">Bite Me Now Sandwiches</a></h6>
-                                    <p class="text-gray mb-1 small">American • Pure veg</p>
+                                    <h6 class="mb-1"><a href=" {% static 'chef.html' %} " class="text-black">{% translate "Bite Me Now Sandwiches" %}</a></h6>
+                                    <p class="text-gray mb-1 small">{% translate "American" %} • {% translate "Pure veg" %}</p>
                                     <p class="text-gray mb-1 rating">
                                     </p>
                                     <ul class="rating-stars list-unstyled">
@@ -498,7 +498,7 @@
                                     <p></p>
                                 </div>
                                 <div class="list-card-badge">
-                                    <span class="badge badge-success">OFFER</span> <small>65% off</small>
+                                    <span class="badge badge-success">{% translate "OFFER" %}</span> <small>65% off</small>
                                 </div>
                             </div>
                         </div>
@@ -507,7 +507,7 @@
             </div>
             <!-- Most sales -->
             <div class="pt-2 pb-3 title d-flex align-items-center">
-                <h5 class="m-0">Most sales</h5>
+                <h5 class="m-0">{% translate "Most sales" %}</h5>
                 <a class="font-weight-bold ml-auto" href="#">26 places <i class="feather-chevrons-right"></i></a>
             </div>
             <!-- Most sales -->
@@ -518,7 +518,7 @@
                             <div class="list-card-image">
                                 <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
                                 <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
-                                <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
+                                <div class="member-plan position-absolute"><span class="badge badge-dark">{% translate "Promoted" %}</span></div>
                                 <a href=" {% static 'chef.html' %} ">
                                     <img alt="#" src=" {% static 'img/sales1.png' %} " class="img-fluid item-img w-100">
                                 </a>
@@ -528,11 +528,11 @@
                                     <h6 class="mb-1"><a href=" {% static 'chef.html' %} " class="text-black">The osahan Restaurant
                                  </a>
                                     </h6>
-                                    <p class="text-gray mb-3">North • Hamburgers • Pure veg</p>
+                                    <p class="text-gray mb-3">{% translate "North" %} • {% translate "Hamburgers" %} • {% translate "Pure veg" %}</p>
                                     <p class="text-gray mb-3 time"><span class="bg-light text-dark rounded-sm pl-2 pb-1 pt-1 pr-2"><i class="feather-clock"></i> 15–25 min</span> <span class="float-right text-black-50"> $500 FOR TWO</span></p>
                                 </div>
                                 <div class="list-card-badge">
-                                    <span class="badge badge-danger">OFFER</span> <small>65% OSAHAN50</small>
+                                    <span class="badge badge-danger">{% translate "OFFER" %}</span> <small>65% OSAHAN50</small>
                                 </div>
                             </div>
                         </div>
@@ -542,7 +542,7 @@
                             <div class="list-card-image">
                                 <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
                                 <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
-                                <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
+                                <div class="member-plan position-absolute"><span class="badge badge-dark">{% translate "Promoted" %}</span></div>
                                 <a href=" {% static 'chef.html' %} ">
                                     <img alt="#" src=" {% static 'img/sales2.png' %} " class="img-fluid item-img w-100">
                                 </a>
@@ -550,11 +550,11 @@
                             <div class="p-3 position-relative">
                                 <div class="list-card-body">
                                     <h6 class="mb-1"><a href=" {% static 'chef.html' %} " class="text-black">Thai Famous Cuisine</a></h6>
-                                    <p class="text-gray mb-3">North Indian • Indian • Pure veg</p>
+                                    <p class="text-gray mb-3">North Indian • {% translate "Indian" %} • Pure veg</p>
                                     <p class="text-gray mb-3 time"><span class="bg-light text-dark rounded-sm pl-2 pb-1 pt-1 pr-2"><i class="feather-clock"></i> 30–35 min</span> <span class="float-right text-black-50"> $250 FOR TWO</span></p>
                                 </div>
                                 <div class="list-card-badge">
-                                    <span class="badge badge-success">OFFER</span> <small>65% off</small>
+                                    <span class="badge badge-success">{% translate "OFFER" %}</span> <small>65% off</small>
                                 </div>
                             </div>
                         </div>
@@ -564,7 +564,7 @@
                             <div class="list-card-image">
                                 <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
                                 <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
-                                <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
+                                <div class="member-plan position-absolute"><span class="badge badge-dark">{% translate "Promoted" %}</span></div>
                                 <a href=" {% static 'chef.html' %} ">
                                     <img alt="#" src=" {% static 'img/sales3.png' %} " class="img-fluid item-img w-100">
                                 </a>
@@ -574,11 +574,11 @@
                                     <h6 class="mb-1"><a href=" {% static 'chef.html' %} " class="text-black">The osahan Restaurant
                                  </a>
                                     </h6>
-                                    <p class="text-gray mb-3">North • Hamburgers • Pure veg</p>
+                                    <p class="text-gray mb-3">{% translate "North" %} • {% translate "Hamburgers" %} • Pure veg</p>
                                     <p class="text-gray mb-3 time"><span class="bg-light text-dark rounded-sm pl-2 pb-1 pt-1 pr-2"><i class="feather-clock"></i> 15–25 min</span> <span class="float-right text-black-50"> $500 FOR TWO</span></p>
                                 </div>
                                 <div class="list-card-badge">
-                                    <span class="badge badge-danger">OFFER</span> <small>65% OSAHAN50</small>
+                                    <span class="badge badge-danger">{% translate "OFFER" %}</span> <small>65% OSAHAN50</small>
                                 </div>
                             </div>
                         </div>

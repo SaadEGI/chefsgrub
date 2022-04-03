@@ -1,14 +1,14 @@
 {% extends 'chef/base2.html' %}
-
+{% load i18n %}
 {% block page %}
 
     <div class="panel">
         <div class="panel-heading bg-blue">
-            <h4 class="panel-title text-center text-white">Meals</h4>
+            <h4 class="panel-title text-center text-white">{% translate "Meals" %}</h4>
         </div>
         <div class="panel-body">
             <div class="text-right">
-                <a href="{% url 'chef-add-meal' %}" class="btn btn-pink">Add Meal</a>
+                <a href="{% url 'vendor:chef-add-meal' %}" class="btn btn-pink">{% translate "Add Meal" %}</a>
                 <br/>
                 <br/>
             </div>
@@ -16,11 +16,11 @@
     <table class="table table-bordered table-hover table-striped">
       <thead>
         <tr class="bg-gray text-white">
-          <th>Id</th>
-          <th>Name</th>
-          <th>Short Description</th>
-          <th>Price</th>
-          <th class="text-center">Image</th>
+          <th>{% translate "Id" %}</th>
+          <th>{% translate "Name" %}</th>
+          <th>{% translate "Short Description" %}</th>
+          <th>{% translate "Price" %}</th>
+          <th class="text-center">{% translate "Image" %}</th>
         </tr>
       </thead>
       <tbody>
@@ -28,7 +28,7 @@
         <tr>
           <td scope="row">{{ meal.id }}</td>
           <td>
-            <a href="{% url 'chef-edit-meal' meal.id %}">{{ meal.title }}</a>
+            <a href="{% url 'vendor:chef-edit-meal' meal.id %}">{{ meal.title }}</a>
           </td>
           <td>{{ meal.description }}</td>
           <td>{{ meal.price }}</td>

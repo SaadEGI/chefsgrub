@@ -1,8 +1,4 @@
-{% extends 'core/base2.html' %}
-
-{% load static %}
-
-
+{% extends 'core/base2.html' %} {% load i18n %} {% load static %} 
 {% block content %}
     <div class="d-none">
         <div class="bg-primary p-3 d-flex align-items-center">
@@ -42,6 +38,7 @@
                 </div>
             </div>
         </div>
+      </div>
     </div>
     <div class="container">
         <div class="p-3 bg-primary bg-primary mt-n3 rounded position-relative">
@@ -51,7 +48,25 @@
             </div>
         </div>
     </div>
+  </div>
+</div>
 
+<!-- Menu -->
+<div class="container position-relative">
+  <div>
+    <div>
+      <div class="shadow-sm rounded bg-white mb-3 overflow-hidden">
+        <div class="d-flex item-aligns-center">
+          <!-- <a class="small text-primary font-weight-bold ml-auto" href="#">View all <i class="feather-chevrons-right"></i></a> -->
+        </div>
+
+        <div class="row m-0">
+          <h6 class="p-3 m-0 bg-light w-100">
+            {% translate "MAIN ITEMS" %} <small class="text-black-50"></small>
+          </h6>
+          <div class="col-md-12 px-0 border-top"></div>
+        </div>
+      </div>
 
     <!-- Menu -->
     <div class="container position-relative">
@@ -62,14 +77,55 @@
 
                         <!-- <a class="small text-primary font-weight-bold ml-auto" href="#">View all <i class="feather-chevrons-right"></i></a> -->
                     </div>
-
-                    <div class="row m-0">
-                        <h6 class="p-3 m-0 bg-light w-100">MAIN ITEMS <small class="text-black-50"></small></h6>
-                        <div class="col-md-12 px-0 border-top">
-
+                    <div class="wrap-details">
+                      <h5>{{ product.title }}</h5>
+                      <div class="wrap-footer">
+                        <div class="rating">
+                          <span class="rating-inner">
+                            <i class="ri-star-fill ps-0"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-half-line pe-0"></i>
+                          </span>
                         </div>
-                    </div>
+                      </div>
+                      <div class="btn-area">
+                        <h6 class="price">{{ product.price }} €</h6>
 
+                        <form method="post" action=".">
+                          {% csrf_token %}
+
+                          <div class="field has-addons">
+                            <div class="control">
+                              <input
+                                type="hidden"
+                                name="quantity"
+                                value="1"
+                                class="input"
+                                min="1"
+                              />
+                            </div>
+                            <div class="control">
+                              <input
+                                type="hidden"
+                                name="product_id"
+                                value="{{ product.id }}"
+                                class="input"
+                                min="1"
+                              />
+                            </div>
+
+                            <div class="control">
+                              <button class="btn btn-secondary">
+                                {% translate "Add to cart" %}
+                              </button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
 

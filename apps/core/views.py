@@ -21,13 +21,10 @@ def frontpage(request):
 
 
 def aboutus(request):
-    return render(request, 'core/about.html')
+    return render(request, 'core/About.html')
 
 def home(request):
-    return render(request, 'core/home2.html', {})
-
-def comingsoon(request):
-    return render(request, 'core/coming-soon.html', {})
+    return render(request, 'core/home-2.html', {})
 
 
 def contact(request):
