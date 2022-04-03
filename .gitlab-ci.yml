@@ -41,7 +41,7 @@ deploy.production:
   - apk update && apk add openssh-client rsync
   - eval $(ssh-agent -s)
   - echo "$LIGHTSAIL_SSH_KEY" | ssh-add -
-  - echo "Host * ntStrictHostKeyChecking no" >> ~ / .ssh / config
+  - echo "Host * ntStrictHostKeyChecking no" >> ~/.ssh/config
   script:
     - echo -en $"ENVIRONMENT=production\nSECRET_KEY=$1\nDJANGO_SUPERUSER_PASSWORD=$ADMIN_PASSWORD" > .env
     - ls ~/.ssh/ 
