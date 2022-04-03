@@ -64,7 +64,7 @@ EMAIL_HOST_USER = 'apikey'
 EMAIL_HOST_PASSWORD = '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'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-DEFAULT_EMAIL_FROM = 'ChefGrub <strtporg@gmail.com>'
+DEFAULT_EMAIL_FROM = 'ChefGrub <order@chefsgrub.com>'
 
 #AWS
 
