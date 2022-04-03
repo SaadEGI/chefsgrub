@@ -1,0 +1,118 @@
+{% extends 'core/base2.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="osahan-profile">
+        <div class="d-none">
+            <div class="bg-primary border-bottom p-3 d-flex align-items-center">
+                <a class="toggle togglew toggle-2" href="#"><span></span></a>
+                <h4 class="font-weight-bold m-0 text-white">Profile</h4>
+            </div>
+        </div>
+        <!-- profile -->
+        <div class="container position-relative">
+            <div class="py-5 osahan-profile row">
+
+                <div>
+                    <div class="osahan-cart-item-profile">
+                        <div id="basics">
+                            <!-- Title -->
+                            <div class="mb-2 mt-3">
+                                <h5 class="font-weight-semi-bold mb-0">Basics</h5>
+                            </div>
+                            <!-- End Title -->
+                            <!-- Basics Accordion -->
+                            <div id="basicsAccordion">
+                                <!-- Card -->
+                                <div class="box border-bottom bg-white mb-2 rounded shadow-sm overflow-hidden">
+                                    <div id="basicsHeadingOne">
+                                        <h5 class="mb-0">
+                                            <button class="shadow-none btn btn-block d-flex justify-content-between card-btn p-3 collapsed" data-toggle="collapse" data-target="#basicsCollapseOne" aria-expanded="false" aria-controls="basicsCollapseOne">
+                                    Do you have any built-in caching?
+                                    <span class="card-btn-arrow">
+                                    <span class="feather-chevron-down"></span>
+                                    </span>
+                                    </button>
+                                        </h5>
+                                    </div>
+                                    <div id="basicsCollapseOne" class="collapse show" aria-labelledby="basicsHeadingOne" data-parent="#basicsAccordion" style="">
+                                        <div class="card-body border-top p-3 text-muted">
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid ...
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- End Card -->
+                            </div>
+                            <!-- End Basics Accordion -->
+                        </div>
+                        <div id="account">
+                            <!-- Title -->
+                            <div class="mb-2 mt-3">
+                                <h5 class="font-weight-semi-bold mb-0">Account</h5>
+                            </div>
+                            <!-- End Title -->
+                            <!-- Account Accordion -->
+                            <div id="accountAccordion">
+                                <!-- Card -->
+                                <div class="box border-bottom bg-white mb-2 rounded shadow-sm overflow-hidden">
+                                    <div id="accountHeadingOne">
+                                        <h5 class="mb-0">
+                                            <button class="shadow-none btn btn-block d-flex justify-content-between card-btn p-3" data-toggle="collapse" data-target="#accountCollapseOne" aria-expanded="false" aria-controls="accountCollapseOne">
+                                    Can a customer have an account?
+                                    <span class="card-btn-arrow">
+                                    <span class="feather-chevron-down"></span>
+                                    </span>
+                                    </button>
+                                        </h5>
+                                    </div>
+                                    <div id="accountCollapseOne" class="collapse show" aria-labelledby="accountHeadingOne" data-parent="#accountAccordion">
+                                        <div class="card-body border-top p-3 text-muted">
+                                            we are working currently on this feature
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Card -->
+                                <!-- Card -->
+                                <!-- End Card -->
+                            </div>
+                            <!-- End Account Accordion -->
+                        </div>
+                        <div id="Delivery">
+                            <!-- Title -->
+                            <div class="mb-2 mt-3">
+                                <h5 class="font-weight-semi-bold mb-0">Delivery</h5>
+                            </div>
+                            <!-- End Title -->
+                            <!-- Basics Accordion -->
+                            <div id="basicsAccordion">
+                                <!-- Card -->
+                                <div class="box border-bottom bg-white mb-2 rounded shadow-sm overflow-hidden">
+                                    <div id="basicsHeadingOne">
+                                        <h5 class="mb-0">
+                                            <button class="shadow-none btn btn-block d-flex justify-content-between card-btn p-3 collapsed" data-toggle="collapse" data-target="#basicsCollapseOne" aria-expanded="false" aria-controls="basicsCollapseOne">
+                                    Will this service offer Delivery?
+                                    <span class="card-btn-arrow">
+                                    <span class="feather-chevron-down"></span>
+                                    </span>
+                                    </button>
+                                        </h5>
+                                    </div>
+                                    <div id="basicsCollapseOne" class="collapse show" aria-labelledby="basicsHeadingOne" data-parent="#basicsAccordion" style="">
+                                        <div class="card-body border-top p-3 text-muted">
+                                            Yes, we are planning to offer the delivery within the city opf the chef and the customer
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- End Card -->
+                            </div>
+                            <!-- End Basics Accordion -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}

@@ -23,6 +23,15 @@ def frontpage(request):
 def aboutus(request):
     return render(request, 'core/about.html')
 
+def privacy(request):
+    return render(request, 'core/privacy.html')
+
+def terms(request):
+    return render(request, 'core/terms.html')
+
+def faq(request):
+    return render(request, 'core/faq.html')
+
 def home(request):
     return render(request, 'core/home2.html', {})
 
