@@ -38,7 +38,7 @@ else:
 # SECURITY WARNING: keep the secret key used in production secret!
 
 # SECURITY WARNING: don't run with debug turned on in production!
-if(ENVIRONMENT == 'production' or ENVIRONMENT == 'staging'):
+if(ENVIRONMENT == 'production'):
     DEBUG = False
 else:
     DEBUG = True

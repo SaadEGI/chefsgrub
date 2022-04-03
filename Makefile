@@ -7,6 +7,7 @@ venv:
 	python3 -m venv venv
 	. venv/bin/activate
 	pip3 install -r requirements.txt
+	pip3 install boto3
 	python3 manage.py makemigrations
 	python3 manage.py migrate
 updateDependencies:
@@ -17,6 +18,7 @@ server:
 	python3 -m venv venv
 	. venv/bin/activate
 	pip3 install -r requirements.txt
+	pip3 install boto3
 	python3 manage.py makemigrations
 	python3 manage.py migrate
 	python3 manage.py collectstatic --no-input
