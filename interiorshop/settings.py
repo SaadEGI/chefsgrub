@@ -68,9 +68,9 @@ DEFAULT_EMAIL_FROM = 'ChefGrub <order@chefsgrub.com>'
 
 #AWS
 
-AWS_ACCESS_KEY_ID = 'AKIAYBSI6JJQSTZM6FNX'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'chefsgrub'
+AWS_ACCESS_KEY_ID = 'AKIAYBSI6JJQ2JZRBFG7'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'herokuappuploadimages'
 AWS_S_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 #AWS_S3_REGION_NAME = "ap-south-1"
@@ -153,9 +153,9 @@ WSGI_APPLICATION = 'interiorshop.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'CHEFSGRUB',
-        'USER': 'postgres',
-        'PASSWORD': 'bend1965',
+        'NAME': 'chefsgrub',
+        'USER': 'strtpadmin',
+        'PASSWORD': 'strtpadmin',
         'HOST': '127.0.0.1', 
         'PORT': '5432',
     }
