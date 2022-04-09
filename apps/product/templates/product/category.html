@@ -3,6 +3,47 @@
 {% load static %}
 
 {% block content %}
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<br>
+<br>
+<br>
+<div class="container">
+<div class="col-md-12">
+    {% for vendor in CategoryVendor %}
+    <div class="card b-1 hover-shadow mb-20">
+        <div class="media card-body">
+            <div class="media-left pr-12">
+                <img class="avatar avatar-xl no-radius" src="{{ vendor.get_thumbnail}}" alt="...">
+            </div>
+            <div class="media-body">
+                <div class="mb-2">
+                    <span class="fs-20 pr-16">{{ vendor.name}}</span>
+                </div>
+                {% for product in vendor.products.all %}
+                <small class="fs-16 fw-300 ls-1"> {{ product.title}}.</small>
+                    {% endfor %}
+            </div>
+            <div class="media-right text-right d-none d-md-block">
+                <p class="fs-14 text-fade mb-12"><i class="fa fa-map-marker pr-1"></i> Wuppertal</p>
+
+            </div>
+        </div>
+        <footer class="card-footer flexbox align-items-center">
+
+            <div class="card-hover-show">
+                <a class="btn btn-xs fs-10 btn-bold btn-primary" href="/" data-toggle="modal" data-target="#modal-contact">Discover Chefs's Dishes</a>
+                <a class="btn btn-xs fs-10 btn-bold btn-warning" href="/contact">Contact</a>
+            </div>
+        </footer>
+    </div>
+    {% endfor %}
+
+
+
+
+    <br>
+</div>
+</div>
 
 
     <div class="d-none">
@@ -20,6 +61,31 @@
 
                 </div>
                 <div class="row">
+                 {% for vendor in CategoryVendor %}
+                       <div class="col-lg-4 mb-3">
+                        <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm grid-card">
+                            <div class="list-card-image">
+                                <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
+                                <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
+
+                                <a href="/chef/{{ vendor_id }}">
+                                    <img alt="#" src=" {{ MEDIA_URL }}{{ vendor.get_thumbnail }} " class="img-fluid item-img w-100">
+                                </a>
+                            </div>
+                            <div class="p-3 position-relative">
+                                <div class="list-card-body">
+                                    <h6 class="mb-1"><a href=" {% static 'restaurant.html' %} " class="text-black">{{ vendor.title }}
+                                 </a>
+                                    </h6>
+                                    <p class="text-gray mb-3"></p>
+                                    <p class="text-gray mb-3 time"><span class="bg-light text-dark rounded-sm pl-2 pb-1 pt-1 pr-2"></span> <span class="float-right text-black-50"> </span></p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+        {% endfor %}
                    {% for product in category.products.all %}
                        <div class="col-lg-4 mb-3">
                         <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm grid-card">

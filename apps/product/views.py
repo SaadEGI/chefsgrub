@@ -6,6 +6,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 
 from .forms import AddToCartForm
 from .models import Category, Product
+from apps.vendor.models import Vendor
 
 from apps.cart.cart import Cart
 
@@ -64,5 +65,15 @@ def product(request, category_slug, product_slug):
 
 def category(request, category_slug):
     category = get_object_or_404(Category, slug=category_slug)
+    vendors = Vendor.objects.all()
+    CategoryVendor = []
+    for vendor in vendors:
+        for product in vendor.products.all():
+            if product.category==category:
+                CategoryVendor.append(vendor)
+                break;
 
-    return render(request, 'product/category.html', {'category': category})
+
+
+
+    return render(request, 'product/category.html', {'CategoryVendor':CategoryVendor,'category': category})
