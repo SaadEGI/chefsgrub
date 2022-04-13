@@ -32,9 +32,9 @@ def delete(request):
     sub = Subscriber.objects.get(email=request.GET['email'])
     if sub.conf_num == request.GET['conf_num']:
         sub.delete()
-        return render(request, 'index.html', {'email': sub.email, 'action': 'unsubscribed'})
+        return render(request, 'core/home-2.html', {'email': sub.email, 'action': 'unsubscribed'})
     else:
-        return render(request, 'index.html', {'email': sub.email, 'action': 'denied'})
+        return render(request, 'core/home-2.html', {'email': sub.email, 'action': 'denied'})
 
 
 
@@ -53,8 +53,8 @@ def home(request):
             subject='Newsletter Confirmation',
             html_content='Thank you for signing up for my email newsletter! \
                 Please complete the process by \
-                <a href="{}/confirm/?email={}&conf_num={}"> clicking here to \
-                confirm your registration</a>.'.format(request.build_absolute_uri('/confirm/'),
+                <a href="{}confirm/?email={}&conf_num={}"> clicking here to \
+                confirm your registration</a>.'.format(request.build_absolute_uri(''),
                                                     sub.email,
                                                     sub.conf_num))
         sg = SendGridAPIClient(settings.SENDGRID_API_KEY)
@@ -115,20 +115,3 @@ def contact(request):
     form = ContactForm()
     return render(request, "core/contact.html", {'form': form})
 
-def subscriber_add(request):
-    if request.method == 'POST':
-        try:
-            conn = http.client.HTTPSConnection("api.sendgrid.com")
-            email = request.POST.get('subscriber-email')
-            payload = json.dumps({"contacts": [{"email": email}]})
-            headers = {
-                'authorization': "Bearer %s" % SENDGRID_API_KEY,
-                'content-type': "application/json"
-            }
-            conn.request("PUT", "/v3/marketing/contacts", payload, headers)
-            res = conn.getresponse()
-            data = res.read()
-            print(data.decode("utf-8"))
-        except Exception as e:
-            print(e.message)
-    return redirect('/')
