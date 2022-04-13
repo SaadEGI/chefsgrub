@@ -12,13 +12,15 @@ from . import views
 #
 
 urlpatterns = [
-    path('', views.frontpage, name='frontpage'),
+    path('browse/', views.frontpage, name='frontpage'),
     path('contact/', views.contact, name='contact'),
-    path('home2/', views.home, name='home'),
+    path('', views.home, name='home'),
     path('comingsoon/', views.comingsoon, name='comingsoon'),
-    path('aboutus/', views.aboutus, name='about'),
+    path('about/', views.about, name='about'),
     path('terms/', views.terms, name='terms'),
     path('privacy/', views.privacy, name='privacy'),
     path('faq/', views.faq, name='faq'),
+    path('confirm/', views.confirm, name='confirm'),
+    path('delete/', views.delete, name='delete'),
 
 ]

@@ -1,591 +1,495 @@
-{% extends 'core/base2.html' %}
-
 {% load static %}
 
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Foodera - Responsive Food Landing Page Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href=" {% static 'images/favicon.html' %} ">
+
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href=" {% static 'css/bootstrap.min.css' %} ">
+
+    <!-- ICONS -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href=" {% static 'css/ilmosys-icon.css' %} ">
+    <link rel="stylesheet" href=" {% static 'js/vendors/swipebox/css/swipebox.min.css' %} ">
 
 
+    <!-- THEME / PLUGIN CSS -->
+    <link rel="stylesheet" href=" {% static 'js/vendors/slick/slick.css' %} ">
+    <link rel="stylesheet" href=" {% static 'css/style3.css' %} ">
 
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-    <div class="osahan-home-page">
-        <div class="bg-primary p-3 d-none">
-            <div class="text-white">
-                <div class="title d-flex align-items-center">
-                    <a class="toggle" href="#">
-                        <span></span>
-                    </a>
-                    <h4 class="font-weight-bold m-0 pl-5">Browse</h4>
-                    <a class="text-white font-weight-bold ml-auto" data-toggle="modal" data-target="#exampleModal" href="#">Filter</a>
-                </div>
-            </div>
-            <div class="input-group mt-3 rounded shadow-sm overflow-hidden">
-                <div class="input-group-prepend">
-                    <button class="border-0 btn btn-outline-secondary text-dark bg-white btn-block"><i class="feather-search"></i></button>
-                </div>
-                <input type="text" class="shadow-none border-0 form-control" placeholder="Search for restaurants or dishes">
-            </div>
-        </div>
-        <!-- Filters -->
-        <div class="container">
-            <div class="cat-slider">
-                <div class="cat-item px-1 py-3">
-                    <a class="bg-white rounded d-block p-2 text-center shadow-sm" href=" palestinian/ ">
-                        <img alt="#" src=" {% static 'img/palestinian.png' %} " class="img-fluid mb-2">
-                        <p class="m-0 small">Palestinian</p>
-                    </a>
-                </div>
-                <div class="cat-item px-1 py-3">
-                    <a class="bg-white rounded d-block p-2 text-center shadow-sm" href=" ./moroccan ">
-                        <img alt="#" src=" {% static 'img/moroccan.png' %} " class="img-fluid mb-2">
-                        <p class="m-0 small">Moroccan</p>
-                    </a>
-                </div>
-                <div class="cat-item px-1 py-3">
-                    <a class="bg-white rounded d-block p-2 text-center shadow-sm" href=" syrian/ ">
-                        <img alt="#" src=" {% static 'img/syrian.png' %} " class="img-fluid mb-2">
-                        <p class="m-0 small">Syrian</p>
-                    </a>
-                </div>
-                <div class="cat-item px-1 py-3">
-                    <a class="bg-white rounded d-block p-2 text-center shadow-sm" href=" turkish/ ">
-                        <img alt="#" src=" {% static 'img/turkish.png' %} " class="img-fluid mb-2">
-                        <p class="m-0 small">Turkish</p>
-                    </a>
-                </div>
-                <div class="cat-item px-1 py-3">
-                    <a class="bg-white rounded d-block p-2 text-center shadow-sm" href=" indian/ ">
-                        <img alt="#" src=" {% static 'img/indian.png' %} " class="img-fluid mb-2">
-                        <p class="m-0 small">indian</p>
-                    </a>
-                </div>
-                <div class="cat-item px-1 py-3">
-                    <a class="bg-white rounded d-block p-2 text-center shadow-sm" href=" jordanian/ ">
-                        <img alt="#" src=" {% static 'img/jordanian.png' %} " class="img-fluid mb-2">
-                        <p class="m-0 small">Jordanian</p>
-                    </a>
-                </div>
-                <div class="cat-item px-1 py-3">
-                    <a class="bg-white rounded d-block p-2 text-center shadow-sm" href=" pakistani/ ">
-                        <img alt="#" src=" {% static 'img/pakisatni.png' %} " class="img-fluid mb-2">
-                        <p class="m-0 small">Pakistani</p>
-                    </a>
-                </div>
-                <div class="cat-item px-1 py-3">
-                    <a class="bg-white rounded d-block p-2 text-center shadow-sm" href=" german/ ">
-                        <img alt="#" src=" {% static 'img/german.png' %} " class="img-fluid mb-2">
-                        <p class="m-0 small">German</p>
-                    </a>
-                </div>
-                <div class="cat-item px-1 py-3">
-                    <a class="bg-white rounded d-block p-2 text-center shadow-sm" href=" italian/ ">
-                        <img alt="#" src=" {% static 'img/italian.png' %} " class="img-fluid mb-2">
-                        <p class="m-0 small">Italian</p>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <!-- offer sectio slider -->
-        <div class="bg-white">
+</head>
+
+<body id="home">
+<div class="body">
+    <!-- HEADER -->
+    <header>
+        <nav class="navbar-inverse navbar-lg navbar-fixed-top">
             <div class="container">
-                <div class="offer-slider">
-                    <div class="cat-item px-1 py-3">
-                        <a class="d-block text-center shadow-sm" href=" {% static 'trending.html' %} ">
-                            <img alt="#" src=" {% static 'img/pro1.jpg' %} " class="img-fluid rounded">
-                        </a>
+                <div class="navbar-header">
+                    <a href="/" class="navbar-brand brand"><img src=" {% static 'images/logo.png' %} " alt="logo"></a>
+                </div>
+
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right navbar-login">
+                        <li>
+                            <a href=" /browse "><span class="icon-call"></span> Go check it out!</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Home -->
+    <div class="intro intro3">
+        <div class="container">
+            <div class="row center-content">
+                <div class="col-md-5 col-sm-6">
+                    <h3>Let ChefsGrub be your personal Chef</h3>
+                    <p>Are you tired of unhealthy takeout and frozen pizza? Do you want to eat something nutritious,
+                        but also something that tastes good? Don't have time to cook for yourself?</p>
+                    <div class="space30"></div>
+                    <div class="dual-btn">
+                        <a href=" /browse " class="btn btn-lg btn-primary page-scroll">Order Now <span
+                                class="fa fa-shopping-basket"></span></a> &nbsp; &nbsp;
+
                     </div>
-                    <div class="cat-item px-1 py-3">
-                        <a class="d-block text-center shadow-sm" href=" {% static 'trending.html' %} ">
-                            <img alt="#" src=" {% static 'img/pro2.jpg' %} " class="img-fluid rounded">
-                        </a>
-                    </div>
-                    <div class="cat-item px-1 py-3">
-                        <a class="d-block text-center shadow-sm" href=" {% static 'trending.html' %} ">
-                            <img alt="#" src=" {% static 'img/pro3.jpg' %} " class="img-fluid rounded">
-                        </a>
-                    </div>
-                    <div class="cat-item px-1 py-3">
-                        <a class="d-block text-center shadow-sm" href=" {% static 'trending.html' %} ">
-                            <img alt="#" src=" {% static 'img/pro4.jpg' %} " class="img-fluid rounded">
-                        </a>
-                    </div>
-                    <div class="cat-item px-1 py-3">
-                        <a class="d-block text-center shadow-sm" href=" {% static 'trending.html' %} ">
-                            <img alt="#" src=" {% static 'img/pro2.jpg' %} " class="img-fluid rounded">
-                        </a>
-                    </div>
+
+                </div>
+                <div class="col-md-7 col-sm-6 no-padding">
                 </div>
             </div>
         </div>
+    </div>
 
+    <!-- Stats -->
+    <div id="stats2" class="bg-primary">
         <div class="container">
-
-            <!-- Trending this week -->
-            <div class="pt-4 pb-2 title d-flex align-items-center">
-                <h5 class="m-0">Ramadan Special</h5>
-
-
-                <a class="font-weight-bold ml-auto" href=" {% static 'trending.html' %} ">View all <i class="feather-chevrons-right"></i></a>
-            </div>
-            <!-- slider -->
-            <div class="trending-slider">
-                <div class="osahan-slider-item">
-                    <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm">
-                        <div class="list-card-image">
-                            <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
-                            <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
-                            <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
-                            <a href=" {% static 'chef.html' %} ">
-                                <img alt="#" src=" {% static 'img/trending1.png' %} " class="img-fluid item-img w-100">
-                            </a>
-                        </div>
-                        <div class="p-3 position-relative">
-                            <div class="list-card-body">
-                                <h6 class="mb-1"><a href=" {% static 'chef.html' %} " class="text-black">Famous Dave's Bar-B-Que
-                              </a>
-                                </h6>
-                                <p class="text-gray mb-3">Vegetarian • Indian • Pure veg</p>
-                                <p class="text-gray mb-3 time"><span class="bg-light text-dark rounded-sm pl-2 pb-1 pt-1 pr-2"><i class="feather-clock"></i> 15–30 min</span> <span class="float-right text-black-50"> $350 FOR TWO</span></p>
-                            </div>
-                            <div class="list-card-badge">
-                                <span class="badge badge-danger">OFFER</span> <small> Use Coupon OSAHAN50</small>
-                            </div>
-                        </div>
+            <div class="row">
+                <div class="col-md-3 col-sm-3">
+                    <div class="stats2-info">
+                        <i class="icon-piggy"></i>
+                        <p><span class="count">120</span>+</p>
+                        <h2>Customers in waiting list</h2>
                     </div>
                 </div>
-                <div class="osahan-slider-item">
-                    <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm">
-                        <div class="list-card-image">
-                            <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
-                            <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
-                            <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
-                            <a href=" {% static 'chef.html' %} ">
-                                <img alt="#" src=" {% static 'img/trending2.png' %} " class="img-fluid item-img w-100">
-                            </a>
-                        </div>
-                        <div class="p-3 position-relative">
-                            <div class="list-card-body">
-                                <h6 class="mb-1"><a href=" {% static 'chef.html' %} " class="text-black">Thai Famous Cuisine</a></h6>
-                                <p class="text-gray mb-3">North Indian • Indian • Pure veg</p>
-                                <p class="text-gray mb-3 time"><span class="bg-light text-dark rounded-sm pl-2 pb-1 pt-1 pr-2"><i class="feather-clock"></i> 30–35 min</span> <span class="float-right text-black-50"> $250 FOR TWO</span></p>
-                            </div>
-                            <div class="list-card-badge">
-                                <span class="badge badge-success">OFFER</span> <small>65% off</small>
-                            </div>
-                        </div>
+                <div class="col-md-3 col-sm-3">
+                    <div class="stats2-info">
+                        <i class="icon-photo"></i>
+                        <p><span class="count">50</span>+</p>
+                        <h2>Chefs</h2>
                     </div>
                 </div>
-                <div class="osahan-slider-item">
-                    <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm">
-                        <div class="list-card-image">
-                            <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
-                            <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
-                            <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
-                            <a href=" {% static 'chef.html' %} ">
-                                <img alt="#" src=" {% static 'img/trending3.png' %} " class="img-fluid item-img w-100">
-                            </a>
-                        </div>
-                        <div class="p-3 position-relative">
-                            <div class="list-card-body">
-                                <h6 class="mb-1"><a href=" {% static 'chef.html' %} " class="text-black">The osahan Restaurant
-                              </a>
-                                </h6>
-                                <p class="text-gray mb-3">North • Hamburgers • Pure veg</p>
-                                <p class="text-gray mb-3 time"><span class="bg-light text-dark rounded-sm pl-2 pb-1 pt-1 pr-2"><i class="feather-clock"></i> 15–25 min</span> <span class="float-right text-black-50"> $500 FOR TWO</span></p>
-                            </div>
-                            <div class="list-card-badge">
-                                <span class="badge badge-danger">OFFER</span> <small>65% OSAHAN50</small>
-                            </div>
-                        </div>
+                <div class="col-md-3 col-sm-3">
+                    <div class="stats2-info">
+                        <i class="icon-rocket"></i>
+                        <p><span class="count">3</span>+</p>
+                        <h2>Cities</h2>
                     </div>
                 </div>
-                <div class="osahan-slider-item">
-                    <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm">
-                        <div class="list-card-image">
-                            <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
-                            <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
-                            <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
-                            <a href=" {% static 'chef.html' %} ">
-                                <img alt="#" src=" {% static 'img/trending2.png' %} " class="img-fluid item-img w-100">
-                            </a>
-                        </div>
-                        <div class="p-3 position-relative">
-                            <div class="list-card-body">
-                                <h6 class="mb-1"><a href=" {% static 'chef.html' %} " class="text-black">Thai Famous Cuisine</a></h6>
-                                <p class="text-gray mb-3">North Indian • Indian • Pure veg</p>
-                                <p class="text-gray mb-3 time"><span class="bg-light text-dark rounded-sm pl-2 pb-1 pt-1 pr-2"><i class="feather-clock"></i> 30–35 min</span> <span class="float-right text-black-50"> $250 FOR TWO</span></p>
-                            </div>
-                            <div class="list-card-badge">
-                                <span class="badge badge-success">OFFER</span> <small>65% off</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Most popular -->
-            <div class="py-3 title d-flex align-items-center">
-                <h5 class="m-0">Most popular</h5>
-                <a class="font-weight-bold ml-auto" href=" {% static 'most_popular.html' %} ">26 places <i class="feather-chevrons-right"></i></a>
-            </div>
-            <!-- Most popular -->
-            <div class="most_popular">
-                <div class="row">
-                    <div class="col-md-3 pb-3">
-                        <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm">
-                            <div class="list-card-image">
-                                <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
-                                <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
-                                <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
-                                <a href=" {% static 'chef.html' %} ">
-                                    <img alt="#" src=" {% static 'img/popular1.png' %} " class="img-fluid item-img w-100">
-                                </a>
-                            </div>
-                            <div class="p-3 position-relative">
-                                <div class="list-card-body">
-                                    <h6 class="mb-1"><a href=" {% static 'chef.html' %} " class="text-black">The osahan Restaurant
-                                 </a>
-                                    </h6>
-                                    <p class="text-gray mb-1 small">• North • Hamburgers</p>
-                                    <p class="text-gray mb-1 rating">
-                                    </p>
-                                    <ul class="rating-stars list-unstyled">
-                                        <li>
-                                            <i class="feather-star star_active"></i>
-                                            <i class="feather-star star_active"></i>
-                                            <i class="feather-star star_active"></i>
-                                            <i class="feather-star star_active"></i>
-                                            <i class="feather-star"></i>
-                                        </li>
-                                    </ul>
-                                    <p></p>
-                                </div>
-                                <div class="list-card-badge">
-                                    <span class="badge badge-danger">OFFER</span> <small>65% OSAHAN50</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 pb-3">
-                        <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm">
-                            <div class="list-card-image">
-                                <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
-                                <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
-                                <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
-                                <a href=" {% static 'chef.html' %} ">
-                                    <img alt="#" src=" {% static 'img/popular2.png' %} " class="img-fluid item-img w-100">
-                                </a>
-                            </div>
-                            <div class="p-3 position-relative">
-                                <div class="list-card-body">
-                                    <h6 class="mb-1"><a href=" {% static 'chef.html' %} " class="text-black">Thai Famous Indian Cuisine</a></h6>
-                                    <p class="text-gray mb-1 small">• Indian • Pure veg</p>
-                                    <p class="text-gray mb-1 rating">
-                                    </p>
-                                    <ul class="rating-stars list-unstyled">
-                                        <li>
-                                            <i class="feather-star star_active"></i>
-                                            <i class="feather-star star_active"></i>
-                                            <i class="feather-star star_active"></i>
-                                            <i class="feather-star star_active"></i>
-                                            <i class="feather-star"></i>
-                                        </li>
-                                    </ul>
-                                    <p></p>
-                                </div>
-                                <div class="list-card-badge">
-                                    <span class="badge badge-success">OFFER</span> <small>65% off</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 pb-3">
-                        <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm">
-                            <div class="list-card-image">
-                                <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
-                                <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
-                                <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
-                                <a href=" {% static 'chef.html' %} ">
-                                    <img alt="#" src=" {% static 'img/popular3.png' %} " class="img-fluid item-img w-100">
-                                </a>
-                            </div>
-                            <div class="p-3 position-relative">
-                                <div class="list-card-body">
-                                    <h6 class="mb-1"><a href=" {% static 'chef.html' %} " class="text-black">The osahan Restaurant
-                                 </a>
-                                    </h6>
-                                    <p class="text-gray mb-1 small">• Hamburgers • Pure veg</p>
-                                    <p class="text-gray mb-1 rating">
-                                    </p>
-                                    <ul class="rating-stars list-unstyled">
-                                        <li>
-                                            <i class="feather-star star_active"></i>
-                                            <i class="feather-star star_active"></i>
-                                            <i class="feather-star star_active"></i>
-                                            <i class="feather-star star_active"></i>
-                                            <i class="feather-star"></i>
-                                        </li>
-                                    </ul>
-                                    <p></p>
-                                </div>
-                                <div class="list-card-badge">
-                                    <span class="badge badge-danger">OFFER</span> <small>65% OSAHAN50</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 pb-3">
-                        <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm">
-                            <div class="list-card-image">
-                                <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
-                                <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
-                                <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
-                                <a href=" {% static 'chef.html' %} ">
-                                    <img alt="#" src=" {% static 'img/popular4.png' %} " class="img-fluid item-img w-100">
-                                </a>
-                            </div>
-                            <div class="p-3 position-relative">
-                                <div class="list-card-body">
-                                    <h6 class="mb-1"><a href=" {% static 'chef.html' %} " class="text-black">Bite Me Now Sandwiches</a></h6>
-                                    <p class="text-gray mb-1 small">American • Pure veg</p>
-                                    <p class="text-gray mb-1 rating">
-                                    </p>
-                                    <ul class="rating-stars list-unstyled">
-                                        <li>
-                                            <i class="feather-star star_active"></i>
-                                            <i class="feather-star star_active"></i>
-                                            <i class="feather-star star_active"></i>
-                                            <i class="feather-star star_active"></i>
-                                            <i class="feather-star"></i>
-                                        </li>
-                                    </ul>
-                                    <p></p>
-                                </div>
-                                <div class="list-card-badge">
-                                    <span class="badge badge-success">OFFER</span> <small>65% off</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3 pb-3">
-                        <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm">
-                            <div class="list-card-image">
-                                <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
-                                <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
-                                <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
-                                <a href=" {% static 'chef.html' %} ">
-                                    <img alt="#" src=" {% static 'img/popular5.png' %} " class="img-fluid item-img w-100">
-                                </a>
-                            </div>
-                            <div class="p-3 position-relative">
-                                <div class="list-card-body">
-                                    <h6 class="mb-1"><a href=" {% static 'chef.html' %} " class="text-black">The osahan Restaurant
-                                 </a>
-                                    </h6>
-                                    <p class="text-gray mb-1 small">• North • Hamburgers</p>
-                                    <p class="text-gray mb-1 rating">
-                                    </p>
-                                    <ul class="rating-stars list-unstyled">
-                                        <li>
-                                            <i class="feather-star star_active"></i>
-                                            <i class="feather-star star_active"></i>
-                                            <i class="feather-star star_active"></i>
-                                            <i class="feather-star star_active"></i>
-                                            <i class="feather-star"></i>
-                                        </li>
-                                    </ul>
-                                    <p></p>
-                                </div>
-                                <div class="list-card-badge">
-                                    <span class="badge badge-danger">OFFER</span> <small>65% OSAHAN50</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 pb-3">
-                        <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm">
-                            <div class="list-card-image">
-                                <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
-                                <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
-                                <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
-                                <a href=" {% static 'chef.html' %} ">
-                                    <img alt="#" src=" {% static 'img/popular6.png' %} " class="img-fluid item-img w-100">
-                                </a>
-                            </div>
-                            <div class="p-3 position-relative">
-                                <div class="list-card-body">
-                                    <h6 class="mb-1"><a href=" {% static 'chef.html' %} " class="text-black">Thai Famous Indian Cuisine</a></h6>
-                                    <p class="text-gray mb-1 small">• Indian • Pure veg</p>
-                                    <p class="text-gray mb-1 rating">
-                                    </p>
-                                    <ul class="rating-stars list-unstyled">
-                                        <li>
-                                            <i class="feather-star star_active"></i>
-                                            <i class="feather-star star_active"></i>
-                                            <i class="feather-star star_active"></i>
-                                            <i class="feather-star star_active"></i>
-                                            <i class="feather-star"></i>
-                                        </li>
-                                    </ul>
-                                    <p></p>
-                                </div>
-                                <div class="list-card-badge">
-                                    <span class="badge badge-success">OFFER</span> <small>65% off</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 pb-3">
-                        <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm">
-                            <div class="list-card-image">
-                                <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
-                                <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
-                                <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
-                                <a href=" {% static 'chef.html' %} ">
-                                    <img alt="#" src=" {% static 'img/popular7.png' %} " class="img-fluid item-img w-100">
-                                </a>
-                            </div>
-                            <div class="p-3 position-relative">
-                                <div class="list-card-body">
-                                    <h6 class="mb-1"><a href=" {% static 'chef.html' %} " class="text-black">The osahan Restaurant
-                                 </a>
-                                    </h6>
-                                    <p class="text-gray mb-1 small">• Hamburgers • Pure veg</p>
-                                    <p class="text-gray mb-1 rating">
-                                    </p>
-                                    <ul class="rating-stars list-unstyled">
-                                        <li>
-                                            <i class="feather-star star_active"></i>
-                                            <i class="feather-star star_active"></i>
-                                            <i class="feather-star star_active"></i>
-                                            <i class="feather-star star_active"></i>
-                                            <i class="feather-star"></i>
-                                        </li>
-                                    </ul>
-                                    <p></p>
-                                </div>
-                                <div class="list-card-badge">
-                                    <span class="badge badge-danger">OFFER</span> <small>65% OSAHAN50</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 pb-3">
-                        <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm">
-                            <div class="list-card-image">
-                                <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
-                                <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
-                                <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
-                                <a href=" {% static 'chef.html' %} ">
-                                    <img alt="#" src=" {% static 'img/popular8.png' %} " class="img-fluid item-img w-100">
-                                </a>
-                            </div>
-                            <div class="p-3 position-relative">
-                                <div class="list-card-body">
-                                    <h6 class="mb-1"><a href=" {% static 'chef.html' %} " class="text-black">Bite Me Now Sandwiches</a></h6>
-                                    <p class="text-gray mb-1 small">American • Pure veg</p>
-                                    <p class="text-gray mb-1 rating">
-                                    </p>
-                                    <ul class="rating-stars list-unstyled">
-                                        <li>
-                                            <i class="feather-star star_active"></i>
-                                            <i class="feather-star star_active"></i>
-                                            <i class="feather-star star_active"></i>
-                                            <i class="feather-star star_active"></i>
-                                            <i class="feather-star"></i>
-                                        </li>
-                                    </ul>
-                                    <p></p>
-                                </div>
-                                <div class="list-card-badge">
-                                    <span class="badge badge-success">OFFER</span> <small>65% off</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Most sales -->
-            <div class="pt-2 pb-3 title d-flex align-items-center">
-                <h5 class="m-0">Most sales</h5>
-                <a class="font-weight-bold ml-auto" href="#">26 places <i class="feather-chevrons-right"></i></a>
-            </div>
-            <!-- Most sales -->
-            <div class="most_sale">
-                <div class="row mb-3">
-                    <div class="col-md-4 mb-3">
-                        <div class="d-flex align-items-center list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm">
-                            <div class="list-card-image">
-                                <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
-                                <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
-                                <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
-                                <a href=" {% static 'chef.html' %} ">
-                                    <img alt="#" src=" {% static 'img/sales1.png' %} " class="img-fluid item-img w-100">
-                                </a>
-                            </div>
-                            <div class="p-3 position-relative">
-                                <div class="list-card-body">
-                                    <h6 class="mb-1"><a href=" {% static 'chef.html' %} " class="text-black">The osahan Restaurant
-                                 </a>
-                                    </h6>
-                                    <p class="text-gray mb-3">North • Hamburgers • Pure veg</p>
-                                    <p class="text-gray mb-3 time"><span class="bg-light text-dark rounded-sm pl-2 pb-1 pt-1 pr-2"><i class="feather-clock"></i> 15–25 min</span> <span class="float-right text-black-50"> $500 FOR TWO</span></p>
-                                </div>
-                                <div class="list-card-badge">
-                                    <span class="badge badge-danger">OFFER</span> <small>65% OSAHAN50</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <div class="d-flex align-items-center list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm">
-                            <div class="list-card-image">
-                                <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
-                                <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
-                                <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
-                                <a href=" {% static 'chef.html' %} ">
-                                    <img alt="#" src=" {% static 'img/sales2.png' %} " class="img-fluid item-img w-100">
-                                </a>
-                            </div>
-                            <div class="p-3 position-relative">
-                                <div class="list-card-body">
-                                    <h6 class="mb-1"><a href=" {% static 'chef.html' %} " class="text-black">Thai Famous Cuisine</a></h6>
-                                    <p class="text-gray mb-3">North Indian • Indian • Pure veg</p>
-                                    <p class="text-gray mb-3 time"><span class="bg-light text-dark rounded-sm pl-2 pb-1 pt-1 pr-2"><i class="feather-clock"></i> 30–35 min</span> <span class="float-right text-black-50"> $250 FOR TWO</span></p>
-                                </div>
-                                <div class="list-card-badge">
-                                    <span class="badge badge-success">OFFER</span> <small>65% off</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <div class="d-flex align-items-center list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm">
-                            <div class="list-card-image">
-                                <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
-                                <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
-                                <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
-                                <a href=" {% static 'chef.html' %} ">
-                                    <img alt="#" src=" {% static 'img/sales3.png' %} " class="img-fluid item-img w-100">
-                                </a>
-                            </div>
-                            <div class="p-3 position-relative">
-                                <div class="list-card-body">
-                                    <h6 class="mb-1"><a href=" {% static 'chef.html' %} " class="text-black">The osahan Restaurant
-                                 </a>
-                                    </h6>
-                                    <p class="text-gray mb-3">North • Hamburgers • Pure veg</p>
-                                    <p class="text-gray mb-3 time"><span class="bg-light text-dark rounded-sm pl-2 pb-1 pt-1 pr-2"><i class="feather-clock"></i> 15–25 min</span> <span class="float-right text-black-50"> $500 FOR TWO</span></p>
-                                </div>
-                                <div class="list-card-badge">
-                                    <span class="badge badge-danger">OFFER</span> <small>65% OSAHAN50</small>
-                                </div>
-                            </div>
-                        </div>
+                <div class="col-md-3 col-sm-3">
+                    <div class="stats2-info">
+                        <i class="icon-world"></i>
+                        <p><span class="count">8</span>+</p>
+                        <h2>Food Categories</h2>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-{% endblock %}
+
+    <!-- About Us -->
+    <div id="about" class="container">
+        <!-- About Section 1 -->
+        <div class="intro intro-about2">
+            <div class="container">
+                <div class="row center-content">
+                    <div class="col-md-7 ">
+                        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                        <lottie-player
+                                src="https://assets6.lottiefiles.com/packages/lf20_rkgoywwu/`lottie_cancel/data.json"
+                                background="transparent" speed="1" style="width: 600px; height: 600px;" hover loop
+                                autoplay></lottie-player>
+                    </div>
+                    <div class="col-md-5">
+                        <h3>ChefsGrub understands the value of home-cooked food</h3>
+                        <p>ChefsGrub is about more than just food delivery. We believe that everyone deserves access to
+                            healthy and delicious food, no matter their budget or time constraints. We also believe that
+                            we, as a community, have the power to support small businesses and independent chefs who are
+                            passionate about cooking every day.</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Section 2 -->
+        <div class="intro intro-about2">
+            <div class="container">
+                <div class="row center-content">
+                    <div class="col-md-5">
+                        <h3>A Personal Chef In Minutes</h3>
+                        <p>ChefsGrub brings you the freshest homemade food in your area, right to your doorstep. Need
+                            some more reasons to try us?</p>
+
+                        <ul class="list">
+                            <li><i class="fa fa-check"></i>Ordering on ChefsGrub is fast, easy and secure.</li>
+                            <li><i class="fa fa-check"></i> We offer a wide variety of dishes from different cuisines.
+                            </li>
+                            <li><i class="fa fa-check"></i> Veggie lover? We got you. Carnivore? It's taken care of</li>
+                        </ul>
+
+                        <div class="space30"></div>
+
+                    </div>
+                    <div class="col-md-7">
+                        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                        <lottie-player
+                                src="https://assets8.lottiefiles.com/packages/lf20_qrwely5b.json"
+                                background="transparent" speed="1" style="width: 600px; height: 600px;" hover loop
+                                autoplay></lottie-player>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="space80"></div>
+
+
+    <div class="video-action">
+        <div class="row text-center">
+            <h1>Turn Your Favorite Recipes Into Money: </h1>
+            <p>We are looking for great cooks who are tired of their dreary 9-5 job. Do you have a skill in cooking?<br>Excellent!
+                Subscribe to our Chefsgrub platform and share your talent by creating awesome dishes. Yummy food
+                deserves your warmt</p>
+            <br><br>
+            <div class="dual-btn">
+                <a href=" chef/become-chef/ " class="btn btn-lg btn-primary page-scroll">Join us as a Chef! <span
+                ></span></a> &nbsp; &nbsp;
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <div id="explore" class="elements-content">
+        <div class="container">
+            <div class="about-inline text-center">
+                <h3>Explore Our Foods </h3>
+
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card card-product">
+                        <div class="img-wrap"><img src=" {% static 'images/foods/2.png' %} " alt="img"></div>
+                        <div class="info-wrap">
+                            <h4 class="title">Super Bowl</h4>
+                            <p class="desc"> Serves: 1 </p>
+                            <div class="price-wrap h3">
+                                <span class="price-new">5 €</span>
+                                <del class="price-old">10 €</del>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-product">
+                        <div class="img-wrap"><img src=" {% static 'images/foods/3.png' %} " alt="img"></div>
+                        <div class="info-wrap">
+                            <h4 class="title">Couscous</h4>
+                            <p class="desc"> Serves: 1 </p>
+                            <div class="price-wrap h3">
+                                <span class="price-new">6 €</span>
+                                <del class="price-old">12 €</del>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-product">
+                        <div class="img-wrap"><img src=" {% static 'images/foods/1.png' %} " alt="img"></div>
+                        <div class="info-wrap">
+                            <h4 class="title">Salad</h4>
+                            <p class="desc"> Serves: 1 </p>
+                            <div class="price-wrap h3">
+                                <span class="price-new">4 €</span>
+                                <del class="price-old">6 €</del>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="space100"></div>
+
+    <!-- Testimonials -->
+    <div id="reviews" class="testimonials-color">
+        <div class="container">
+            <div class="about-inline text-center">
+                <h3>Testimonials </h3>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="quote2">
+                        <div>
+                            <img src=" {% static 'images/testimonials/chef1.png' %} " alt=""/>
+                            <p>"ChefsGrub matches expert home cooks with hungry customers. With just a few taps, you can
+                                order an array of gourmet meals, desserts, and snacks. "</p>
+                            <span class="author">Simab Dave - Private Chef</span>
+                        </div>
+                        <div>
+                            <img src=" {% static 'images/testimonials/chef2.png' %} " alt=""/>
+                            <p>"Chef's Grub is the place to let your palette travel. Homemade food orders and delivery –
+                                made simple by ChefsGrub. From multiple cuisines to every type of dish, our menu has all
+                                your cravings covered."</p>
+                            <span class="author">Johnthan Doe - Private Chef</span>
+                        </div>
+                        <div>
+                            <img src=" {% static 'images/testimonials/chef3.png' %} " alt=""/>
+                            <p>"Spare yourself the trouble of cooking and enjoy a prepared dish made by one of our chefs
+                                "</p>
+                            <span class="author">Maccy Doe - Mom at Home</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="space100"></div>
+        </div>
+    </div>
+
+    <!-- Faq -->
+    <div class="container" id="faq">
+        <div class="about-inline text-center">
+            <h3>Frequently Asked Questions </h3>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <div class="faq">
+                    <h4><span>~ </span>ChefsGrub is a…Is it a web app? Is it a delivery service? Is it an online
+                        ordering
+                        system?</h4>
+                    <p><br> It’s ChefsGrub.We took all the best parts of these things, and combined them into one
+                        service.
+                        We're building ChefsGrub to make it easier for you to find great eats near you. We're working
+                        in-house with the top chefs in cities around the country and are utilizing technology that makes
+                        it possible for you to place a lot more than just an order - from viewing a place's menu,
+                        selecting your meal preferences, to paying by credit card or cashless payment option.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-sm-6">
+                <div class="faq">
+                    <h4><span>~ </span> Are you concerned about the food safety of the homemade food that?</h4>
+                    <p>
+                        <br>ChefsGrub understands the food safety of the homemade foods that it promotes. We're focused
+                        on
+                        food safety and packaged our kits with that in mind. We have the proper supplies to mix, store,
+                        prepare, chill and serve your homemade food safely and understandably.
+                        Chefs are verified for a quality and safe food preparing.</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="space100"></div>
+    </div>
+
+    <!-- PARALLAX -->
+    <section class="parallax-content2 parallax2 text-center" data-stellar-background-ratio="0.4">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="col-md-12">
+                <div class="col-md-12">
+                    <h4>Because the Best Food is Homemade.</h4>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- PARALLAX -->
+
+    <section class="text-center">
+        <div class="cta-wrap subscribe-elt2 ">
+            <div class="container">
+                <div class="col-md-12">
+                    <h1>Hurry up! Join the ChefsGrub waiting list and get 10% OFF your first order when we launch.<br>
+                    </h1>
+                    <p>Limited time offer for this month! Join our waiting list so we can make your food dreams come
+                        true, you'll be on the first list to receive 10 percent off of your first order.</p>
+                    <div class="container">
+                        <div class="col-12">
+                            {% if email %}
+                                <p>{{ email }} has been {{ action }}.</p>
+                            {% endif %}
+                        </div>
+                        {% if form %}
+                            <div>
+                                <form method="post" novalidate>
+                                    {% csrf_token %}
+                                    {{ form }}
+                                    <br>
+                                    <button type="submit" class="btn btn-success">Get 10% off</button>
+                                </form>
+                            </div>
+                        {% endif %}
+
+
+                    </div>
+                </div>
+            </div>
+    </section>
+    <div class="space80"></div>
+
+
+    <!-- FOOTER -->
+    <footer class="footer2" id="footer2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 footerP text-center">
+                    <a href="/about">About Us</a>
+                    <a href="/chef/become-chef/"> Join us as a Chef </a>
+
+                    <a href="/faq">FAQ</a>
+                </div>
+                <div class="footer-social space30 text-center">
+                    <a href="https://www.facebook.com/ChefsGrub-101055565915321/" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+
+                    <a href="#" class="fa fa-instagram"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Copyright -->
+    <div class="footer-copy">
+        <div class="container">
+            &copy; 2022. ChefsGrub. All rights reserved.
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" data-toggle="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="cf2-wrap">
+
+                        <h2>Make Your Order Now!</h2>
+
+                        <div class="clearfix space40"></div>
+                        <form class="positioned" name="sentMessage" id="contactForm" action="php/contact.php"
+                              method="post">
+                            <div class="row">
+
+                                <div class="col-md-6 col-sm-6">
+                                    <input name="senderName" id="senderName" placeholder="Your Name" required
+                                           type="text">
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <input name="senderEmail" id="senderEmail" placeholder="Email Address" required
+                                           type="email">
+                                </div>
+                            </div>
+
+                            <input name="address" id="address" placeholder="Address" required type="text">
+
+                            <input placeholder="Zip Code" required type="number">
+
+                            <input placeholder="Mobile No." required type="number">
+
+
+                            <select name="name" id="select" required="required">
+                                <option value=""> Super Bowl - $10.50</option>
+                                <option value="1"> Salad - $9.20</option>
+                                <option value="2"> Couscous - $12.50</option>
+
+                            </select>
+
+
+                            <button type="submit" class="btn btn-primary btn-ico">Send Message<i
+                                    class="fa fa-paper-plane-o"></i></button>
+                        </form>
+                        <div id="sendingMessage" class="statusMessage">
+                            <p><i class="fa fa-spin fa-cog"></i> Sending your message. Please wait...</p>
+                        </div>
+                        <div id="successMessage" class="successmessage">
+                            <p><span class="success-ico"></span> Thanks for sending your message! We'll get back to you
+                                shortly.</p>
+                        </div>
+                        <div id="failureMessage" class="errormessage">
+                            <p><span class="error-ico"></span> There was a problem sending your message. Please try
+                                again.</p>
+                        </div>
+                        <div id="incompleteMessage" class="statusMessage">
+                            <p><i class="fa fa-warning"></i> Please complete all the fields in the form before sending.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+<!-- JAVASCRIPT =============================-->
+<script src=" {% static 'js/jquery.js' %} "></script>
+<script src=" {% static 'js/bootstrap.min.js' %} "></script>
+<script src=" {% static 'js/vendors/slick/slick.min.js' %} "></script>
+<script src=" {% static 'js/vendors/jquery.easing.min.js' %} "></script>
+<script src=" {% static 'js/vendors/stellar.js' %} "></script>
+<script src=" {% static 'js/vendors/isotope/isotope.pkgd.js' %} "></script>
+<script src=" {% static 'js/vendors/swipebox/js/jquery.swipebox.min.js' %} "></script>
+<script src=" {% static 'js/main.js' %} "></script>
+<script src=" {% static 'js/vendors/mc/jquery.ketchup.all.min.js' %} "></script>
+<script src=" {% static 'js/vendors/mc/main.js' %} "></script>
+</body>
+
+</html>

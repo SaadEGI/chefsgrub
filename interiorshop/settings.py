@@ -65,6 +65,10 @@ EMAIL_HOST_PASSWORD = 'SG.0TkWQkUaT46la7_zJ_LlDw.tiYbkQIi-PYTN7BfJ8KqM7UU_QsTQ6a
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_EMAIL_FROM = 'ChefGrub <order@chefsgrub.com>'
+#newsletter
+
+FROM_EMAIL = 'hey@chefsgrub.com' # replace with your address
+SENDGRID_API_KEY = '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'
 
 #AWS
 
@@ -153,9 +157,9 @@ WSGI_APPLICATION = 'interiorshop.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'chefsgrub',
-        'USER': 'strtpadmin',
-        'PASSWORD': 'strtpadmin',
+        'NAME': 'CHEFSGRUB',
+        'USER': 'postgres',
+        'PASSWORD': 'bend1965',
         'HOST': '127.0.0.1', 
         'PORT': '5432',
     }
