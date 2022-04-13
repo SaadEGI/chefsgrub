@@ -157,9 +157,9 @@ WSGI_APPLICATION = 'interiorshop.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'CHEFSGRUB',
-        'USER': 'postgres',
-        'PASSWORD': 'bend1965',
+        'NAME': 'chefsgrub',
+        'USER': 'strtpadmin',
+        'PASSWORD': 'strtpadmin',
         'HOST': '127.0.0.1', 
         'PORT': '5432',
     }
