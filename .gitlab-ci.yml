@@ -12,7 +12,7 @@ stages:
 #   script:
 #     - echo "end2end tests run successfully"
 
-deploy:
+deploy.staging:
   image: ruby:3.1.1
   stage: deploy
   before_script:
@@ -26,7 +26,6 @@ deploy:
     name: staging
     url: $HEROKU_APP_HOST
   only: 
-    - main
     - develop
   tags:
     - dockerRunner
@@ -46,7 +45,7 @@ deploy.production:
     - echo "${LIGHTSAIL_HOST_KEY}" > ~/.ssh/known_hosts
     - echo -en "ENVIRONMENT=production\nSECRET_KEY=$DJANGO_SECRET_KEY\nDJANGO_SUPERUSER_PASSWORD=$ADMIN_PASSWORD" > .env
     - rsync -azv --stats -e ssh ./ ubuntu@$AWS_IP:/home/ubuntu/ChefsGrub/live
-    - ssh ubuntu@$AWS_IP 'cd ChefsGrub/live; sudo bash ./server.sh;'
+    - ssh ubuntu@$AWS_IP 'cd ChefsGrub/live; sudo ./server.bash;'
   environment:
     name: production
     url: $AWS_APP_HOST
