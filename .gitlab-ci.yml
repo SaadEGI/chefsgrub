@@ -46,7 +46,7 @@ deploy.production:
     - echo "${LIGHTSAIL_HOST_KEY}" > ~/.ssh/known_hosts
     - echo -en "ENVIRONMENT=production\nSECRET_KEY=$DJANGO_SECRET_KEY\nDJANGO_SUPERUSER_PASSWORD=$ADMIN_PASSWORD" > .env
     - rsync -azv --stats -e ssh ./ ubuntu@$AWS_IP:/home/ubuntu/ChefsGrub/live
-    - ssh ubuntu@$AWS_IP 'cd ChefsGrub/live; make server;'
+    - ssh ubuntu@$AWS_IP 'cd ChefsGrub/live; sudo bash ./server.sh;'
   environment:
     name: production
     url: $AWS_APP_HOST
