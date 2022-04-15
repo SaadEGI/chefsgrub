@@ -110,7 +110,7 @@ def contact(request):
 
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
-            return redirect("frontpage")
+            return redirect("core:frontpage")
 
     form = ContactForm()
     return render(request, "core/contact.html", {'form': form})

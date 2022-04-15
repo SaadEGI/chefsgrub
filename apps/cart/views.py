@@ -37,7 +37,7 @@ def cart_detail(request):
             notify_customer(order)
             notify_vendor(order)
 
-            return redirect('success')
+            return redirect('cart:success')
     else:
         form = CheckoutForm()
 
@@ -48,12 +48,12 @@ def cart_detail(request):
     if remove_from_cart:
         cart.remove(remove_from_cart)
 
-        return redirect('cart')
+        return redirect('cart:cart')
 
     if change_quantity:
         cart.add(change_quantity, quantity, True)
 
-        return redirect('cart')
+        return redirect('cart:cart')
 
     return render(request, 'cart/cart.html', {'form': form})
 

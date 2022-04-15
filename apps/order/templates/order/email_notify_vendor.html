@@ -1,9 +1,10 @@
+{% load i18n %}
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         
-        <title>Interiorshop</title>
+        <title>ChefsGrub</title>
 
         <style type="text/css">
             html {
@@ -23,31 +24,31 @@
     <body>
         <table width="100%" cellspacing="0" cellpadding="0">
             <tr>
-                <td><h1>New order</h1></td>
+                <td><h1>{% translate "New order" %}</h1></td>
             </tr>
 
             <tr>
                 <td>
-                    <h3>Details</h3>
+                    <h3>{% translate "Details" %}</h3>
 
-                    <b>Name:</b> {{ order.first_name }} {{ order.last_name }}<br>
-                    <b>Address:</b> {{ order.address }}<br>
-                    <b>Zip and place:</b> {{ order.zipcode }} {{ order.place }}<br>
-                    <b>E-mail:</b> {{ order.email }}<br>
-                    <b>Phone:</b> {{ order.phone }}
+                    <b>{% translate "Name" %}:</b> {{ order.first_name }} {{ order.last_name }}<br>
+                    <b>{% translate "Address" %}:</b> {{ order.address }}<br>
+                    <b>{% translate "Zip and place" %}:</b> {{ order.zipcode }} {{ order.place }}<br>
+                    <b>{% translate "E-mail" %}:</b> {{ order.email }}<br>
+                    <b>{% translate "Phone" %}:</b> {{ order.phone }}
                 </td>
             </tr>
 
             <tr>
                 <td>
-                    <h3>Products</h3>
+                    <h3>{% translate "Products" %}</h3>
 
                     <table width="100%" cellspacing="0" cellpadding="0">
                         <tr>
-                            <td><b>Product</b></td>
-                            <td><b>Price</b></td>
-                            <td><b>Quantity</b></td>
-                            <td><b>Total</b></td>
+                            <td><b>{% translate "Product" %}</b></td>
+                            <td><b>{% translate "Price" %}</b></td>
+                            <td><b>{% translate "Quantity" %}</b></td>
+                            <td><b>{% translate "Total" %}</b></td>
                         </tr>
                         
                         {% for item in order.items.all %}

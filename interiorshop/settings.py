@@ -25,7 +25,7 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 PRODUCTION = os.environ.get('DATABASE_URL') != None
 ENVIRONMENT = os.environ.get('ENVIRONMENT')
 # SECRET_KEY = 'wmmx*^_i6@p)kP5nxa=89byfm0=gzc_h%13q)*7g7+181rk0po' # TODO: get from os.environ.get('SECRET_KEY), inject it in pipeline
-if(ENVIRONMENT == 'production'):
+if(ENVIRONMENT == 'staging' or ENVIRONMENT == 'production'):
     SECRET_KEY = os.environ.get("SECRET_KEY")
 else:
     SECRET_KEY = 'tuxik&w(xnck86#t!asbp67u$##glq!#08y35%2kxrt!-3i%0n'
@@ -48,9 +48,6 @@ ALLOWED_HOSTS = ['*']
 ## to fix the problem of using chefgrub.com
 CSRF_TRUSTED_ORIGINS = ['https://chefsgrub.com']
 
-
-STRIPE_PUB_KEY = 'pk_test_51HIHiuKBJV2qfWbD2gQe6aqanfw6Eyul5P02KeOuSR1UMuaV4TxEtaQyzr9DbLITSZweL7XjK3p74swcGYrE2qEX00Hz7GmhMI'
-STRIPE_SECRET_KEY = 'sk_test_51HIHiuKBJV2qfWbD4I9pAODack7r7r9LJOY65zSFx7jUUwgy2nfKEgQGvorv1p2xP7tgMsJ5N9EW7K1lBdPnFnyK00kdrS27cj'
 
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'vendor_admin' # TODO: change to accomodate chef
@@ -115,12 +112,16 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.request',
+)
 
 ROOT_URLCONF = 'interiorshop.urls'
 
@@ -191,7 +192,6 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
 
@@ -214,3 +214,18 @@ MEDIA_ROOT = BASE_DIR / 'media/'
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+
+
+from django.utils.translation import gettext_lazy
+
+LANGUAGE_CODE = 'de'
+LANGUAGES = (
+    ('de', gettext_lazy('German')),
+    ('en', gettext_lazy('English')),
+    ('ar', gettext_lazy('Arabic')),
+)
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale/'),
+)

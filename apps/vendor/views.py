@@ -90,7 +90,7 @@ def become_chef(request):
 
             chef = Vendor.objects.create(name=user.username, created_by=user)
 
-            return redirect('chef-order')
+            return redirect("vendor:chef-order")
     else:
         form = UserCreationForm()
 
@@ -99,7 +99,7 @@ def become_chef(request):
 
 @login_required(login_url='/chef/sign-in/')
 def chef_admin(request):
-    return redirect('chef-order')
+    return redirect("vendor:chef-order")
 
 
 @login_required(login_url='/chef/sign-in/')
@@ -180,7 +180,7 @@ def chef_add_meal(request):
             product.slug = slugify(product.title)
             product.save()
 
-            return redirect('chef-meal')
+            return redirect("vendor:chef-meal")
     else:
         form = forms.ProductForm()
 
