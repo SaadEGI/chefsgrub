@@ -48,10 +48,6 @@
                 <p class="m-0 small">{% translate "indian" %}</p>
             </a>
         </div>
-        {% comment %} {{ request.get_full_path}}
-        {{ request.path}} {% endcomment %}
-        {{request.get_full_path|slice:'4:'}}
-        {{request.path|length}}
         <div class="cat-item px-1 py-3">
             <a class="bg-white rounded d-block p-2 text-center shadow-sm" 
             {% if 'palestinian'  in request.path%}
