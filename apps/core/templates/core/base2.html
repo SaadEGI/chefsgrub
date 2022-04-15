@@ -256,8 +256,8 @@
                     <aside class="col-sm-3  col-md-2 text-white">
                         <h6 class="title">{% translate "Get to Know Us" %}</h6>
                         <ul class="list-unstyled hov_footer">
-                            <li> <a href=" {% static 'about.html' %} " class="text-muted"> {% translate "About us" %} </a></li>
-                            <li> <a href="{% static 'contact.html' %} " class="text-muted"> {% translate "Contact us" %} </a></li>
+                            <li> <a href=" {% url 'core:about' %}  " class="text-muted"> {% translate "About us" %} </a></li>
+                            <li> <a href="{% url 'core:contact' %} " class="text-muted"> {% translate "Contact us" %} </a></li>
 
                         </ul>
                     </aside>
@@ -305,7 +305,7 @@
 
             <li><a href="{% static 'about.html' %} "><i class="feather-heart mr-2"></i> {% translate "Ramadan Offers" %}</a></li>
 
-            <li><a href=" {% static 'about.html' %}"><i class="feather-paperclip mr-2"></i>{% translate "About us" %}</a></li>
+            <li><a href=" /about"><i class="feather-paperclip mr-2"></i>{% translate "About us" %}</a></li>
             <li><a href=" {% static 'contact.html' %} "><i class="feather-paperclip mr-2"></i> {% translate "Contact us" %}</a></li>
             <li><a href=" {% static 'cart.html' %} "><i class="feather-list mr-2"></i> {% translate "Cart" %}</a></li>
 
