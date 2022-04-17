@@ -67,13 +67,21 @@ def category(request, category_slug):
     category = get_object_or_404(Category, slug=category_slug)
     vendors = Vendor.objects.all()
     CategoryVendor = []
+    AllCategoryVendor = []
+
     for vendor in vendors:
         for product in vendor.products.all():
+            if product.category not in AllCategoryVendor:
+                AllCategoryVendor.append(product.category)
             if product.category==category:
+
                 CategoryVendor.append(vendor)
                 break;
 
 
 
 
-    return render(request, 'product/category.html', {'CategoryVendor':CategoryVendor,'category': category})
+
+
+
+    return render(request, 'product/category.html', {'AllCategoryVendor':AllCategoryVendor,'CategoryVendor':CategoryVendor,'category': category})
