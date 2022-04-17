@@ -51,7 +51,7 @@ CSRF_TRUSTED_ORIGINS = ['https://chefsgrub.com']
 
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'vendor_admin' # TODO: change to accomodate chef
-LOGOUT_REDIRECT_URL = 'frontpage'
+LOGOUT_REDIRECT_URL = '/'
 
 SESSION_COOKIE_AGE = 86400
 CART_SESSION_ID = 'cart'
