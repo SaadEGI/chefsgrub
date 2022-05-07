@@ -15,6 +15,7 @@ class Order(models.Model):
     paid_amount = models.DecimalField(max_digits=8, decimal_places=2)
     vendors = models.ManyToManyField(Vendor, related_name='orders')
     id = models.AutoField(primary_key=True)
+    #time_field = models.TimeField()
 
     class Meta:
         ordering = ['-created_at']
