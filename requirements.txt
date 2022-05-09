@@ -26,4 +26,4 @@ django-storages==1.12.3
 boto3==1.21.28
 django-tawkto==0.5.1
 sendgrid==6.9.7
-
+django-paypal==2.0
