@@ -7,6 +7,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,14 +19,13 @@
     <link rel="icon" type="image/png" href=" {% static 'img/new_Logo.png' %}' %} ">
     <title>{% translate "ChefsGrub" %} - {% translate "Order Homemade Food" %}</title>
     <!-- Slick Slider -->
-    <link rel="stylesheet" type="text/css" href=" {% static 'vendor/slick/slick.min.css' %} " />
-    <link rel="stylesheet" type="text/css" href=" {% static 'vendor/slick/slick-theme.min.css' %} " />
+    <link rel="stylesheet" type="text/css" href=" {% static 'vendor/slick/slick.min.css' %} "/>
+    <link rel="stylesheet" type="text/css" href=" {% static 'vendor/slick/slick-theme.min.css' %} "/>
     <!-- Feather Icon-->
     <link href=" {% static 'vendor/icons/feather.css' %} " rel="stylesheet" type="text/css">
     <!-- Bootstrap core CSS -->
     <link href=" {% static 'vendor/bootstrap/css/bootstrap.min.css' %} " rel="stylesheet">
     <!-- Custom styles for this template -->
-
 
 
     <link href=" {% static 'css/style.css' %} " rel="stylesheet">
@@ -32,116 +34,133 @@
 </head>
 
 <body class="fixed-bottom-bar">
-    <header class="section-header">
+<header class="section-header">
 
-    <div   style="background: #EC0161;color: #fff; padding: 14px 0; text-align: center;" >
-  <a style=" color: #fff;" href="/" target="_blank"> <strong>We still do not accept Orders Currently!</strong> <span></span></a>
-</div>
-
-        <section class="header-main shadow-sm bg-white">
-        <div class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center">
-    <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
-
-    <div class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
-
-      <div class="modal-close absolute top-0 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-white text-sm z-50">
-        <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
-          <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
-        </svg>
-        <span class="text-sm">(Esc)</span>
-      </div><!-- Add margin if you want to see some of the overlay behind the modal-->
-      <div class="modal-content py-4 text-left px-6 leading-normal">
-        <!--Title-->
-        <div class="flex justify-between items-center pb-3">
-          <p class="text-2xl font-bold">Hey, smarty pants!</p>
-          <div class="modal-close cursor-pointer z-50">
-            <svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
-              <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
-            </svg>
-          </div>
-        </div><!--Body-->
-        <p>
-        Let's keep in touch. Sign up for our newsletter
-        </p>
-        <form action="/success" method="POST" >
-          {% csrf_token %}<input type="email" name="subscriber-email" class="mt-4 border-solid border border-teal-500 focus:border-teal-400 active:border-teal-400 w-full rounded px-3 py-2" placeholder="Email"/>
-
-         <button class="subscribe bg-teal-500 text-white px-3 py-2 rounded w-full mt-4 font-semibold">SUBSCRIBE</button>
-        </form>
-
-      </div>
+    <div style="background: #EC0161;color: #fff; padding: 14px 0; text-align: center;">
+        <a style=" color: #fff;" href="/" target="_blank"> <strong>We still do not accept Orders Currently!</strong>
+            <span></span></a>
     </div>
-  </div>
 
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-1">
-                        <a href="{% url 'core:frontpage' %}" class="brand-wrap mb-0">
-                            <img alt="#" class="img-fluid" src=" {% static 'img/new_logo.png' %} ">
+    <section class="header-main shadow-sm bg-white">
+        <div class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center">
+            <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
+
+            <div class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
+
+                <div class="modal-close absolute top-0 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-white text-sm z-50">
+                    <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                         viewBox="0 0 18 18">
+                        <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                    </svg>
+                    <span class="text-sm">(Esc)</span>
+                </div><!-- Add margin if you want to see some of the overlay behind the modal-->
+                <div class="modal-content py-4 text-left px-6 leading-normal">
+                    <!--Title-->
+                    <div class="flex justify-between items-center pb-3">
+                        <p class="text-2xl font-bold">Hey, smarty pants!</p>
+                        <div class="modal-close cursor-pointer z-50">
+                            <svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18"
+                                 height="18" viewBox="0 0 18 18">
+                                <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                            </svg>
+                        </div>
+                    </div><!--Body-->
+                    <p>
+                        Let's keep in touch. Sign up for our newsletter
+                    </p>
+                    <form action="/success" method="POST">
+                        {% csrf_token %}<input type="email" name="subscriber-email"
+                                               class="mt-4 border-solid border border-teal-500 focus:border-teal-400 active:border-teal-400 w-full rounded px-3 py-2"
+                                               placeholder="Email"/>
+
+                        <button class="subscribe bg-teal-500 text-white px-3 py-2 rounded w-full mt-4 font-semibold">
+                            SUBSCRIBE
+                        </button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-1">
+                    <a href="{% url 'core:frontpage' %}" class="brand-wrap mb-0">
+                        <img alt="#" class="img-fluid" src=" {% static 'img/new_logo.png' %} ">
+                    </a>
+                    <!-- brand-wrap.// -->
+                </div>
+                <div class="col-2 d-flex align-items-center m-none">
+                    <div class="dropdown mr-2">
+                        <a class="text-dark dropdown-toggle d-flex align-items-center py-3" href="#" id="navbarDropdown"
+                           role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div><i class="feather-map-pin mr-2 bg-light rounded-pill p-2 icofont-size"></i></div>
+                            <div>
+                                <p class="text-muted mb-0 small">{% translate "Select Location" %}</p>
+                                {% translate "Wuppertal" %}
+                            </div>
                         </a>
-                        <!-- brand-wrap.// -->
-                    </div>
-                    <div class="col-2 d-flex align-items-center m-none">
-                        <div class="dropdown mr-2">
-                            <a class="text-dark dropdown-toggle d-flex align-items-center py-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <div><i class="feather-map-pin mr-2 bg-light rounded-pill p-2 icofont-size"></i></div>
-                                <div>
-                                    <p class="text-muted mb-0 small">{% translate "Select Location" %}</p>
-                                    {% translate "Wuppertal" %}
-                                </div>
-                            </a>
-                            <div class="dropdown-menu p-0 drop-loc" aria-labelledby="navbarDropdown">
-                                <div class="osahan-country">
+                        <div class="dropdown-menu p-0 drop-loc" aria-labelledby="navbarDropdown">
+                            <div class="osahan-country">
 
-                                    <div class="filter">
-                                        <h6 class="px-3 py-3 bg-light pb-1 m-0 border-bottom">{% translate "Choose your city" %}</h6>
-                                        <div class="custom-control  border-bottom px-0 custom-radio">
-                                            <input type="radio" id="customRadio1" name="location" class=" custom-control-input">
-                                            <label class="custom-control-label py-3 w-100 px-3" for="customRadio1" checked>{% translate "Wuppertal" %}</label>
-                                        </div>
-                                        <div class="custom-control  border-bottom px-0 custom-radio">
-                                            <input type="radio" id="customRadio2" name="location" class="custom-control-input" >
-                                            <label class="custom-control-label py-3 w-100 px-3" for="customRadio2">{% translate "Düsseldorf" %}</label>
-                                        </div>
-                                        <div class="custom-control  border-bottom px-0 custom-radio">
-                                            <input type="radio" id="customRadio3" name="location" class="custom-control-input">
-                                            <label class="custom-control-label py-3 w-100 px-3" for="customRadio3">{% translate "Berlin" %}</label>
-                                        </div>
-
+                                <div class="filter">
+                                    <h6 class="px-3 py-3 bg-light pb-1 m-0 border-bottom">{% translate "Choose your city" %}</h6>
+                                    <div class="custom-control  border-bottom px-0 custom-radio">
+                                        <input type="radio" id="customRadio1" name="location"
+                                               class=" custom-control-input">
+                                        <label class="custom-control-label py-3 w-100 px-3" for="customRadio1"
+                                               checked>{% translate "Wuppertal" %}</label>
                                     </div>
+                                    <div class="custom-control  border-bottom px-0 custom-radio">
+                                        <input type="radio" id="customRadio2" name="location"
+                                               class="custom-control-input">
+                                        <label class="custom-control-label py-3 w-100 px-3"
+                                               for="customRadio2">{% translate "Düsseldorf" %}</label>
+                                    </div>
+                                    <div class="custom-control  border-bottom px-0 custom-radio">
+                                        <input type="radio" id="customRadio3" name="location"
+                                               class="custom-control-input">
+                                        <label class="custom-control-label py-3 w-100 px-3"
+                                               for="customRadio3">{% translate "Berlin" %}</label>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <li class="col-1 nav-item dropdown" style="list-style-type: none;">
-                            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                {% translate "Select Language" %}
-                            </button>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          {% for LANG_LANGUAGE_CODE, LANG_LANGUAGE_NAME in langs %}
+                </div>
+                <li class="col-1 nav-item dropdown" style="list-style-type: none;">
+                    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                        {% translate "Select Language" %}
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        {% for LANG_LANGUAGE_CODE, LANG_LANGUAGE_NAME in langs %}
                             <li>
-                            <a
-                            class="dropdown-item
+                                <a
+                                        class="dropdown-item
                             {% if LANG_LANGUAGE_CODE == LANGUAGE_CODE %}
                              btn-primary
                             {% endif %}
                             "
-                             href="/{{ LANG_LANGUAGE_CODE }}{{request.get_full_path | slice:'3:'}}" style="text-decoration: none">
-                            {{ LANG_LANGUAGE_CODE | language_name_local }}
-                            </a>
+                                        href="/{{ LANG_LANGUAGE_CODE }}{{ request.get_full_path | slice:'3:' }}"
+                                        style="text-decoration: none">
+                                    {{ LANG_LANGUAGE_CODE | language_name_local }}
+                                </a>
                             </li>
-                          {% endfor %}
-                        </ul>
-                      </li>
-                    <!-- col.// -->
-                    <div class="col-8">
-                        <div class="d-flex align-items-center justify-content-end pr-5">
+                        {% endfor %}
+                    </ul>
+                </li>
+                <!-- col.// -->
+                <div class="col-8">
+                    <div class="d-flex align-items-center justify-content-end pr-5">
 
 
-                            {% if user.is_authenticated %}
+                        {% if user.is_authenticated %}
 
                             <div class="dropdown mr-4 m-none">
-                                <a href="#" class="dropdown-toggle text-dark py-3 d-block" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a href="#" class="dropdown-toggle text-dark py-3 d-block" id="dropdownMenuButton"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
@@ -149,321 +168,344 @@
                                 </div>
                             </div>
 
-                            {% else %}
+                        {% else %}
 
                             <a href="/login " class="widget-header mr-4 text-dark m-none">
                                 <div class="icon d-flex align-items-center">
                                     <i class="feather-user h6 mr-2 mb-0"></i> <span></span>
                                 </div>
                             </a>
-                            {% endif %}
+                        {% endif %}
 
-                            <!-- signin -->
-                            <a href=" {% url 'cart:cart' %} " class="widget-header mr-4 text-dark">
-                                <div class="icon d-flex align-items-center">
-                                    <i class="feather-shopping-cart h6 mr-2 mb-0"></i> <span>{% translate "Cart" %} {% if cart %} ({{ cart|length }}){% endif %}</span>
-                                </div>
-                            </a>
+                        <!-- signin -->
+                        <a href=" {% url 'cart:cart' %} " class="widget-header mr-4 text-dark">
+                            <div class="icon d-flex align-items-center">
+                                <i class="feather-shopping-cart h6 mr-2 mb-0"></i> <span>{% translate "Cart" %}
+                                {% if cart %} ({{ cart|length }}){% endif %}</span>
+                            </div>
+                        </a>
 
-                        </div>
-                        <!-- widgets-wrap.// -->
                     </div>
-                    <!-- col.// -->
+                    <!-- widgets-wrap.// -->
                 </div>
-                <!-- row.// -->
+                <!-- col.// -->
             </div>
-            <!-- container.// -->
-        </section>
-        <!-- header-main .// -->
-    </header>
+            <!-- row.// -->
+        </div>
+        <!-- container.// -->
+    </section>
+    <!-- header-main .// -->
+</header>
 {% block content %}
 {% endblock %}
 
 <!-- Footer -->
-    <div class="osahan-menu-fotter fixed-bottom bg-white px-3 py-2 text-center d-none">
-        <div class="row">
-            <div class="col selected">
-                <a href="/ " class="text-danger small font-weight-bold text-decoration-none">
-                    <p class="h4 m-0"><i class="feather-home text-danger"></i></p>
-                    {% translate "Home" %}
+<div class="osahan-menu-fotter fixed-bottom bg-white px-3 py-2 text-center d-none">
+    <div class="row">
+        <div class="col selected">
+            <a href="/ " class="text-danger small font-weight-bold text-decoration-none">
+                <p class="h4 m-0"><i class="feather-home text-danger"></i></p>
+                {% translate "Home" %}
+            </a>
+        </div>
+        <div class="col">
+            <a href=" /moroccan " class="text-dark small font-weight-bold text-decoration-none">
+                <p class="h4 m-0"><i class="feather-map-pin"></i></p>
+                {% translate "I Feel Lucky" %}
+            </a>
+        </div>
+        <div class="col bg-white rounded-circle mt-n4 px-3 py-2">
+            <div class="bg-danger rounded-circle mt-n0 shadow">
+                <a href=" /cart " class="text-white small font-weight-bold text-decoration-none">
+                    <i class="feather-shopping-cart"></i>
                 </a>
             </div>
-            <div class="col">
-                <a href=" /moroccan " class="text-dark small font-weight-bold text-decoration-none">
-                    <p class="h4 m-0"><i class="feather-map-pin"></i></p>
-                    {% translate "I Feel Lucky" %}
-                </a>
-            </div>
-            <div class="col bg-white rounded-circle mt-n4 px-3 py-2">
-                <div class="bg-danger rounded-circle mt-n0 shadow">
-                    <a href=" /cart " class="text-white small font-weight-bold text-decoration-none">
-                        <i class="feather-shopping-cart"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col">
-                <a href=" /ramadan" class="text-dark small font-weight-bold text-decoration-none">
-                    <p class="h4 m-0"><i class="feather-heart"></i></p>
-                    {% translate "Favorites" %}
-                </a>
-            </div>
-            <div class="col">
-                <a href=" /chef/sign-in " class="text-dark small font-weight-bold text-decoration-none">
-                    <p class="h4 m-0"><i class="feather-user"></i></p>
-                    {% translate "Chef's Panel" %}
-                </a>
-            </div>
+        </div>
+        <div class="col">
+            <a href=" /ramadan" class="text-dark small font-weight-bold text-decoration-none">
+                <p class="h4 m-0"><i class="feather-heart"></i></p>
+                {% translate "Favorites" %}
+            </a>
+        </div>
+        <div class="col">
+            <a href=" /chef/sign-in " class="text-dark small font-weight-bold text-decoration-none">
+                <p class="h4 m-0"><i class="feather-user"></i></p>
+                {% translate "Chef's Panel" %}
+            </a>
         </div>
     </div>
-    <!-- footer -->
-    <footer class="section-footer border-top bg-dark">
-        <div class="container">
-            <section class="footer-top padding-y py-5">
-                <div class="row">
-                    <aside class="col-md-4 footer-about">
-                        <article class="d-flex pb-3">
-                            <div><img alt="#" src=" {% static 'img/new_logo.png' %} " class="logo-footer mr-3"></div>
-                            <div>
-                                <h6 class="title text-white">{% translate "About us" %}</h6>
-                                <p class="text-muted">{% translate "ChefsGrub is an online food ordering platform that enables the user to order homemade food from their neighbors in a 3 step process. We connect home chefs with hungry customers looking for food delivery and deliver it straight to their doorsteps." %}
-                                </p>
-                                <div class="d-flex align-items-center">
-                                    <a class="btn btn-icon btn-outline-light mr-1 btn-sm" title="Facebook" target="_blank" href="#"><i class="feather-facebook"></i></a>
-                                    <a class="btn btn-icon btn-outline-light mr-1 btn-sm" title="Instagram" target="_blank" href="#"><i class="feather-instagram"></i></a>
-                                    <a class="btn btn-icon btn-outline-light mr-1 btn-sm" title="Youtube" target="_blank" href="#"><i class="feather-youtube"></i></a>
-                                    <a class="btn btn-icon btn-outline-light mr-1 btn-sm" title="Twitter" target="_blank" href="#"><i class="feather-twitter"></i></a>
-                                </div>
+</div>
+<!-- footer -->
+<footer class="section-footer border-top bg-dark">
+    <div class="container">
+        <section class="footer-top padding-y py-5">
+            <div class="row">
+                <aside class="col-md-4 footer-about">
+                    <article class="d-flex pb-3">
+                        <div><img alt="#" src=" {% static 'img/new_logo.png' %} " class="logo-footer mr-3"></div>
+                        <div>
+                            <h6 class="title text-white">{% translate "About us" %}</h6>
+                            <p class="text-muted">{% translate "ChefsGrub is an online food ordering platform that enables the user to order homemade food from their neighbors in a 3 step process. We connect home chefs with hungry customers looking for food delivery and deliver it straight to their doorsteps." %}
+                            </p>
+                            <div class="d-flex align-items-center">
+                                <a class="btn btn-icon btn-outline-light mr-1 btn-sm" title="Facebook" target="_blank"
+                                   href="#"><i class="feather-facebook"></i></a>
+                                <a class="btn btn-icon btn-outline-light mr-1 btn-sm" title="Instagram" target="_blank"
+                                   href="#"><i class="feather-instagram"></i></a>
+                                <a class="btn btn-icon btn-outline-light mr-1 btn-sm" title="Youtube" target="_blank"
+                                   href="#"><i class="feather-youtube"></i></a>
+                                <a class="btn btn-icon btn-outline-light mr-1 btn-sm" title="Twitter" target="_blank"
+                                   href="#"><i class="feather-twitter"></i></a>
                             </div>
-                        </article>
-                    </aside>
+                        </div>
+                    </article>
+                </aside>
 
-                    <aside class="col-sm-3 col-md-2 text-white">
-                        <h6 class="title">{% translate "Services" %}</h6>
-                        <ul class="list-unstyled hov_footer">
-                            <li> <a href=" {% static 'faq.html' %} " class="text-muted">{% translate "Delivery Support" %}</a></li>
-                            <li> <a href=" {% static 'contact.html' %} " class="text-muted">{% translate "Contact us" %}</a></li>
-                            <li> <a href=" {% static 'terms.html' %} " class="text-muted">{% translate "Terms of use" %}</a></li>
-                            <li> <a href=" {% static 'privacy.html' %} " class="text-muted">{% translate "Privacy policy" %}</a></li>
-                        </ul>
-                    </aside>
-                    <aside class="col-sm-3  col-md-2 text-white">
-                        <h6 class="title">{% translate "For Chefs" %}</h6>
-                        <ul class="list-unstyled hov_footer">
-                            <li> <a href=" /chef/sign-in/ " class="text-muted"> {% translate "Chef's login" %} </a></li>
-                            <li> <a href=" {% url 'vendor:become-chef' %} " class="text-muted"> {% translate "Join us as a Chef" %} </a></li>
-                           </ul>
-                    </aside>
-                    <aside class="col-sm-3  col-md-2 text-white">
-                        <h6 class="title">{% translate "Get to Know Us" %}</h6>
-                        <ul class="list-unstyled hov_footer">
-                            <li> <a href=" {% url 'core:about' %}  " class="text-muted"> {% translate "About us" %} </a></li>
-                            <li> <a href="{% url 'core:contact' %} " class="text-muted"> {% translate "Contact us" %} </a></li>
+                <aside class="col-sm-3 col-md-2 text-white">
+                    <h6 class="title">{% translate "Services" %}</h6>
+                    <ul class="list-unstyled hov_footer">
+                        <li><a href=" {% static 'faq.html' %} "
+                               class="text-muted">{% translate "Delivery Support" %}</a></li>
+                        <li><a href=" {% static 'contact.html' %} " class="text-muted">{% translate "Contact us" %}</a>
+                        </li>
+                        <li><a href=" {% static 'terms.html' %} " class="text-muted">{% translate "Terms of use" %}</a>
+                        </li>
+                        <li><a href=" {% static 'privacy.html' %} "
+                               class="text-muted">{% translate "Privacy policy" %}</a></li>
+                    </ul>
+                </aside>
+                <aside class="col-sm-3  col-md-2 text-white">
+                    <h6 class="title">{% translate "For Chefs" %}</h6>
+                    <ul class="list-unstyled hov_footer">
+                        <li><a href=" /chef/sign-in/ " class="text-muted"> {% translate "Chef's login" %} </a></li>
+                        <li><a href=" {% url 'vendor:become-chef' %} "
+                               class="text-muted"> {% translate "Join us as a Chef" %} </a></li>
+                    </ul>
+                </aside>
+                <aside class="col-sm-3  col-md-2 text-white">
+                    <h6 class="title">{% translate "Get to Know Us" %}</h6>
+                    <ul class="list-unstyled hov_footer">
+                        <li><a href=" {% url 'core:about' %}  " class="text-muted"> {% translate "About us" %} </a></li>
+                        <li><a href="{% url 'core:contact' %} " class="text-muted"> {% translate "Contact us" %} </a>
+                        </li>
 
-                        </ul>
-                    </aside>
-                </div>
-                <!-- row.// -->
-            </section>
-            <!-- footer-top.// -->
-
-        </div>
-        <!-- //container -->
-        <section class="footer-copyright border-top py-3 bg-light">
-            <div class="container d-flex align-items-center">
-                <p class="mb-0"> © {% now "Y" %} {% translate "ChefsGrub All rights reserved" %} </p>
-                <p class="text-muted mb-0 ml-auto d-flex align-items-center">
-                    <a href="#" class="d-block"><img alt="#" src=" {% static 'img/appstore.png' %} " height="40"></a>
-                    <a href="#" class="d-block ml-3"><img alt="#" src=" {% static 'img/playmarket.png' %} " height="40"></a>
-                </p>
+                    </ul>
+                </aside>
             </div>
+            <!-- row.// -->
         </section>
-    </footer>
-    <nav id="main-nav">
-        <ul class="second-nav">
-            <li><a href=" /home "><i class="feather-home mr-2"></i> {% translate "Homepage" %}</a></li>
-         <li>
-                <a href="#"><i class="feather-globe mr-2"></i> {% translate "Select Language" %}</a>
-                <ul>
-                    {% for LANG_LANGUAGE_CODE, LANG_LANGUAGE_NAME in langs %}
-                            <li>
-                            <a
-                            class="dropdown-item
+        <!-- footer-top.// -->
+
+    </div>
+    <!-- //container -->
+    <section class="footer-copyright border-top py-3 bg-light">
+        <div class="container d-flex align-items-center">
+            <p class="mb-0"> © {% now "Y" %} {% translate "ChefsGrub All rights reserved" %} </p>
+            <p class="text-muted mb-0 ml-auto d-flex align-items-center">
+                <a href="#" class="d-block"><img alt="#" src=" {% static 'img/appstore.png' %} " height="40"></a>
+                <a href="#" class="d-block ml-3"><img alt="#" src=" {% static 'img/playmarket.png' %} " height="40"></a>
+            </p>
+        </div>
+    </section>
+</footer>
+<nav id="main-nav">
+    <ul class="second-nav">
+        <li><a href=" /home "><i class="feather-home mr-2"></i> {% translate "Homepage" %}</a></li>
+        <li>
+            <a href="#"><i class="feather-globe mr-2"></i> {% translate "Select Language" %}</a>
+            <ul>
+                {% for LANG_LANGUAGE_CODE, LANG_LANGUAGE_NAME in langs %}
+                    <li>
+                        <a
+                                class="dropdown-item
                             {% if LANG_LANGUAGE_CODE == LANGUAGE_CODE %}
                              btn-primary
                             {% endif %}
                             "
-                             href="/{{ LANG_LANGUAGE_CODE }}{{request.get_full_path | slice:'3:'}}" style="text-decoration: none">
+                                href="/{{ LANG_LANGUAGE_CODE }}{{ request.get_full_path | slice:'3:' }}"
+                                style="text-decoration: none">
                             {{ LANG_LANGUAGE_CODE | language_name_local }}
-                            </a>
-                            </li>
-                          {% endfor %}
-                </ul>
-            </li>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </li>
 
 
+        <li><a href="{% static 'about.html' %} "><i class="feather-heart mr-2"></i> {% translate "Ramadan Offers" %}</a>
+        </li>
+
+        <li><a href=" /about"><i class="feather-paperclip mr-2"></i>{% translate "About us" %}</a></li>
+        <li><a href=" {% static 'contact.html' %} "><i class="feather-paperclip mr-2"></i> {% translate "Contact us" %}
+        </a></li>
+        <li><a href=" {% static 'cart.html' %} "><i class="feather-list mr-2"></i> {% translate "Cart" %}</a></li>
 
 
-            <li><a href="{% static 'about.html' %} "><i class="feather-heart mr-2"></i> {% translate "Ramadan Offers" %}</a></li>
-
-            <li><a href=" /about"><i class="feather-paperclip mr-2"></i>{% translate "About us" %}</a></li>
-            <li><a href=" {% static 'contact.html' %} "><i class="feather-paperclip mr-2"></i> {% translate "Contact us" %}</a></li>
-            <li><a href=" {% static 'cart.html' %} "><i class="feather-list mr-2"></i> {% translate "Cart" %}</a></li>
-
-
-
-        </ul>
-        <ul class="bottom-nav">
-            <li class="email">
-                <a class="text-danger" href="/home ">
-                    <p class="h5 m-0"><i class="feather-home text-danger"></i></p>
-                    {% translate "Home" %}
-                </a>
-            </li>
-            <li class="github">
-                <a href=" /faq ">
-                    <p class="h5 m-0"><i class="feather-message-circle"></i></p>
-                    {% translate "FAQ" %}
-                </a>
-            </li>
-            <li class="ko-fi">
-                <a href="/contact ">
-                    <p class="h5 m-0"><i class="feather-phone"></i></p>
-                    {% translate "Help" %}
-                </a>
-            </li>
-        </ul>
-    </nav>
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title"></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body p-0">
-                    <div class="osahan-filter">
-                        <div class="filter">
-                            <!-- SORT BY -->
-                            <div class="p-3 bg-light border-bottom">
-                                <h6 class="m-0">{% translate "Sort by" %}</h6>
-                            </div>
-                            <div class="custom-control border-bottom px-0  custom-radio">
-                                <input type="radio" id="customRadio1f" name="location" class="custom-control-input" checked>
-                                <label class="custom-control-label py-3 w-100 px-3" for="customRadio1f">{% translate "Top Rated" %}</label>
-                            </div>
-                            <div class="custom-control border-bottom px-0  custom-radio">
-                                <input type="radio" id="customRadio2f" name="location" class="custom-control-input">
-                                <label class="custom-control-label py-3 w-100 px-3" for="customRadio2f">{% translate "Nearest Me" %}</label>
-                            </div>
-                            <div class="custom-control border-bottom px-0  custom-radio">
-                                <input type="radio" id="customRadio3f" name="location" class="custom-control-input">
-                                <label class="custom-control-label py-3 w-100 px-3" for="customRadio3f">{% translate "Cost High to Low" %}</label>
-                            </div>
-                            <div class="custom-control border-bottom px-0  custom-radio">
-                                <input type="radio" id="customRadio4f" name="location" class="custom-control-input">
-                                <label class="custom-control-label py-3 w-100 px-3" for="customRadio4f">{% translate "Cost Low to High" %}</label>
-                            </div>
-                            <div class="custom-control border-bottom px-0  custom-radio">
-                                <input type="radio" id="customRadio5f" name="location" class="custom-control-input">
-                                <label class="custom-control-label py-3 w-100 px-3" for="customRadio5f">{% translate "Most Popular" %}</label>
-                            </div>
-                            <!-- Filter -->
-                            <div class="p-3 bg-light border-bottom">
-                                <h6 class="m-0"></h6>
-                            </div>
-                            <div class="custom-control border-bottom px-0  custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="defaultCheck1" checked>
-                                <label class="custom-control-label py-3 w-100 px-3" for="defaultCheck1">{% translate "Open Now" %}</label>
-                            </div>
-                            <div class="custom-control border-bottom px-0  custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="defaultCheck2">
-                                <label class="custom-control-label py-3 w-100 px-3" for="defaultCheck2">{% translate "Credit Cards" %}</label>
-                            </div>
-                            <div class="custom-control border-bottom px-0  custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="defaultCheck3">
-                                <label class="custom-control-label py-3 w-100 px-3" for="defaultCheck3"></label>
-                            </div>
-                            <!-- Filter -->
-                            <div class="p-3 bg-light border-bottom">
-                                <h6 class="m-0">{% translate "ADDITIONAL FILTERS" %}</h6>
-                            </div>
-                            <div class="px-3 pt-3">
-                                <input type="range" class="custom-range" min="0" max="100" name="minmax">
-                                <div class="form-row">
-                                    <div class="form-group col-6">
-                                        <label>{% translate "Min" %}</label>
-                                        <input class="form-control" placeholder="$0" type="number">
-                                    </div>
-                                    <div class="form-group text-right col-6">
-                                        <label>{% translate "Max" %}</label>
-                                        <input class="form-control" placeholder="$1,0000" type="number">
-                                    </div>
+    </ul>
+    <ul class="bottom-nav">
+        <li class="email">
+            <a class="text-danger" href="/home ">
+                <p class="h5 m-0"><i class="feather-home text-danger"></i></p>
+                {% translate "Home" %}
+            </a>
+        </li>
+        <li class="github">
+            <a href=" /faq ">
+                <p class="h5 m-0"><i class="feather-message-circle"></i></p>
+                {% translate "FAQ" %}
+            </a>
+        </li>
+        <li class="ko-fi">
+            <a href="/contact ">
+                <p class="h5 m-0"><i class="feather-phone"></i></p>
+                {% translate "Help" %}
+            </a>
+        </li>
+    </ul>
+</nav>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body p-0">
+                <div class="osahan-filter">
+                    <div class="filter">
+                        <!-- SORT BY -->
+                        <div class="p-3 bg-light border-bottom">
+                            <h6 class="m-0">{% translate "Sort by" %}</h6>
+                        </div>
+                        <div class="custom-control border-bottom px-0  custom-radio">
+                            <input type="radio" id="customRadio1f" name="location" class="custom-control-input" checked>
+                            <label class="custom-control-label py-3 w-100 px-3"
+                                   for="customRadio1f">{% translate "Top Rated" %}</label>
+                        </div>
+                        <div class="custom-control border-bottom px-0  custom-radio">
+                            <input type="radio" id="customRadio2f" name="location" class="custom-control-input">
+                            <label class="custom-control-label py-3 w-100 px-3"
+                                   for="customRadio2f">{% translate "Nearest Me" %}</label>
+                        </div>
+                        <div class="custom-control border-bottom px-0  custom-radio">
+                            <input type="radio" id="customRadio3f" name="location" class="custom-control-input">
+                            <label class="custom-control-label py-3 w-100 px-3"
+                                   for="customRadio3f">{% translate "Cost High to Low" %}</label>
+                        </div>
+                        <div class="custom-control border-bottom px-0  custom-radio">
+                            <input type="radio" id="customRadio4f" name="location" class="custom-control-input">
+                            <label class="custom-control-label py-3 w-100 px-3"
+                                   for="customRadio4f">{% translate "Cost Low to High" %}</label>
+                        </div>
+                        <div class="custom-control border-bottom px-0  custom-radio">
+                            <input type="radio" id="customRadio5f" name="location" class="custom-control-input">
+                            <label class="custom-control-label py-3 w-100 px-3"
+                                   for="customRadio5f">{% translate "Most Popular" %}</label>
+                        </div>
+                        <!-- Filter -->
+                        <div class="p-3 bg-light border-bottom">
+                            <h6 class="m-0"></h6>
+                        </div>
+                        <div class="custom-control border-bottom px-0  custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="defaultCheck1" checked>
+                            <label class="custom-control-label py-3 w-100 px-3"
+                                   for="defaultCheck1">{% translate "Open Now" %}</label>
+                        </div>
+                        <div class="custom-control border-bottom px-0  custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="defaultCheck2">
+                            <label class="custom-control-label py-3 w-100 px-3"
+                                   for="defaultCheck2">{% translate "Credit Cards" %}</label>
+                        </div>
+                        <div class="custom-control border-bottom px-0  custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="defaultCheck3">
+                            <label class="custom-control-label py-3 w-100 px-3" for="defaultCheck3"></label>
+                        </div>
+                        <!-- Filter -->
+                        <div class="p-3 bg-light border-bottom">
+                            <h6 class="m-0">{% translate "ADDITIONAL FILTERS" %}</h6>
+                        </div>
+                        <div class="px-3 pt-3">
+                            <input type="range" class="custom-range" min="0" max="100" name="minmax">
+                            <div class="form-row">
+                                <div class="form-group col-6">
+                                    <label>{% translate "Min" %}</label>
+                                    <input class="form-control" placeholder="$0" type="number">
+                                </div>
+                                <div class="form-group text-right col-6">
+                                    <label>{% translate "Max" %}</label>
+                                    <input class="form-control" placeholder="$1,0000" type="number">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer p-0 border-0">
-                    <div class="col-6 m-0 p-0">
-                        <button type="button" class="btn border-top btn-lg btn-block" data-dismiss="modal">{% translate "Close" %}</button>
-                    </div>
-                    <div class="col-6 m-0 p-0">
-                        <button type="button" class="btn btn-primary btn-lg btn-block">{% translate "Apply" %}</button>
-                    </div>
+            </div>
+            <div class="modal-footer p-0 border-0">
+                <div class="col-6 m-0 p-0">
+                    <button type="button" class="btn border-top btn-lg btn-block"
+                            data-dismiss="modal">{% translate "Close" %}</button>
+                </div>
+                <div class="col-6 m-0 p-0">
+                    <button type="button" class="btn btn-primary btn-lg btn-block">{% translate "Apply" %}</button>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src=" {% static 'vendor/jquery/jquery.min.js' %} "></script>
-    <script type="text/javascript" src=" {% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %} "></script>
-    <!-- slick Slider JS-->
-    <script type="text/javascript" src=" {% static 'vendor/slick/slick.min.js' %} "></script>
-    <!-- Sidebar JS-->
-    <script type="text/javascript" src=" {% static 'vendor/sidebar/hc-offcanvas-nav.js' %} "></script>
-    <!-- Custom scripts for all pages-->
-    <script type="text/javascript" src=" {% static 'js/osahan.js' %} "></script>
-<script>window.onload = function(e){
-      if(sessionStorage.getItem('homePageAlreadyVisited')  == null)//The first time this will be null
-      {
-         //true can be anything. You are just concerned about checking whether 'homePageAlreadyVisited' key has some value or not.
-        setTimeout(function(){ toggleModal(); }, 1500);}}
-
-    const overlay = document.querySelector('.modal-overlay')
-    overlay.addEventListener('click', toggleModal)
-
-    var closemodal = document.querySelectorAll('.modal-close')
-    for (var i = 0; i < closemodal.length; i++) {
-      closemodal[i].addEventListener('click', toggleModal)
+</div>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src=" {% static 'vendor/jquery/jquery.min.js' %} "></script>
+<script type="text/javascript" src=" {% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %} "></script>
+<!-- slick Slider JS-->
+<script type="text/javascript" src=" {% static 'vendor/slick/slick.min.js' %} "></script>
+<!-- Sidebar JS-->
+<script type="text/javascript" src=" {% static 'vendor/sidebar/hc-offcanvas-nav.js' %} "></script>
+<!-- Custom scripts for all pages-->
+<script type="text/javascript" src=" {% static 'js/osahan.js' %} "></script>
+<script>window.onload = function (e) {
+    if (sessionStorage.getItem('homePageAlreadyVisited') == null)//The first time this will be null
+    {
+        //true can be anything. You are just concerned about checking whether 'homePageAlreadyVisited' key has some value or not.
+        setTimeout(function () {
+            toggleModal();
+        }, 1500);
     }
+}
+
+const overlay = document.querySelector('.modal-overlay')
+overlay.addEventListener('click', toggleModal)
+
+var closemodal = document.querySelectorAll('.modal-close')
+for (var i = 0; i < closemodal.length; i++) {
+    closemodal[i].addEventListener('click', toggleModal)
+}
 
 
+function toggleModal() {
+    const body = document.querySelector('body')
+    const modal = document.querySelector('.modal')
+    modal.classList.toggle('opacity-0')
+    modal.classList.toggle('pointer-events-none')
+    body.classList.toggle('modal-active')
+}
 
-    function toggleModal () {
-      const body = document.querySelector('body')
-      const modal = document.querySelector('.modal')
-      modal.classList.toggle('opacity-0')
-      modal.classList.toggle('pointer-events-none')
-      body.classList.toggle('modal-active')
-    }
 
-
-  </script>
+</script>
 
 {% tawkto_script user_name=request.user.get_full_name user_email=request.user.email %}
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/62484c252abe5b455fc38fd6/1fvl6isj2';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/62484c252abe5b455fc38fd6/1fvl6isj2';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+    })();
 </script>
 <!--End of Tawk.to Script-->
 </body>

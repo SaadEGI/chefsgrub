@@ -33,6 +33,7 @@
                                 <b>{% translate "Address" %}: </b> {{ order.address }}  <br />
                                 <b>{% translate "City" %}:</b> {{ order.place }}  <br /></b>
                             </td>
+                            <td>{{ order.paymentmethod }}</td>
 
                             <td>{{ order.paid_amount }}</td>
                             <td>{{ order.get_status_display }}</td>

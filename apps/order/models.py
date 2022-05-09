@@ -15,7 +15,15 @@ class Order(models.Model):
     paid_amount = models.DecimalField(max_digits=8, decimal_places=2)
     vendors = models.ManyToManyField(Vendor, related_name='orders')
     id = models.AutoField(primary_key=True)
-    #time_field = models.TimeField()
+    class paymentmethod(models.TextChoices):
+        cod = '1', "COD"
+        pyp = '2', "Paypal"
+
+    paymentmethod = models.CharField(
+        max_length=5,
+        choices=paymentmethod.choices,
+        default=paymentmethod.cod
+    )
 
     class Meta:
         ordering = ['-created_at']

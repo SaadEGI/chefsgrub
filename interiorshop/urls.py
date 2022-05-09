@@ -17,19 +17,21 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.i18n import i18n_patterns
-from django.utils.translation import gettext_lazy # TODO: use it to translate urls as well
+from django.utils.translation import gettext_lazy  # TODO: use it to translate urls as well
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
-    # path("chef/", include("apps.vendor.urls", namespace="apps.vendor")),
-    # path("cart/", include("apps.cart.urls", namespace="apps.cart")),
-    # path("", include("apps.core.urls", namespace="apps.core")),
-    # path("product/", include("apps.product.urls", namespace="apps.product")),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
+                  path("admin/", admin.site.urls),
 
-urlpatterns += i18n_patterns (
+                  # path("chef/", include("apps.vendor.urls", namespace="apps.vendor")),
+                  # path("cart/", include("apps.cart.urls", namespace="apps.cart")),
+                  # path("", include("apps.core.urls", namespace="apps.core")),
+                  # path("product/", include("apps.product.urls", namespace="apps.product")),
+              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns += i18n_patterns(
     path("chef/", include("apps.vendor.urls", namespace="vendor")),
+    path('paypal/', include('paypal.standard.ipn.urls')),
     path("cart/", include("apps.cart.urls", namespace="cart")),
     path("", include("apps.core.urls", namespace="core")),
     path("", include("apps.product.urls", namespace="product")),

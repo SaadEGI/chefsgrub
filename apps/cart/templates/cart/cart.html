@@ -132,48 +132,24 @@
                                             </button>
                                         </h2>
                                     </div>
+
                                     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                          data-parent="#accordionExample">
                                         <div class="osahan-card-body border-top p-3">
-                                            <script src="https://js.stripe.com/v3/"></script>
+
+                                            <a href="{% url 'cart:process' %}"
+                                               class="text-dark small font-weight-bold text-decoration-none">
+                                                <p class="h4 m-0"><i class="feather-user"></i></p>
+                                                Pay with paypal
+                                            </a>
+
+
+                                            <div id="paypal-button-container">
+
+                                            </div>
+                                            <script src="https://www.paypal.com/sdk/js?client-id=AYoam_YecYQZydznsG1pjoa0_ocXMBzQ6gPJXsirScWO-eJErlqq73BSPi1x6pIB62IIXUUlDH2OCghU&currency=EUR&disable-funding=card,sepa,giropay,sofort"></script>
                                             <script>
-                                                var stripe = Stripe('{{ stripe_pub_key }}');
-                                                var elements = stripe.elements();
 
-                                                var card = elements.create('card');
-
-                                                card.mount('#card-element');
-
-                                                var form = document.getElementById('payment-form');
-                                                form.addEventListener('submit', function (event) {
-                                                    event.preventDefault();
-
-                                                    stripe.createToken(card).then(function (result) {
-                                                        if (result.error) {
-                                                            var errorElement = document.getElementById('card-errors');
-                                                            errorElement.textContent = result.error.message;
-                                                        } else {
-                                                            stripeTokenHandler(result.token);
-                                                        }
-                                                    });
-                                                });
-
-                                                function stripeTokenHandler(token) {
-                                                    var form = document.getElementById('payment-form');
-                                                    var hiddenInput = document.createElement('input');
-                                                    hiddenInput.setAttribute('type', 'hidden');
-                                                    hiddenInput.setAttribute('name', 'stripe_token');
-                                                    hiddenInput.setAttribute('value', token.id);
-                                                    form.appendChild(hiddenInput);
-
-                                                    form.submit();
-                                                }
-                                            </script>
-
-
-                                            <div id="paypal-button-container"></div>
-                                            <script src="https://www.paypal.com/sdk/js?client-id=AYoam_YecYQZydznsG1pjoa0_ocXMBzQ6gPJXsirScWO-eJErlqq73BSPi1x6pIB62IIXUUlDH2OCghU&currency=EUR"></script>
-                                            <script>
                                                 var total = '{{ cart.get_total_cost }}'
                                                 // Render the PayPal button into #paypal-button-container
                                                 paypal.Buttons({
@@ -196,11 +172,12 @@
 
                                                     // Finalize the transaction
                                                     onApprove: function (data, actions) {
-                                                        return actions.order.capture().then(function (details) {
-                                                            // Show a success message to the buyer
-                                                            checkout(request, first_name, last_name, email, address, zipcode, place, phone,
-                                                                cart.get_total_cost())
-                                                        });
+                                                        return actions.order.capture().then(
+                                                            function (details) {
+                                                                // Show a success message to the buyer
+                                                                alert('Transaction Completed by' + details.payer.name.given_name);
+                                                            })
+                                                            ;
                                                     }
 
                                                 }).render('#paypal-button-container');
@@ -225,8 +202,14 @@
                                          data-parent="#accordionExample">
                                         <div class="card-body border-top">
                                             <h6 class="mb-3 mt-0 mb-3 font-weight-bold">Cash</h6>
-                                            <p class="m-0">Please keep exact change handy to help us serve you
-                                                better</p>
+
+                                            <div class="field">
+                                                <div class="control">
+                                                    <button class="btn btn-success btn-block btn-lg">
+                                                        Order Now!
+                                                    </button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -236,7 +219,7 @@
                     <div class="col-md-4">
                         <div class="osahan-cart-item rounded rounded shadow-sm overflow-hidden bg-white sticky_sidebar">
                             <div class="d-flex border-bottom osahan-cart-item-profile bg-white p-3">
-                                <img alt="osahan" src=" {{ vendor.image }} " class="mr-3 rounded-circle img-fluid">
+                                <h6 class="mb-1 font-weight-bold">{{ item.product.vendor.name }}</h6>
                                 <div class="d-flex flex-column">
                                     <h6 class="mb-1 font-weight-bold">{{ vendor.name }}</h6>
 
@@ -244,6 +227,7 @@
                             </div>
                             <div class="bg-white border-bottom py-2">
                                 {% for item in cart %}
+
                                     <div class="gold-members d-flex align-items-center justify-content-between px-3 py-2 border-bottom">
                                         <div class="media align-items-center">
                                             <div class="mr-2 text-danger">&middot;</div>
@@ -288,12 +272,7 @@
                                         class="float-right">{{ cart.get_total_cost }} €</span></h6>
                             </div>
 
-                            <div class="field">
-                                <div class="control">
-                                    <button class="btn btn-success btn-block btn-lg">PAY {{ cart.get_total_cost }} €
-                                    </button>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
