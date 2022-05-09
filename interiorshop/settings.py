@@ -105,8 +105,13 @@ INSTALLED_APPS = [
     'django_extensions',
     'storages',
     'tawkto',
+    'paypal.standard.ipn',
 
 ]
+
+#Paypal
+PAYPAL_RECEIVER_EMAIL = 'support@chefsgrub.com'
+PAYPAL_TEST = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
