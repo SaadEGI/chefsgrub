@@ -1,8 +1,9 @@
 {% extends 'core/base2.html' %}
 {% load static %}
 {% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 {% block head %}
-    <meta http-equiv="refresh" content="3;url=https://www.google.com" />
+    <meta http-equiv="refresh" content="2;url={{ request.scheme }}://{{ request.get_host }}/{{ LANGUAGE_CODE }}/browse" />
 {% endblock %}
 
 {% block content %}
@@ -115,7 +116,7 @@
             </div>
 <div class="most_popular">
                 <div class="row">
-                    <h1> category is coming soon</h1>
+                    <h1>Category is coming soon</h1>
                 </div>
             </div>
             <div class="container">
