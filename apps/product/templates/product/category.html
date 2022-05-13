@@ -134,7 +134,216 @@
                             <div class="p-3 position-relative">
                                 <div class="list-card-body">
                                 <img class="rounded-circle"
+                                                                 src="{{ {% extends 'core/base2.html' %}
+
+{% load static %}
+{% load i18n %}
+{% block content %}
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+     <div class="d-none">
+        <div class="bg-primary p-3 d-flex align-items-center">
+            <a class="toggle togglew toggle-2" href="#"><span></span></a>
+            <h4 class="font-weight-bold m-0 text-white">{{ category.title }}</h4>
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-md-12">
+
+            <div class="container">
+                <div class="cat-slider">
+
+                    <div class="cat-item px-1 py-3">
+                        <a class="bg-white rounded d-block p-2 text-center shadow-sm"
+                                {% if 'syrian' in request.path %}
+                           style="background-color: #ee5462 !important;"
+                                {% endif %}
+                           href=" {% url 'product:category'  'syrian' %} ">
+                            <img alt="#" src=" {% static 'img/syrian.png' %} " class="img-fluid mb-2">
+                            <p class="m-0 small">{% translate "Syrian" %}</p>
+                        </a>
+                    </div>
+                    <div class="cat-item px-1 py-3">
+                        <a class="bg-white rounded d-block p-2 text-center shadow-sm"
+                                {% if 'egyptian' in request.path %}
+                           style="background-color: #ee5462 !important;"
+                                {% endif %}
+                           href=" {% url 'product:category'  'egyptian' %} ">
+                            <img alt="#" src=" {% static 'img/egyptian.png' %} " class="img-fluid mb-2">
+                            <p class="m-0 small">{% translate "Egyptian" %}</p>
+                        </a>
+                    </div>
+                    <div class="cat-item px-1 py-3">
+                        <a class="bg-white rounded d-block p-2 text-center shadow-sm"
+                                {% if 'turkish' in request.path %}
+                           style="background-color: #ee5462 !important;"
+                                {% endif %}
+                           href=" {% url 'product:category'  'turkish' %} ">
+                            <img alt="#" src=" {% static 'img/turkish.png' %} " class="img-fluid mb-2">
+                            <p class="m-0 small">{% translate "Turkish" %}</p>
+                        </a>
+                    </div>
+                    <div class="cat-item px-1 py-3">
+                        <a class="bg-white rounded d-block p-2 text-center shadow-sm"
+                                {% if 'indian' in request.path %}
+                           style="background-color: #ee5462 !important;"
+                                {% endif %}
+                           href=" {% url 'product:category'  'indian' %} ">
+                            <img alt="#" src=" {% static 'img/indian.png' %} " class="img-fluid mb-2">
+                            <p class="m-0 small">{% translate "indian" %}</p>
+                        </a>
+                    </div>
+                    <div class="cat-item px-1 py-3">
+                        <a class="bg-white rounded d-block p-2 text-center shadow-sm"
+                                {% if 'palestinian'  in request.path %}
+                           style="background-color: #ee5462 !important;"
+                                {% endif %}
+                           href="{% url 'product:category'  'palestinian' %}">
+                            <img alt="#" src=" {% static 'img/palestinian.png' %} " class="img-fluid mb-2">
+                            <p class="m-0 small">{% translate "Palestinian" %}</p>
+                        </a>
+                    </div>
+                    <div class="cat-item px-1 py-3">
+                        <a class="bg-white rounded d-block p-2 text-center shadow-sm"
+                                {% if 'moroccan' in request.path %}
+                           style="background-color: #ee5462 !important;"
+                                {% endif %}
+                           href=" {% url 'product:category'  'moroccan' %} ">
+                            <img alt="#" src=" {% static 'img/moroccan.png' %} " class="img-fluid mb-2">
+                            <p class="m-0 small">{% translate "Moroccan" %}</p>
+                        </a>
+                    </div>
+
+                    <div class="cat-item px-1 py-3">
+                        <a class="bg-white rounded d-block p-2 text-center shadow-sm"
+                                {% if 'pakistani' in request.path %}
+                           style="background-color: #ee5462 !important;"
+                                {% endif %}
+                           href=" {% url 'product:category'  'pakistani' %} ">
+                            <img alt="#" src=" {% static 'img/pakisatni.png' %} " class="img-fluid mb-2">
+                            <p class="m-0 small">{% translate "Pakistani" %}</p>
+                        </a>
+                    </div>
+                    <div class="cat-item px-1 py-3">
+                        <a class="bg-white rounded d-block p-2 text-center shadow-sm selected"
+                                {% if 'german' in request.path %}
+                           style="background-color: #ee5462 !important;"
+                                {% endif %}
+                           href=" {% url 'product:category'  'german' %} ">
+                            <img alt="#" src=" {% static 'img/german.png' %} " class="img-fluid mb-2">
+                            <p class="m-0 small">{% translate "German" %}</p>
+                        </a>
+                    </div>
+                    {% comment %} style="background-color: #ee5462 !important;" {% endcomment %}
+                    <div class="cat-item px-1 py-3">
+                        <a class="bg-white rounded d-block p-2 text-center shadow-sm"
+                                {% if 'italian' in request.path %}
+                           style="background-color: #ee5462 !important;"
+                                {% endif %}
+                           href=" {% url 'product:category'  'italian' %} ">
+                            <img alt="#" src=" {% static 'img/italian.png' %} " class="img-fluid mb-2">
+                            <p class="m-0 small">{% translate "Italian" %}</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+
+<div class="most_popular">
+                <div class="row">
+
+                     {% for vendor in CategoryVendor %}
+
+
+                         <div class="col-sm">
+                        <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm">
+                            <div class="list-card-image">
+                                <div class="star position-absolute"><span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span></div>
+                                <div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a></div>
+                                <div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
+                                <a href="restaurant.html">
+                                    <img alt="#" src="{{ vendor.products.all.0.get_trendingimage }}" class="img-fluid item-img w-100">
+                                </a>
+                            </div>
+                            <div class="p-3 position-relative">
+                                <div class="list-card-body">
+                                <img class="rounded-circle"
                                                                  src="{{ vendor.get_thumbnail }}"
+
+                                                                 alt="ChefsGrub" data-resized="true"
+                                                                 object-position="center"
+                                                                 width="72" height="72">
+                                    <h6 class="mb-1"><a href="restaurant.html" class="text-black">{{ vendor.name}}
+                                 </a>
+                                    </h6>
+                                    {% for category in AllCategoryVendor %}
+                                    <p class="text-gray mb-1 small">• {{ category.title }} • </p>
+                                        {% endfor %}
+                                    <p class="text-gray mb-1 rating">
+                                    </p>
+                                    <ul class="rating-stars list-unstyled">
+                                        <li>
+                                            <i class="feather-star star_active"></i>
+                                            <i class="feather-star star_active"></i>
+                                            <i class="feather-star star_active"></i>
+                                            <i class="feather-star star_active"></i>
+                                            <i class="feather-star"></i>
+                                        </li>
+                                    </ul>
+                                    <p></p>
+                                </div>
+                                <div class="list-card-badge">
+                                    <span class="badge badge-danger">FREE DELIEVRY</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                {% endfor %}
+
+
+
+
+
+                </div>
+            </div>
+
+
+            <div class="container">
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+
+            <br>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+ }}"
 
                                                                  alt="ChefsGrub" data-resized="true"
                                                                  object-position="center"

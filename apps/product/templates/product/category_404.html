@@ -1,0 +1,127 @@
+{% extends 'core/base2.html' %}
+{% load static %}
+{% load i18n %}
+{% block head %}
+    <meta http-equiv="refresh" content="3;url=https://www.google.com" />
+{% endblock %}
+
+{% block content %}
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+     <div class="d-none">
+        <div class="bg-primary p-3 d-flex align-items-center">
+            <a class="toggle togglew toggle-2" href="#"><span></span></a>
+            <h4 class="font-weight-bold m-0 text-white">{{ category.title }}</h4>
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-md-12">
+
+            <div class="container">
+                <div class="cat-slider">
+
+                    <div class="cat-item px-1 py-3">
+                        <a class="bg-white rounded d-block p-2 text-center shadow-sm"
+                                {% if 'syrian' in request.path %}
+                           style="background-color: #ee5462 !important;"
+                                {% endif %}
+                           href=" {% url 'product:category'  'syrian' %} ">
+                            <img alt="#" src=" {% static 'img/syrian.png' %} " class="img-fluid mb-2">
+                            <p class="m-0 small">{% translate "Syrian" %}</p>
+                        </a>
+                    </div>
+                    <div class="cat-item px-1 py-3">
+                        <a class="bg-white rounded d-block p-2 text-center shadow-sm"
+                                {% if 'egyptian' in request.path %}
+                           style="background-color: #ee5462 !important;"
+                                {% endif %}
+                           href=" {% url 'product:category'  'egyptian' %} ">
+                            <img alt="#" src=" {% static 'img/egyptian.png' %} " class="img-fluid mb-2">
+                            <p class="m-0 small">{% translate "Egyptian" %}</p>
+                        </a>
+                    </div>
+                    <div class="cat-item px-1 py-3">
+                        <a class="bg-white rounded d-block p-2 text-center shadow-sm"
+                                {% if 'turkish' in request.path %}
+                           style="background-color: #ee5462 !important;"
+                                {% endif %}
+                           href=" {% url 'product:category'  'turkish' %} ">
+                            <img alt="#" src=" {% static 'img/turkish.png' %} " class="img-fluid mb-2">
+                            <p class="m-0 small">{% translate "Turkish" %}</p>
+                        </a>
+                    </div>
+                    <div class="cat-item px-1 py-3">
+                        <a class="bg-white rounded d-block p-2 text-center shadow-sm"
+                                {% if 'indian' in request.path %}
+                           style="background-color: #ee5462 !important;"
+                                {% endif %}
+                           href=" {% url 'product:category'  'indian' %} ">
+                            <img alt="#" src=" {% static 'img/indian.png' %} " class="img-fluid mb-2">
+                            <p class="m-0 small">{% translate "indian" %}</p>
+                        </a>
+                    </div>
+                    <div class="cat-item px-1 py-3">
+                        <a class="bg-white rounded d-block p-2 text-center shadow-sm"
+                                {% if 'palestinian'  in request.path %}
+                           style="background-color: #ee5462 !important;"
+                                {% endif %}
+                           href="{% url 'product:category'  'palestinian' %}">
+                            <img alt="#" src=" {% static 'img/palestinian.png' %} " class="img-fluid mb-2">
+                            <p class="m-0 small">{% translate "Palestinian" %}</p>
+                        </a>
+                    </div>
+                    <div class="cat-item px-1 py-3">
+                        <a class="bg-white rounded d-block p-2 text-center shadow-sm"
+                                {% if 'moroccan' in request.path %}
+                           style="background-color: #ee5462 !important;"
+                                {% endif %}
+                           href=" {% url 'product:category'  'moroccan' %} ">
+                            <img alt="#" src=" {% static 'img/moroccan.png' %} " class="img-fluid mb-2">
+                            <p class="m-0 small">{% translate "Moroccan" %}</p>
+                        </a>
+                    </div>
+
+                    <div class="cat-item px-1 py-3">
+                        <a class="bg-white rounded d-block p-2 text-center shadow-sm"
+                                {% if 'pakistani' in request.path %}
+                           style="background-color: #ee5462 !important;"
+                                {% endif %}
+                           href=" {% url 'product:category'  'pakistani' %} ">
+                            <img alt="#" src=" {% static 'img/pakisatni.png' %} " class="img-fluid mb-2">
+                            <p class="m-0 small">{% translate "Pakistani" %}</p>
+                        </a>
+                    </div>
+                    <div class="cat-item px-1 py-3">
+                        <a class="bg-white rounded d-block p-2 text-center shadow-sm selected"
+                                {% if 'german' in request.path %}
+                           style="background-color: #ee5462 !important;"
+                                {% endif %}
+                           href=" {% url 'product:category'  'german' %} ">
+                            <img alt="#" src=" {% static 'img/german.png' %} " class="img-fluid mb-2">
+                            <p class="m-0 small">{% translate "German" %}</p>
+                        </a>
+                    </div>
+                    <div class="cat-item px-1 py-3">
+                        <a class="bg-white rounded d-block p-2 text-center shadow-sm"
+                                {% if 'italian' in request.path %}
+                           style="background-color: #ee5462 !important;"
+                                {% endif %}
+                           href=" {% url 'product:category'  'italian' %} ">
+                            <img alt="#" src=" {% static 'img/italian.png' %} " class="img-fluid mb-2">
+                            <p class="m-0 small">{% translate "Italian" %}</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+<div class="most_popular">
+                <div class="row">
+                    <h1> category is coming soon</h1>
+                </div>
+            </div>
+            <div class="container">
+          </div>
+            <br>
+        </div>
+    </div>
+
+{% endblock %}

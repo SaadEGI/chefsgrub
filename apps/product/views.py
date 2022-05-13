@@ -3,6 +3,7 @@ import random
 from django.contrib import messages
 from django.db.models import Q
 from django.shortcuts import render, get_object_or_404, redirect
+from django.http import HttpResponse
 
 from .forms import AddToCartForm
 from .models import Category, Product
@@ -61,10 +62,17 @@ def product(request, category_slug, product_slug):
     }
 
     return render(request, 'product/product.html', context)
+def category_coming_soon(request):
+    # return HttpResponse("<html><body><h1>category is coming soon</h1></html></body>")
+    return render(request, 'product/category_404.html')
 
 
 def category(request, category_slug):
-    category = get_object_or_404(Category, slug=category_slug)
+    try:
+        category = get_object_or_404(Category, slug=category_slug)
+    except: 
+        return category_coming_soon(request)
+
     vendors = Vendor.objects.all()
     CategoryVendor = []
     AllCategoryVendor = []
@@ -74,14 +82,7 @@ def category(request, category_slug):
             if product.category not in AllCategoryVendor:
                 AllCategoryVendor.append(product.category)
             if product.category==category:
-
                 CategoryVendor.append(vendor)
                 break;
-
-
-
-
-
-
 
     return render(request, 'product/category.html', {'AllCategoryVendor':AllCategoryVendor,'CategoryVendor':CategoryVendor,'category': category})
