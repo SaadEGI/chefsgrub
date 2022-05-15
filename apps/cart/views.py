@@ -8,6 +8,8 @@ from django.urls import reverse
 from django.shortcuts import render, get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
 from paypal.standard.forms import PayPalPaymentsForm
+from apps.cart.utils import create_new_ref_number
+
 
 from apps.order.models import Order
 
@@ -36,7 +38,7 @@ def payment_process(request):
         'business': settings.PAYPAL_RECEIVER_EMAIL,
         'amount':  cart.get_total_cost(),
         'item_name': 'Bestellung',
-        'invoice': 'ChefsGrub order',
+        'invoice': create_new_ref_number,
         'currency_code': 'EUR',
         'notify_url': 'http://{}{}'.format(host, reverse('paypal-ipn')),
         'return_url': 'http://{}{}'.format(host, reverse('cart:done')),
