@@ -23,6 +23,8 @@ from django.conf.urls.static import static
 urlpatterns = [
                   path("admin/", admin.site.urls),
 
+                  path('paypal/', include('paypal.standard.ipn.urls')),
+
                   # path("chef/", include("apps.vendor.urls", namespace="apps.vendor")),
                   # path("cart/", include("apps.cart.urls", namespace="apps.cart")),
                   # path("", include("apps.core.urls", namespace="apps.core")),
@@ -31,7 +33,6 @@ urlpatterns = [
 
 urlpatterns += i18n_patterns(
     path("chef/", include("apps.vendor.urls", namespace="vendor")),
-    path('paypal/', include('paypal.standard.ipn.urls')),
     path("cart/", include("apps.cart.urls", namespace="cart")),
     path("", include("apps.core.urls", namespace="core")),
     path("", include("apps.product.urls", namespace="product")),
