@@ -17,7 +17,8 @@ class Order(models.Model):
     id = models.AutoField(primary_key=True)
     class paymentmethod(models.TextChoices):
         cod = '1', "COD"
-        pyp = '2', "Paypal"
+        pyp = '2', "Paypal paid"
+        pypnt = '3', "Paypal Not paid"
 
     paymentmethod = models.CharField(
         max_length=5,

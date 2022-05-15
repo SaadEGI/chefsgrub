@@ -112,113 +112,32 @@
                                                                    name="place">
                                                         </div>
                                                     </div>
+                                                    <div class="form-group">
+                                                        <label for="exampleFormControlSelect1">Payment Method</label>
+                                                        <select class="form-control" id="exampleFormControlSelect1"
+                                                                name="paymentmethod">
+                                                            <option>Cash</option>
+                                                            <option>PayPal</option>
+                                                        </select>
+                                                    </div>
+
                                                 </div>
                                             </div>
 
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion mb-3 rounded shadow-sm bg-white overflow-hidden"
-                                 id="accordionExample">
-                                <div class="osahan-card bg-white border-bottom overflow-hidden">
-                                    <div class="osahan-card-header" id="headingOne">
-                                        <h2 class="mb-0">
-                                            <button class="d-flex p-3 align-items-center btn btn-link w-100"
-                                                    type="button" data-toggle="collapse" data-target="#collapseOne"
-                                                    aria-expanded="true" aria-controls="collapseOne">
-                                                <i class="feather-credit-card mr-3"></i> PayPal
-                                                <i class="feather-chevron-down ml-auto"></i>
-                                            </button>
-                                        </h2>
-                                    </div>
-
-                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-                                         data-parent="#accordionExample">
-                                        <div class="osahan-card-body border-top p-3">
-
-                                            <a href="{% url 'cart:process' %}"
-                                               class="text-dark small font-weight-bold text-decoration-none">
-                                                <p class="h4 m-0"><i class="feather-user"></i></p>
-                                                Pay with paypal
-                                            </a>
-
-
-                                            <div id="paypal-button-container">
-
-                                            </div>
-                                            <script src="https://www.paypal.com/sdk/js?client-id=AYoam_YecYQZydznsG1pjoa0_ocXMBzQ6gPJXsirScWO-eJErlqq73BSPi1x6pIB62IIXUUlDH2OCghU&currency=EUR&disable-funding=card,sepa,giropay,sofort"></script>
-                                            <script>
-
-                                                var total = '{{ cart.get_total_cost }}'
-                                                // Render the PayPal button into #paypal-button-container
-                                                paypal.Buttons({
-
-                                                    style: {
-                                                        color: 'blue',
-                                                        shape: 'rect',
-                                                    },
-
-                                                    // Set up the transaction
-                                                    createOrder: function (data, actions) {
-                                                        return actions.order.create({
-                                                            purchase_units: [{
-                                                                amount: {
-                                                                    value: parseFloat(total).toFixed(2)
-                                                                }
-                                                            }]
-                                                        });
-                                                    },
-
-                                                    // Finalize the transaction
-                                                    onApprove: function (data, actions) {
-                                                        return actions.order.capture().then(
-                                                            function (orderData) {
-                                                                print(orderData)
-                                                                // Show a success message to the buyer
-                                                                console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
-                                                                var transaction = orderData.purchase_units[0].payments.captures[0];
-                                                                alert('Transaction ' + transaction.status + ': ' + transaction.id + orderData.address+'\n\nSee console for all available details');
-
-
-                                                            })
-                                                            ;
-                                                    }
-
-                                                }).render('#paypal-button-container');
-                                            </script>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="osahan-card bg-white overflow-hidden">
-                                    <div class="osahan-card-header" id="headingThree">
-                                        <h2 class="mb-0">
-                                            <button class="d-flex p-3 align-items-center btn btn-link w-100"
-                                                    type="button" data-toggle="collapse" data-target="#collapseThree"
-                                                    aria-expanded="false" aria-controls="collapseThree">
-                                                <i class="feather-dollar-sign mr-3"></i> Cash on Delivery
-                                                <i class="feather-chevron-down ml-auto"></i>
-                                            </button>
-                                        </h2>
-                                    </div>
-                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-                                         data-parent="#accordionExample">
-                                        <div class="card-body border-top">
-                                            <h6 class="mb-3 mt-0 mb-3 font-weight-bold">Cash</h6>
-
-                                            <div class="field">
-                                                <div class="control">
-                                                    <button class="btn btn-success btn-block btn-lg">
+                                    <button class="btn btn-success btn-block btn-lg">
                                                         Order Now!
                                                     </button>
-                                                </div>
-                                            </div>
-                                        </div>
+
+                                        </form>
+
+
                                     </div>
                                 </div>
                             </div>
+
+
+
+
                         </div>
                     </div>
                     <div class="col-md-4">

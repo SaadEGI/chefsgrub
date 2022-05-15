@@ -26,6 +26,7 @@ from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.utils.text import slugify
+from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render, redirect, get_object_or_404
 
 from .models import Vendor
@@ -50,7 +51,7 @@ def vendors(request):
 
     return render(request, 'vendor/chef.html', {'vendors': vendors})
 
-
+@csrf_exempt
 def vendor(request, vendorName):
     vendor = get_object_or_404(Vendor, pk=vendorName)
     cart = Cart(request)

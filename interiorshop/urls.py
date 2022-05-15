@@ -25,6 +25,7 @@ urlpatterns = [
 
                   path('paypal/', include('paypal.standard.ipn.urls')),
 
+
                   # path("chef/", include("apps.vendor.urls", namespace="apps.vendor")),
                   # path("cart/", include("apps.cart.urls", namespace="apps.cart")),
                   # path("", include("apps.core.urls", namespace="apps.core")),
@@ -32,6 +33,7 @@ urlpatterns = [
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += i18n_patterns(
+
     path("chef/", include("apps.vendor.urls", namespace="vendor")),
     path("cart/", include("apps.cart.urls", namespace="cart")),
     path("", include("apps.core.urls", namespace="core")),
