@@ -4,19 +4,27 @@ from . import models
 from apps.product.models import Product, ProductImage
 from django.contrib.auth.models import User
 
+from django.contrib.auth.forms import UserCreationForm
+
+
+
 class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
         fields = ['category', 'image', 'title', 'description', 'price']
 
+
 class ProductImageForm(forms.ModelForm):
     class Meta:
         model = ProductImage
         fields = ['image']
+
+
 class ChefForm(forms.ModelForm):
     class Meta:
-        model = models.Vendor # Restaurant
-        fields = ("phone", "address", "logo") # TODO: cos "name" field is primary key on the Vendor model, it is sensitive. Updating it should be
+        model = models.Vendor  # Restaurant
+        fields = ("phone", "City","address",
+                  "logo")  # TODO: cos "name" field is primary key on the Vendor model, it is sensitive. Updating it should be
         # done in the right way. If being a PK prevents it from being updated without creating problems, a new PK should be used instead
 
 
@@ -27,6 +35,21 @@ class UserFormForEdit(forms.ModelForm):
         model = User
         fields = ("first_name", "last_name", "email")
 
+
+class RegisterChefForm(UserCreationForm):
+    City = (
+        ('1', "Wuppertal"),
+        ('2', "Dortmund"),
+        ('3', "Cologne"),
+        ('4', "Duesseldorf"))
+    email = forms.EmailField()
+    first_name = forms.CharField(max_length=50)
+    last_name = forms.CharField(max_length=50)
+    City = forms.ChoiceField(choices=City)
+
+    class Meta:
+        model = User
+        fields = ("first_name", "last_name","username", "email", "City",)
 
 
 class UserForm(forms.ModelForm):

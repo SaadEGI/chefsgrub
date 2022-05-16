@@ -14,6 +14,18 @@ class Vendor(models.Model):
     # id = models.AutoField(primary_key=True)
     logo = models.ImageField(upload_to='uploads/', default=None, blank=True, null=True)
     thumbnail = models.ImageField(upload_to='uploads/', blank=True, null=True)
+    #category = models.ForeignKey(Category, related_name="products", on_delete=models.CASCADE)
+    class City(models.TextChoices):
+        Wuppertal = '1', "Wuppertal"
+        Dortmund = '2', "Dortmund"
+        Cologne = '3', "Cologne"
+        Duesseldorf = '4', "Duesseldorf"
+
+    City = models.CharField(
+        max_length=4,
+        choices=City.choices,
+        default=City.Wuppertal
+    )
 
     class Meta:
         ordering = ['name']

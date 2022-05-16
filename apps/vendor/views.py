@@ -1,26 +1,3 @@
-from django.contrib.auth import login
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import UserCreationForm
-from django.utils.text import slugify
-from django.shortcuts import render, redirect, get_object_or_404
-from . import forms
-
-from .models import Vendor
-from apps.product.models import Product, ProductImage
-from apps.order.models import Order, OrderItem
-
-from . import forms
-from django.contrib.auth import login
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import UserCreationForm
-from django.utils.text import slugify
-from django.shortcuts import render, redirect, get_object_or_404
-from . import forms
-
-from .models import Vendor
-from apps.product.models import Product, ProductImage
-from apps.order.models import Order, OrderItem
-
 from . import forms
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
@@ -42,6 +19,7 @@ from apps.product.forms import AddToCartForm
 from apps.product.models import Category, Product
 
 from apps.cart.cart import Cart
+from .forms import RegisterChefForm
 
 
 
@@ -82,7 +60,7 @@ def vendor(request, vendorName):
 
 def become_chef(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = RegisterChefForm(request.POST)
 
         if form.is_valid():
             user = form.save()
@@ -93,7 +71,7 @@ def become_chef(request):
 
             return redirect("vendor:chef-order")
     else:
-        form = UserCreationForm()
+        form = RegisterChefForm()
 
     return render(request, 'chef/sign_up.html', {'form': form})
 
