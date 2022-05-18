@@ -3,6 +3,7 @@ from django.db import models
 from apps.product.models import Product
 from apps.vendor.models import Vendor
 
+
 class Order(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
@@ -15,6 +16,7 @@ class Order(models.Model):
     paid_amount = models.DecimalField(max_digits=8, decimal_places=2)
     vendors = models.ManyToManyField(Vendor, related_name='orders')
     id = models.AutoField(primary_key=True)
+
     class paymentmethod(models.TextChoices):
         cod = '1', "COD"
         pyp = '2', "Paypal paid"
@@ -26,11 +28,24 @@ class Order(models.Model):
         default=paymentmethod.cod
     )
 
+    confirmed = 'confirmed'
+    pending = 'pending'
+    cancelled = 'cancelled'
+    STATUS_CHOICES = (
+        (confirmed, 'confirmed'),
+        (pending, 'pending'),
+        (cancelled, 'cancelled'),
+    )
+    status = models.CharField(max_length=9,
+                              choices=STATUS_CHOICES,
+                              default=pending)
+
     class Meta:
         ordering = ['-created_at']
-    
+
     def __str__(self):
         return self.first_name
+
 
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, related_name='items', on_delete=models.CASCADE)
@@ -40,9 +55,9 @@ class OrderItem(models.Model):
     price = models.DecimalField(max_digits=8, decimal_places=2)
     quantity = models.IntegerField(default=1)
     id = models.AutoField(primary_key=True)
-    
+
     def __str__(self):
         return '%s' % self.id
-    
+
     def get_total_price(self):
         return self.price * self.quantity

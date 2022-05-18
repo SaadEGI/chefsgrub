@@ -6,8 +6,8 @@ from apps.cart.cart import Cart
 
 from .models import Order, OrderItem
 
-def checkout(request, first_name, last_name, email, address, zipcode, place, phone, amount, paymentmethod):
-    order = Order.objects.create(first_name=first_name, last_name=last_name, email=email, address=address, zipcode=zipcode, place=place, phone=phone, paid_amount=amount, paymentmethod=paymentmethod)
+def checkout(request, first_name, last_name, email, address, zipcode, place, phone, amount, paymentmethod, status):
+    order = Order.objects.create(first_name=first_name, last_name=last_name, email=email, address=address, zipcode=zipcode, place=place, phone=phone, paid_amount=amount, paymentmethod=paymentmethod, status=status)
 
     for item in Cart(request):
         OrderItem.objects.create(order=order, product=item['product'], vendor=item['product'].vendor, price=item['product'].price, quantity=item['quantity'])
@@ -40,3 +40,21 @@ def notify_customer(order):
     msg = EmailMultiAlternatives(subject, text_content, from_email, [to_email])
     msg.attach_alternative(html_content, 'text/html')
     msg.send()
+
+def notify_customer_and_admin_cancelled(order):
+    from_email = settings.DEFAULT_EMAIL_FROM
+
+    to_email = order.email
+    subject = 'Your Order was cancelled'
+    subject_to_admin = 'this order was cancelled, paypal refund needed'
+    text_content = 'Your Order was cancelled by the chef, if you paid with paypal, you will be refunded in the next 4 hours'
+    text_content_to_admin = 'Customer email for refund is '+ order.email+ 'and the order id is ' + order.id
+
+    html_content = render_to_string('order/email_notify_customer.html', {'order': order})
+
+    msg = EmailMultiAlternatives(subject, text_content, from_email, [to_email])
+    msg.attach_alternative(html_content, 'text/html')
+    msg.send()
+    msg_to_admin = EmailMultiAlternatives(subject_to_admin, text_content_to_admin, from_email, ['support@chefsgrub.com'])
+    msg_to_admin.attach_alternative(html_content, 'text/html')
+    msg_to_admin.send()

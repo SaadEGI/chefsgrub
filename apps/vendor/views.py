@@ -18,8 +18,10 @@ from django.shortcuts import render, get_object_or_404, redirect
 from apps.product.forms import AddToCartForm
 from apps.product.models import Category, Product
 
+from apps.order.models import *
 from apps.cart.cart import Cart
 from .forms import RegisterChefForm
+from apps.order.utilities import *
 
 
 
@@ -83,16 +85,26 @@ def chef_admin(request):
 
 @login_required(login_url='/chef/sign-in/')
 def chef_order(request):
-    # if request.method == "POST":
-        # order = Order.objects.get(id=request.POST["id"],
-        #                           vendor=request.user.vendor)
-
-        # if order.status == Order.COOKING:
-        #     order.status = Order.READY
-        #     order.save()
     chef = request.user.vendor
     orders = chef.orders.all()
-    # #TODO: fix filter
+    if 'btnform1' in request.POST:
+
+        order = request.POST.get("order")
+        sts = 'confirmed'
+        order.status = sts
+        print("testyy")
+
+        return redirect("vendor:chef_order")
+    if 'btnform2' in request.POST:
+
+        order = request.POST.get("order")
+        sts = 'cancelled'
+        order.status = sts
+
+        return redirect("vendor:chef_order")
+
+
+
 
     return render(request, 'chef/order.html', {'orders': orders,'orders': orders, 'chef': chef})
 

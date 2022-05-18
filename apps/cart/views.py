@@ -19,7 +19,7 @@ from .forms import CheckoutForm
 from django.core import serializers
 
 from apps.order.utilities import checkout, notify_customer, notify_vendor
-
+from django.forms.models import model_to_dict
 
 @csrf_exempt
 def payment_done(request):
@@ -39,7 +39,12 @@ def payment_process(request):
 
 
 def cart_detail(request):
-    cart = Cart(request)
+    #self.session = request.session
+
+    someDict = {1:'s'}
+
+    #request.session['order'] = "test"
+
     #order = Order(request)
     #for items in Cart
     for key, value in request.session.items():
@@ -50,9 +55,12 @@ def cart_detail(request):
     if request.method == 'POST':
         form = CheckoutForm(request.POST)
 
+        cart = Cart(request)
+
 
 
         if form.is_valid():
+            cart = Cart(request)
             if(form.cleaned_data['paymentmethod'] == "PayPal"):
                 print("Paypal choosed")
                 first_name = form.cleaned_data['first_name']
@@ -63,11 +71,13 @@ def cart_detail(request):
                 zipcode = form.cleaned_data['zipcode']
                 place = form.cleaned_data['place']
                 paymentmethod = 'pypnt'
+                status = 'pending'
                 order = checkout(request, first_name, last_name, email, address, zipcode, place, phone,
-                                 cart.get_total_cost(), paymentmethod)
-                print(order.id)
-                print(order)
-                #request.session['username'] = form.cleaned_data['email']
+                                 cart.get_total_cost(), paymentmethod,status)
+                for key, value in request.session.items():
+                    print('{} => {}'.format(key, value))
+                request.POST[order.id]
+
 
 
                 return redirect('cart:process')
@@ -83,8 +93,9 @@ def cart_detail(request):
                 zipcode = form.cleaned_data['zipcode']
                 place = form.cleaned_data['place']
                 paymentmethod = 'COD'
+                status = 'pending'
                 order = checkout(request, first_name, last_name, email, address, zipcode, place, phone,
-                                 cart.get_total_cost(), paymentmethod)
+                                 cart.get_total_cost(), paymentmethod, status)
 
 
                 cart.clear()
@@ -92,7 +103,7 @@ def cart_detail(request):
                 # notify_customer(order)
                 # notify_vendor(order)
 
-                return redirect('cart:success')
+                return redirect('cart:successcash')
 
 
             # stripe.api_key = settings.STRIPE_SECRET_KEY
