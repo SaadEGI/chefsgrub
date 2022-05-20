@@ -87,26 +87,21 @@ def chef_admin(request):
 def chef_order(request):
     chef = request.user.vendor
     orders = chef.orders.all()
+
     if 'btnform1' in request.POST:
-
-        order = request.POST.get("order")
-        sts = 'confirmed'
-        order.status = sts
-        print("testyy")
-
-        return redirect("vendor:chef_order")
+        orderid = request.POST.get("orderid")
+        order = Order.objects.get(pk=int(orderid))
+        confirm_order(order)
+        order.save()
+        return redirect("vendor:chef-order")
     if 'btnform2' in request.POST:
+        orderid = request.POST.get("orderid")
+        order = Order.objects.get(pk=int(orderid))
+        cancel_order(order)
+        order.save()
+        return redirect("vendor:chef-order")
 
-        order = request.POST.get("order")
-        sts = 'cancelled'
-        order.status = sts
-
-        return redirect("vendor:chef_order")
-
-
-
-
-    return render(request, 'chef/order.html', {'orders': orders,'orders': orders, 'chef': chef})
+    return render(request, 'chef/order.html', {'orders': orders, 'chef': chef})
 
 
 @login_required(login_url='/chef/sign-in/')

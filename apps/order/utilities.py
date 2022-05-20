@@ -16,6 +16,14 @@ def checkout(request, first_name, last_name, email, address, zipcode, place, pho
 
     return order
 
+def confirm_order(order):
+    order.status = "confirmed"
+
+def cancel_order(order):
+    order.status = "cancelled"
+    notify_customer_and_admin_cancelled(order)
+
+
 def notify_vendor(order):
     from_email = settings.DEFAULT_EMAIL_FROM
 
@@ -45,16 +53,17 @@ def notify_customer_and_admin_cancelled(order):
     from_email = settings.DEFAULT_EMAIL_FROM
 
     to_email = order.email
+    admin_email = 'support@chefsgrub.com'
     subject = 'Your Order was cancelled'
     subject_to_admin = 'this order was cancelled, paypal refund needed'
     text_content = 'Your Order was cancelled by the chef, if you paid with paypal, you will be refunded in the next 4 hours'
-    text_content_to_admin = 'Customer email for refund is '+ order.email+ 'and the order id is ' + order.id
+    text_content_to_admin = 'Customer email for refund is '+ str(order.email)+ 'and the order id is ' + str(order.id)
 
     html_content = render_to_string('order/email_notify_customer.html', {'order': order})
 
     msg = EmailMultiAlternatives(subject, text_content, from_email, [to_email])
     msg.attach_alternative(html_content, 'text/html')
     msg.send()
-    msg_to_admin = EmailMultiAlternatives(subject_to_admin, text_content_to_admin, from_email, ['support@chefsgrub.com'])
+    msg_to_admin = EmailMultiAlternatives(subject_to_admin, text_content_to_admin, from_email, [admin_email])
     msg_to_admin.attach_alternative(html_content, 'text/html')
     msg_to_admin.send()

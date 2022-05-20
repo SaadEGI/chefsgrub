@@ -22,15 +22,19 @@
                 </thead>
                 <tbody>
                 {% for order in orders %}
+
                     <tr>
                         <td scope="row">{{ order.id }}</td>
                         <td>{{ order.get_status_display }}
-                            {% if order.status == '2' %}
+
+                            {% if order.status == 'pending' %}
                                 <form action="" method="POST">{% csrf_token %}
-                                    <input type="hidden" value="{{order}}" name="order">
-                                    <button type="submit" name="btnform1">Confirm Order</button>
-                                    <button type="submit" name="btnform2">Cancel Order</button>
-                                </form>
+                                <input type="hidden" value="{{ order.id }}" name="orderid">
+
+                                <button type="submit" name="btnform1" class="btn btn-success">Confirm Order</button>
+                                <button type="submit" name="btnform2" class="btn btn-danger">Cancel Order</button>
+                            </form>
+
 
                             {% endif %}
 
